@@ -18,7 +18,7 @@ def detail():
 
 @app.route('/main-feature', methods=['POST'])
 def index():
-    return jsonify("message":"not yet")
+    return jsonify({"message":"not yet"})
 
 if __name__ == '__main__':
     app.run(debug=True)
