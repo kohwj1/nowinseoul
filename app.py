@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/on-map')
+@app.route('/map-pin')
 def browse_on_map():
     return render_template('index.html')
 
@@ -16,15 +16,7 @@ def detail():
 
 # --------------------------------------------
 
-@app.route('/')
-def index():
-    return jsonify("message":"not yet")
-
-@app.route('/')
-def index():
-    return jsonify("message":"not yet")
-
-@app.route('/')
+@app.route('/main-feature', methods=['POST'])
 def index():
     return jsonify("message":"not yet")
 
