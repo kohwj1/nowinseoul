@@ -44,7 +44,8 @@
       "PNJi-Ctbh2gt2C-Ai2OFB",
       "y-IcMCRQJKm12B-0gGeN6",
       "0vpqOCEc5PcV4ZiNTMMRA",
-      "sKe_faxKFvAU1QNGrSUZu"
+      "sKe_faxKFvAU1QNGrSUZu",
+      "P6_bvWVXItk2E0cHmPSEU"
     ],
     "indexIds": [],
     "memoIds": []
@@ -255,13 +256,14 @@
         "name": "detail_raw",
         "comment": "각 지역 상세 원본 데이터",
         "columnIds": [
-          "rdAa6ZC6ROv36sS623PGM",
+          "lrHi7Fi55HB36HmA2-eP2",
           "Q0OllndsCvIndAuxrKU26",
           "sjxiSIY0Mv5YnU6Rbgt8U",
           "kTB4g7YvxVfRMwv_JON6P"
         ],
         "seqColumnIds": [
           "rdAa6ZC6ROv36sS623PGM",
+          "lrHi7Fi55HB36HmA2-eP2",
           "Q0OllndsCvIndAuxrKU26",
           "sjxiSIY0Mv5YnU6Rbgt8U",
           "kTB4g7YvxVfRMwv_JON6P"
@@ -275,7 +277,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1755263487330,
+          "updateAt": 1755266404800,
           "createAt": 1755254823139
         }
       },
@@ -410,7 +412,7 @@
         "comment": "",
         "dataType": "BOOLEAN",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 60,
@@ -419,7 +421,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754985933411,
+          "updateAt": 1755266517169,
           "createAt": 1754985899054
         }
       },
@@ -479,7 +481,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754985962038,
+          "updateAt": 1755266524115,
           "createAt": 1754985957688
         }
       },
@@ -550,7 +552,7 @@
         "comment": "",
         "dataType": "DECIMAL",
         "default": "",
-        "options": 0,
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
@@ -559,7 +561,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754986052538,
+          "updateAt": 1755266507855,
           "createAt": 1754986009837
         }
       },
@@ -570,7 +572,7 @@
         "comment": "",
         "dataType": "TEXT",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 60,
@@ -579,7 +581,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754986095337,
+          "updateAt": 1755266527982,
           "createAt": 1754986077987
         }
       },
@@ -630,7 +632,7 @@
         "comment": "예측 온도",
         "dataType": "INTEGER",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 60,
@@ -639,7 +641,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755131179025,
+          "updateAt": 1755266467382,
           "createAt": 1754986365169
         }
       },
@@ -730,7 +732,7 @@
         "comment": "예측 일시",
         "dataType": "TEXT",
         "default": "",
-        "options": 0,
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
@@ -739,7 +741,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754987179574,
+          "updateAt": 1755266460221,
           "createAt": 1754986676717
         }
       },
@@ -1470,7 +1472,7 @@
         "comment": "입력일시",
         "dataType": "TEXT",
         "default": "",
-        "options": 0,
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 67,
@@ -1479,7 +1481,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755255066739,
+          "updateAt": 1755266443569,
           "createAt": 1755254990032
         }
       },
@@ -1530,7 +1532,7 @@
         "comment": "예측 온도",
         "dataType": "INTEGER",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 60,
@@ -1539,7 +1541,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755255087802,
+          "updateAt": 1755266478988,
           "createAt": 1755255087802
         }
       },
@@ -1610,7 +1612,7 @@
         "comment": "예측 일시",
         "dataType": "TEXT",
         "default": "",
-        "options": 0,
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
@@ -1619,7 +1621,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755255115088,
+          "updateAt": 1755266483922,
           "createAt": 1755255115087
         }
       },
@@ -1701,6 +1703,26 @@
         "meta": {
           "updateAt": 1755263555460,
           "createAt": 1755263543259
+        }
+      },
+      "lrHi7Fi55HB36HmA2-eP2": {
+        "id": "lrHi7Fi55HB36HmA2-eP2",
+        "tableId": "u_8DTXn6i4Di7hZM1TRQd",
+        "name": "id",
+        "comment": "장소 고유식별자",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 3,
+          "widthName": 60,
+          "widthComment": 78,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1755266402182,
+          "createAt": 1755266394309
         }
       }
     },
@@ -1955,6 +1977,34 @@
         "meta": {
           "updateAt": 1755263543259,
           "createAt": 1755263543259
+        }
+      },
+      "P6_bvWVXItk2E0cHmPSEU": {
+        "id": "P6_bvWVXItk2E0cHmPSEU",
+        "identification": true,
+        "relationshipType": 8,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "x1yxu_y3de0VZMAWWYdzr",
+          "columnIds": [
+            "gqj3ZxlpFk5HvyQpvMpDp"
+          ],
+          "x": 694.1859,
+          "y": 255.9017,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "u_8DTXn6i4Di7hZM1TRQd",
+          "columnIds": [
+            "lrHi7Fi55HB36HmA2-eP2"
+          ],
+          "x": 691.5,
+          "y": 191,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1755266394311,
+          "createAt": 1755266394311
         }
       }
     },
