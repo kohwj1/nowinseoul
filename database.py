@@ -12,13 +12,23 @@ def create_table():
     conn =  connect_db()
     cur = conn.cursor()
     
+# -- 관광지 기본 정보
     cur.execute('''
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT, 
-            name TEXT NOT NULL, 
-            age INTEGER NOT NULL
-        )
-    ''')
+CREATE TABLE attraction
+(
+  id          TEXT    NOT NULL,
+  name        TEXT    NOT NULL,
+  description TEXT    NULL    ,
+  lat         DECIMAL NOT NULL,
+  lon         DECIMAL NULL    ,
+  food        BOOLEAN NULL    ,
+  beauty      BOOLEAN NOT NULL,
+  drama       BOOLEAN NULL    ,
+  movie       BOOLEAN NULL    ,
+  thumbnail   TEXT    NOT NULL,
+  insert_dttm TEXT    NOT NULL
+  PRIMARY KEY (id)
+)''')
 
     cur.execute('''
         CREATE TABLE IF NOT EXISTS users (
