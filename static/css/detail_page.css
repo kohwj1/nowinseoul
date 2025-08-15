@@ -1,0 +1,154 @@
+/*========== 1. 기본 설정 (Mobile First) ==========*/
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    background-color: #f0f2f5; 
+    color: #333;
+}
+
+.page-container {
+    max-width: 31.25rem;
+    margin: 0 auto;
+    background-color: #fff; 
+}
+
+/*========== 2. 상단 이미지 및 제목 섹션 ==========*/
+.top-section {
+    position: relative;
+    height: 21.875rem; /* 350px -> 21.875rem */
+    color: #fff;
+}
+
+.background-image-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.back-button {
+    position: absolute;
+    top: 1.25rem; /* 20px -> 1.25rem */
+    left: 1.25rem; /* 20px -> 1.25rem */
+    z-index: 2; 
+    width: 2.1875rem; /* 35px -> 2.1875rem */
+    height: 2.1875rem; /* 35px -> 2.1875rem */
+    border-radius: 50%;
+    background-color: rgba(251, 251, 251, 0.5);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-button img {
+    width: 1.25rem; /* 20px -> 1.25rem */
+    height: 1.25rem; /* 20px -> 1.25rem */
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 1.875rem; /* 30px -> 1.875rem */
+    left: 1.875rem; /* 30px -> 1.875rem */
+    z-index: 2; /* 오버레이보다 위에 표시 */
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5); /* 2px 2px 4px -> 0.125rem 0.125rem 0.25rem */
+}
+
+/*========== 3. 본문 내용 섹션 ==========*/
+.content-section {
+    padding: 0.05rem 1rem; /* 30px 20px -> 1.875rem 1.25rem */
+    line-height: 1.2;
+}
+
+#location-description {
+    font-size: 13px;
+}
+
+/*========== 4. 정보 카드 섹션 (군중 밀도, 교통 상황) ==========*/
+.crowd-density-section,
+.traffic-conditions-section {
+    padding: 1.25rem 1rem; /* 20px -> 1.25rem */
+    margin: 0.625rem 1.25rem 1.25rem; /* 10px 20px 20px -> 0.625rem 1.25rem 1.25rem */
+    border-radius: 0.9375rem; /* 15px -> 0.9375rem */
+    background-color: #eeeeef;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.05); /* 4px 4px 8px -> 0.25rem 0.25rem 0.5rem */
+}
+
+.info-tag {
+    display: inline-block;
+    padding: 0.3125rem 0.75rem; /* 5px 12px -> 0.3125rem 0.75rem */
+    border-radius: 1.25rem; /* 20px -> 1.25rem */
+    color: #111010;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.625rem; /* 10px -> 0.625rem */
+}
+
+/* 상태별 색상 */
+.info-tag.medium {
+    background-color: #ffc107; /* 주황색 */
+}
+
+.info-tag.congested {
+    background-color: #dc3545; /* 빨간색 */
+}
+
+.info-title {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*========== 5. 프로그레스 바 ==========*/
+.progress-bar-container {
+    display: flex; /* 자식 요소들을 가로로 나열 */
+    height: 0.25rem;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 0.05rem;
+}
+
+.progress-bar-segment {
+    flex: 1; /* 모든 <span>이 동일한 너비를 가짐 */
+    height: 100%;
+    /* 초기 색상은 비워두거나 기본값 설정 */
+}
+
+.time-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.3125rem; /* 5px -> 0.3125rem */
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/*========== 6. PC 버전 스타일 (미디어 쿼리) ==========*/
+@media (min-width: 48rem) { /* 768px -> 48rem */
+    .page-container {
+        max-width: 50rem; /* 800px -> 50rem */
+    }
+
+    .top-section {
+        height: 28.125rem; /* 450px -> 28.125rem */
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .content-section {
+        padding: 2.5rem 1.875rem; /* 40px 30px -> 2.5rem 1.875rem */
+    }
+}
