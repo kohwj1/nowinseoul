@@ -51,6 +51,63 @@
             <div class="info-tag" id="traffic-tag">{{traffic}}</div>
             <div class="info-title">Traffic Conditions</div>
         </section>
+        
+        <section class="additional-info-section">
+            <div class="weather-section">
+                <div class="weather-header">
+                    <h2>Weather</h2>
+                    <span class="current-temp">{{current_temp}}</span>
+                </div>
+                <div class="weather-forecast">
+                    <div class="forecast-item">
+                        <span class="time">Now</span>
+                        <span class="temp">{{now_temp}}</span>
+                        <div class="rain-chance-graph"></div>
+                    </div>
+                    <div class="forecast-item">
+                        <span class="time">{{time_1}}</span>
+                        <span class="temp">{{temp_1}}</span>
+                        <div class="rain-chance-graph"></div>
+                    </div>
+                    <div class="forecast-item">
+                        <span class="time">{{time_2}}</span>
+                        <span class="temp">{{temp_2}}</span>
+                        <div class="rain-chance-graph"></div>
+                    </div>
+                    <div class="forecast-item">
+                        <span class="time">{{time_3}}</span>
+                        <span class="temp">{{temp_3}}</span>
+                        <div class="rain-chance-graph"></div>
+                    </div>
+                    <div class="forecast-item">
+                        <span class="time">{{time_4}}</span>
+                        <span class="temp">{{temp_4}}</span>
+                        <div class="rain-chance-graph"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="public-bike-section">
+                <div class="bike-header">
+                    <p>{{bike_count}} Public bike(s) available</p>
+                </div>
+                <div class="bike-map"></div>
+                <ul class="bike-list">
+                    <li>
+                        <span class="bike-count-list">{{station_1_count}}</span>
+                        <span class="bike-station-name">{{station_1_name}}</span>
+                    </li>
+                    <li>
+                        <span class="bike-count-list">{{station_2_count}}</span>
+                        <span class="bike-station-name">{{station_2_name}}</span>
+                    </li>
+                    <li>
+                        <span class="bike-count-list">{{station_3_count}}</span>
+                        <span class="bike-station-name">{{station_3_name}}</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 </body>
 </html>
