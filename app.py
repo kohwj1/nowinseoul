@@ -1,6 +1,8 @@
 from flask import Flask, render_template, jsonify
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, instance_relative_config=True) # instance 폴더가 앱 설정과 리소스 파일들의 기준 경로로 사용됩
+app.config['DATABASE'] = os.path.join(app.instance_path, 'nowinseoul.db')
 
 # 메인 페이지
 @app.route('/')

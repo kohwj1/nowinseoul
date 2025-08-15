@@ -8,3 +8,6 @@
 
 # 파이썬 컴파일된 결과 파일
 __pycache__/
+
+# 테스트 데이터
+requests_api.py

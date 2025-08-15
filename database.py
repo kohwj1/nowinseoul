@@ -1,10 +1,13 @@
 import sqlite3
+from dotenv import load_dotenv
 
-MY_DATABASE = 'nowinseoul.db'
+load_dotenv()  # .env 파일의 환경변수 로드
+
+DATABASE = 'DATABASE'
 
 # db에 접속하는 함수를 작성하시오.
 def connect_db():
-    conn = sqlite3.connect(MY_DATABASE)
+    conn = sqlite3.connect(DATABASE)
     return conn
 
 # 테이블 생성함수 작성하시오.
@@ -12,39 +15,6 @@ def create_table():
     conn =  connect_db()
     cur = conn.cursor()
     
-# -- 관광지 기본 정보
-    cur.execute('''
-CREATE TABLE attraction
-(
-  id          TEXT    NOT NULL,
-  name        TEXT    NOT NULL,
-  description TEXT    NULL    ,
-  lat         DECIMAL NOT NULL,
-  lon         DECIMAL NULL    ,
-  food        BOOLEAN NULL    ,
-  beauty      BOOLEAN NOT NULL,
-  drama       BOOLEAN NULL    ,
-  movie       BOOLEAN NULL    ,
-  thumbnail   TEXT    NOT NULL,
-  insert_dttm TEXT    NOT NULL
-  PRIMARY KEY (id)
-)''')
-
-    cur.execute('''
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT, 
-            name TEXT NOT NULL, 
-            age INTEGER NOT NULL
-        )
-    ''')
-
-    cur.execute('''
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT, 
-            name TEXT NOT NULL, 
-            age INTEGER NOT NULL
-        )
-    ''')
     
     conn.commit()
     conn.close()
