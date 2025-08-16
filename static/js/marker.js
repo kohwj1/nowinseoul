@@ -40,6 +40,17 @@ function markOnMap(marker_data) {
     }
 }
 
+//검색어 입력 시 맵 중앙 자동이동 및 팝업 오픈
+function searchPop() {
+    map.eachLayer(function(layer) {
+    if (layer instanceof L.Marker) {
+        map.setView(layer.getLatLng());
+        layer.openPopup();
+        return;
+        }
+    });
+}
+
 //지도 렌더링
 let map = L.map('map', {
     center: [37.5665, 126.9780],
