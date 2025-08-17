@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # .env 파일의 환경변수 로드
 
-DATABASE = 'DATABASE'
+DATABASE = os.getenv('DATABASE')
 DB_PATH = os.path.join('instance',DATABASE)  # 데이터베이스 파일 경로
 CSV_FOLDER = 'data'     # CSV 파일이 있는 폴더 경로
 
@@ -104,6 +104,18 @@ CREATE TABLE IF NOT EXISTS weather_raw
   insert_dttm TEXT    NOT NULL, -- 입력일시
   PRIMARY KEY (id),
   FOREIGN KEY (id) REFERENCES weather_cache (id)
+)''')
+
+# -- 따릉이 대여소 기본 정보
+    cur.execute('''
+CREATE TABLE bike_station_info
+(
+  station_id      TEXT NOT NULL, -- 대여소 id
+  station_lat     REAL NULL    , -- 대여소 위도
+  station_lon     REAL NULL    , -- 대여소 경도
+  station_name_ko TEXT NULL    , -- 한국어 대여소명
+  station_name_en TEXT NULL    , -- 영어 대여소명
+  PRIMARY KEY (station_id)
 )''')
 
     print("[DB] 테이블 생성 완료.")

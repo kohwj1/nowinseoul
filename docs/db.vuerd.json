@@ -37,7 +37,8 @@
       "x1yxu_y3de0VZMAWWYdzr",
       "u_8DTXn6i4Di7hZM1TRQd",
       "ouFV2yl6ELM-A8znvwaBm",
-      "82NmnsuIZvfZ51UPiDGpW"
+      "82NmnsuIZvfZ51UPiDGpW",
+      "hIcTx2_EfbL-yvSslkqqM"
     ],
     "relationshipIds": [
       "qmaKucNnrjNi9CdvLCUZf",
@@ -54,7 +55,7 @@
     "tableEntities": {
       "mxBecmZzmYWxCQlbFG4cr": {
         "id": "mxBecmZzmYWxCQlbFG4cr",
-        "name": "attraction",
+        "name": "attraction_info",
         "comment": "관광지 기본 정보",
         "columnIds": [
           "ZodrB1Xgy3C6s9U0Fe2J7",
@@ -89,12 +90,12 @@
           "x": 1.7658,
           "y": 125.6004,
           "zIndex": 2,
-          "widthName": 60,
+          "widthName": 85,
           "widthComment": 81,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755263479479,
+          "updateAt": 1755411415204,
           "createAt": 1754985801491
         }
       },
@@ -147,25 +148,6 @@
         "meta": {
           "updateAt": 1755263492679,
           "createAt": 1754986061305
-        }
-      },
-      "Ozmax2TrsHMiJmPXm-8LJ": {
-        "id": "Ozmax2TrsHMiJmPXm-8LJ",
-        "name": "",
-        "comment": "",
-        "columnIds": [],
-        "seqColumnIds": [],
-        "ui": {
-          "x": 545,
-          "y": 322.097,
-          "zIndex": 157,
-          "widthName": 60,
-          "widthComment": 60,
-          "color": ""
-        },
-        "meta": {
-          "updateAt": 1754986199615,
-          "createAt": 1754986195337
         }
       },
       "3kgxLUAZO4mpuhmj4fl7c": {
@@ -230,25 +212,6 @@
         "meta": {
           "updateAt": 1755263523209,
           "createAt": 1754986639635
-        }
-      },
-      "MeVJzzAwLMxr181o5MTro": {
-        "id": "MeVJzzAwLMxr181o5MTro",
-        "name": "bike",
-        "comment": "따릉이 실시간 테이블",
-        "columnIds": [],
-        "seqColumnIds": [],
-        "ui": {
-          "x": 960,
-          "y": 518,
-          "zIndex": 341,
-          "widthName": 60,
-          "widthComment": 102,
-          "color": ""
-        },
-        "meta": {
-          "updateAt": 1754987054578,
-          "createAt": 1754987008953
         }
       },
       "u_8DTXn6i4Di7hZM1TRQd": {
@@ -341,6 +304,37 @@
         "meta": {
           "updateAt": 1755263565193,
           "createAt": 1755254940856
+        }
+      },
+      "hIcTx2_EfbL-yvSslkqqM": {
+        "id": "hIcTx2_EfbL-yvSslkqqM",
+        "name": "bike_station_info",
+        "comment": "따릉이 대여소 기본 정보",
+        "columnIds": [
+          "ZngCMqF5aFEnVn4fGuzHH",
+          "vb3qnhzY_bmqKh54FlihG",
+          "jl9Nk1lifHwg5RERnJV5q",
+          "NNtCeBMNtoATyF-86j3Bv",
+          "uX_FR7nrHSU_3a_grlSOQ"
+        ],
+        "seqColumnIds": [
+          "ZngCMqF5aFEnVn4fGuzHH",
+          "vb3qnhzY_bmqKh54FlihG",
+          "jl9Nk1lifHwg5RERnJV5q",
+          "NNtCeBMNtoATyF-86j3Bv",
+          "uX_FR7nrHSU_3a_grlSOQ"
+        ],
+        "ui": {
+          "x": 416,
+          "y": 450,
+          "zIndex": 397,
+          "widthName": 99,
+          "widthComment": 116,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1755412373741,
+          "createAt": 1755411421632
         }
       }
     },
@@ -529,8 +523,8 @@
         "id": "IAhzBHWbLfzvlR6dl0Y77",
         "tableId": "mxBecmZzmYWxCQlbFG4cr",
         "name": "lat",
-        "comment": "",
-        "dataType": "DECIMAL",
+        "comment": "관광지 위도",
+        "dataType": "REAL",
         "default": "",
         "options": 8,
         "ui": {
@@ -541,7 +535,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754986007504,
+          "updateAt": 1755412110995,
           "createAt": 1754985985304
         }
       },
@@ -549,8 +543,8 @@
         "id": "1j31lUYv7R0lEmVnxv0as",
         "tableId": "mxBecmZzmYWxCQlbFG4cr",
         "name": "lon",
-        "comment": "",
-        "dataType": "DECIMAL",
+        "comment": "관광지 경도",
+        "dataType": "REAL",
         "default": "",
         "options": 8,
         "ui": {
@@ -561,7 +555,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755266507855,
+          "updateAt": 1755412115078,
           "createAt": 1754986009837
         }
       },
@@ -1724,93 +1718,109 @@
           "updateAt": 1755266402182,
           "createAt": 1755266394309
         }
+      },
+      "ZngCMqF5aFEnVn4fGuzHH": {
+        "id": "ZngCMqF5aFEnVn4fGuzHH",
+        "tableId": "hIcTx2_EfbL-yvSslkqqM",
+        "name": "station_id",
+        "comment": "대여소 id",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1755412423429,
+          "createAt": 1755411444700
+        }
+      },
+      "vb3qnhzY_bmqKh54FlihG": {
+        "id": "vb3qnhzY_bmqKh54FlihG",
+        "tableId": "hIcTx2_EfbL-yvSslkqqM",
+        "name": "station_lat",
+        "comment": "대여소 위도",
+        "dataType": "REAL",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 62,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1755412300340,
+          "createAt": 1755411467635
+        }
+      },
+      "jl9Nk1lifHwg5RERnJV5q": {
+        "id": "jl9Nk1lifHwg5RERnJV5q",
+        "tableId": "hIcTx2_EfbL-yvSslkqqM",
+        "name": "station_lon",
+        "comment": "대여소 경도",
+        "dataType": "REAL",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1755412303827,
+          "createAt": 1755412289330
+        }
+      },
+      "NNtCeBMNtoATyF-86j3Bv": {
+        "id": "NNtCeBMNtoATyF-86j3Bv",
+        "tableId": "hIcTx2_EfbL-yvSslkqqM",
+        "name": "station_name_ko",
+        "comment": "한국어 대여소명",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 99,
+          "widthComment": 78,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1755412371521,
+          "createAt": 1755412309150
+        }
+      },
+      "uX_FR7nrHSU_3a_grlSOQ": {
+        "id": "uX_FR7nrHSU_3a_grlSOQ",
+        "tableId": "hIcTx2_EfbL-yvSslkqqM",
+        "name": "station_name_en",
+        "comment": "영어 대여소명",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 99,
+          "widthComment": 68,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1755412399186,
+          "createAt": 1755412373741
+        }
       }
     },
     "relationshipEntities": {
-      "z-xEpcBD5AM6B_DQMHQeO": {
-        "id": "z-xEpcBD5AM6B_DQMHQeO",
-        "identification": false,
-        "relationshipType": 4,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "mxBecmZzmYWxCQlbFG4cr",
-          "columnIds": [
-            "ZodrB1Xgy3C6s9U0Fe2J7"
-          ],
-          "x": 491,
-          "y": 207.09699999999998,
-          "direction": 2
-        },
-        "end": {
-          "tableId": "3kgxLUAZO4mpuhmj4fl7c",
-          "columnIds": [
-            "rW9PHXOPef148-bUHwOmH"
-          ],
-          "x": 643,
-          "y": 336.097,
-          "direction": 1
-        },
-        "meta": {
-          "updateAt": 1754986440561,
-          "createAt": 1754986440561
-        }
-      },
-      "OWjA-faBBCoKL-yyWQyrj": {
-        "id": "OWjA-faBBCoKL-yyWQyrj",
-        "identification": false,
-        "relationshipType": 4,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "mxBecmZzmYWxCQlbFG4cr",
-          "columnIds": [
-            "ZodrB1Xgy3C6s9U0Fe2J7"
-          ],
-          "x": 471,
-          "y": 127.097,
-          "direction": 4
-        },
-        "end": {
-          "tableId": "mxBecmZzmYWxCQlbFG4cr",
-          "columnIds": [
-            "2lz64cbwjoY_AqwP6Xyq6"
-          ],
-          "x": 491,
-          "y": 207.09699999999998,
-          "direction": 2
-        },
-        "meta": {
-          "updateAt": 1754986722015,
-          "createAt": 1754986722015
-        }
-      },
-      "zQ5qmg20uueAMoTs3863Y": {
-        "id": "zQ5qmg20uueAMoTs3863Y",
-        "identification": false,
-        "relationshipType": 4,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "mxBecmZzmYWxCQlbFG4cr",
-          "columnIds": [
-            "ZodrB1Xgy3C6s9U0Fe2J7"
-          ],
-          "x": 491,
-          "y": 367.097,
-          "direction": 2
-        },
-        "end": {
-          "tableId": "j5_Jj-x3D1JptDIN3Pfo2",
-          "columnIds": [
-            "NBghO5sDH9O2LrQM0Nr8O"
-          ],
-          "x": 650,
-          "y": 519,
-          "direction": 1
-        },
-        "meta": {
-          "updateAt": 1754986734312,
-          "createAt": 1754986734312
-        }
-      },
       "qmaKucNnrjNi9CdvLCUZf": {
         "id": "qmaKucNnrjNi9CdvLCUZf",
         "identification": true,
@@ -1837,34 +1847,6 @@
         "meta": {
           "updateAt": 1754986929158,
           "createAt": 1754986929158
-        }
-      },
-      "tFmHqTSh7xwZhT34L5d9_": {
-        "id": "tFmHqTSh7xwZhT34L5d9_",
-        "identification": false,
-        "relationshipType": 4,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "x1yxu_y3de0VZMAWWYdzr",
-          "columnIds": [
-            "_8wmuG6GikX7gpmz6QIuP"
-          ],
-          "x": 833.5,
-          "y": 181.097,
-          "direction": 8
-        },
-        "end": {
-          "tableId": "3kgxLUAZO4mpuhmj4fl7c",
-          "columnIds": [
-            "u1Ld2zUW8N96HXn-YTDVY"
-          ],
-          "x": 836,
-          "y": 320.097,
-          "direction": 4
-        },
-        "meta": {
-          "updateAt": 1754986948605,
-          "createAt": 1754986948605
         }
       },
       "PNJi-Ctbh2gt2C-Ai2OFB": {
