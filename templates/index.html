@@ -1,25 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Now in Seoul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../static/css/index.css">
 </head>
-
 <body>
-    <header>
-        주요 헤딩 영역
-    </header>
-    <nav>
-        메뉴바 등이 추가로 될 곳
-    </nav>
-    <main>
-        본문 내용이 추가될 곳
-    </main>
-    <footer>
-        아래 카피롸잇 등등이 추가될 곳
-    </footer>
-</body>
 
+    <div class="header-image">
+        <img src="../static/images/main.jpg" alt="Now in Seoul Main Image">
+        <div class="header-text-container">
+            <h1 class="header-text">Now in Seoul</h1>
+            <p class="header-subtitle">See What’s Happening Right Now in Seoul!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <form class="tag-form">
+            <div class="tag-group">
+                <input type="checkbox" class="tag-filter btn-check" id="food" name="tag" value="Food">
+                <label class="btn btn-outline-secondary rounded-pill btn-sm m-1" for="food">#Food</label>
+
+                <input type="checkbox" class="tag-filter btn-check" id="drama" name="tag" value="Drama">
+                <label class="btn btn-outline-secondary rounded-pill btn-sm m-1" for="drama">#Drama</label>
+
+                <input type="checkbox" class="tag-filter btn-check" id="beauty" name="tag" value="Beauty">
+                <label class="btn btn-outline-secondary rounded-pill btn-sm m-1" for="beauty">#Beauty</label>
+
+                <input type="checkbox" class="tag-filter btn-check" id="movie" name="tag" value="Movie">
+                <label class="btn btn-outline-secondary rounded-pill btn-sm m-1" for="movie">#Movie</label>
+            </div>
+        </form>
+
+        <div class="content">
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="../static/images/POI095.jpg" alt="main image" class="card-image">
+                    <div class="card-title">Namsan Park</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="../static/images/북촌한옥마을_263.jpg" alt="rankings" class="card-image">
+                    <div class="card-title">Bukchon Hanok Village</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-button-container">
+            <a href="/onmap.html" class="map-button">Browse on a Map</a>
+        </div>
+    </div>
+
+</body>
 </html>
