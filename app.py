@@ -23,7 +23,7 @@ def detail():
 
 # 메인에서 태그 필터 걸때
 @app.route('/main-feature', methods=['POST'])
-def index():
+def filter_by_tags():
     return render_template('index.html', data = {"tags" : ["food", "movie"],
         "data":[
             {'id':'POI095','thumnail':'POI095.jpg','name': 'Banpo Hangang Park'},
@@ -37,7 +37,7 @@ def index():
 
 # 지도에서 조건 걸때
 @app.route('/map-pin', methods=['POST'])
-def index():
+def filter_pin():
     return jsonify({"message":"not yet"})
 
 if __name__ == '__main__':
