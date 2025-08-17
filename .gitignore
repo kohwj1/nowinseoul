@@ -1,13 +1,16 @@
+### IDE 및 시스템 파일
+# VSCode 설정 등
 .vscode/
-
-# 민감정보 파일
-.env
 
 # 맥북 사용자용 인덱스 파일
 .DS_Store
 
+# 민감정보 파일
+.env
+
 # 파이썬 컴파일된 결과 파일
 __pycache__/
 
-# 테스트 데이터
-requests_api.py
+# db나 sqlite 파일 제외
+*.db
+instance/*
