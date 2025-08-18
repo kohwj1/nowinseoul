@@ -29,6 +29,16 @@ main {
 
 .leaflet-popup-content-wrapper {
     font-family: "Noto Sans KR";
+    text-align: center;
+    border-radius: 0.6rem;
+}
+
+.leaflet-heatmap-layer {
+  opacity: 0.5;
+}
+
+.gotoDetail {
+    text-decoration: none;
 }
 
 .btnBack {
