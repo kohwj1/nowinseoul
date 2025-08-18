@@ -110,25 +110,50 @@ CREATE TABLE IF NOT EXISTS weather_raw
     cur.execute('''
 CREATE TABLE bike_station_info
 (
-  station_id      TEXT NOT NULL, -- 대여소 id
+  station_id      TEXT NULL    , -- 대여소 id
+  station_no      TEXT NOT NULL, -- 대여소 no
   station_lat     REAL NULL    , -- 대여소 위도
   station_lon     REAL NULL    , -- 대여소 경도
-  station_name_ko TEXT NULL    , -- 한국어 대여소명
+  station_name_ko TEXT NOT NULL, -- 한국어 대여소명
   station_name_en TEXT NULL    , -- 영어 대여소명
-  PRIMARY KEY (station_id)
+  PRIMARY KEY (station_no)
 )''')
+
+    cur.execute('''
+CREATE INDEX idx_station_location
+  ON bike_station_info (station_lat ASC, station_lon ASC)
+ ''')
 
     print("[DB] 테이블 생성 완료.")
     conn.commit()
     conn.close()
 
-def import_csv(table, csv_filename):
+def import_bike_station_info():
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+
+    cur.execute('DELETE FROM bike_station_info')
+
+    csv_path = os.path.join(CSV_FOLDER, 'bike_station_info.csv')
+    with open(csv_path, newline='', encoding='utf-8') as f: # newline=''은 파일의 줄바꿈 문자 변환을 하지 않고 "있는 그대로" 처리
+        reader = csv.DictReader(f.readlines())
+        rows = list(reader)
+
+        insert_sql = f"""INSERT INTO bike_station_info (station_no,station_lat,station_lon,station_name_ko,station_name_en) 
+                                                VALUES (:station_no,:station_lat,:station_lon,:station_name_ko,:station_name_en)"""
+        cur.executemany(insert_sql, rows)
+
+    conn.commit()
+    conn.close()
+    print(f"[CSV] bike_station_info.csv → bike_station_info 업로드 완료.")
+
+def import_attraction(table, csv_filename):
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
     csv_path = os.path.join(CSV_FOLDER, csv_filename)
-    with open(csv_path, newline='', encoding='utf-8') as csvfile:
-        reader = csv.reader(csvfile)
-        columns = next(reader)  # 첫 줄은 컬럼명
+    with open(csv_path, newline='', encoding='utf-8') as f: # newline=''은 파일의 줄바꿈 문자 변환을 하지 않고 "있는 그대로" 처리
+        reader = csv.DictReader(f.readlines())
+        print(list(reader))
 
         placeholders = ','.join(['?']*len(columns))
         insert_sql = f"INSERT INTO {table} ({','.join(columns)}) VALUES ({placeholders})"
@@ -142,11 +167,11 @@ def import_csv(table, csv_filename):
 
 if __name__ == '__main__':
     # 1. 데이터베이스 초기화
-    if os.path.exists(DB_PATH):
-        os.remove(DB_PATH)
-    init_db()
+    # if os.path.exists(DB_PATH):
+    #     os.remove(DB_PATH)
+    # init_db()
 
     # 2. CSV 파일 업로드 (예시)
-    # import_csv('users', 'users.csv')
+    import_bike_station_info()
     # import_csv('products', 'products.csv')
     # import_csv('orders', 'orders.csv')
