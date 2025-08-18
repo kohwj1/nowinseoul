@@ -18,14 +18,16 @@ sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
 from models import db
 
 
+
+
+
 load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
-bike_station_attr = ['RENT_ID','RENT_NO','STA_LAT','STA_LONG','RENT_ID_NM']
+bike_station_attr = ['RENT_ID','RENT_ID_NM','STA_LAT','STA_LONG']
 
 
 def fetch(url):
     # https://requests.readthedocs.io/en/latest/user/quickstart/#errors-and-exceptions
-    # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     try:
         response = requests.get(url)
         # response.raise_for_status()  # HTTP 상태 코드 오류 체크
@@ -75,9 +77,8 @@ async def translate_ko_to_en(bike_station_info):
     return bike_station_info
 
 def main():
-    # station_id만 필요한 station_no
-    station_id_list = db.get_null_station_id()
-
+    # 새로운 데이터를 입력하기전에 테이블 비우기
+    db.delete_table('bike_station_info')
 
     # for n in range(5): # 4001 부터는 없음
     for n in [3]: # 4001 부터는 없음
@@ -90,7 +91,6 @@ def main():
         if not data:
             break
         
-
         # api 데이터 중 적재할 데이터만 추출
         bike_station_info = concurrent_processing(subset_station_info, data.get('row'))
         # bike_station_info = {"1308. 안암로터리 버스정류장 앞" : {"RENT_ID": "ST-827","RENT_ID_NM": "1308. 안암로터리 버스정류장 앞","STA_LAT": "37.58259201","STA_LONG": "127.02897644"}}

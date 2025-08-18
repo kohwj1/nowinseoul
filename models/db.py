@@ -7,7 +7,7 @@ DATABASE = os.getenv('DATABASE')
 DB_PATH = os.path.join('instance',DATABASE)  # 데이터베이스 파일 경로
 tables = []
 
-# db에 접속하는 함수를 작성하시오.
+# db에 접속하는 함수
 def connect_db():
     conn = sqlite3.connect(DB_PATH)
     return conn
@@ -27,15 +27,6 @@ def table_list():
 
 # 테이블 목록 전역변수에 업데이트
 table_list()
-
-# 테이블 생성함수 작성하시오.
-def create_table():
-    conn =  connect_db()
-    cur = conn.cursor()
-    
-    
-    conn.commit()
-    conn.close()
     
 # 데이터 삽입 함수
 def insert_user(name, age):
@@ -51,10 +42,11 @@ def insert_bike_station_info(bike_station_info):
     conn = connect_db()
     cur = conn.cursor()
 
-    cur.executemany("""INSERT INTO bike_station_info (station_id, station_lat, station_lon, station_name_ko, station_name_en)
-                                              VALUES (:RENT_ID, :STA_LAT, :STA_LONG, :RENT_ID_NM, :RENT_ID_NM_EN)""", bike_station_info) # 여러 개의 SQL 명령을 하나씩 반복 실행하는 것
+    cur.executemany("""INSERT INTO bike_station_info (station_id, station_no, station_lat, station_lon, station_name_ko, station_name_en)
+                                              VALUES (:RENT_ID, :RENT_NO, :STA_LAT, :STA_LONG, :RENT_ID_NM, :RENT_ID_NM_EN)""", bike_station_info) # 여러 개의 SQL 명령을 하나씩 반복 실행하는 것
     '''
     station_id      TEXT : RENT_ID       -- 대여소 id
+    station_no      TEXT : RENT_NO       -- 대여소 no
     station_lat     REAL : STA_LAT       -- 대여소 위도
     station_lon     REAL : STA_LONG      -- 대여소 경도
     station_name_ko TEXT : RENT_ID_NM    -- 한국어 대여소명
@@ -65,13 +57,13 @@ def insert_bike_station_info(bike_station_info):
     conn.close()
     
 # 데이터 조회 함수
-def get_users():
+def get_null_station_id():
     conn = connect_db()
     cur = conn.cursor()
     
     #  여기에 구현할것
-    cur.execute('SELECT * FROM users')
-    rows = cur.fetchall()  # 모든거 다
+    cur.execute('SELECT station_no FROM bike_station_info WHERE station_id is NULL')
+    rows = [ i[0] for i in cur.fetchall()]  # 모든거 다
     
     conn.commit()
     conn.close()
@@ -133,4 +125,7 @@ def delete_user_by_id(id):
     
     conn.commit()
     conn.close()
+
+if __name__ == "__main__":
+    # print(get_null_station_id())
 
