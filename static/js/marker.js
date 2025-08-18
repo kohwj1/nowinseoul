@@ -2,16 +2,16 @@
 function customMarker(crowdLevel) {
     switch(crowdLevel) {
         case 'Low Density':
-            iconUrl = 'static/img/marker_0.png'
+            iconUrl = 'static/images/marker_0.png'
             break;
         case 'Medium Density':
-            iconUrl = 'static/img/marker_1.png'
+            iconUrl = 'static/images/marker_1.png'
             break;
         case 'Slightly Crowded':
-            iconUrl = 'static/img/marker_2.png'
+            iconUrl = 'static/images/marker_2.png'
             break;
         case 'Crowded':
-            iconUrl = 'static/img/marker_3.png'
+            iconUrl = 'static/images/marker_3.png'
             break;
     }
     const marker = L.icon({
