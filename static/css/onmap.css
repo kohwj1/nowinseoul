@@ -30,3 +30,8 @@ main {
 .leaflet-popup-content-wrapper {
     font-family: "Noto Sans KR";
 }
+
+.btnBack {
+    width:20px;
+    height:20px;
+}

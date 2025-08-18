@@ -12,7 +12,7 @@ def index():
 # 지도 페이지
 @app.route('/map')
 def browse_on_map():
-    return render_template('index.html')
+    return render_template('onmap.html')
 
 # 상세 페이지
 @app.route('/detail/<id>')
@@ -41,4 +41,4 @@ def filter_pin():
     return jsonify({"message":"not yet"})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
