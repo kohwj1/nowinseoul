@@ -56,8 +56,8 @@ function heatOnMap(marker_data) {
     }
 
     L.heatLayer(heatData, {
-        radius: 50,
-        blur: 40,
+        radius: 100,
+        blur: 10,
         maxZoom: 17,
         gradient: {
             0.25: '#00ff00',
