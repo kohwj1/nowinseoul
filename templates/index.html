@@ -15,7 +15,7 @@
 <body>
 
     <div class="header-image">
-        <img src="../static/images/main.jpg" alt="Now in Seoul Main Image">
+        <img src="../static/images/main.png" alt="Now in Seoul Main Image">
         <div class="header-text-container">
             <h1 class="header-text">Now in Seoul</h1>
             <p class="header-subtitle">See What’s Happening Right Now in Seoul!</p>
@@ -26,16 +26,19 @@
         <form class="tag-form">
             <div class="tag-group">
                 <input type="checkbox" class="tag-filter btn-check" id="food" name="tag" value="Food">
-                <label class="btn btn-outline-secondary rounded-pill btn-sm m-1" for="food">#Food</label>
+                <label class="btn btn-outline-secondary rounded-pill m-1" for="food">#Food</label>
 
                 <input type="checkbox" class="tag-filter btn-check" id="drama" name="tag" value="Drama">
-                <label class="btn btn-outline-secondary rounded-pill btn-sm m-1" for="drama">#Drama</label>
+                <label class="btn btn-outline-secondary rounded-pill m-1" for="drama">#Drama</label>
 
                 <input type="checkbox" class="tag-filter btn-check" id="beauty" name="tag" value="Beauty">
-                <label class="btn btn-outline-secondary rounded-pill btn-sm m-1" for="beauty">#Beauty</label>
-
+                <label class="btn btn-outline-secondary rounded-pill m-1" for="beauty">#Beauty</label>
+                
                 <input type="checkbox" class="tag-filter btn-check" id="movie" name="tag" value="Movie">
-                <label class="btn btn-outline-secondary rounded-pill btn-sm m-1" for="movie">#Movie</label>
+                <label class="btn btn-outline-secondary rounded-pill m-1" for="movie">#Movie</label>
+            </div>
+            <div class="map-button-container pc-only">
+                <a href="/map" class="map-button">Browse on a Map</a>
             </div>
         </form>
 
@@ -54,7 +57,7 @@
             </div>
         </div>
 
-        <div class="map-button-container">
+        <div class="map-button-container mobile-only">
             <a href="/map" class="map-button">Browse on a Map</a>
         </div>
     </div>
