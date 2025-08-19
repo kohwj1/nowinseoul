@@ -16,7 +16,7 @@
     <div class="page-container">
         <div class="top-section">
             <button class="back-button">
-                <img src="../static/images/back-button.png" alt="뒤로가기">
+                <a href="/"><img src="../static/images/back-button.png" alt="뒤로가기"></a>
             </button>
 
             <!-- {{url}} 나중에는 진짜 이미지 링크 받아오기 -->
@@ -29,13 +29,16 @@
 
         <div class="content-section">
             <!-- 나중에 {{description}}와 같은 것 추가하기 -->
-            <p id="location-description">Surrounded by Gyeongbokgung Palace, Changdeokgung Palace and Jongmyo Shrine,
-                Bukchon Hanok Village is home to hundreds of traditional houses, called hanok, that date back to the
-                Joseon dynasty. The name Bukchon, which literally translates to "northern village," came about as the
-                neighborhood lies north of two significant Seoul landmarks, Cheonggyecheon Stream and Jongno. Unlike
-                many other traditional villages that were built for tourism, Bukchon is a real, functioning residential
-                neighborhood. Many of the hanoks (traditional Korean houses) are still occupied by residents. This is
-                why visitors are asked to be respectful and practice "silent tourism."</p>
+            <div class="text-container">
+                <p id="location-description">Surrounded by Gyeongbokgung Palace, Changdeokgung Palace and Jongmyo Shrine,
+                    Bukchon Hanok Village is home to hundreds of traditional houses, called hanok, that date back to the
+                    Joseon dynasty. The name Bukchon, which literally translates to "northern village," came about as the
+                    neighborhood lies north of two significant Seoul landmarks, Cheonggyecheon Stream and Jongno. Unlike
+                    many other traditional villages that were built for tourism, Bukchon is a real, functioning residential
+                    neighborhood. Many of the hanoks (traditional Korean houses) are still occupied by residents. This is
+                    why visitors are asked to be respectful and practice "silent tourism."</p>
+            </div>
+            <button id="read-more-btn">Read more</button>
         </div>
 
         <section class="crowd-density-section">
@@ -69,7 +72,7 @@
                 <div class="weather-forecast">
                     <div class="forecast-item">
                         <span class="time">Now</span>
-                        <span class="temp">{{now_temp}}</span>
+                        <span class="temp">{{current_temp}}</span>
                         <div class="rain-chance-graph"></div>
                     </div>
                     <div class="forecast-item">
