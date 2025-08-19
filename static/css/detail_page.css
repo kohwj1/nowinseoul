@@ -15,8 +15,7 @@ body {
 /*========== 2. 상단 이미지 및 제목 섹션 ==========*/
 .top-section {
     position: relative;
-    height: 21.875rem;
-    /* 350px -> 21.875rem */
+    height: 20rem; /* 320px */
     color: #fff;
 }
 
@@ -32,15 +31,11 @@ body {
 
 .back-button {
     position: absolute;
-    top: 1.25rem;
-    /* 20px -> 1.25rem */
-    left: 1.25rem;
-    /* 20px -> 1.25rem */
+    top: 1.25rem; /* 20px */
+    left: 1.25rem; /* 20px */
     z-index: 2;
-    width: 2.1875rem;
-    /* 35px -> 2.1875rem */
-    height: 2.1875rem;
-    /* 35px -> 2.1875rem */
+    width: 2.1875rem; /* 35px */
+    height: 2.1875rem; /* 35px */
     border-radius: 50%;
     background-color: rgba(251, 251, 251, 0.5);
     border: none;
@@ -51,78 +46,111 @@ body {
 }
 
 .back-button img {
-    width: 1.25rem;
-    /* 20px -> 1.25rem */
-    height: 1.25rem;
-    /* 20px -> 1.25rem */
+    width: 1.25rem; /* 20px */
+    height: 1.25rem; /* 20px */
 }
 
 .hero-text {
     position: absolute;
-    bottom: 1.875rem;
-    /* 30px -> 1.875rem */
-    left: 1.875rem;
-    /* 30px -> 1.875rem */
+    bottom: 1.875rem; /* 30px */
+    left: 1.875rem; /* 30px */
     z-index: 2;
-    /* 오버레이보다 위에 표시 */
 }
 
 .hero-text h1 {
     margin: 0;
     font-size: 2.5rem;
     font-weight: bold;
-    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
-    /* 2px 2px 4px -> 0.125rem 0.125rem 0.25rem */
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5); /* 2px 2px 4px */
 }
 
 /*========== 3. 본문 내용 섹션 ==========*/
 .content-section {
-    padding: 0.05rem 1rem;
-    /* 30px 20px -> 1.875rem 1.25rem */
-    line-height: 1.2;
+    position: relative;
+    padding: 1.25rem 1rem; /* 20px 16px */
+    margin: 0 1.25rem; /* 0 20px */
 }
 
 #location-description {
     font-size: 13px;
+    line-height: 1.7rem;
+}
+
+/* 'read more' 버튼 기능 관련 스타일 (모바일 전용) */
+@media (max-width: 48rem) {
+    .text-container {
+        max-height: 200px;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .text-container.expanded {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    /* 버튼 크기 수정 */
+    #read-more-btn {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border: 1px solid #ccc;
+        padding: 4px 8px; 
+        font-size: 0.75rem;
+        cursor: pointer;
+        font-family: 'Noto Sans KR', sans-serif;
+        border-radius: 20px;
+        z-index: 10;
+    }
+
+    #read-more-btn.hidden {
+        display: none;
+    }
+}
+
+/* PC 버전에서는 항상 전체 텍스트 보이기 */
+@media (min-width: 48rem) {
+    .text-container {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    #read-more-btn {
+        display: none !important; /* JavaScript에 의해 숨겨진 경우도 강제로 숨김 */
+    }
 }
 
 /*========== 4. 정보 카드 섹션 (군중 밀도, 교통 상황) ==========*/
 .crowd-density-section,
 .traffic-conditions-section {
-    padding: 1.25rem 1rem;
-    /* 20px -> 1.25rem */
-    margin: 0.625rem 1.25rem 1.25rem;
-    /* 10px 20px 20px -> 0.625rem 1.25rem 1.25rem */
-    border-radius: 0.9375rem;
-    /* 15px -> 0.9375rem */
+    padding: 1.25rem 1rem; /* 20px 16px */
+    margin: 0.625rem 1.25rem 1.25rem; /* 10px 20px 20px */
+    border-radius: 0.9375rem; /* 15px */
     background-color: #eeeeef;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-    /* 4px 4px 8px -> 0.25rem 0.25rem 0.5rem */
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.05); /* 4px 4px 8px */
 }
 
 .info-tag {
     display: inline-block;
-    padding: 0.3125rem 0.75rem;
-    /* 5px 12px -> 0.3125rem 0.75rem */
-    border-radius: 1.25rem;
-    /* 20px -> 1.25rem */
+    padding: 0.3125rem 0.75rem; /* 5px 12px */
+    border-radius: 1.25rem; /* 20px */
     color: #111010;
     font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
-    margin-right: 0.625rem;
-    /* 10px -> 0.625rem */
+    margin-right: 0.625rem; /* 10px */
 }
 
 /* 상태별 색상 */
 .info-tag.medium {
-    background-color: #ffc107;
-    /* 주황색 */
+    background-color: #ffc107; /* 주황색 */
 }
 
 .info-tag.congested {
-    background-color: #dc3545;
-    /* 빨간색 */
+    background-color: #dc3545; /* 빨간색 */
 }
 
 .info-title {
@@ -134,7 +162,6 @@ body {
 /*========== 5. 프로그레스 바 ==========*/
 .progress-bar-container {
     display: flex;
-    /* 자식 요소들을 가로로 나열 */
     height: 0.25rem;
     background-color: #eee;
     border-radius: 5px;
@@ -144,32 +171,25 @@ body {
 
 .progress-bar-segment {
     flex: 1;
-    /* 모든 <span>이 동일한 너비를 가짐 */
     height: 100%;
-    /* 초기 색상은 비워두거나 기본값 설정 */
 }
 
 .time-labels {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.3125rem;
-    /* 5px -> 0.3125rem */
+    margin-top: 0.3125rem; /* 5px */
     font-size: 0.8rem;
     color: #6c757d;
 }
 
 /*========== 6. PC 버전 스타일 (미디어 쿼리) ==========*/
-@media (min-width: 48rem) {
-
-    /* 768px -> 48rem */
+@media (min-width: 48rem) { /* 768px */
     .page-container {
-        max-width: 50rem;
-        /* 800px -> 50rem */
+        max-width: 100rem; /* 1280px */
     }
 
     .top-section {
-        height: 28.125rem;
-        /* 450px -> 28.125rem */
+        height: 20rem; /* 320px */
     }
 
     .hero-text h1 {
@@ -177,8 +197,7 @@ body {
     }
 
     .content-section {
-        padding: 2.5rem 1.875rem;
-        /* 40px 30px -> 2.5rem 1.875rem */
+        padding: 2.5rem 1.875rem; /* 40px 30px */
     }
 }
 
@@ -188,7 +207,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    /* 섹션 간 간격 */
 }
 
 /* 날씨 섹션 */
@@ -223,14 +241,9 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     gap: 0.5rem;
-    /* --- The fix is here: ensures elements don't overflow --- */
     flex-wrap: nowrap;
-    /* Prevents wrapping to a new line */
     overflow-x: auto;
-    /* Adds horizontal scrolling if needed */
     -webkit-overflow-scrolling: touch;
-    /* Improves scrolling on iOS */
-    /* -------------------------------------------------------- */
 }
 
 .forecast-item {
@@ -239,9 +252,7 @@ body {
     align-items: center;
     text-align: center;
     flex: 0 0 auto;
-    /* Ensures items don't shrink and take up their content size */
     width: 18%;
-    /* Adjusted width to fit 5 items with gap */
 }
 
 .forecast-item .time {
@@ -260,9 +271,7 @@ body {
 .rain-chance-graph {
     width: 100%;
     height: 6.25rem;
-    /* 그래프 최대 높이 */
     background-color: #d1e2f6;
-    /* 막대 배경색 */
     border-radius: 0.3125rem;
     position: relative;
     overflow: hidden;
@@ -296,10 +305,8 @@ body {
 
 .bike-map {
     width: 100%;
-    height: 12.5rem;
-    /* 200px -> 12.5rem */
+    height: 12.5rem; /* 200px */
     background-color: #e0e0e0;
-    /* 지도 로딩 전 배경색 */
     border-radius: 0.625rem;
     margin-bottom: 1rem;
     position: relative;
