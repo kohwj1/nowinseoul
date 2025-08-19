@@ -117,8 +117,10 @@ function placeFilter(keyword, theme, crowd) {
 function searchPlace() {
     const filter_agrs = getFilterArgs()
     const filtered_data = placeFilter(filter_agrs.keyword, filter_agrs.theme, filter_agrs.crowd)
+    clearMap()
     markOnMap(filtered_data);
-    searchPop();
+    heatOnMap(filtered_data);
+    openTooltip();
 }
 
 
@@ -128,7 +130,9 @@ for (i of filter_items) {
     i.addEventListener('click', () => {
         const filter_agrs = getFilterArgs()
         const filtered_data = placeFilter(filter_agrs.keyword, filter_agrs.theme, filter_agrs.crowd)
+        clearMap()
         markOnMap(filtered_data)
+        heatOnMap(filtered_data)
     })
 }
 
@@ -150,8 +154,18 @@ filterDisplayBtn.addEventListener('click', () => {
     isFilterDisplayed = !isFilterDisplayed;
 });
 
-document.addEventListener('DOMContentLoaded', () => markOnMap(origin_data))
-document.getElementById('btnReset').addEventListener('click', () => markOnMap(origin_data))
+document.addEventListener('DOMContentLoaded', () => {
+        clearMap()
+        markOnMap(origin_data)
+        heatOnMap(origin_data)
+    }
+)
+document.getElementById('btnReset').addEventListener('click', () => {
+        clearMap()
+        markOnMap(origin_data)
+        heatOnMap(origin_data)
+    }
+)
 document.getElementById('btnSearch').addEventListener('click', () => searchPlace())
 document.getElementById('filterForm').addEventListener('submit', (e) => {
     e.preventDefault()
