@@ -14,3 +14,6 @@ __pycache__/
 # db나 sqlite 파일 제외
 *.db
 instance/*
+
+# 레거시 개발파일
+bike_station_fetcher_everyday.py

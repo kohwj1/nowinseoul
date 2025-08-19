@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+from services.bike_station_fetcher import get_info
 import os
 
 app = Flask(__name__, instance_relative_config=True) # instance 폴더가 앱 설정과 리소스 파일들의 기준 경로로 사용됩
@@ -16,8 +17,10 @@ def browse_on_map():
 
 # 상세 페이지
 @app.route('/detail/<id>')
-def detail():
-    return render_template('detail_page.html')
+def detail(id):
+    data = {"AREA_CD":id, "SBIKE_STTS":get_info(id)}
+    print(data)
+    return render_template('detail_page.html', data=data)
 
 # --------------------------------------------
 

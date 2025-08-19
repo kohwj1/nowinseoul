@@ -2,6 +2,7 @@ import sqlite3
 import csv
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 
 load_dotenv()  # .env 파일의 환경변수 로드
 
@@ -22,7 +23,7 @@ CREATE TABLE IF NOT EXISTS attraction
   name        TEXT    NOT NULL,
   description TEXT    NULL    ,
   lat         DECIMAL NOT NULL,
-  lon         DECIMAL NOT NULL,
+  lng         DECIMAL NOT NULL,
   food        BOOLEAN NULL    ,
   beauty      BOOLEAN NULL    ,
   drama       BOOLEAN NULL    ,
@@ -110,68 +111,52 @@ CREATE TABLE IF NOT EXISTS weather_raw
     cur.execute('''
 CREATE TABLE bike_station_info
 (
+  id              TEXT NULL DEFAULT '', -- 장소 고유식별자
   station_id      TEXT NULL    , -- 대여소 id
   station_no      TEXT NOT NULL, -- 대여소 no
   station_lat     REAL NULL    , -- 대여소 위도
   station_lon     REAL NULL    , -- 대여소 경도
   station_name_ko TEXT NOT NULL, -- 한국어 대여소명
   station_name_en TEXT NULL    , -- 영어 대여소명
-  PRIMARY KEY (station_no)
+  insert_dttm     TEXT NOT NULL, -- 입력일시
+  PRIMARY KEY (station_name_ko),
+  FOREIGN KEY (id) REFERENCES detail_cache (id)
 )''')
 
-    cur.execute('''
-CREATE INDEX idx_station_location
-  ON bike_station_info (station_lat ASC, station_lon ASC)
- ''')
+#     cur.execute('''
+# CREATE INDEX idx_station_location
+#   ON bike_station_info (station_lat ASC, station_lon ASC)
+#  ''')
 
     print("[DB] 테이블 생성 완료.")
     conn.commit()
     conn.close()
 
-def import_bike_station_info():
+def import_attraction():
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
-    cur.execute('DELETE FROM bike_station_info')
+    cur.execute('DELETE FROM attraction')
 
-    csv_path = os.path.join(CSV_FOLDER, 'bike_station_info.csv')
+    csv_path = os.path.join(CSV_FOLDER, 'attraction.csv')
     with open(csv_path, newline='', encoding='utf-8') as f: # newline=''은 파일의 줄바꿈 문자 변환을 하지 않고 "있는 그대로" 처리
         reader = csv.DictReader(f.readlines())
         rows = list(reader)
 
-        insert_sql = f"""INSERT INTO bike_station_info (station_no,station_lat,station_lon,station_name_ko,station_name_en) 
-                                                VALUES (:station_no,:station_lat,:station_lon,:station_name_ko,:station_name_en)"""
+        insert_sql = f"""INSERT INTO attraction (id,name,lat,lng,insert_dttm) 
+                                                VALUES (:id,:name,:lat,:lng,{datetime.now().strftime('%Y%m%d%H%M%S')})"""
         cur.executemany(insert_sql, rows)
 
     conn.commit()
     conn.close()
-    print(f"[CSV] bike_station_info.csv → bike_station_info 업로드 완료.")
-
-def import_attraction(table, csv_filename):
-    conn = sqlite3.connect(DB_PATH)
-    cur = conn.cursor()
-    csv_path = os.path.join(CSV_FOLDER, csv_filename)
-    with open(csv_path, newline='', encoding='utf-8') as f: # newline=''은 파일의 줄바꿈 문자 변환을 하지 않고 "있는 그대로" 처리
-        reader = csv.DictReader(f.readlines())
-        print(list(reader))
-
-        placeholders = ','.join(['?']*len(columns))
-        insert_sql = f"INSERT INTO {table} ({','.join(columns)}) VALUES ({placeholders})"
-
-        for row in reader:
-            cur.execute(insert_sql, row)
-
-    conn.commit()
-    conn.close()
-    print(f"[CSV] {csv_filename} → {table} 업로드 완료.")
+    print(f"[CSV] attraction.csv → attraction 업로드 완료.")
 
 if __name__ == '__main__':
     # 1. 데이터베이스 초기화
-    # if os.path.exists(DB_PATH):
-    #     os.remove(DB_PATH)
-    # init_db()
+    if os.path.exists(DB_PATH):
+        os.remove(DB_PATH)
+    init_db()
 
     # 2. CSV 파일 업로드 (예시)
-    import_bike_station_info()
-    # import_csv('products', 'products.csv')
+    import_attraction()
     # import_csv('orders', 'orders.csv')
