@@ -1,15 +1,15 @@
 //커스텀 마커
 function customMarker(crowdLevel) {
     const crowd_icon_url = {
-        'Low Density':'static/images/marker_0.png', 
-        'Medium Density':'static/images/marker_1.png', 
-        'Slightly Crowded':'static/images/marker_2.png', 
-        'Crowded':'static/images/marker_3.png', 
+        'Low Density':'static/images/ui/marker_0.png', 
+        'Medium Density':'static/images/ui/marker_1.png', 
+        'Slightly Crowded':'static/images/ui/marker_2.png', 
+        'Crowded':'static/images/ui/marker_3.png', 
     }
 
     const marker = L.icon({
-        // iconUrl: crowd_icon_url[crowdLevel],
-        iconUrl: 'static/images/marker_none.png',
+        iconUrl: crowd_icon_url[crowdLevel],
+        // iconUrl: 'static/images/ui/marker_none.png',
         iconSize: [30, 36],
         // iconAnchor: [22, 94],
         iconAnchor: [22, 15],
@@ -56,14 +56,14 @@ function heatOnMap(marker_data) {
     }
 
     L.heatLayer(heatData, {
-        radius: 30,
-        blur: 24,
+        radius: 50,
+        blur: 40,
         maxZoom: 17,
         gradient: {
-            0.25: 'blue',
-            0.5: 'lime',
-            0.75: 'orange',
-            1.0: 'red'
+            0.25: '#00ff00',
+            0.5: '#ffff00',
+            0.75: '#ff6600',
+            1.0: '#ff0000'
         }
     })
     .addTo(map);
@@ -85,10 +85,10 @@ function openTooltip() {
 //지도 렌더링
 let map = L.map('map', {
     center: [37.5665, 126.9780],
-    zoom: 17,
+    zoom: 11,
 });
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 17,
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
