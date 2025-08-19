@@ -79,7 +79,7 @@ body {
 /* 'read more' 버튼 기능 관련 스타일 (모바일 전용) */
 @media (max-width: 48rem) {
     .text-container {
-        max-height: 150px;
+        max-height: 200px;
         overflow: hidden;
         transition: max-height 0.5s ease-in-out;
     }
