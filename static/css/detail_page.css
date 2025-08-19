@@ -73,12 +73,13 @@ body {
 
 #location-description {
     font-size: 13px;
+    line-height: 1.7rem;
 }
 
 /* 'read more' 버튼 기능 관련 스타일 (모바일 전용) */
 @media (max-width: 48rem) {
     .text-container {
-        max-height: 120px;
+        max-height: 150px;
         overflow: hidden;
         transition: max-height 0.5s ease-in-out;
     }
@@ -90,6 +91,7 @@ body {
     
     /* 버튼 크기 수정 */
     #read-more-btn {
+        display: block;
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -183,7 +185,7 @@ body {
 /*========== 6. PC 버전 스타일 (미디어 쿼리) ==========*/
 @media (min-width: 48rem) { /* 768px */
     .page-container {
-        max-width: 80rem; /* 1280px */
+        max-width: 100rem; /* 1280px */
     }
 
     .top-section {
