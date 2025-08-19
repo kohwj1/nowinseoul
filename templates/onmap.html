@@ -15,14 +15,14 @@
 
 <body>
     <div class="nav p-2 bg-light border-bottom">
-        <a href="/" class="nav-item"><img class="btnBack" src="static/images/back-button.png"></a>
+        <a href="/" class="nav-item"><img class="btnBack" src="static/images/ui/back-button.png"></a>
     </div>
     <main>
         <div id="map"></div>
         <div class="accordion" id="mapFilter">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" id="filterDisplay">
+                    <button class="accordion-button bg-white" type="button" id="filterDisplay">
                         Filter
                     </button>
                 </h2>
@@ -37,38 +37,38 @@
                         </div>
                         <div class="mb-3">
                             <p class="form-label">Theme</p>
-                            <div class="btn-group flex-wrap" role="group" aria-label="Theme filter">
+                            <div class="flex-wrap" role="group" aria-label="Theme filter">
                                 <input type="checkbox" class="mapfilter btn-check" id="food" name="theme" value="food">
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="food">#Food</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="food">#Food</label>
 
                                 <input type="checkbox" class="mapfilter btn-check" id="drama" name="theme" value="drama">
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="drama">#Drama</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="drama">#Drama</label>
 
                                 <input type="checkbox" class="mapfilter btn-check" id="beauty" name="theme" value="beauty">
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="beauty">#Beauty</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="beauty">#Beauty</label>
 
                                 <input type="checkbox" class="mapfilter btn-check" id="movie" name="theme" value="movie">
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="movie">#Movie</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="movie">#Movie</label>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <p class="form-label">Crowd Density Level</p>
-                            <div class="btn-group flex-wrap" role="group" aria-label="Crowd density">
+                            <div class="flex-wrap" role="group" aria-label="Crowd density">
                                 <input type="radio" class="mapfilter btn-check" name="crowd" id="density-all" value="all" checked>
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="density-all">All</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="density-all">All</label>
 
                                 <input type="radio" class="mapfilter btn-check" name="crowd" id="density-low" value="Low Density">
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="density-low">Low Density</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="density-low">Low Density</label>
 
                                 <input type="radio" class="mapfilter btn-check" name="crowd" id="density-medium" value="Medium Density">
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="density-medium">Medium Density</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="density-medium">Medium Density</label>
 
                                 <input type="radio" class="mapfilter btn-check" name="crowd" id="density-slightly" value="Slightly Crowded">
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="density-slightly">Slightly Crowded</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="density-slightly">Slightly Crowded</label>
 
                                 <input type="radio" class="mapfilter btn-check" name="crowd" id="density-high" value="Crowded">
-                                <label class="btn btn-outline-primary rounded-pill btn-sm m-1" for="density-high">Crowded</label>
+                                <label class="btn btn-outline-primary btn-sm m-1" for="density-high">Crowded</label>
                             </div>
                         </div>
 
@@ -80,7 +80,9 @@
             </div>
         </div>
     </main>
-
+    <script>
+        const origin_data = {{ data|safe }};
+    </script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
     <script src="static/js/marker.js"></script>

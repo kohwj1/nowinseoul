@@ -1,0 +1,81 @@
+id,name,crowd,beauty,food,drama,movie,lat,lng
+POI001,Gangnam MICE Special Tourist Zone,Crowded,1,1,0,0,37.512693,127.0624
+POI003,Myeong-dong Namdaemun Bukchang-dong Da-dong Mugyo-dong Special Tourist Zone,Crowded,0,1,0,1,37.5680586,126.9788194
+POI006,Jongno Cheonggye Special Toruist Zone,Slightly Crowded,0,1,1,0,37.56134981,126.9959254
+POI007,HongDae Culture & Arts Special Tourist Zone,Medium Density,1,1,1,0,37.55424091,126.9379277
+POI008,Gyeongbokgung Palace,Low Density,0,1,1,1,37.5759,126.9768
+POI010,Bosingak,Low Density,0,0,1,0,37.56982577,126.983572
+POI011,Amsa Prehistoric Settlement Site,Low Density,0,0,0,0,37.55906143,127.1306007
+POI012,Changdeokgung Palace & Jongmyo Shrine,Low Density,0,0,1,1,37.5705064,126.9937799
+POI015,Konkuk University station,Medium Density,0,1,0,0,37.54067736,127.0712989
+POI017,Express Bus Terminal station,Crowded,0,0,0,0,37.50593889,127.0046061
+POI030,Samgakji station,Medium Density,0,0,0,0,37.53439257,126.9733264
+POI032,Seoul Botanic Park/Magongnaru station,Low Density,0,0,1,0,37.56917015,126.8360016
+POI033,Seoul station,Crowded,0,0,1,1,37.55467884,126.9706069
+POI037,Sinnonhyeon/Nonhyeon station,Medium Density,1,0,0,0,37.50708946,127.0228736
+POI039,Sillim station,Medium Density,1,0,0,0,37.48294081,126.9489856
+POI040,Sinchon/Ewha Womans University station,Low Density,0,1,0,0,37.56111073,126.9465464
+POI042,Yeoksam station,Crowded,1,0,0,0,37.5007861,127.036886
+POI045,Wangsimni station,Medium Density,0,1,0,0,37.56861014,127.0204336
+POI046,Yongsan station,Crowded,1,0,0,1,37.52952171,126.9645409
+POI053,Hapjeong station,Medium Density,1,1,1,0,37.54983699,126.9136696
+POI054,Hyehwa station,Low Density,0,0,1,1,37.58241297,127.0037824
+POI058,Garak Market,Low Density,0,1,0,0,37.49602466,127.1107532
+POI059,Garosu-gil,Slightly Crowded,1,1,1,1,37.52382503,127.0292316
+POI060,Gwangjang(Traditional) Market,Low Density,0,1,1,1,37.57018151,126.9980513
+POI063,Noryangjin,Medium Density,0,1,1,1,37.51535585,126.9401595
+POI064,Deoksugung-gil/Jeongdong-gil,Low Density,0,0,1,1,37.56413045,126.9799343
+POI066,Bukchon Hanok Village,Low Density,0,0,1,1,37.57782509,126.98669
+POI067,Seochon,Low Density,0,0,1,1,37.57870054,126.9730984
+POI068,Seongsu Cafe Street,Medium Density,1,1,1,0,37.53607515,127.0538525
+POI071,Apgujeong Rodeo Street,Medium Density,0,0,1,0,37.52382503,127.0292316
+POI072,Yeouido,Crowded,1,0,1,0,37.52389,126.92667
+POI073,Yeonnam-dong,Medium Density,1,1,0,0,37.56310831,126.9223461
+POI074,Yeongdeungpo Time square,Crowded,0,1,0,1,37.51778061,126.9053675
+POI076,Yongnidan-gil,Medium Density,0,1,1,0,37.53153901,126.9721839
+POI077,Itaewon Antiques street,Low Density,1,1,1,0,37.53899401,126.991704
+POI078,Insa-dong,Low Density,0,1,1,1,37.57440283,126.9873802
+POI080,Cheongdam-dong Luxury Fashion street,Low Density,0,0,1,0,37.5254064,127.0523782
+POI081,Traditional market in Cheongnyangni Jegi-dong ,Low Density,0,0,0,0,37.57893198,127.0387334
+POI082,Haebangchon/Gyeongnidan-gil,Medium Density,0,0,1,1,37.53899401,126.991704
+POI083,DDP(Dongdaemun Design Plaza),Medium Density,0,1,0,0,37.56605397,127.0095548
+POI084,DMC(Digital Media City),Medium Density,0,0,0,0,37.57770952,126.892043
+POI085,Gangseo Hangang Park,Low Density,0,0,0,0,37.588217,126.815589
+POI086,Gocheok Dome,Low Density,0,0,1,0,37.498216,126.86761
+POI087,Gwangnaru Hangang Park,Low Density,0,0,1,1,37.548922,127.120575
+POI088,Gwanghwamun Square,Medium Density,1,0,0,0,37.57165012,126.9771564
+POI089,The National Museum of Korea/Yongsan Family Park,Low Density,1,0,0,0,37.52116819,126.9791297
+POI090,Nanji Hangang Park,Low Density,0,1,0,0,37.566915,126.878066
+POI091,Namsan Park,Low Density,1,0,0,0,37.553914,126.98142
+POI092,Nodeul island,Medium Density,0,1,0,0,37.518407,126.959409
+POI093,Ttukseom Hangang Park,Low Density,1,0,0,1,37.529495,127.070342
+POI094,Mangwon Hangang Park,Low Density,1,1,1,0,37.552911,126.898969
+POI095,Banpo Hangang Park,Medium Density,0,0,1,1,37.50720841,126.9917993
+POI096,Dream Forest,Low Density,0,1,0,0,37.621576,127.041
+POI098,Seoripul Park/Montmartre Park,Low Density,1,1,1,1,37.489028,127.003044
+POI099,Seoul Plaza,Low Density,0,1,1,1,37.565721,126.9784
+POI100,Seoul Grand Park,Medium Density,0,1,1,1,37.427627,127.017605
+POI101,Seoul Forest,Low Density,0,0,1,1,37.544558,127.038097
+POI102,Achasan,Low Density,0,0,1,1,37.572086,127.103763
+POI103,Yanghwa Hangang Park,Low Density,0,0,1,1,37.538437,126.902694
+POI104,Children's Grand Park,Low Density,1,1,1,0,37.549491,127.082564
+POI105,Yeouido Hangang Park,Low Density,0,0,1,0,37.526821,126.935398
+POI106,World Cup Park,Low Density,1,0,1,0,37.564001,126.894112
+POI107,Eungbongsan,Low Density,1,1,0,0,37.548652,127.031714
+POI108,Ichon Hangang Park,Low Density,0,1,0,1,37.517022,126.972164
+POI109,Jamsil (Seoul) Sports Complex,Medium Density,0,1,1,0,37.51142818,127.0735662
+POI110,Jamsil Hangang Park,Medium Density,1,1,1,0,37.51753406,127.0864748
+POI111,Jamwon Hangang Park,Low Density,0,1,1,1,37.519208,127.009884
+POI112,Cheonggyesan,Low Density,0,0,1,0,37.46349,127.046004
+POI113,Cheongwadae,Low Density,0,0,0,0,37.583908,126.973671
+POI114,Bukchang-dong food alley,Slightly Crowded,0,0,1,1,37.561929,126.977856
+POI115,Namdaemun Market,Slightly Crowded,0,1,0,0,37.559413,126.978218
+POI116,Ikseon-dong,Medium Density,0,0,0,0,37.574408,126.989901
+POI120,Jamsil Lotte Tower area,Crowded,0,0,0,0,37.51419392,127.1040148
+POI121,Songridan-gil/Hosudan-gil,Low Density,0,0,1,0,37.50912839,127.1082148
+POI122,Shinchon Star Plaza,Medium Density,0,0,1,1,37.557032,126.936771
+POI123,Boramae Park,Low Density,1,0,0,0,37.493379,126.920162
+POI124,Seodaemun Independence Park,Low Density,1,0,0,0,37.575388,126.955491
+POI126,Yeouiseoro,Low Density,0,1,0,0,37.52831257,126.929428
+POI127,Olympic Park,Low Density,1,0,0,0,37.52084,127.12188
+POI128,Hongje Waterfall,Low Density,0,1,0,0,37.580876,126.937799
