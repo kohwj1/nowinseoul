@@ -103,13 +103,14 @@
 
             <div class="public-bike-section">
                 <div class="bike-header">
-                    <p>{{ data['따릉이']['주차 대수'] }} Public bike(s) available</p>
+                    <p>14 Public bike(s) available</p>
                 </div>
                 <div class="bike-map"></div>
                 <ul class="bike-list">
+                    {% for bike in data.SBIKE_STTS %}
                     <li>
-                        <span class="bike-count-list">{{station_1_count}}</span>
-                        <span class="bike-station-name">{{station_1_name}}</span>
+                        <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+                        <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
                     </li>
                     <li>
                         <span class="bike-count-list">{{station_2_count}}</span>
@@ -119,6 +120,7 @@
                         <span class="bike-count-list">{{station_3_count}}</span>
                         <span class="bike-station-name">{{station_3_name}}</span>
                     </li>
+                    {% endfor %}
                 </ul>
             </div>
         </section>
