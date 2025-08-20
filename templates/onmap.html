@@ -18,20 +18,23 @@
         <a href="/" class="nav-item"><img class="btnBack" src="static/images/ui/back-button.png"></a>
     </div>
     <main>
-        <div id="map"></div>
-        <div class="accordion" id="mapFilter">
+        <div class="main-container">
+            <div class="accordion" id="mapFilter">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button bg-white" type="button" id="filterDisplay">
+                    <div class="accordion-button bg-white" type="button" id="filterDisplay">
                         Filter
-                    </button>
+                    </div>
                 </h2>
                 <div id="filterDiv" class="accordion-collapse collapse show" data-bs-parent="#mapFilter">
                     <form class="accordion-body" id="filterForm">
                         <div class="mb-3">
                             <p class="form-label">Search by place name</p>
                             <div class="d-flex">
-                                <input type="search" class="form-control me-3" id="mapSearch" name="mapSearch">
+                                <input type="search" class="form-control me-3" id="mapSearch" name="mapSearch" data-bs-toggle="dropdown">
+                                <ul class="dropdown-menu p-2" id="comboboxDropdown">
+                                    <li class="loading">Please input attraction name</li>
+                                </ul>
                                 <button class="btn btn-primary" id="btnSearch">Search</button>
                             </div>
                         </div>
@@ -78,6 +81,8 @@
                     </form>
                 </div>
             </div>
+            </div>
+            <div id="map"></div>
         </div>
     </main>
     <script>
