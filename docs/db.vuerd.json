@@ -7,7 +7,7 @@
     "scrollTop": 0,
     "scrollLeft": 0,
     "zoomLevel": 1,
-    "show": 431,
+    "show": 423,
     "database": 32,
     "databaseName": "nowinseoul",
     "canvasType": "ERD",
@@ -88,15 +88,15 @@
           "mfPtSOsOAk7cIBNMLBhwe"
         ],
         "ui": {
-          "x": 1.7658,
-          "y": 125.6004,
+          "x": 47.7658,
+          "y": 95.6004,
           "zIndex": 2,
           "widthName": 85,
           "widthComment": 81,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755411415204,
+          "updateAt": 1755670707140,
           "createAt": 1754985801491
         }
       },
@@ -139,15 +139,15 @@
           "QZMVRzlA1Ho2aYCEiB7Cd"
         ],
         "ui": {
-          "x": 437.6859,
-          "y": 255.9017,
+          "x": 451.6859,
+          "y": 278.9017,
           "zIndex": 137,
           "widthName": 74,
           "widthComment": 119,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755263492679,
+          "updateAt": 1755668422286,
           "createAt": 1754986061305
         }
       },
@@ -336,15 +336,15 @@
           "A_J0ULz8NdBZ5l-TEw2YU"
         ],
         "ui": {
-          "x": 503,
-          "y": 558,
+          "x": 532,
+          "y": 553,
           "zIndex": 397,
           "widthName": 99,
           "widthComment": 116,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755607542857,
+          "updateAt": 1755670880676,
           "createAt": 1755411421632
         }
       }
@@ -1936,7 +1936,7 @@
         "name": "id",
         "comment": "장소 고유식별자",
         "dataType": "TEXT",
-        "default": "''",
+        "default": "",
         "options": 0,
         "ui": {
           "keys": 2,
@@ -1946,7 +1946,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755613018017,
+          "updateAt": 1755670664315,
           "createAt": 1755589667204
         }
       },
@@ -1982,8 +1982,8 @@
           "columnIds": [
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
-          "x": 373.7658,
-          "y": 285.6004,
+          "x": 351.7658,
+          "y": 255.60039999999998,
           "direction": 2
         },
         "end": {
@@ -1991,8 +1991,8 @@
           "columnIds": [
             "gqj3ZxlpFk5HvyQpvMpDp"
           ],
-          "x": 437.6859,
-          "y": 331.9017,
+          "x": 451.6859,
+          "y": 354.9017,
           "direction": 1
         },
         "meta": {
@@ -2010,8 +2010,8 @@
           "columnIds": [
             "gqj3ZxlpFk5HvyQpvMpDp"
           ],
-          "x": 1018.6859,
-          "y": 293.9017,
+          "x": 964.6859,
+          "y": 316.9017,
           "direction": 2
         },
         "end": {
@@ -2038,8 +2038,8 @@
           "columnIds": [
             "gqj3ZxlpFk5HvyQpvMpDp"
           ],
-          "x": 1018.6859,
-          "y": 369.9017,
+          "x": 964.6859,
+          "y": 392.9017,
           "direction": 2
         },
         "end": {
@@ -2066,7 +2066,7 @@
           "columnIds": [
             "uC1zNUrMR7j6Evzxn-nKK"
           ],
-          "x": 1550.6388,
+          "x": 1482.6388,
           "y": 240.5436,
           "direction": 2
         },
@@ -2094,7 +2094,7 @@
           "columnIds": [
             "A78PnsHvhGelhsvXn3FBt"
           ],
-          "x": 1552.9478,
+          "x": 1484.9478,
           "y": 481.0156,
           "direction": 2
         },
@@ -2122,8 +2122,8 @@
           "columnIds": [
             "gqj3ZxlpFk5HvyQpvMpDp"
           ],
-          "x": 728.1859,
-          "y": 255.9017,
+          "x": 708.1859,
+          "y": 278.9017,
           "direction": 4
         },
         "end": {
@@ -2131,7 +2131,7 @@
           "columnIds": [
             "lrHi7Fi55HB36HmA2-eP2"
           ],
-          "x": 725.5,
+          "x": 691.5,
           "y": 191,
           "direction": 8
         },
@@ -2150,8 +2150,8 @@
           "columnIds": [
             "gqj3ZxlpFk5HvyQpvMpDp"
           ],
-          "x": 728.1859,
-          "y": 407.9017,
+          "x": 708.1859,
+          "y": 430.9017,
           "direction": 8
         },
         "end": {
@@ -2159,8 +2159,8 @@
           "columnIds": [
             "bjTwbho1sPfyDDtcAiZbD"
           ],
-          "x": 714,
-          "y": 558,
+          "x": 709,
+          "y": 553,
           "direction": 4
         },
         "meta": {
