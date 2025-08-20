@@ -98,6 +98,18 @@ def get_attraction_name_by_id(attraction_id):
     
     return attr_name
 
+def get_desc(attraction_id):
+    conn = connect_db()
+    cur = conn.cursor()
+    
+    #  여기에 구현할것
+    cur.execute('SELECT description FROM attraction WHERE id = ?', (attraction_id,))
+    attr_desc = cur.fetchone()[0] 
+    
+    conn.commit()
+    conn.close()
+    
+    return attr_desc
 
 # 데이터 수정 함수
 def update_id(station_id_mapping_list):
@@ -197,4 +209,5 @@ def import_bike_station_info():
 if __name__ == "__main__":
     # print(get_null_station_id())
     # print(get_attraction_name())
-    print(get_station_info('POI007'))
+    # print(get_station_info('POI007'))
+    print(get_desc('POI007'))
