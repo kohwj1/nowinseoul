@@ -57,13 +57,13 @@ function heatOnMap(marker_data) {
 
     L.heatLayer(heatData, {
         radius: 100,
-        blur: 10,
+        blur: 45,
         maxZoom: 17,
         gradient: {
-            0.25: '#00ff00',
-            0.5: '#ffff00',
-            0.75: '#ff6600',
-            1.0: '#ff0000'
+            0.25: '#ffff00',
+            0.5: '#ff6600',
+            0.75: '#ff0000',
+            1.0: '#870000ff'
         }
     })
     .addTo(map);
