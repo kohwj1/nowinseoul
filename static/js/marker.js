@@ -9,12 +9,9 @@ function customMarker(crowdLevel) {
 
     const marker = L.icon({
         iconUrl: crowd_icon_url[crowdLevel],
-        // iconUrl: 'static/images/ui/marker_none.png',
         iconSize: [30, 36],
-        // iconAnchor: [22, 94],
         iconAnchor: [22, 15],
-        // popupAnchor: [0, -76], 
-        popupAnchor: [0, -5] 
+        popupAnchor: [-7, 2] 
     });
     return marker
 }
@@ -57,11 +54,11 @@ function heatOnMap(marker_data) {
 
     L.heatLayer(heatData, {
         radius: 100,
-        blur: 10,
-        maxZoom: 17,
+        blur: 32,
+        maxZoom: 16,
         gradient: {
-            0.25: '#00ff00',
-            0.5: '#ffff00',
+            0.25: '#ffff00',
+            0.5: '#ff6600',
             0.75: '#ff6600',
             1.0: '#ff0000'
         }

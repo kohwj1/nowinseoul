@@ -123,7 +123,6 @@ function searchPlace() {
     openTooltip();
 }
 
-
 //필터 UI 조작 시마다 마커 갱신
 const filter_items = document.querySelectorAll('.mapfilter')
 for (i of filter_items) {
@@ -137,6 +136,7 @@ for (i of filter_items) {
 }
 
 //filter UI 접기/펼치기
+const windowwidth = window.innerWidth
 let isFilterDisplayed = false;
 const filterDisplayBtn = document.getElementById('filterDisplay');
 const filterUI = document.getElementById('mapFilter');
@@ -144,20 +144,24 @@ const filterDiv = document.getElementById('filterDiv');
 const filterBody = document.querySelector('#filterDiv .accordion-body');
 
 filterDisplayBtn.addEventListener('click', () => {
-    if (!isFilterDisplayed) {
-        const bodyHeight = filterBody.offsetHeight;
-        filterUI.style.bottom = bodyHeight + 'px';
-    } else {
-        filterUI.style.bottom = '0px';
+    if (windowwidth <= 1000) {
+        if (!isFilterDisplayed) {
+            filterUI.style.bottom = 0 + 'px';
+        } else {
+            filterUI.style.bottom = -filterBody.offsetHeight + 'px';
+        }
+        filterUI.classList.toggle('move-up');
+        isFilterDisplayed = !isFilterDisplayed;
     }
-    filterUI.classList.toggle('move-up');
-    isFilterDisplayed = !isFilterDisplayed;
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-        clearMap()
-        markOnMap(origin_data)
-        heatOnMap(origin_data)
+    if (windowwidth <= 1000) {
+        filterUI.style.bottom = -filterBody.offsetHeight + 'px';
+    }
+    clearMap()
+    markOnMap(origin_data)
+    heatOnMap(origin_data)
     }
 )
 document.getElementById('btnReset').addEventListener('click', () => {

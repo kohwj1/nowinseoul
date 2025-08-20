@@ -8,46 +8,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/detail_page.css">
-
     <title>Detailed Page</title>
 </head>
 
 <body>
-    <div class="page-container">
-        <div class="top-section">
-            <button class="back-button">
-                <a href="/"><img src="{{ data['사진'] }}" alt="뒤로가기"></a>
-            </button>
-
-            <!-- {{url}} 나중에는 진짜 이미지 링크 받아오기 -->
-            <img src="../static/images/POI066.jpg" alt="배경 이미지" class="background-image-cover">
-
-            <div class="hero-text">
-                <h1 id="location-name">{{ data['지역명']}}</h1>
-            </div>
+    <div class="top-section">
+        <button class="back-button">
+            <a href="/"><img src="../static/images/ui/back-button.png" alt="뒤로가기"></a>
+        </button>
+        <img src="../static/images/attraction/POI003.jpg" alt="배경 이미지" class="background-image-cover">
+        <div class="hero-text">
+            <h1 id="location-name">{{ name }}</h1>
         </div>
+    </div>
 
+    <div class="page-container">
         <div class="content-section">
-            <!-- 나중에 {{ data['description'] }}으로 바꾸기 지금은 어느 정도 공간 차지하는지 보기 위해서  -->
             <div class="text-container">
-                <p id="location-description">Deoksugung-gil, which continues into Jeongdong-gil, is a beautiful and famous walking path in the heart of Seoul. Imagine a quiet, charming street that feels completely different from the bustling city around it, as if you've stepped back in time.
-                The most iconic feature of this path is the stone wall that runs along one side, belonging to the historic Deoksugung Palace. This is why the path is often called "Doldam-gil" (돌담길), which means "stone wall path." Walking along it, you can appreciate the traditional Korean architecture of the palace while being surrounded by modern city buildings.
-                The street is lined with elegant, old trees (mostly ginkgo and sycamore), which provide a beautiful canopy in the summer and a stunning yellow and orange glow in the autumn, making it a favorite spot for locals and tourists alike.
-                Beyond the palace wall, the path leads to several other important places, including the Seoul Museum of Art (SeMA) and historic churches, giving it a peaceful, cultural atmosphere. It's a place for a leisurely stroll, where you can enjoy history, nature, and art all at once.
-                One interesting fact you might hear about this path in Korean culture is a folklore that says couples who walk this path together are destined to break up. This is a well-known superstition, but it doesn't stop many people from enjoying its beauty! It simply adds a touch of playful legend to a very scenic and historically significant place.</p>
+                <p id="location-description">
+                    Deoksugung-gil, which continues into Jeongdong-gil, is a
+                    beautiful and famous walking path in the heart of Seoul. Imagine a quiet, charming street that feels
+                    completely different from the bustling city around it, as if you've stepped back in time. The most
+                    iconic feature of this path is the stone wall that runs along one side, belonging to the historic
+                    Deoksugung Palace. This is why the path is often called "Doldam-gil" (돌담길), which means "stone wall
+                    path." Walking along it, you can appreciate the traditional Korean architecture of the palace while
+                    being surrounded by modern city buildings. The street is lined with elegant, old trees (mostly
+                    ginkgo and sycamore), which provide a beautiful canopy in the summer and a stunning yellow and
+                    orange glow in the autumn, making it a favorite spot for locals and tourists alike. Beyond the
+                    palace wall, the path leads to several other important places, including the Seoul Museum of Art
+                    (SeMA) and historic churches, giving it a peaceful, cultural atmosphere. It's a place for a
+                    leisurely stroll, where you can enjoy history, nature, and art all at once. One interesting fact you
+                    might hear about this path in Korean culture is a folklore that says couples who walk this path
+                    together are destined to break up. This is a well-known superstition, but it doesn't stop many
+                    people from enjoying its beauty! It simply adds a touch of playful legend to a very scenic and
+                    historically significant place.
+                </p>
             </div>
             <button id="read-more-btn">Read more</button>
         </div>
 
         <section class="crowd-density-section">
-            <div class="info-tag" id="traffic-tag">{{ data['인구 정보']['실시간 인구현황'] }}</div>
+            <div class="info-tag" id="traffic-tag">{{ crowd }}</div>
             <div class="info-title">Crowd Density</div>
-            <div class="progress-bar-container">
-                <span class="progress-bar-segment" id="bar-segment-1"></span>
-                <span class="progress-bar-segment" id="bar-segment-2"></span>
-                <span class="progress-bar-segment" id="bar-segment-3"></span>
-                <span class="progress-bar-segment" id="bar-segment-4"></span>
-            </div>
+            <div class="progress-bar-container" id="crowd-density-bar"></div>
             <div class="time-labels">
                 <span id="time-now">Now</span>
                 <span id="time-1">{{time_1}}</span>
@@ -57,7 +60,7 @@
         </section>
 
         <section class="traffic-conditions-section">
-            <div class="info-tag" id="traffic-tag">{{ data['도로 정보'] }}</div>
+            <div class="info-tag" id="traffic-tag">{{ traffic condition }}</div>
             <div class="info-title">Traffic Conditions</div>
         </section>
 
@@ -65,65 +68,65 @@
             <div class="weather-section">
                 <div class="weather-header">
                     <h2>Weather</h2>
-                    <span class="current-temp">{{ data['날씨'][0]['기온'] }}</span>
+                    <span class="current-temp">{{ current-temp }}</span>
                 </div>
                 <div class="weather-forecast">
                     <div class="forecast-item">
-                        <span class="time">{{ data['날씨'][0]['예측일자'] }}</span>
-                        <span class="temp">{{ data['날씨'][0]['기온'] }}</span>
+                        <span class="time">{{ time }}</span>
+                        <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ data['날씨'][0]['강수확률'] }}</div>
+                        <div class="rain-chance">{{ rain-chance }}</div>
                     </div>
                     <div class="forecast-item">
-                        <span class="time">{{ data['날씨'][1]['예측일자'] }}</span>
-                        <span class="temp">{{ data['날씨'][1]['기온'] }}</span>
+                        <span class="time">{{ time }}</span>
+                        <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ data['날씨'][1]['강수확률'] }}</div>
+                        <div class="rain-chance">{{ rain-chance }}</div>
                     </div>
                     <div class="forecast-item">
-                        <span class="time">{{ data['날씨'][2]['예측일자'] }}</span>
-                        <span class="temp">{{ data['날씨'][2]['기온'] }}</span>
+                        <span class="time">{{ time }}</span>
+                        <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ data['날씨'][2]['강수확률'] }}</div>
+                        <div class="rain-chance">{{ rain-chance }}</div>
                     </div>
                     <div class="forecast-item">
-                        <span class="time">{{ data['날씨'][3]['예측일자'] }}</span>
-                        <span class="temp">{{ data['날씨'][3]['기온'] }}</span>
+                        <span class="time">{{ time }}</span>
+                        <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ data['날씨'][3]['강수확률'] }}</div>
+                        <div class="rain-chance">{{ rain-chance }}</div>
                     </div>
                     <div class="forecast-item">
-                        <span class="time">{{ data['날씨'][4]['예측일자'] }}</span>
-                        <span class="temp">{{ data['날씨'][4]['기온'] }}</span>
+                        <span class="time">{{ time }}</span>
+                        <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ data['날씨'][4]['강수확률'] }}</div>
+                        <div class="rain-chance">{{ rain-chance }}</div>
                     </div>
                 </div>
             </div>
 
             <div class="public-bike-section">
                 <div class="bike-header">
-                    <p>{{ data['따릉이']['주차 대수'] }} Public bike(s) available</p>
+                    <p id="total-bikes">Public bike(s) available</p>
                 </div>
                 <div class="bike-map"></div>
                 <ul class="bike-list">
+                    {% for bike in data.SBIKE_STTS %}
                     <li>
-                        <span class="bike-count-list">{{station_1_count}}</span>
-                        <span class="bike-station-name">{{station_1_name}}</span>
+                        <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+                        <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
                     </li>
-                    <li>
-                        <span class="bike-count-list">{{station_2_count}}</span>
-                        <span class="bike-station-name">{{station_2_name}}</span>
-                    </li>
-                    <li>
-                        <span class="bike-count-list">{{station_3_count}}</span>
-                        <span class="bike-station-name">{{station_3_name}}</span>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </section>
     </div>
+
+    <script id="crowd-data-json" type="application/json">
+        {{ crowd_data | tojson }}
+    </script>
+    <script id="bike-data-json" type="application/json">
+        {{ data.SBIKE_STTS | tojson }}
+    </script>
     <script src="../static/js/detail_page.js"></script>
 </body>
-
 </html>

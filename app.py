@@ -204,7 +204,7 @@ def detail(id):
             "SBIKE_STTS":get_info(id)
     }
     print(data)
-    return render_template('detail_page.html', data=data)
+    return render_template('detail_page_copy.html', data=data)
 
 # --------------------------------------------
 

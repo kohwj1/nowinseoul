@@ -1,8 +1,8 @@
 id,name,crowd,beauty,food,drama,movie,lat,lng
 POI001,Gangnam MICE Special Tourist Zone,Crowded,1,1,0,0,37.512693,127.0624
-POI003,Myeong-dong Namdaemun Bukchang-dong Da-dong Mugyo-dong Special Tourist Zone,Crowded,0,1,0,1,37.5680586,126.9788194
-POI006,Jongno Cheonggye Special Toruist Zone,Slightly Crowded,0,1,1,0,37.56134981,126.9959254
-POI007,HongDae Culture & Arts Special Tourist Zone,Medium Density,1,1,1,0,37.55424091,126.9379277
+POI003,Myeong-dong Namdaemun Bukchang-dong Da-dong Mugyo-dong Special Tourist Zone,Crowded,0,1,0,1,37.564061,126.984531
+POI006,Jongno Cheonggye Special Toruist Zone,Slightly Crowded,0,1,1,0,37.569549,126.977913
+POI007,HongDae Culture & Arts Special Tourist Zone,Medium Density,1,1,1,0,37.556349,126.925495
 POI008,Gyeongbokgung Palace,Low Density,0,1,1,1,37.5759,126.9768
 POI010,Bosingak,Low Density,0,0,1,0,37.56982577,126.983572
 POI011,Amsa Prehistoric Settlement Site,Low Density,0,0,0,0,37.55906143,127.1306007
