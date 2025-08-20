@@ -103,7 +103,7 @@
       "x1yxu_y3de0VZMAWWYdzr": {
         "id": "x1yxu_y3de0VZMAWWYdzr",
         "name": "detail_cache",
-        "comment": "각 지역 상세 캐싱 데이터",
+        "comment": "각 지역 상세 캐싱 데이터 from 실시간 인구데이터 (영문)",
         "columnIds": [
           "gqj3ZxlpFk5HvyQpvMpDp",
           "FO02EcjlBQ3VHLbFbGbiH",
@@ -143,18 +143,18 @@
           "y": 278.9017,
           "zIndex": 137,
           "widthName": 74,
-          "widthComment": 119,
+          "widthComment": 272,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755668422286,
+          "updateAt": 1755715815257,
           "createAt": 1754986061305
         }
       },
       "3kgxLUAZO4mpuhmj4fl7c": {
         "id": "3kgxLUAZO4mpuhmj4fl7c",
         "name": "weather_cache",
-        "comment": "날씨 예측 캐싱 테이블",
+        "comment": "날씨 예측 캐싱 테이블 from 도시 데이터",
         "columnIds": [
           "uC1zNUrMR7j6Evzxn-nKK",
           "g9_S7ztf7ldz0Fj4j4WpF",
@@ -177,18 +177,18 @@
           "y": 152.5436,
           "zIndex": 160,
           "widthName": 88,
-          "widthComment": 106,
+          "widthComment": 194,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755263498962,
+          "updateAt": 1755715625675,
           "createAt": 1754986244003
         }
       },
       "j5_Jj-x3D1JptDIN3Pfo2": {
         "id": "j5_Jj-x3D1JptDIN3Pfo2",
         "name": "density_cache",
-        "comment": "인구밀도 예측 캐싱 테이블",
+        "comment": "인구밀도 예측 캐싱 테이블 from 실시간 인구데이터 (영문)",
         "columnIds": [
           "A78PnsHvhGelhsvXn3FBt",
           "SoOy_SkvZNLaPFTgbpK_j",
@@ -207,11 +207,11 @@
           "y": 405.0156,
           "zIndex": 257,
           "widthName": 83,
-          "widthComment": 126,
+          "widthComment": 279,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755263523209,
+          "updateAt": 1755715749836,
           "createAt": 1754986639635
         }
       },
@@ -2094,7 +2094,7 @@
           "columnIds": [
             "A78PnsHvhGelhsvXn3FBt"
           ],
-          "x": 1484.9478,
+          "x": 1558.9478,
           "y": 481.0156,
           "direction": 2
         },
