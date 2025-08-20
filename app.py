@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+from models import init_db
 from services.bike_station_fetcher import get_info
 import os
 
