@@ -358,4 +358,5 @@ body {
 
 .leaflet-popup {
     max-width: 20rem;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
 }
