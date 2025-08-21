@@ -27,6 +27,7 @@ function heatLevel(crowdLevel) {
     return crowd_level_value[crowdLevel]
 }
 
+//레이어 초기화
 function clearMap() {
     map.eachLayer(function(layer) {
         if (layer instanceof L.Marker || layer instanceof L.HeatLayer) {
@@ -34,7 +35,6 @@ function clearMap() {
         }
     });
 }
-
 
 //맵에 마킹
 function markOnMap(marker_data) {
