@@ -16,41 +16,6 @@ main {
 }
 
 
-@media (max-width:1000px) {
-    #map {
-        max-width: 999px;
-        height: 90vh;
-    }
-
-    #mapFilter {
-        /* max-width: 1000px; */
-        margin: auto;
-        position: relative;
-        bottom: 0px;
-        transition: bottom 0.5s ease;
-        z-index: 99999;
-    }
-}
-@media (min-width:1001px) {
-    #map {
-        max-width: 60%;
-        height: 100%;
-    }
-
-
-
-    #mapFilter {
-        width: 40%;
-        position: fixed;
-        top: 2rem;
-        z-index: 99999;
-    }
-
-    #filterDiv {
-        height:100vh;
-    }
-}
-
 .leaflet-popup-content-wrapper {
     font-family: "Noto Sans KR";
     text-align: center;
@@ -68,4 +33,41 @@ main {
 .btnBack {
     width:20px;
     height:20px;
+}
+
+@media (max-width:1000px) {
+    #map {
+        max-width: 999px;
+        height: 90vh;
+    }
+
+    #mapFilter {
+        /* max-width: 1000px; */
+        margin: auto;
+        position: relative;
+        bottom: 0px;
+        transition: bottom 0.5s ease;
+        z-index: 99999;
+    }
+}
+@media (min-width:1001px) {
+    .main-container {
+        display: flex;
+    }
+
+    #map {
+        width: 70%;
+        height: 100vh;
+    }
+
+    #mapFilter {
+        width: 30%;
+        /* position: fixed; */
+        /* top: 2rem; */
+        z-index: 99999;
+    }
+
+    #filterDiv {
+        height:100vh;
+    }
 }
