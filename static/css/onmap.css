@@ -54,6 +54,7 @@ main {
         z-index: 99999;
     }
 }
+
 @media (min-width:1001px) {
     .main-container {
         display: flex;
