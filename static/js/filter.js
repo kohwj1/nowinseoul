@@ -151,6 +151,7 @@ filterDisplayBtn.addEventListener('click', () => {
             filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
         }
         filterUI.classList.toggle('move-up');
+        filterDisplayBtn.classList.toggle('collapsed')
         isFilterDisplayed = !isFilterDisplayed;
     }
 });
@@ -164,12 +165,14 @@ document.addEventListener('DOMContentLoaded', () => {
     heatOnMap(origin_data)
     }
 )
+
 document.getElementById('btnReset').addEventListener('click', () => {
         clearMap()
         markOnMap(origin_data)
         heatOnMap(origin_data)
     }
 )
+
 document.getElementById('btnSearch').addEventListener('click', () => searchPlace())
 document.getElementById('filterForm').addEventListener('submit', (e) => {
     e.preventDefault()
