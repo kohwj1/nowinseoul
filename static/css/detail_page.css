@@ -348,3 +348,14 @@ body {
         flex: 1;
     }
 }
+
+/* 따릉이 지도 서식 */
+.circle-text {
+    color: #fff;
+    font-weight: 800;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+}
+
+.leaflet-popup {
+    max-width: 20rem;
+}
