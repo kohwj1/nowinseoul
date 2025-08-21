@@ -200,7 +200,7 @@ def detail(id):
                     "FCST_TIME": "2025-08-21 15:00",
                     "FCST_CONGEST_LVL": "Crowded",
                 }
-            ]
+            ],
             "SBIKE_STTS":get_info(id)
     }
     print(data)
