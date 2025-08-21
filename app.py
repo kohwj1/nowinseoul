@@ -229,5 +229,5 @@ def filter_pin():
     return jsonify({"message":"not yet"})
 
 if __name__ == '__main__':
-    scheduler.start()  # 스케줄러 시작
+    # scheduler.start()  # 스케줄러 시작
     app.run(host='0.0.0.0', debug=True)

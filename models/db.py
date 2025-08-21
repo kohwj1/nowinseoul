@@ -27,11 +27,14 @@ def table_list():
     return tables
     
 # 데이터 삽입 함수
-def insert_user(name, age):
+def insert_congestion_lvl(result_list): # fetch api data
     conn = connect_db()
     cur = conn.cursor()
     
-    cur.execute("INSERT INTO users (name, age) VALUES (?, ?)", (name, age))
+    cur.execute('DELETE FROM detail_raw')
+    # [{'id': 'POI003', 'realtime_pop': 'Comfortable'},]
+    cur.executemany(f"""INSERT INTO detail_raw (id, realtime_pop, insert_dttm) 
+                                    VALUES (:id, :realtime_pop, {datetime.now().strftime('%Y%m%d%H%M%S')})""", result_list)
     
     conn.commit()
     conn.close()

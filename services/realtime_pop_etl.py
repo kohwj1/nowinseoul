@@ -4,7 +4,7 @@
 
 import sys
 sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
-import models.db
+from models import db
 from datetime import datetime
 
 def realtime_pop_etl():
@@ -19,8 +19,12 @@ def realtime_pop_etl():
     # transform 
     # load
     cursor.execute('DELETE FROM detail_cache')
-    cursor.executemany(f'INSERT INTO detail_cache ({', '.join(columns)}) VALUES ({', '.join(map(lambda x: ':' + x, columns))})', rows)
+    cursor.executemany(f"""INSERT INTO detail_cache ({', '.join(columns)}, insert_dttm)
+                                             VALUES ({', '.join(map(lambda x: ':' + x, columns))}, {datetime.now().strftime("%Y%m%d%H%M%S")})""", rows)
     
     conn.commit()
     conn.close()
-    print(f'realtime_pop_etl 수행 완료 {datetime.now.strftime("%Y%m%d%H%M%S")}')
+    print(f'realtime_pop_etl 수행 완료 {datetime.now().strftime("%Y%m%d%H%M%S")}')
+
+if __name__ == "__main__":
+    realtime_pop_etl()
