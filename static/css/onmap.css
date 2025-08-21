@@ -11,6 +11,10 @@ main {
     height: 96vh;
 }
 
+.nav-item {
+    text-decoration: none;
+}
+
 #map {
     margin-left: auto;
 }
