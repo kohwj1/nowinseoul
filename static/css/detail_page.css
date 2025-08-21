@@ -350,6 +350,12 @@ body {
 }
 
 /* 따릉이 지도 서식 */
+#map, .leaflet-div-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .circle-text {
     color: #fff;
     font-weight: 800;
