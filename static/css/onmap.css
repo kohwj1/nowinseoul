@@ -48,7 +48,7 @@ main {
     #mapFilter {
         /* max-width: 1000px; */
         margin: auto;
-        position: relative;
+        position: fixed;
         bottom: 0px;
         transition: bottom 0.5s ease;
         z-index: 99999;
@@ -66,8 +66,6 @@ main {
 
     #mapFilter {
         width: 30%;
-        /* position: fixed; */
-        /* top: 2rem; */
         z-index: 99999;
     }
 

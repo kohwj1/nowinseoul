@@ -148,7 +148,7 @@ filterDisplayBtn.addEventListener('click', () => {
         if (!isFilterDisplayed) {
             filterUI.style.bottom = 0 + 'px';
         } else {
-            filterUI.style.bottom = -filterBody.offsetHeight + 'px';
+            filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
         }
         filterUI.classList.toggle('move-up');
         isFilterDisplayed = !isFilterDisplayed;
@@ -157,7 +157,7 @@ filterDisplayBtn.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (windowwidth <= 1000) {
-        filterUI.style.bottom = -filterBody.offsetHeight + 'px';
+        filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
     }
     clearMap()
     markOnMap(origin_data)
