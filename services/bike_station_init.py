@@ -87,6 +87,7 @@ def insert_bike_station_api():
         print(f"{n*1000 +1} ~ {(n+1)*1000} 범위의 대여소 정보 적재 완료")
 
 if __name__ == "__main__":
+    pass
     ## (추후 삭제) 1. 서울특별시 운영중인 공공자전거 대여소 정보 api를 bike_station_info 에 입력
     # insert_bike_station_api()
 
@@ -96,4 +97,3 @@ if __name__ == "__main__":
     # db.download_csv()
     ## 4. import csv
     # db.import_bike_station_info()
-
