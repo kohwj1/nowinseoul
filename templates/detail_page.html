@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="../static/css/detail_page.css">
     <title>Detailed Page</title>
 </head>
@@ -91,7 +92,7 @@
                 <div class="bike-header">
                     <p id="total-bikes">Public bike(s) available</p>
                 </div>
-                <div class="bike-map"></div>
+                <div class="bike-map" id="map"></div>
                 <ul class="bike-list">
                     {% for bike in data.SBIKE_STTS %}
                     <li>
@@ -104,12 +105,17 @@
         </section>
     </div>
 
+    <script>
+        const bikeList = {{ data|safe }};
+    </script>
     <script id="crowd-data-json" type="application/json">
         {{ crowd_data | default({}) | tojson }}
     </script>
     <script id="bike-data-json" type="application/json">
         {{ data.SBIKE_STTS | default([]) | tojson }}
     </script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="../static/js/detail_page.js"></script>
+    <script src="../static/js/bike.js"></script>
 </body>
 </html>
