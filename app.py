@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify
 from models import init_db
 from services.bike_station_fetcher import get_info
-from scheduler.etl_scheduler import scheduler  # 스케줄러 객체 import
+# from scheduler.etl_scheduler import scheduler  # 스케줄러 객체 import
 import os
 
 #테스트 데이터 불러오기 위한 모듈입니다. 배포 전 삭제 필요!
@@ -14,7 +14,14 @@ app.config['DATABASE'] = os.path.join(app.instance_path, 'nowinseoul.db')
 # 메인 페이지
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', data = [
+            {'id':'POI095','thumnail':'POI095.jpg','name': 'Banpo Hangang Park'},
+            {'id':'POI096','thumnail':'POI096.png','name': 'Dream Forest'},
+            {'id':'POI098','thumnail':'POI098.jpg','name': 'Seoripul Park·Montmartre Park'},
+            {'id':'POI099','thumnail':'POI099.jpg','name': 'Seoul Plaza'},
+            {'id':'POI100','thumnail':'POI100.png','name': 'Seoul Grand Park'},
+            {'id':'POI101','thumnail':'POI101.png','name': 'Seoul Forest'},
+        ])
 
 # 지도 페이지
 @app.route('/map')
@@ -205,7 +212,7 @@ def detail(id):
             "SBIKE_STTS":get_info(id)
     }
     print(data)
-    return render_template('detail_page_copy.html', data=data)
+    return render_template('detail_page.html', data=data)
 
 # --------------------------------------------
 
