@@ -4,7 +4,6 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 import requests, os
 from dotenv import load_dotenv
-from time import time
 import sys
 sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
 from models import db
