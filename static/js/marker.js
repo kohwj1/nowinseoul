@@ -1,8 +1,8 @@
 //커스텀 마커
 function customMarker(crowdLevel) {
     const crowd_icon_url = {
-        'Comfortable':'static/images/ui/marker_0.png', 
-        'Moderate':'static/images/ui/marker_1.png', 
+        'Low Density':'static/images/ui/marker_0.png', 
+        'Medium Density':'static/images/ui/marker_1.png', 
         'Slightly Crowded':'static/images/ui/marker_2.png', 
         'Crowded':'static/images/ui/marker_3.png', 
     }
@@ -19,8 +19,8 @@ function customMarker(crowdLevel) {
 //히트레벨 리턴 함수
 function heatLevel(crowdLevel) {
     const crowd_level_value = {
-        'Comfortable': 0.25, 
-        'Moderate': 0.5, 
+        'Low Density': 0.25, 
+        'Medium Density': 0.5, 
         'Slightly Crowded': 0.75, 
         'Crowded': 1, 
     }

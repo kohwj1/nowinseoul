@@ -1,7 +1,7 @@
 //따릉이용 서클 마커
 function circleOnMap(marker_data, map) {
     try {
-        for (m of marker_data) {
+        for (m of marker_data.SBIKE_STTS) {
             if (m.SBIKE_PARKING_CNT != 0) {
                 L.circleMarker([m.SBIKE_X, m.SBIKE_Y], {radius: 15, color: '#33a758', fillColor: '#33a758', fillOpacity: 1})
                 .addTo(map)
@@ -16,14 +16,11 @@ function circleOnMap(marker_data, map) {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     //지도 렌더링
     try{
-        const bikeDataElement = document.getElementById('bike-data-json');
-        const bikeList = JSON.parse(bikeDataElement.textContent);
-        const initLat = bikeList[0].SBIKE_X;
-        const initLng = bikeList[0].SBIKE_Y;
+        const initLat = bikeList.SBIKE_STTS[0].SBIKE_X;
+        const initLng = bikeList.SBIKE_STTS[0].SBIKE_Y;
         console.log(initLat, initLng);
         
         let map = L.map('map', {
