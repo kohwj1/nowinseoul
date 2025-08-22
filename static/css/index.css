@@ -167,7 +167,7 @@ body {
 @media (min-width: 48rem) {
     /* 컨테이너 너비 확장 */
     .container {
-        max-width: 90rem;
+        max-width: 100rem;
     }
 
     /* PC: 태그와 버튼을 가로로 정렬 */
@@ -189,19 +189,21 @@ body {
         width: auto;
     }
 
-    /* PC: 카드들을 가로로 나열 */
+    /* PC: 카드들을 3열 grid로 나열 */
     .content {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
         gap: 1.5rem;
     }
 
     .card {
-        width: calc(33.333% - 0.625rem);
-        margin-bottom: 0;
+        width: 100%;   /* grid가 크기를 알아서 맞추게 */
     }
 
     .card-image {
         height: 8rem;
+        object-fit: cover; /* 이미지 비율 유지하면서 꽉 채우기 */
+        width: 100%;
+        border-radius: 0.75rem; /* 모서리 둥글게 */
     }
 }

@@ -16,33 +16,16 @@
         <button class="back-button">
             <a href="/"><img src="../static/images/ui/back-button.png" alt="뒤로가기"></a>
         </button>
-        <img src="../static/images/attraction/POI003.jpg" alt="배경 이미지" class="background-image-cover">
+        <img src="../static/images/attraction/{{ data.AREA_CD }}" alt="배경 이미지" class="background-image-cover">
         <div class="hero-text">
-            <h1 id="location-name">{{ name }}</h1>
+            <h1 id="location-name">{{name}}</h1>
         </div>
     </div>
 
     <div class="page-container">
         <div class="content-section">
             <div class="text-container">
-                <p id="location-description">
-                    Deoksugung-gil, which continues into Jeongdong-gil, is a
-                    beautiful and famous walking path in the heart of Seoul. Imagine a quiet, charming street that feels
-                    completely different from the bustling city around it, as if you've stepped back in time. The most
-                    iconic feature of this path is the stone wall that runs along one side, belonging to the historic
-                    Deoksugung Palace. This is why the path is often called "Doldam-gil" (돌담길), which means "stone wall
-                    path." Walking along it, you can appreciate the traditional Korean architecture of the palace while
-                    being surrounded by modern city buildings. The street is lined with elegant, old trees (mostly
-                    ginkgo and sycamore), which provide a beautiful canopy in the summer and a stunning yellow and
-                    orange glow in the autumn, making it a favorite spot for locals and tourists alike. Beyond the
-                    palace wall, the path leads to several other important places, including the Seoul Museum of Art
-                    (SeMA) and historic churches, giving it a peaceful, cultural atmosphere. It's a place for a
-                    leisurely stroll, where you can enjoy history, nature, and art all at once. One interesting fact you
-                    might hear about this path in Korean culture is a folklore that says couples who walk this path
-                    together are destined to break up. This is a well-known superstition, but it doesn't stop many
-                    people from enjoying its beauty! It simply adds a touch of playful legend to a very scenic and
-                    historically significant place.
-                </p>
+                <p id="location-description">{{ data.DESCRIPTION }}</p>
             </div>
             <button id="read-more-btn">Read more</button>
         </div>
@@ -60,7 +43,7 @@
         </section>
 
         <section class="traffic-conditions-section">
-            <div class="info-tag" id="traffic-tag">{{ traffic condition }}</div>
+            <div class="info-tag" id="traffic-tag">{{ traffic_condition }}</div>
             <div class="info-title">Traffic Conditions</div>
         </section>
 
@@ -68,38 +51,38 @@
             <div class="weather-section">
                 <div class="weather-header">
                     <h2>Weather</h2>
-                    <span class="current-temp">{{ current-temp }}</span>
+                    <span class="current-temp">{{ current_temp }}</span>
                 </div>
                 <div class="weather-forecast">
                     <div class="forecast-item">
                         <span class="time">{{ time }}</span>
                         <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain-chance }}</div>
+                        <div class="rain-chance">{{ rain_chance }}</div>
                     </div>
                     <div class="forecast-item">
                         <span class="time">{{ time }}</span>
                         <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain-chance }}</div>
+                        <div class="rain-chance">{{ rain_chance }}</div>
                     </div>
                     <div class="forecast-item">
                         <span class="time">{{ time }}</span>
                         <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain-chance }}</div>
+                        <div class="rain-chance">{{ rain_chance }}</div>
                     </div>
                     <div class="forecast-item">
                         <span class="time">{{ time }}</span>
                         <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain-chance }}</div>
+                        <div class="rain-chance">{{ rain_chance }}</div>
                     </div>
                     <div class="forecast-item">
                         <span class="time">{{ time }}</span>
                         <span class="temp">{{ temp }}</span>
                         <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain-chance }}</div>
+                        <div class="rain-chance">{{ rain_chance }}</div>
                     </div>
                 </div>
             </div>
@@ -122,10 +105,10 @@
     </div>
 
     <script id="crowd-data-json" type="application/json">
-        {{ crowd_data | tojson }}
+        {{ crowd_data | default({}) | tojson }}
     </script>
     <script id="bike-data-json" type="application/json">
-        {{ data.SBIKE_STTS | tojson }}
+        {{ data.SBIKE_STTS | default([]) | tojson }}
     </script>
     <script src="../static/js/detail_page.js"></script>
 </body>
