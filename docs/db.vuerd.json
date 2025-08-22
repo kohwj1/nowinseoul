@@ -68,7 +68,6 @@
           "s3ItOZtfENPlDdVOnD_fm",
           "B7t0SKvEbeX2FZg_3ArRp",
           "9sK4F__RD8Z0BRe8PpcQr",
-          "77SQ_ITAedVHK4aPXdWE4",
           "mfPtSOsOAk7cIBNMLBhwe"
         ],
         "seqColumnIds": [
@@ -96,7 +95,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1755782318803,
+          "updateAt": 1755838490159,
           "createAt": 1754985801491
         }
       },
@@ -1983,7 +1982,7 @@
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
           "x": 202.7658,
-          "y": 415.6004,
+          "y": 391.6004,
           "direction": 8
         },
         "end": {
