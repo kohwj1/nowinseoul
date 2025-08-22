@@ -1,4 +1,3 @@
-
 //따릉이용 서클 마커
 function circleOnMap(marker_data, map) {
     try {
@@ -16,7 +15,6 @@ function circleOnMap(marker_data, map) {
         return;   
     }
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
     //지도 렌더링
