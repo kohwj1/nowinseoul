@@ -12,7 +12,7 @@
 
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-import requests, os
+import requests, os, utils
 from dotenv import load_dotenv
 from datetime import datetime
 import sys
@@ -22,27 +22,6 @@ from models import db
 load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
 
-def fetch(url):
-    # https://requests.readthedocs.io/en/latest/user/quickstart/#errors-and-exceptions
-    # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
-    try:
-        response = requests.get(url)
-        # response.raise_for_status()  # HTTP 상태 코드 오류 체크
-    except requests.exceptions.ConnectionError:
-        print("네트워크 연결 문제 발생")
-    except requests.exceptions.Timeout:
-        print("요청이 타임아웃되었습니다.")
-    except requests.exceptions.TooManyRedirects:
-        print("너무 많은 리디렉션 발생")
-    except requests.exceptions.HTTPError as http_err:
-        print(f"HTTP 오류 발생: {http_err}")
-    except requests.exceptions.RequestException as err:
-        print(f"기타 오류 발생: {err}")
-    # else:
-    #     print("요청 성공:", response.status_code)
-        
-    return response.json()
-
 ## 2. 실시간 인구밀도 데이터에서 도시ID - 인구밀도 매핑
 def mapping_id(attraction_name_ko):
         # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
@@ -50,7 +29,7 @@ def mapping_id(attraction_name_ko):
         url = f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/citydata_ppltn_eng/1/50/{attraction_name_ko}'
         # print(f'fetching url :{url}')
 
-        city_data = fetch(url).get('SeoulRtd.citydata_ppltn')[0]
+        city_data = utils.fetch(url).get('SeoulRtd.citydata_ppltn')[0]
         # city_data 전체를 그대로 전달하면 데이터 크기가 커지고 전송 및 처리 비용이 증가합니다.
         # 필요한 컬럼 2개만 추출해서 전달하면 DB 쓰기 시점에 불필요한 데이터 파싱/처리가 줄어듭니다.
 
