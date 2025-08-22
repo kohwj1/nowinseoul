@@ -30,10 +30,9 @@ def browse_on_map():
     return render_template('onmap.html', data={"data":mapdata})
 
 # 상세 페이지
-@app.route('/detail/<id>/<name>')
-def detail(id, name):
+@app.route('/detail/<id>')
+def detail(id):
     data = {"AREA_CD":id,
-            "NAME":name,
             # "LAST_UPDATE_DTTM": db.get_id_info(id).get('insert_dttm')
             "LAST_UPDATE_DTTM" : '20250819231821',
             # DB에 아직 없음 "DESCRIPTION":db.get_id_info(id).get('description'),
