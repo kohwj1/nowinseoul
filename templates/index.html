@@ -45,9 +45,9 @@
         <div class="content">
             {% for item in data %}
             <div class="card">
-                <a href="/detail/{{ item.thumnail }}">
+                <a href="/detail/{{ item.id }}">
                 <div class="card-image-container">
-                    <img src="../static/images/attraction/{{ item.thumnail }}" alt="main image" class="card-image">
+                    <img src="../static/images/attraction/{{ item.id }}.jpg" alt="main image" class="card-image">
                     <div class="card-title">{{ item.name }}</div>
                 </div>
                 </a>

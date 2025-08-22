@@ -17,7 +17,7 @@
         <button class="back-button">
             <a href="/"><img src="../static/images/ui/back-button.png" alt="뒤로가기"></a>
         </button>
-        <img src="../static/images/attraction/{{ data.AREA_CD }}" alt="배경 이미지" class="background-image-cover">
+        <img src="../static/images/attraction/{{ data.AREA_CD }}.jpg" alt="배경 이미지" class="background-image-cover">
         <div class="hero-text">
             <h1 id="location-name">{{name}}</h1>
         </div>
@@ -32,9 +32,11 @@
         </div>
 
         <section class="crowd-density-section">
-            <div class="info-tag" id="traffic-tag">{{ crowd }}</div>
+            <div class="info-tag" id="traffic-tag">{{ data.AREA_PPLTN[0].FCST_CONGET_LVL }}</div>
             <div class="info-title">Crowd Density</div>
-            <div class="progress-bar-container" id="crowd-density-bar"></div>
+            
+            <div class="progress-bar-container" id="crowd-density-bar"></div>  
+
             <div class="time-labels">
                 <span id="time-now">Now</span>
                 <span id="time-1">{{time_1}}</span>
@@ -52,41 +54,29 @@
             <div class="weather-section">
                 <div class="weather-header">
                     <h2>Weather</h2>
-                    <span class="current-temp">{{ current_temp }}</span>
+                    <span class="current-temp">{{ data.WEATHER_STTS[0].TEMP }}</span>
                 </div>
-                <div class="weather-forecast">
-                    <div class="forecast-item">
-                        <span class="time">{{ time }}</span>
-                        <span class="temp">{{ temp }}</span>
-                        <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain_chance }}</div>
-                    </div>
-                    <div class="forecast-item">
-                        <span class="time">{{ time }}</span>
-                        <span class="temp">{{ temp }}</span>
-                        <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain_chance }}</div>
-                    </div>
-                    <div class="forecast-item">
-                        <span class="time">{{ time }}</span>
-                        <span class="temp">{{ temp }}</span>
-                        <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain_chance }}</div>
-                    </div>
-                    <div class="forecast-item">
-                        <span class="time">{{ time }}</span>
-                        <span class="temp">{{ temp }}</span>
-                        <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain_chance }}</div>
-                    </div>
-                    <div class="forecast-item">
-                        <span class="time">{{ time }}</span>
-                        <span class="temp">{{ temp }}</span>
-                        <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ rain_chance }}</div>
+                
+                <div class="weather-forecast-container">
+                    <div class="weather-forecast">
+                        {% for item in data.WEATHER_STTS %}
+                        <div class="forecast-item">
+                            <span class="time">
+                                {{ item.FCST_DT[8:10] }}:00
+                            </span>
+                            <span class="temp">
+                                {{ item.TEMP }}
+                            </span>
+                            <div class="rain-chance-graph"></div>
+                            <div class="rain-chance">
+                                {{ item.RAIN_CHANCE }}%
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+        </section>
 
             <div class="public-bike-section">
                 <div class="bike-header">
@@ -107,12 +97,11 @@
 
     <script>
         const bikeList = {{ data|safe }};
-    </script>
-    <script id="crowd-data-json" type="application/json">
-        {{ crowd_data | default({}) | tojson }}
-    </script>
-    <script id="bike-data-json" type="application/json">
-        {{ data.SBIKE_STTS | default([]) | tojson }}
+        const pageData = {{ data | tojson }};
+        var crowdData = pageData.AREA_PPLTN;
+        var bikeData = pageData.SBIKE_STTS;
+        console.log(bikeData)
+        var weatherData = pageData.WEATHER_STTS;
     </script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="../static/js/detail_page.js"></script>
