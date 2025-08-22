@@ -1,84 +1,3 @@
-//테스트용 더미 데이터 (나중에 서버에서 받아올 부분)
-// const origin_data = [
-//     {
-//         "id":"P12312",
-//         "name":"Gwanghwamun",
-//         "crowd":"Slightly Crowded",
-//         "lat":37.5662,
-//         "lng":126.9772,
-//         "food": 1,
-//         "drama": 1,
-//         "beauty": 1,
-//         "movie": 1,
-//     },
-//     {
-//         "id":"P12316",
-//         "name":"Gwangjang Market",
-//         "crowd":"Slightly Crowded",
-//         "lat":37.5662,
-//         "lng":126.9783,
-//         "food": 1,
-//         "drama": 0,
-//         "beauty": 0,
-//         "movie": 0,
-//     },
-//     {
-//         "id":"P12313",
-//         "name":"Cheonggyecheon",
-//         "crowd":"Crowded",
-//         "lat":37.5660,
-//         "lng":126.9779,
-//         "food": 0,
-//         "drama": 1,
-//         "beauty": 0,
-//         "movie": 1,
-//     },
-//     {
-//         "id":"P12314",
-//         "name":"Bosingak",
-//         "crowd":"Low Density",
-//         "lat":37.5664,
-//         "lng":126.9781,
-//         "food": 0,
-//         "drama": 1,
-//         "beauty": 0,
-//         "movie": 0,
-//     },
-//     {
-//         "id":"P12315",
-//         "name":"Jongno-5ga",
-//         "crowd":"Medium Density",
-//         "lat":37.5670,
-//         "lng":126.9779,
-//         "food": 0,
-//         "drama": 1,
-//         "beauty": 0,
-//         "movie": 0
-//     },
-//     {
-//         "id":"P12315",
-//         "name":"Jongno-3ga",
-//         "crowd":"Crowded",
-//         "lat":37.5685,
-//         "lng":126.9779,
-//         "food": 0,
-//         "drama": 1,
-//         "beauty": 0,
-//         "movie": 1
-//     },
-//     {
-//         "id":"P12315",
-//         "name":"Jonggak",
-//         "crowd":"Crowded",
-//         "lat":37.5672,
-//         "lng":126.9781,
-//         "food": 0,
-//         "drama": 1,
-//         "beauty": 0,
-//         "movie": 1
-//     },
-// ]
-
 //검색 또는 필터 UI 조정 시 현재 상태값 가져오는 함수
 function getFilterArgs() {
     const keyword = document.getElementById('mapSearch').value;
@@ -89,7 +8,7 @@ function getFilterArgs() {
 }
 
 function placeFilter(keyword, theme, crowd) {
-    let filtered_data = origin_data
+    let filtered_data = originMapData
     
     if (keyword !== '') {
         filtered_data = filtered_data.filter(place => place.name.toLowerCase().includes(keyword.toLowerCase()));
@@ -136,6 +55,9 @@ for (i of filter_items) {
 }
 
 //filter UI 접기/펼치기
+// const mapDataElement = document.getElementById('map-data-json');
+// const originMapData = JSON.parse(mapDataElement.textContent);
+
 const windowwidth = window.innerWidth
 let isFilterDisplayed = false;
 const filterDisplayBtn = document.getElementById('filterDisplay');
@@ -161,15 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
         filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
     }
     clearMap()
-    markOnMap(origin_data)
-    heatOnMap(origin_data)
+    markOnMap(originMapData)
+    heatOnMap(originMapData)
     }
 )
 
 document.getElementById('btnReset').addEventListener('click', () => {
         clearMap()
-        markOnMap(origin_data)
-        heatOnMap(origin_data)
+        markOnMap(originMapData)
+        heatOnMap(originMapData)
     }
 )
 

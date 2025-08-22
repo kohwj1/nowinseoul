@@ -1,7 +1,7 @@
 //따릉이용 서클 마커
 function circleOnMap(marker_data, map) {
     try {
-        for (m of marker_data.SBIKE_STTS) {
+        for (m of marker_data) {
             if (m.SBIKE_PARKING_CNT != 0) {
                 L.circleMarker([m.SBIKE_X, m.SBIKE_Y], {radius: 15, color: '#33a758', fillColor: '#33a758', fillOpacity: 1})
                 .addTo(map)
@@ -19,8 +19,8 @@ function circleOnMap(marker_data, map) {
 document.addEventListener('DOMContentLoaded', () => {
     //지도 렌더링
     try{
-        const initLat = bikeList.SBIKE_STTS[0].SBIKE_X;
-        const initLng = bikeList.SBIKE_STTS[0].SBIKE_Y;
+        const initLat = bikeData[0].SBIKE_X;
+        const initLng = bikeData[0].SBIKE_Y;
         console.log(initLat, initLng);
         
         let map = L.map('map', {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             maxZoom: 17,
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
-        circleOnMap(bikeList, map)
+        circleOnMap(bikeData, map)
     } catch {
         const msgNoBike = document.createElement('div')
         msgNoBike.textContent = 'No bike available'
