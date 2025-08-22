@@ -26,7 +26,7 @@ def index():
 @app.route('/map')
 def browse_on_map():
     mapdata = mapdata_generator()
-    return render_template('onmap.html', data=json.dumps(mapdata))
+    return render_template('onmap.html', data={"data":mapdata})
 
 # 상세 페이지
 @app.route('/detail/<id>')
