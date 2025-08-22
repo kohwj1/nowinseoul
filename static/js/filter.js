@@ -55,9 +55,8 @@ for (i of filter_items) {
 }
 
 //filter UI 접기/펼치기
-const mapDataElement = document.getElementById('map-data-json');
-const originMapData = JSON.parse(mapDataElement.textContent);
-
+// const mapDataElement = document.getElementById('map-data-json');
+// const originMapData = JSON.parse(mapDataElement.textContent);
 
 const windowwidth = window.innerWidth
 let isFilterDisplayed = false;

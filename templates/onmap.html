@@ -64,11 +64,11 @@
                                 <input type="radio" class="mapfilter btn-check" name="crowd" id="density-all" value="all" checked>
                                 <label class="btn btn-outline-primary btn-sm m-1" for="density-all">All</label>
 
-                                <input type="radio" class="mapfilter btn-check" name="crowd" id="density-low" value="Low Density">
-                                <label class="btn btn-outline-primary btn-sm m-1" for="density-low">Low Density</label>
+                                <input type="radio" class="mapfilter btn-check" name="crowd" id="density-low" value="Comfortable">
+                                <label class="btn btn-outline-primary btn-sm m-1" for="density-low">Comfortable</label>
 
-                                <input type="radio" class="mapfilter btn-check" name="crowd" id="density-medium" value="Medium Density">
-                                <label class="btn btn-outline-primary btn-sm m-1" for="density-medium">Medium Density</label>
+                                <input type="radio" class="mapfilter btn-check" name="crowd" id="density-medium" value="Moderate">
+                                <label class="btn btn-outline-primary btn-sm m-1" for="density-medium">Moderate</label>
 
                                 <input type="radio" class="mapfilter btn-check" name="crowd" id="density-slightly" value="Slightly Crowded">
                                 <label class="btn btn-outline-primary btn-sm m-1" for="density-slightly">Slightly Crowded</label>
@@ -89,7 +89,7 @@
         </div>
     </main>
     <script>
-        const origin_data = {{ data|safe }};
+        const originMapData = {{ data.data | safe }};
     </script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
