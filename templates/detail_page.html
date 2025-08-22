@@ -19,7 +19,7 @@
         </button>
         <img src="../static/images/attraction/{{ data.AREA_CD }}.jpg" alt="배경 이미지" class="background-image-cover">
         <div class="hero-text">
-            <h1 id="location-name">{{name}}</h1>
+            <h1 id="location-name">Name</h1>
         </div>
     </div>
 
@@ -95,7 +95,7 @@
         </section>
     </div>
     <script>
-        const bikeList = {{ data|safe }};
+        const bikeList = {{ data| tojson }};
         const pageData = {{ data | tojson }};
         var crowdData = pageData.AREA_PPLTN;
         var bikeData = pageData.SBIKE_STTS;
