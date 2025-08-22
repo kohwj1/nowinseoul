@@ -28,7 +28,6 @@ CREATE TABLE IF NOT EXISTS attraction
   beauty      BOOLEAN NULL    ,
   drama       BOOLEAN NULL    ,
   movie       BOOLEAN NULL    ,
-  thumbnail   TEXT    NULL    ,
   insert_dttm TEXT    NOT NULL, -- 입력일시
   PRIMARY KEY (id)
 )''')
