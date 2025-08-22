@@ -104,10 +104,6 @@
             </div>
         </section>
     </div>
-
-    <script>
-        const bikeList = {{ data|safe }};
-    </script>
     <script id="crowd-data-json" type="application/json">
         {{ crowd_data | default({}) | tojson }}
     </script>
