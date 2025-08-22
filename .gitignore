@@ -17,3 +17,6 @@ instance/*
 
 # 레거시 개발파일
 bike_station_fetcher_everyday.py
+
+# 개발
+test/*

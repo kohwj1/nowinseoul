@@ -51,6 +51,8 @@ def mapping_id(attraction_name_ko):
         # print(f'fetching url :{url}')
 
         city_data = fetch(url).get('SeoulRtd.citydata_ppltn')[0]
+        # city_data 전체를 그대로 전달하면 데이터 크기가 커지고 전송 및 처리 비용이 증가합니다.
+        # 필요한 컬럼 2개만 추출해서 전달하면 DB 쓰기 시점에 불필요한 데이터 파싱/처리가 줄어듭니다.
 
         area_code = city_data.get('AREA_CD') # POI008
         area_congestion_level = city_data.get('AREA_CONGEST_LVL') # 인구밀도혼잡도 레벨
