@@ -1,4 +1,5 @@
 import time # 타임 데코레이터
+import requests
 
 def execution_time(func):
     def wrapper(*args, **kwargs):
