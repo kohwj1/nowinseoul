@@ -1,7 +1,6 @@
 from flask import Flask, render_template, jsonify
 from models import init_db
 from services.bike_station_fetcher import get_info
-from scheduler.etl_scheduler import scheduler  # 스케줄러 객체 import
 import os
 
 #테스트 데이터 불러오기 위한 모듈입니다. 배포 전 삭제 필요!
@@ -229,5 +228,4 @@ def filter_pin():
     return jsonify({"message":"not yet"})
 
 if __name__ == '__main__':
-    # scheduler.start()  # 스케줄러 시작
     app.run(host='0.0.0.0', debug=True)
