@@ -20,6 +20,7 @@ def index():
             {'id':'POI099','name': 'Seoul Plaza'},
             {'id':'POI100','name': 'Seoul Grand Park'},
             {'id':'POI101','name': 'Seoul Forest'},
+            {'id':'POI102','name': 'Achasan'},
         ])
 
 # 지도 페이지
