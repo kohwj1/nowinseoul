@@ -1,22 +1,13 @@
 import sqlite3, os, csv, time
 from dotenv import load_dotenv
 from datetime import datetime
-import time # 타임 데코레이터
+
 
 load_dotenv()  # .env 파일의 환경변수 로드
 
 DATABASE = os.getenv('DATABASE')
 DB_PATH = os.path.join('instance',DATABASE)  # 데이터베이스 파일 경로
 
-
-def execution_time(func):
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        print(f"{func.__name__} 함수 실행 시간: {round(end_time - start_time/60,1)}분")
-        return result
-    return wrapper
 
 # db에 접속하는 함수
 def connect_db():
