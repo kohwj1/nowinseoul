@@ -8,18 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="../static/css/detail_page.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}">
     <title>Detailed Page</title>
 </head>
 
 <body>
     <div class="top-section">
         <button class="back-button">
-            <a href="/"><img src="../static/images/ui/back-button.png" alt="뒤로가기"></a>
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/ui/back-button.png') }}" alt="뒤로가기"></a>
         </button>
-        <img src="../static/images/attraction/{{ data.AREA_CD }}.jpg" alt="배경 이미지" class="background-image-cover">
+        <img src="{{ url_for('static', filename='images/attraction/' + data.AREA_CD + '.jpg') }}" alt="배경 이미지" class="background-image-cover">
         <div class="hero-text">
-            <h1 id="location-name">Name</h1>
+            <h1 id="location-name">{{ data.NAME }}</h1>
         </div>
     </div>
 
@@ -58,23 +58,25 @@
                 </div>
                 
                 <div class="weather-forecast-container">
-                    <div class="weather-forecast">
-                        {% for item in data.WEATHER_STTS %}
-                        <div class="forecast-item">
-                            <span class="time">
-                                {{ item.FCST_DT[8:10] }}:00
-                            </span>
-                            <span class="temp">
-                                {{ item.TEMP }}
-                            </span>
-                            <div class="rain-chance-graph"></div>
-                            <div class="rain-chance">
-                                {{ item.RAIN_CHANCE }}%
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+                    <div class="weather-forecast">
+                        {% for item in data.WEATHER_STTS %}
+                        <div class="forecast-item">
+                            <span class="time">
+                                {{ item.FCST_DT[8:10] }}:00
+                            </span>
+                            <span class="temp">
+                                {{ item.TEMP }}
+                            </span>
+                            <div class="rain-chance-graph"></div>
+                            <div class="rain-chance">
+                                {{ item.RAIN_CHANCE }}%
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                
                 </div>
+                
             </div>
         </section>
 
@@ -103,7 +105,7 @@
         var weatherData = pageData.WEATHER_STTS;
     </script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="../static/js/detail_page.js"></script>
-    <script src="../static/js/bike.js"></script>
+    <script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bike.js') }}"></script>
 </body>
 </html>
