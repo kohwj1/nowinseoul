@@ -1,11 +1,11 @@
 ### 따릉이 대여소 현황
 
-import asyncio
-from concurrent.futures import ThreadPoolExecutor
-import requests, os, utils
-from dotenv import load_dotenv
 import sys
 sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
+import os, utils
+from dotenv import load_dotenv
 from models import db
 from itertools import repeat
 
@@ -60,4 +60,4 @@ def get_info(attraction_id): # POI033 서울역
     return result_data
 
 if __name__ == "__main__":
-    get_info("POI033") # POI033 서울역
+    print(get_info("POI033")) # POI033 서울역

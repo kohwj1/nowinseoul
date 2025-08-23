@@ -14,118 +14,117 @@ def init_db():
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
-    # 예시 테이블 생성
+### 예시 테이블 생성
 # -- 관광지 기본 정보
     cur.execute('''
 CREATE TABLE IF NOT EXISTS attraction
 (
-  id          TEXT    NOT NULL,
+  id          TEXT    NOT NULL,   -- 관광지 고유식별자
   name        TEXT    NOT NULL,
   description TEXT    NULL    ,
-  lat         DECIMAL NOT NULL,
-  lng         DECIMAL NOT NULL,
+  lat         REAL    NOT NULL,   -- 관광지 위도
+  lng         REAL    NOT NULL,   -- 관광지 경도
   food        BOOLEAN NULL    ,
   beauty      BOOLEAN NULL    ,
   drama       BOOLEAN NULL    ,
   movie       BOOLEAN NULL    ,
-  insert_dttm TEXT    NOT NULL, -- 입력일시
+  insert_dttm TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
   PRIMARY KEY (id)
-)''')
-
-# -- 인구밀도 예측 캐싱 테이블
-    cur.execute('''
-CREATE TABLE IF NOT EXISTS density_cache
-(
-  id          TEXT NOT NULL, -- 장소 고유식별자
-  fcst_dt     TEXT NOT NULL, -- 예측 일시
-  level       TEXT NULL    , -- 인구밀도 수준
-  insert_dttm TEXT NOT NULL, -- 입력일시
-  PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES detail_cache (id)
-)''')
-
-# -- 인구밀도 예측 원본 테이블
-    cur.execute('''
-CREATE TABLE IF NOT EXISTS density_raw
-(
-  id          TEXT NOT NULL, -- 장소 고유식별자
-  fcst_dt     TEXT NOT NULL, -- 예측 일시
-  level       TEXT NULL    , -- 인구밀도 수준
-  insert_dttm TEXT NOT NULL, -- 입력일시
-  PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES density_cache (id)
-)''')
-
-# -- 각 지역 상세 캐싱 데이터
-    cur.execute('''
-CREATE TABLE IF NOT EXISTS detail_cache
-(
-  id            TEXT NOT NULL, -- 장소 고유식별자
-  realtime_pop  TEXT NULL    , -- 실시간 인구밀도 수준
-  realtime_road TEXT NULL    , -- 실시간 도로상황 (상세 페이지 진입 시에만 업뎃치기?)
-  insert_dttm   TEXT NOT NULL, -- 입력일시
-  PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES attraction (id)
-)''')
-
-# -- 각 지역 상세 원본 데이터
-    cur.execute('''
-CREATE TABLE IF NOT EXISTS detail_raw
-(
-  id            TEXT NOT NULL, -- 장소 고유식별자
-  realtime_pop  TEXT NULL    , -- 실시간 인구밀도 수준
-  realtime_road TEXT NULL    , -- 실시간 도로상황 (상세 페이지 진입 시에만 업뎃치기?)
-  insert_dttm   TEXT NOT NULL, -- 입력일시
-  PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES detail_cache (id)
-)''')
-
-# -- 날씨 예측 캐싱 테이블
-    cur.execute('''
-CREATE TABLE IF NOT EXISTS weather_cache
-(
-  id          TEXT    NOT NULL, -- 장소 고유식별자
-  fcst_dt     TEXT    NOT NULL, -- 예측 일시
-  fcst_temp   INTEGER NULL    , -- 예측 온도
-  rain_chance INTEGER NULL    , -- 예측 강수확률
-  insert_dttm TEXT    NOT NULL, -- 입력일시
-  PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES detail_cache (id)
-)''')
-
-# -- 날씨 예측 원본 테이블
-    cur.execute('''
-CREATE TABLE IF NOT EXISTS weather_raw
-(
-  id          TEXT    NOT NULL, -- 장소 고유식별자
-  fcst_dt     TEXT    NOT NULL, -- 예측 일시
-  fcst_temp   INTEGER NULL    , -- 예측 온도
-  rain_chance INTEGER NULL    , -- 예측 강수확률
-  insert_dttm TEXT    NOT NULL, -- 입력일시
-  PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES weather_cache (id)
 )''')
 
 # -- 따릉이 대여소 기본 정보
     cur.execute('''
 CREATE TABLE bike_station_info
 (
-  id              TEXT NULL DEFAULT '', -- 장소 고유식별자
-  station_id      TEXT NULL    , -- 대여소 id
-  station_no      TEXT NOT NULL, -- 대여소 no
-  station_lat     REAL NULL    , -- 대여소 위도
-  station_lon     REAL NULL    , -- 대여소 경도
-  station_name_ko TEXT NOT NULL, -- 한국어 대여소명
-  station_name_en TEXT NULL    , -- 영어 대여소명
-  insert_dttm     TEXT NOT NULL, -- 입력일시
-  PRIMARY KEY (station_name_ko),
-  FOREIGN KEY (id) REFERENCES detail_cache (id)
+  id              TEXT NOT NULL,   -- 관광지 고유식별자
+  station_id      TEXT NOT NULL,   -- 대여소 id
+  station_name_ko TEXT NOT NULL,   -- 한국어 대여소명
+  station_name_en TEXT NULL    ,   -- 영어 대여소명
+  insert_dttm     TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  PRIMARY KEY (id, station_id),
+  FOREIGN KEY (id) REFERENCES attraction_info (id)
 )''')
 
 #     cur.execute('''
 # CREATE INDEX idx_station_location
 #   ON bike_station_info (station_lat ASC, station_lon ASC)
 #  ''')
+
+# -- 인구밀도 예측 캐싱 테이블
+    cur.execute('''
+CREATE TABLE IF NOT EXISTS density_cache
+(
+  id          TEXT NOT NULL,   -- 관광지 고유식별자
+  fcst_dt     TEXT NOT NULL,   -- 예측 일시
+  level       TEXT NULL    ,   -- 인구밀도 수준
+  insert_dttm TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  PRIMARY KEY (id, fcst_dt),
+  FOREIGN KEY (id, fcst_dt) REFERENCES density_raw (id, fcst_dt)
+)''')
+
+# -- 인구밀도 예측 원본 테이블
+    cur.execute('''
+CREATE TABLE IF NOT EXISTS density_raw
+(
+  id          TEXT NOT NULL,   -- 관광지 고유식별자
+  fcst_dt     TEXT NOT NULL,   -- 예측 일시
+  level       TEXT NULL    ,   -- 인구밀도 수준
+  insert_dttm TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  PRIMARY KEY (id, fcst_dt),
+  FOREIGN KEY (id) REFERENCES attraction_info (id)
+)''')
+
+# -- 각 지역 상세 캐싱 데이터
+    cur.execute('''
+CREATE TABLE IF NOT EXISTS detail_cache
+(
+  id            TEXT NOT NULL,   -- 관광지 고유식별자
+  realtime_pop  TEXT NULL    ,   -- 실시간 인구밀도 수준
+  realtime_pop_dttm TEXT NULL,   -- 실시간 인구 데이터 업데이트 시간
+  realtime_road TEXT NULL    ,   -- 실시간 도로상황 (상세 페이지 진입 시에만 업뎃치기?)
+  insert_dttm   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  PRIMARY KEY (id),
+  FOREIGN KEY (id) REFERENCES detail_raw (id)
+)''')
+
+# -- 각 지역 상세 원본 데이터
+    cur.execute('''
+CREATE TABLE IF NOT EXISTS detail_raw
+(
+  id            TEXT NOT NULL,   -- 관광지 고유식별자
+  realtime_pop  TEXT NULL    ,   -- 실시간 인구밀도 수준
+  realtime_pop_dttm TEXT NULL,   -- 실시간 인구 데이터 업데이트 시간
+  realtime_road TEXT NULL    ,   -- 실시간 도로상황 (상세 페이지 진입 시에만 업뎃치기?)
+  insert_dttm   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  PRIMARY KEY (id),
+  FOREIGN KEY (id) REFERENCES attraction_info (id)
+)''')
+
+# -- 날씨 예측 캐싱 테이블
+    cur.execute('''
+CREATE TABLE IF NOT EXISTS weather_cache
+(
+  id          TEXT    NOT NULL,   -- 관광지 고유식별자
+  fcst_dt     TEXT    NOT NULL,   -- 예측 일시
+  fcst_temp   INTEGER NULL    ,   -- 예측 온도
+  rain_chance INTEGER NULL    ,   -- 예측 강수확률
+  insert_dttm TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  PRIMARY KEY (id, fcst_dt),
+  FOREIGN KEY (id, fcst_dt) REFERENCES weather_raw (id, fcst_dt)
+)''')
+
+# -- 날씨 예측 원본 테이블
+    cur.execute('''
+CREATE TABLE IF NOT EXISTS weather_raw
+(
+  id          TEXT    NOT NULL,   -- 관광지 고유식별자
+  fcst_dt     TEXT    NOT NULL,   -- 예측 일시
+  fcst_temp   INTEGER NULL    ,   -- 예측 온도
+  rain_chance INTEGER NULL    ,   -- 예측 강수확률
+  insert_dttm TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  PRIMARY KEY (id, fcst_dt),
+  FOREIGN KEY (id) REFERENCES attraction_info (id)
+)''')
 
     print("[DB] 테이블 생성 완료.")
     conn.commit()
