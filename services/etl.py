@@ -7,7 +7,6 @@ sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
 from models import db
 from datetime import datetime
 
-@db.execution_time
 def raw_to_cache_etl(domain):
     conn = db.connect_db()
     cursor = conn.cursor()

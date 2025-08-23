@@ -1,4 +1,4 @@
-### 실시간 인구밀도 현황
+### 실시간 날씨 현황
 # 통신데이터를 바탕으로 전체 인구를 추정하여 사용자에게 제공되기까지 15분 소요
 # - 예) 10시 10분~10시 15분에 집계된 데이터는 전체 인구 추정 과정을 거쳐 10시 30분에 사용자에게 제공
 # 
@@ -10,14 +10,17 @@
 # An index that calculated the 4 stages of congestion into
 # crowded, slightly crowded, moderate, and comfortable (ref.Seoul Real-Time Population Data API manual_eng.pdf)
 
+import sys
+sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
 import os, utils
 from dotenv import load_dotenv
 from datetime import datetime
-import sys
-sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
 from models import db
+from itertools import chain
+
+
 
 load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
@@ -33,29 +36,30 @@ def mapping_id(attraction_name_ko):
         # city_data 전체를 그대로 전달하면 데이터 크기가 커지고 전송 및 처리 비용이 증가합니다.
         # 필요한 컬럼 2개만 추출해서 전달하면 DB 쓰기 시점에 불필요한 데이터 파싱/처리가 줄어듭니다.
 
-        return {
-            'id': city_data.get('AREA_CD'), # POI008
-            'realtime_pop': city_data.get('AREA_CONGEST_LVL'), # 인구밀도혼잡도 레벨
-            'realtime_pop_dttm' : city_data.get('PPLTN_TIME'), # 실시간 인구 데이터 업데이트 시간
-        }
+        area_code = city_data.get('AREA_CD') # POI033 서울역
+        fcst_ppltn = city_data.get('FCST_PPLTN') # 인구밀도예측 목록
+
+        return [{**item, 'id': area_code} for item in fcst_ppltn]
+
   
     except Exception as e:
         print(f'error message : {e}')
         print(f"error url : {url}")
         return []  # [] 반환해 나중에 필터링 예정
     
-# id - area_congestion_lvl 목록 생성 함수
+# id - FCST_PPLTN 예측 목록 생성 함수
 def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달하는 것이 안전
     with ThreadPoolExecutor() as executor:
-        results = list(executor.map(fn, load))
+        # https://docs.python.org/ko/3/library/itertools.html#itertools.chain.from_iterable
+        results = list(chain.from_iterable(executor.map(fn, load)))
 
         return results
 
-def fetch_realtime_pop():
+def fetch_density():
     result_list = concurrent_processing(mapping_id,db.get_attraction_name())
-    db.insert_data('detail_raw', result_list)
-    print(f'detail_raw {len(result_list)}개 데이터 insert 완료 {datetime.now().strftime('%Y%m%d%H%M%S')}')
+    db.insert_data('density_raw', result_list)
+    print(f'density_raw {len(result_list)}개 데이터 insert 완료 {datetime.now().strftime('%Y%m%d%H%M%S')}')
     return result_list
 
 if __name__ == "__main__":
-    fetch_realtime_pop()
+    fetch_density()
