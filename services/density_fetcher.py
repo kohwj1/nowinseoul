@@ -35,16 +35,17 @@ def mapping_id(attraction_name_ko):
         # city_data 전체를 그대로 전달하면 데이터 크기가 커지고 전송 및 처리 비용이 증가합니다.
         # 필요한 컬럼 2개만 추출해서 전달하면 DB 쓰기 시점에 불필요한 데이터 파싱/처리가 줄어듭니다.
 
-        area_code = city_data.get('AREA_CD') # POI033 서울역
         fcst_ppltn = city_data.get('FCST_PPLTN') # 인구밀도예측 목록
 
-        return [{**item, 'id': area_code} for item in fcst_ppltn]
+        # **item : item dict 언패킹
+        return [{'id': city_data.get('AREA_CD'), # POI033 서울역
+                 **item} for item in fcst_ppltn]
 
   
     except Exception as e:
         print(f'error message : {e}')
         print(f"error url : {url}")
-        return []  # [] 반환해 나중에 필터링 예정
+        return []  # # [] 반환해 나중에 When flattened, it disappears.
     
 # id - FCST_PPLTN 예측 목록 생성 함수
 def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달하는 것이 안전
