@@ -13,12 +13,12 @@ def init_app_fetch_data():
 
     # 2. CSV 파일 업로드 (예시)
     import_attraction()
-    # import_csv('orders', 'orders.csv')
+
 
 
     ## services.init_bike_station
     ## 1. 실시간 도시 데이터에서 도시ID - 대여소ID 매핑
-    db.insert_data('bike_station_info',concurrent_processing(mapping_id,db.get_attraction_name()))
+    db.insert_data('bike_station_info',concurrent_processing(mapping_id,db.get_attraction_name_ko()))
     print('bike_station_info')
 
 def init_app_before_translation():

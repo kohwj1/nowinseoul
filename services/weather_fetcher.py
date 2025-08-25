@@ -1,4 +1,7 @@
 ### 실시간 날씨 예측
+# 원천부서 이원재(02-2133-4272)로 문의요청 2025.04.11 13:55 댓글
+# 9월 중순에 api update 예정. 만약, 그 이후에도 느리면 기상청 api 허브에서 행정동/위치 고정시켜서 가져와야함.
+# 날씨만 따로 api제공할 계획 없음(기상청 관할이기 때문)
 
 
 import sys
@@ -12,11 +15,10 @@ from models import db
 from itertools import chain
 
 
-
 load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
 
-## 실시간 도시 데이터에서 도시ID - 인구밀도 매핑
+## 실시간 도시 데이터에서 날씨 예측정보 fetch
 def mapping_id(attraction_name_ko):
         # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     try:
@@ -43,7 +45,7 @@ def mapping_id(attraction_name_ko):
         print(f"error url : {url}")
         return []  # [] 반환해 나중에 When flattened, it disappears.
     
-# id - FCST24HOURS 예측 목록 생성 함수
+# FCST24HOURS 날씨 예측 목록 생성 함수
 def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달하는 것이 안전
     with ThreadPoolExecutor() as executor:
         # https://docs.python.org/ko/3/library/itertools.html#itertools.chain.from_iterable
@@ -52,7 +54,7 @@ def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달�
         return results
 @utils.execution_time
 def fetch_weather():
-    result_list = concurrent_processing(mapping_id,db.get_attraction_name()) # 여기까지 21.3초 걸렸음
+    result_list = concurrent_processing(mapping_id,db.get_attraction_name_ko()) # 여기까지 21.3초 걸렸음
     db.insert_data('weather_raw', result_list)
     print(f'weather_raw {len(result_list)}개 데이터 insert 완료 {datetime.now().strftime('%Y%m%d%H%M%S')}')
     # weather_raw 1920(24*80)개 데이터 insert 완료 20250824224242
