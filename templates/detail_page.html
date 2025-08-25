@@ -8,7 +8,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}"> -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/crowd_density.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
   <title>Detailed Page</title>
 </head>
 
@@ -32,17 +35,23 @@
     </div>
 
     <section class="info-grid">
-        <section class="crowd-density-section">
-            <div class="info-tag" id="traffic-tag">{{ data.AREA_PPLTN[0].FCST_CONGET_LVL }}</div>
-            <div class="info-title">Crowd Density</div>
-            <div class="progress-bar-container" id="crowd-density-bar"></div>
-            <div class="time-labels">
-                <span id="time-now">Now</span>
-                <span id="time-1">--</span>
-                <span id="time-2">--</span>
-                <span id="time-3">--</span>
-            </div>
-        </section>
+      <section class="crowd-density-section">
+        <div class="info-header">
+          <div class="info-tag" id="traffic-tag">
+            {{ data.AREA_PPLTN[0].FCST_CONGEST_LVL }}
+          </div>
+          <div class="info-title">Crowd Density</div>
+        </div>
+
+        <div class="progress-bar-container" id="crowd-density-bar"></div>
+
+        <div class="time-labels">
+          <span id="time-now">Now</span>
+          <span id="time-1">--</span>
+          <span id="time-2">--</span>
+          <span id="time-3">--</span>
+        </div>
+      </section>
 
         <!--Traffic-->
         <section class="traffic-conditions-section">
@@ -94,7 +103,7 @@
   </div>
 
   <script>
-    // const bikeList = {{ data | tojson }};
+    const bikeList = {{ data | tojson }};
     const pageData = {{ data | tojson }};
     var crowdData = pageData.AREA_PPLTN;
     var bikeData = pageData.SBIKE_STTS;
@@ -103,5 +112,7 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
   <script src="{{ url_for('static', filename='js/bike.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/crowd_density.js') }}"></script>  
+  <script src="{{ url_for('static', filename='js/Weather.js') }}"></script>  
 </body>
 </html>
