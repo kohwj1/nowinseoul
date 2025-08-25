@@ -93,7 +93,14 @@ document.getElementById('btnReset').addEventListener('click', () => {
     }
 )
 
-document.getElementById('btnSearch').addEventListener('click', () => searchPlace())
+document.getElementById('btnSearch').addEventListener('click', () => {
+    const keyword = document.getElementById('mapSearch').value;
+    if (keyword == '') {
+        return;
+    } else {
+        searchPlace()
+    }
+})
 document.getElementById('filterForm').addEventListener('submit', (e) => {
     e.preventDefault()
 })
