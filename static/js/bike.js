@@ -11,8 +11,9 @@ function circleOnMap(marker_data, map) {
                 })})
                 // L.circleMarker([m.SBIKE_X, m.SBIKE_Y], {radius: 15, color: '#33a758', fillColor: '#33a758', fillOpacity: 1})
                 // .addTo(map)
-                // L.marker([m.SBIKE_X, m.SBIKE_Y],{icon: L.divIcon({html: `<div class="circle-text">${m.SBIKE_PARKING_CNT}</div>`, iconSize: [0, 0], iconAnchor: [0, 0],})})
                 .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br>${m.SBIKE_PARKING_CNT} bike(s)`)
+                .addTo(map)
+                L.marker([m.SBIKE_X, m.SBIKE_Y],{icon: L.divIcon({html: `<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${m.SBIKE_PARKING_CNT}</span>`, iconSize: [0, 0], iconAnchor: [-5, 15],})})
                 .addTo(map)
         }
     }
