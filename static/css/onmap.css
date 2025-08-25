@@ -73,4 +73,8 @@ main {
     #filterDiv {
         height:100vh;
     }
+
+    .accordion-button::after {
+        display: none;
+    }
 }

@@ -57,7 +57,8 @@ for (i of filter_items) {
 //filter UI 접기/펼치기
 
 const windowwidth = window.innerWidth
-let isFilterDisplayed = false;
+let isFilterOpened = false;
+const mapCanvas = document.getElementById('map');
 const filterDisplayBtn = document.getElementById('filterDisplay');
 const filterUI = document.getElementById('mapFilter');
 const filterDiv = document.getElementById('filterDiv');
@@ -65,14 +66,14 @@ const filterBody = document.querySelector('#filterDiv .accordion-body');
 
 filterDisplayBtn.addEventListener('click', () => {
     if (windowwidth <= 1000) {
-        if (!isFilterDisplayed) {
+        if (!isFilterOpened) {
             filterUI.style.bottom = 0 + 'px';
         } else {
             filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
         }
         filterUI.classList.toggle('move-up');
         filterDisplayBtn.classList.toggle('collapsed')
-        isFilterDisplayed = !isFilterDisplayed;
+        isFilterOpened = !isFilterOpened;
     }
 });
 
