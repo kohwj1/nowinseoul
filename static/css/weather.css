@@ -1,3 +1,4 @@
+/* ====== 레이아웃 공통 ====== */
 .additional-info-section {
   padding: 0 1rem;
   display: flex;
@@ -5,31 +6,29 @@
   gap: 1.25rem;
 }
 
-/* Weather card */
+/* ====== Weather 카드 ====== */
 .weather-section{
-  background:#eef0ff;
-  border-radius:12px;
-  padding:14px 16px;
+  background:#eef0ff; border-radius:12px; padding:15px 16px;
   box-shadow:0 2px 6px rgba(17,24,39,.06);
+  overflow:visible; /* 폭 확장 시 잘리지 않음 */
 }
 
 /* 헤더 */
-.weather-header{
-  display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;
-}
+.weather-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
 .weather-header h2{ font-size:1.1rem; font-weight:700; color:#1f2937; margin:0; }
 .current-temp{ font-size:1.5rem; font-weight:800; color:#111827; letter-spacing:.2px; }
 
-/* 가로 리스트 */
+/* 예보 리스트(그래프는 그대로 고정, 컨테이너만 스크롤) */
+.weather-forecast-container{ scrollbar-width:none; }
+.weather-forecast-container::-webkit-scrollbar{ display:none; }
+
 .weather-forecast{
-  display:flex; align-items:flex-end; justify-content:flex-start;
-  gap:12px; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:8px;
+  display:flex; align-items:flex-end; gap:0.6rem;
+  overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:8px;
+  overscroll-behavior-x: contain;
 }
 
-/* 각 아이템 */
-.forecast-item{ display:flex; flex-direction:column; align-items:center; text-align:center; flex:0 0 auto; width:15%; }
-
-/* 라벨 */
+.forecast-item{ flex:0 0 auto; width:15%; display:flex; flex-direction:column; align-items:center; text-align:center; }
 .forecast-item .time{ font-size:.8rem; color:#6b7280; margin-bottom:2px; }
 .forecast-item .temp{ font-size:.9rem; font-weight:700; color:#374151; margin-bottom:6px; }
 
@@ -45,23 +44,15 @@
 }
 .rain-chance{ font-size:.75rem; color:#06b6d4; font-weight:700; }
 
-/* PC 확장 */
-@media (min-width: 48rem) {
-  .weather-section, .public-bike-section { flex: 1; display: flex; flex-direction: column; }
-  .weather-forecast-container { flex: 1; display: flex; align-items: center; }
-  .forecast-item .time { font-size: 1rem; margin-bottom: 6px; }
-  .forecast-item .temp { font-size: 1.2rem; margin-bottom: 10px; }
-  .rain-chance-graph { max-width: 36px; height: 100px; margin-bottom: 10px; }
-  .rain-chance { font-size: 1rem; }
+/* 데스크톱 살짝 확대(선택) */
+@media (min-width:48rem){
+  .forecast-item .time{ font-size:1rem; margin-bottom:6px; }
+  .forecast-item .temp{ font-size:1.1rem; margin-bottom:8px; }
+  .rain-chance-graph{ max-width:30px; height:100px; margin-bottom:10px; }
+  .rain-chance{ font-size:.95rem; }
 }
 
-/* 모바일 최적화 */
-@media (max-width: 47.99rem){
-  .weather-forecast{ gap: 12px; align-items: stretch; padding-bottom: 10px; }
-  .forecast-item{ flex: 0 0 11%; min-width: 17%; display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .forecast-item .time{ height: 1.2rem; line-height: 1.2rem; font-size: 0.8rem; color: #6c757d; margin: 0 0 4px 0; white-space: nowrap; }
-  .forecast-item .temp{ height: 1.3rem; display: inline-flex; align-items: center; gap: 2px; font-size: 0.95rem; font-weight: 700; color: #374151; margin: 0 0 8px 0; white-space: nowrap; }
-  .rain-chance-graph{ width: 22px; height: 70px; background: #e5e7eb; border-radius: 6px; position: relative; overflow: hidden; margin: 0 0 8px 0; }
-  .rain-chance-graph::after{ content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: var(--rain-height, 0%); background: #10c7e6; border-radius: 6px 6px 4px 4px; transition: height .35s ease; }
-  .rain-chance{ height: 1.2rem; line-height: 1.2rem; font-size: 0.8rem; color: #06b6d4; font-weight: 700; margin: 0; white-space: nowrap; }
+@media (max-width:47.99rem){
+  .weather-forecast { gap: 1rem; }  /* 👈 원하는 간격(px)으로 변경 */
 }
+

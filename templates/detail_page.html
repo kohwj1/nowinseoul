@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}"> -->
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bs/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}"> -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/crowd_density.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
@@ -61,27 +63,33 @@
 
         <!--Weather-->
         <div class="weather-section">
-            <div class="weather-header">
-                <h2>Weather</h2>
-                <span class="current-temp">
-                    {{ data.WEATHER_STTS[0].TEMP }}<span class="unit">°C</span>
-                </span>
-            </div>
+  <div class="weather-header">
+    <h2>Weather</h2>
+    <span class="current-temp">
+      {{ data.WEATHER_STTS[0].TEMP }}<span class="unit">°C</span>
+    </span>
+  </div>
 
-            <div class="weather-forecast-container">
-                <div class="weather-forecast">
-                    {% for item in data.WEATHER_STTS %}
-                    <div class="forecast-item">
-                        <span class="time">{{ item.FCST_DT[8:10] }}:00</span>
-                        <span class="temp">
-                            {{ item.TEMP }}<span class="unit">°C</span>
-                        </span>
-                        <div class="rain-chance-graph"></div>
-                        <div class="rain-chance">{{ item.RAIN_CHANCE }}%</div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+  <div class="weather-forecast-container">
+    <div class="weather-forecast">
+      {% for item in data.WEATHER_STTS %}
+      <div class="forecast-item">
+        <span class="time">{{ item.FCST_DT[8:10] }}:00</span>
+        <span class="temp">{{ item.TEMP }}<span class="unit">°C</span></span>
+        <div class="rain-chance-graph"></div>
+        <div class="rain-chance">{{ item.RAIN_CHANCE }}%</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+          <!-- 드래그 트랙 + 썸 (버튼) -->
+        <div class="weather-scroll-controls">
+          <div class="scroll-track" role="slider" aria-label="Forecast scroll"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+            <!-- <div class="scroll-thumb" aria-hidden="true"></div> -->
+          </div>
+        </div>
         </div>
 
         <!--Public Bike -->
