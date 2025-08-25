@@ -71,7 +71,6 @@ function heatOnMap(marker_data) {
 function openTooltip() {
     map.eachLayer(function(layer) {
     if (layer instanceof L.Marker) {
-        map.get
         map.setView(layer.getLatLng());
         layer.openPopup();
         return;
