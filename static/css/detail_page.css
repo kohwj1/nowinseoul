@@ -1,434 +1,102 @@
 /*========== 1. 기본 설정 (Mobile First) ==========*/
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Noto Sans KR', Arial, sans-serif;
-    background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  background-color: #f0f2f5;
 }
 
 .page-container {
-    max-width: 31.25rem;
-    margin: 0 auto;
-    background-color: #fff;
+  max-width: 31.25rem;
+  margin: 0 auto;
+  background-color: #fff;
 }
 
 /*========== 2. 상단 이미지 및 제목 섹션 ==========*/
 .top-section {
-    position: relative;
-    height: 20rem;
-    color: #fff;
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
+  position: relative;
+  height: 20rem;
+  color: #fff;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
-
 .background-image-cover {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  position: absolute; top: 0; left: 0; z-index: 0;
 }
-
 .back-button {
-    position: absolute;
-    top: 1.25rem;
-    left: 1.25rem;
-    z-index: 2;
-    width: 2.1875rem;
-    height: 2.1875rem;
-    border-radius: 50%;
-    background-color: rgba(251, 251, 251, 0.5);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2;
+  width: 2.1875rem; height: 2.1875rem; border-radius: 50%;
+  background-color: rgba(251, 251, 251, 0.5);
+  border: none; cursor: pointer; display: flex; justify-content: center; align-items: center;
 }
-
-.back-button img {
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.hero-text {
-    position: absolute;
-    bottom: 1.875rem;
-    left: 1.875rem;
-    z-index: 2;
-}
-
+.back-button img { width: 1.25rem; height: 1.25rem; }
+.hero-text { position: absolute; bottom: 1.875rem; left: 1.875rem; z-index: 2; }
 .hero-text h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+  margin: 0; font-size: 2.5rem; font-weight: bold;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
 }
 
 /*========== 3. 본문 내용 섹션 ==========*/
-.content-section {
-    position: relative;
-    padding: 1.25rem 1rem;
-    margin-top: -1rem;
-}
+.content-section { position: relative; padding: 1.25rem 1rem; margin-top: -1rem; }
+#location-description { font-size: 13px; line-height: 2rem; }
 
-#location-description {
-    font-size: 13px;
-    line-height: 2rem;
-}
-
-/* 'read more' 버튼 기능 관련 (모바일 전용) */
+/* 모바일 read more */
 @media (max-width: 48rem) {
-    .text-container {
-        max-height: 200px;
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out;
-    }
-
-    .text-container.expanded {
-        max-height: none;
-        overflow: visible;
-    }
-    
-    #read-more-btn {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background: white;
-        border: 1px solid #ccc;
-        padding: 4px 8px; 
-        font-size: 0.75rem;
-        cursor: pointer;
-        font-family: 'Noto Sans KR', sans-serif;
-        border-radius: 20px;
-        z-index: 10;
-    }
-
-    #read-more-btn.hidden {
-        display: none;
-    }
+  .text-container { max-height: 200px; overflow: hidden; transition: max-height 0.5s ease-in-out; }
+  .text-container.expanded { max-height: none; overflow: visible; }
+  #read-more-btn {
+    display: block; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    background: #fff; border: 1px solid #ccc; padding: 4px 8px; font-size: 0.75rem;
+    cursor: pointer; font-family: 'Noto Sans KR', sans-serif; border-radius: 20px; z-index: 10;
+  }
+  #read-more-btn.hidden { display: none; }
 }
 
-/* PC 버전에서는 항상 전체 텍스트 보이기 */
+/* PC에선 항상 전체 텍스트 */
 @media (min-width: 48rem) {
-    .text-container {
-        max-height: none;
-        overflow: visible;
-    }
-    
-    #read-more-btn {
-        display: none !important;
-    }
+  .text-container { max-height: none; overflow: visible; }
+  #read-more-btn { display: none !important; }
 }
 
-/*========== 4. 정보 카드 섹션 ==========*/
+/*========== 4. 카드 공통 ==========*/
 .crowd-density-section,
 .traffic-conditions-section {
-    padding: 1.25rem 1rem;
-    margin: 0.625rem 1.25rem 1.25rem;
-    border-radius: 0.9375rem;
-    background-color: #eeeeef;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+  padding: 1.25rem 1rem;
+  margin: 0.625rem 1.25rem 1.25rem;
+  border-radius: 0.9375rem;
+  background-color: #eeeeef;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
 }
 
-.info-tag.comfortable { background-color:#22c55e; color:#fff; } /* green */
-.info-tag.medium      { background-color:#f59e0b; color:#fff; } /* yellow(기존 medium 재사용) */
-.info-tag.congested   { background-color:#ef4444; color:#fff; } /* red */
+.info-title { display: inline-block; font-size: 1.2rem; font-weight: bold; }
 
-.info-title {
-    display: inline-block;
-    font-size: 1.2rem;
-    font-weight: bold;
+/* 배지(공통 베이스) */
+.info-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  width: max-content;
 }
+.info-tag.comfortable { background-color:#22c55e; color:#fff; }
+.info-tag.medium      { background-color:#f59e0b; color:#fff; }
+.info-tag.congested   { background-color:#ef4444; color:#fff; }
 
-/*========== 5. 프로그레스 바 ==========*/
-.progress-bar-container {
-    width: 100%;
-    height: 12px;
-    border-radius: 6px;
-    background: linear-gradient(to right, red, orange, yellow, #81c784, green);
-}
-
-.time-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.3125rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-/*========== 6. PC 버전 스타일 ==========*/
+/* 레이아웃: PC 그리드 */
 @media (min-width: 48rem) {
-    .page-container { max-width: 100rem; }
-    .top-section { height: 20rem; }
-    .hero-text h1 { font-size: 3.5rem; }
-    .content-section { padding: 2.5rem 1.875rem; }
-    .crowd-density-section { margin-top: -1rem; }
-}
+  .page-container { max-width: 100rem; }
+  .top-section { height: 20rem; }
+  .hero-text h1 { font-size: 3.5rem; }
+  .content-section { padding: 2.5rem 1.875rem; }
+  .crowd-density-section { margin-top: -1rem; }
 
-/*========== 7. 추가 정보 섹션 (날씨, 공공 자전거) ==========*/
-.additional-info-section {
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-/* --- Weather card (디자인만 변경) --- */
-.weather-section{
-    background:#eef0ff;              /* 예시처럼 연한 보라 카드 */
-    border-radius:12px;
-    padding:14px 16px;
-    box-shadow:0 2px 6px rgba(17,24,39,.06);
-}
-
-/* 헤더 */
-.weather-header{
-    display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;
-}
-.weather-header h2{
-    font-size:1.1rem;font-weight:700;color:#1f2937;margin:0;
-}
-.current-temp{
-    font-size:1.5rem;font-weight:800;color:#111827;letter-spacing:.2px;
-}
-
-
-/* 가로 리스트 */
-.weather-forecast{
-    display:flex;
-    align-items:flex-end;
-    justify-content:flex-start;
-    gap:12px;                        /* 촘촘한 간격 */
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    padding-bottom:8px;
-}
-
-/* 각 아이템 */
-.forecast-item{
-    display:flex;flex-direction:column;align-items:center;text-align:center;
-    flex:0 0 auto; width:15%;        /* 화면에 약 5개 보이는 느낌 */
-}
-
-/* 시간/기온 라벨 */
-.forecast-item .time{
-    font-size:.8rem;color:#6b7280;margin-bottom:2px;
-}
-.forecast-item .temp{
-    font-size:.9rem;font-weight:700;color:#374151;margin-bottom:6px;
-}
-
-
-/* 막대(청록색), 트랙은 연한 회색 */
-.rain-chance-graph{
-    width:100%;
-    max-width:26px;                  /* 막대 넓이 제한 */
-    height:70px;
-    background:#e5e7eb;
-    border-radius:6px;
-    position:relative;
-    overflow:hidden;
-    margin-bottom:6px;
-}
-.rain-chance-graph::after{
-    content:"";
-    position:absolute;left:0;bottom:0;width:100%;
-    height:var(--rain-height,0%);    /* JS에서 주는 값 사용 */
-    background:#10c7e6;              /* 청록색 바 */
-    border-radius:6px 6px 4px 4px;
-    transition:height .35s ease;
-}
-
-/* 퍼센트 라벨 */
-.rain-chance{
-    font-size:.75rem;
-    color:#06b6d4;
-    font-weight:700;
-}
-
-/* 공공 자전거 */
-.public-bike-section {
-    background-color: #ffffff;
-    border-radius: 0.9375rem;
-    padding: 1rem;
-    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
-    border: 1px solid #dcdcdc;
-}
-
-.bike-header { margin-bottom: 1rem; }
-.bike-header p { font-size: 1rem; font-weight: bold; margin: 0; }
-
-.bike-map {
-    width: 100%;
-    height: 12.5rem;
-    background-color: #e0e0e0;
-    border-radius: 0.625rem;
-    margin-bottom: 1rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.bike-list { list-style: none; padding: 0; margin: 0; }
-
-.bike-list li {
-    display: flex;
-    align-items: center;
-    padding: 0.625rem 0;
-    border-bottom: 1px solid #eee;
-}
-.bike-list li:last-child { border-bottom: none; }
-
-.bike-count-list {
-    width: 2.5rem; height: 2.5rem; border-radius: 50%;
-    background-color: #33a758; color: #fff; font-weight: bold;
-    display: flex; justify-content: center; align-items: center;
-    margin-right: 0.75rem; font-size: 1rem;
-}
-.bike-station-name { font-size: 0.9rem; flex: 1; }
-
-/*========== PC 버전 추가 스타일 ==========*/
-@media (min-width: 48rem) {
-    .additional-info-section {
-    display: flex;
-    align-items: stretch; /* 두 카드 같은 높이 */
-    gap: 1rem;
-  }
-
-  /* 날씨와 자전거 높이 동일 */
-  .weather-section,
-  .public-bike-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* 날씨 카드 내부 확장 */
-  .weather-forecast-container {
-    flex: 1;              /* 남은 공간 채우기 */
-    display: flex;
-    align-items: center;  /* 세로 가운데 정렬 */
-  }
-
-  /* --- 날씨 아이템 크기 키우기 --- */
-  .forecast-item .time {
-    font-size: 1rem;      /* 기존 .8rem → 크게 */
-    margin-bottom: 6px;
-  }
-
-  .forecast-item .temp {
-    font-size: 1.2rem;    /* 기존 .9rem → 크게 */
-    margin-bottom: 10px;
-  }
-
-  .rain-chance-graph {
-    max-width: 36px;      /* 막대 넓이 확대 (기존 26px) */
-    height: 100px;        /* 막대 높이 확대 (기존 70px) */
-    margin-bottom: 10px;
-  }
-
-  .rain-chance {
-    font-size: 1rem;      /* 기존 .75rem → 크게 */
-  }
-}
-
-/* 따릉이 지도 서식 */
-#map, .leaflet-div-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.circle-text {
-    color: #fff;
-    font-weight: 800;
-    font-family: 'Noto Sans KR', Arial, sans-serif;
-}
-.leaflet-popup {
-    max-width: 20rem;
-    font-family: 'Noto Sans KR', Arial, sans-serif;
-}
-
-@media (max-width: 47.99rem){
-  /* 아이템 4칸 유지 + 내부 행 정렬용 높이 지정 */
-  .weather-forecast{
-    gap: 12px;
-    align-items: stretch;        /* 각 칼럼 높이 동일하게 */
-    padding-bottom: 10px;
-  }
-
-  .forecast-item{
-    flex: 0 0 11%;    /* ← 모바일도 10% 적용 */
-    min-width: 17%;   /* ← 최소 폭도 10%로 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  /* 1) 시간 라벨: 한 줄 고정 + 동일 높이 */
-  .forecast-item .time{
-    height: 1.2rem;
-    line-height: 1.2rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-    margin: 0 0 4px 0;
-    white-space: nowrap;
-  }
-
-  /* 2) 온도 + °C를 한 줄에, 가운데 정렬 */
-  .forecast-item .temp{
-    height: 1.3rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;                    /* 숫자와 단위 간격 */
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #374151;
-    margin: 0 0 8px 0;
-    white-space: nowrap;
-  }
-  /* 3) 막대: 모두 같은 높이/여백 */
-  .rain-chance-graph{
-    width: 22px;
-    height: 70px;
-    background: #e5e7eb;
-    border-radius: 6px;
-    position: relative;
-    overflow: hidden;
-    margin: 0 0 8px 0;
-  }
-  .rain-chance-graph::after{
-    content: "";
-    position: absolute; left: 0; bottom: 0; width: 100%;
-    height: var(--rain-height, 0%);     /* 기존 JS 값 사용 */
-    background: #10c7e6;
-    border-radius: 6px 6px 4px 4px;
-    transition: height .35s ease;
-  }
-
-  /* 4) 퍼센트: 한 줄 고정 + 동일 높이 */
-  .rain-chance{
-    height: 1.2rem;
-    line-height: 1.2rem;
-    font-size: 0.8rem;
-    color: #06b6d4;
-    font-weight: 700;
-    margin: 0;
-    white-space: nowrap;
-  }
-}
-
-@media (min-width: 48rem) {
-  /* 전체 그리드: 좌 1열(Crowd, Traffic), 우 1열(Bike), 맨 아래 Weather 전체폭 */
   .info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;   /* 좌/우 1:1 */
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
       "crowd   bike"
@@ -438,24 +106,37 @@ body {
     margin: 0 1rem 1rem;
     align-items: start;
   }
-
-  .crowd-density-section   { grid-area: crowd;   margin-top: 0 !important; } /* 겹침 방지 */
+  .crowd-density-section   { grid-area: crowd;   margin-top: 0 !important; }
   .traffic-conditions-section { grid-area: traffic; }
   .public-bike-section     { grid-area: bike;    display: flex; flex-direction: column; }
   .weather-section         { grid-area: weather; }
 
-  /* 카드 패딩(선택 조절) */
   .crowd-density-section,
   .traffic-conditions-section,
   .public-bike-section,
   .weather-section { padding: 1rem; }
-
-  /* Weather 아이템 확대 (PC에서만) */
-  .forecast-item .time { font-size: 1rem; margin-bottom: 6px; }
-  .forecast-item .temp { font-size: 1.2rem; margin-bottom: 10px; }
-  .rain-chance-graph   { max-width: 36px; height: 100px; margin-bottom: 10px; }
-  .rain-chance         { font-size: 1rem; }
-
-  /* 스크롤바 공간 살짝 */
-  .weather-forecast { padding-bottom: 12px; }
 }
+
+/* 공공 자전거 (공통) */
+.public-bike-section {
+  background-color: #ffffff; border-radius: 0.9375rem; padding: 1rem;
+  box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.05); border: 1px solid #dcdcdc;
+}
+.bike-header { margin-bottom: 1rem; }
+.bike-header p { font-size: 1rem; font-weight: bold; margin: 0; }
+.bike-map { width: 100%; height: 12.5rem; background-color: #e0e0e0; border-radius: 0.625rem; margin-bottom: 1rem; position: relative; overflow: hidden; }
+.bike-list { list-style: none; padding: 0; margin: 0; }
+.bike-list li { display: flex; align-items: center; padding: 0.625rem 0; border-bottom: 1px solid #eee; }
+.bike-list li:last-child { border-bottom: none; }
+.bike-count-list {
+  width: 2.5rem; height: 2.5rem; border-radius: 50%;
+  background-color: #33a758; color: #fff; font-weight: bold;
+  display: flex; justify-content: center; align-items: center;
+  margin-right: 0.75rem; font-size: 1rem;
+}
+.bike-station-name { font-size: 0.9rem; flex: 1; }
+
+/* 지도 서식 */
+#map, .leaflet-div-icon { display: flex; justify-content: center; align-items: center; }
+.circle-text { color: #fff; font-weight: 800; font-family: 'Noto Sans KR', Arial, sans-serif; }
+.leaflet-popup { max-width: 20rem; font-family: 'Noto Sans KR', Arial, sans-serif; }
