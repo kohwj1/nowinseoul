@@ -11,6 +11,21 @@ main {
     height: 96vh;
 }
 
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    position:fixed;
+    bottom:0px;
+    z-index: 999999;
+    background-color: #fff;
+    padding: 0.4rem;
+}
+
+.public-data {
+    height: 24px;
+}
+
 .nav-item {
     text-decoration: none;
 }

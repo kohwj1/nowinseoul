@@ -66,9 +66,9 @@ const filterBody = document.querySelector('#filterDiv .accordion-body');
 filterDisplayBtn.addEventListener('click', () => {
     if (windowwidth <= 1000) {
         if (!isFilterDisplayed) {
-            filterUI.style.bottom = 0 + 'px';
+            filterUI.style.bottom = '36px';
         } else {
-            filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
+            filterUI.style.bottom = 36 + -1 * filterBody.offsetHeight + 'px';
         }
         filterUI.classList.toggle('move-up');
         filterDisplayBtn.classList.toggle('collapsed')
@@ -78,7 +78,7 @@ filterDisplayBtn.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (windowwidth <= 1000) {
-        filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
+        filterUI.style.bottom = 36 + -1 * filterBody.offsetHeight + 'px';
     }
     clearMap()
     markOnMap(originMapData)
