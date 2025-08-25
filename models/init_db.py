@@ -75,28 +75,30 @@ CREATE TABLE IF NOT EXISTS density_raw
   FOREIGN KEY (id) REFERENCES attraction_info (id)
 )''')
 
-# -- 각 지역 상세 캐싱 데이터
+# -- 각 지역 상세 캐싱 데이터 from 실시간 인구데이터 (영문)
     cur.execute('''
-CREATE TABLE IF NOT EXISTS detail_cache
+CREATE TABLE detail_cache
 (
-  id            TEXT NOT NULL,   -- 관광지 고유식별자
-  realtime_pop  TEXT NULL    ,   -- 실시간 인구밀도 수준
-  realtime_pop_dttm TEXT NULL,   -- 실시간 인구 데이터 업데이트 시간
-  realtime_road TEXT NULL    ,   -- 실시간 도로상황 (상세 페이지 진입 시에만 업뎃치기?)
-  insert_dttm   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  id                 TEXT NOT NULL,  -- 관광지 고유식별자
+  realtime_pop       TEXT NULL    ,  -- 실시간 인구밀도 수준( 5분마다 갱신 )
+  realtime_pop_dttm  TEXT NULL    ,  -- 실시간 인구 데이터 업데이트 시간
+  realtime_road      TEXT NULL    ,  -- 실시간 주변 도로 (평균)혼잡도( 5분마다 갱신 )
+  realtime_road_dttm TEXT NULL    ,  -- 실시간 주변 도로 (평균)혼잡도 데이터 업데이트 시간
+  insert_dttm        TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- 입력일시
   PRIMARY KEY (id),
   FOREIGN KEY (id) REFERENCES detail_raw (id)
 )''')
 
-# -- 각 지역 상세 원본 데이터
+# -- 각 지역 상세 원본 데이터 from 실시간 인구데이터 (영문)
     cur.execute('''
-CREATE TABLE IF NOT EXISTS detail_raw
+CREATE TABLE detail_raw
 (
-  id            TEXT NOT NULL,   -- 관광지 고유식별자
-  realtime_pop  TEXT NULL    ,   -- 실시간 인구밀도 수준
-  realtime_pop_dttm TEXT NULL,   -- 실시간 인구 데이터 업데이트 시간
-  realtime_road TEXT NULL    ,   -- 실시간 도로상황 (상세 페이지 진입 시에만 업뎃치기?)
-  insert_dttm   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  id                 TEXT NOT NULL,  -- 관광지 고유식별자
+  realtime_pop       TEXT NULL    ,  -- 실시간 인구밀도 수준 ( 5분마다 갱신 )
+  realtime_pop_dttm  TEXT NULL    ,  -- 실시간 인구 데이터 업데이트 시간
+  realtime_road      TEXT NULL    ,  -- 실시간 주변 도로 (평균) 혼잡도( 5분마다 갱신 )
+  realtime_road_dttm TEXT NULL    ,  -- 실시간 주변 도로 (평균) 혼잡도 데이터 업데이트 시간
+  insert_dttm        TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- 입력일시
   PRIMARY KEY (id),
   FOREIGN KEY (id) REFERENCES attraction_info (id)
 )''')
