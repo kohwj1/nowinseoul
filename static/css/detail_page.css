@@ -136,23 +136,9 @@ body {
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
 }
 
-.info-tag {
-    display: inline-block;
-    padding: 0.3125rem 0.75rem;
-    border-radius: 1.25rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-right: 0.625rem;
-}
-
-.info-tag.medium {
-    background-color: #ffc107;
-}
-
-.info-tag.congested {
-    background-color: #dc3545;
-}
+.info-tag.comfortable { background-color:#22c55e; color:#fff; } /* green */
+.info-tag.medium      { background-color:#f59e0b; color:#fff; } /* yellow(기존 medium 재사용) */
+.info-tag.congested   { background-color:#ef4444; color:#fff; } /* red */
 
 .info-title {
     display: inline-block;
@@ -178,25 +164,11 @@ body {
 
 /*========== 6. PC 버전 스타일 ==========*/
 @media (min-width: 48rem) {
-    .page-container {
-        max-width: 100rem;
-    }
-
-    .top-section {
-        height: 20rem;
-    }
-
-    .hero-text h1 {
-        font-size: 3.5rem;
-    }
-
-    .content-section {
-        padding: 2.5rem 1.875rem;
-    }
-
-    .crowd-density-section {
-        margin-top: -1rem;
-    }
+    .page-container { max-width: 100rem; }
+    .top-section { height: 20rem; }
+    .hero-text h1 { font-size: 3.5rem; }
+    .content-section { padding: 2.5rem 1.875rem; }
+    .crowd-density-section { margin-top: -1rem; }
 }
 
 /*========== 7. 추가 정보 섹션 (날씨, 공공 자전거) ==========*/
@@ -207,69 +179,78 @@ body {
     gap: 1.25rem;
 }
 
-/* 날씨 */
-.weather-section {
-    background-color: #f6f8fb;
-    border-radius: 0.9375rem;
-    padding: 1rem;
-    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+/* --- Weather card (디자인만 변경) --- */
+.weather-section{
+    background:#eef0ff;              /* 예시처럼 연한 보라 카드 */
+    border-radius:12px;
+    padding:14px 16px;
+    box-shadow:0 2px 6px rgba(17,24,39,.06);
 }
 
-.weather-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+/* 헤더 */
+.weather-header{
+    display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;
+}
+.weather-header h2{
+    font-size:1.1rem;font-weight:700;color:#1f2937;margin:0;
+}
+.current-temp{
+    font-size:1.5rem;font-weight:800;color:#111827;letter-spacing:.2px;
 }
 
-.weather-header h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0;
+
+/* 가로 리스트 */
+.weather-forecast{
+    display:flex;
+    align-items:flex-end;
+    justify-content:flex-start;
+    gap:12px;                        /* 촘촘한 간격 */
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:8px;
 }
 
-.current-temp {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* 각 아이템 */
+.forecast-item{
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    flex:0 0 auto; width:15%;        /* 화면에 약 5개 보이는 느낌 */
 }
 
-.weather-forecast {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 0.5rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* 시간/기온 라벨 */
+.forecast-item .time{
+    font-size:.8rem;color:#6b7280;margin-bottom:2px;
+}
+.forecast-item .temp{
+    font-size:.9rem;font-weight:700;color:#374151;margin-bottom:6px;
 }
 
-.forecast-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex: 0 0 auto;
-    width: 18%;
+
+/* 막대(청록색), 트랙은 연한 회색 */
+.rain-chance-graph{
+    width:100%;
+    max-width:26px;                  /* 막대 넓이 제한 */
+    height:70px;
+    background:#e5e7eb;
+    border-radius:6px;
+    position:relative;
+    overflow:hidden;
+    margin-bottom:6px;
+}
+.rain-chance-graph::after{
+    content:"";
+    position:absolute;left:0;bottom:0;width:100%;
+    height:var(--rain-height,0%);    /* JS에서 주는 값 사용 */
+    background:#10c7e6;              /* 청록색 바 */
+    border-radius:6px 6px 4px 4px;
+    transition:height .35s ease;
 }
 
-.forecast-item .time {
-    font-size: 0.8rem;
-    color: #6c757d;
-    margin-bottom: 0.2rem;
-}
-
-.forecast-item .temp {
-    font-size: 0.6rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.rain-chance-graph {
-    width: 100%;
-    height: 6.25rem;
-    background-color: #d1e2f6;
-    border-radius: 0.3125rem;
-    position: relative;
+/* 퍼센트 라벨 */
+.rain-chance{
+    font-size:.75rem;
+    color:#06b6d4;
+    font-weight:700;
 }
 
 /* 공공 자전거 */
@@ -281,15 +262,8 @@ body {
     border: 1px solid #dcdcdc;
 }
 
-.bike-header {
-    margin-bottom: 1rem;
-}
-
-.bike-header p {
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0;
-}
+.bike-header { margin-bottom: 1rem; }
+.bike-header p { font-size: 1rem; font-weight: bold; margin: 0; }
 
 .bike-map {
     width: 100%;
@@ -301,11 +275,7 @@ body {
     overflow: hidden;
 }
 
-.bike-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+.bike-list { list-style: none; padding: 0; margin: 0; }
 
 .bike-list li {
     display: flex;
@@ -313,40 +283,59 @@ body {
     padding: 0.625rem 0;
     border-bottom: 1px solid #eee;
 }
-
-.bike-list li:last-child {
-    border-bottom: none;
-}
+.bike-list li:last-child { border-bottom: none; }
 
 .bike-count-list {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: #33a758;
-    color: #fff;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0.75rem;
-    font-size: 1rem;
+    width: 2.5rem; height: 2.5rem; border-radius: 50%;
+    background-color: #33a758; color: #fff; font-weight: bold;
+    display: flex; justify-content: center; align-items: center;
+    margin-right: 0.75rem; font-size: 1rem;
 }
-
-.bike-station-name {
-    font-size: 0.9rem;
-    flex: 1;
-}
+.bike-station-name { font-size: 0.9rem; flex: 1; }
 
 /*========== PC 버전 추가 스타일 ==========*/
 @media (min-width: 48rem) {
     .additional-info-section {
-        flex-direction: row;
-    }
+    display: flex;
+    align-items: stretch; /* 두 카드 같은 높이 */
+    gap: 1rem;
+  }
 
-    .weather-section,
-    .public-bike-section {
-        flex: 1;
-    }
+  /* 날씨와 자전거 높이 동일 */
+  .weather-section,
+  .public-bike-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 날씨 카드 내부 확장 */
+  .weather-forecast-container {
+    flex: 1;              /* 남은 공간 채우기 */
+    display: flex;
+    align-items: center;  /* 세로 가운데 정렬 */
+  }
+
+  /* --- 날씨 아이템 크기 키우기 --- */
+  .forecast-item .time {
+    font-size: 1rem;      /* 기존 .8rem → 크게 */
+    margin-bottom: 6px;
+  }
+
+  .forecast-item .temp {
+    font-size: 1.2rem;    /* 기존 .9rem → 크게 */
+    margin-bottom: 10px;
+  }
+
+  .rain-chance-graph {
+    max-width: 36px;      /* 막대 넓이 확대 (기존 26px) */
+    height: 100px;        /* 막대 높이 확대 (기존 70px) */
+    margin-bottom: 10px;
+  }
+
+  .rain-chance {
+    font-size: 1rem;      /* 기존 .75rem → 크게 */
+  }
 }
 
 /* 따릉이 지도 서식 */
@@ -355,14 +344,118 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .circle-text {
     color: #fff;
     font-weight: 800;
     font-family: 'Noto Sans KR', Arial, sans-serif;
 }
-
 .leaflet-popup {
     max-width: 20rem;
     font-family: 'Noto Sans KR', Arial, sans-serif;
+}
+
+@media (max-width: 47.99rem){
+  /* 아이템 4칸 유지 + 내부 행 정렬용 높이 지정 */
+  .weather-forecast{
+    gap: 12px;
+    align-items: stretch;        /* 각 칼럼 높이 동일하게 */
+    padding-bottom: 10px;
+  }
+
+  .forecast-item{
+    flex: 0 0 11%;    /* ← 모바일도 10% 적용 */
+    min-width: 17%;   /* ← 최소 폭도 10%로 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 1) 시간 라벨: 한 줄 고정 + 동일 높이 */
+  .forecast-item .time{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+  }
+
+  /* 2) 온도 + °C를 한 줄에, 가운데 정렬 */
+  .forecast-item .temp{
+    height: 1.3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;                    /* 숫자와 단위 간격 */
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #374151;
+    margin: 0 0 8px 0;
+    white-space: nowrap;
+  }
+  /* 3) 막대: 모두 같은 높이/여백 */
+  .rain-chance-graph{
+    width: 22px;
+    height: 70px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 8px 0;
+  }
+  .rain-chance-graph::after{
+    content: "";
+    position: absolute; left: 0; bottom: 0; width: 100%;
+    height: var(--rain-height, 0%);     /* 기존 JS 값 사용 */
+    background: #10c7e6;
+    border-radius: 6px 6px 4px 4px;
+    transition: height .35s ease;
+  }
+
+  /* 4) 퍼센트: 한 줄 고정 + 동일 높이 */
+  .rain-chance{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 0.8rem;
+    color: #06b6d4;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 48rem) {
+  /* 전체 그리드: 좌 1열(Crowd, Traffic), 우 1열(Bike), 맨 아래 Weather 전체폭 */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 좌/우 1:1 */
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "crowd   bike"
+      "traffic bike"
+      "weather weather";
+    gap: 1rem;
+    margin: 0 1rem 1rem;
+    align-items: start;
+  }
+
+  .crowd-density-section   { grid-area: crowd;   margin-top: 0 !important; } /* 겹침 방지 */
+  .traffic-conditions-section { grid-area: traffic; }
+  .public-bike-section     { grid-area: bike;    display: flex; flex-direction: column; }
+  .weather-section         { grid-area: weather; }
+
+  /* 카드 패딩(선택 조절) */
+  .crowd-density-section,
+  .traffic-conditions-section,
+  .public-bike-section,
+  .weather-section { padding: 1rem; }
+
+  /* Weather 아이템 확대 (PC에서만) */
+  .forecast-item .time { font-size: 1rem; margin-bottom: 6px; }
+  .forecast-item .temp { font-size: 1.2rem; margin-bottom: 10px; }
+  .rain-chance-graph   { max-width: 36px; height: 100px; margin-bottom: 10px; }
+  .rain-chance         { font-size: 1rem; }
+
+  /* 스크롤바 공간 살짝 */
+  .weather-forecast { padding-bottom: 12px; }
 }
