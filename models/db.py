@@ -68,18 +68,22 @@ def get_station_info(attraction_id):
     
     return [dict(r) for r in rows]  # 가져온 사용자 반환
 
-def get_attraction_name():
+def get_attraction_name_ko():
+def get_data(attr, table_name):
+    if table_name not in table_list():
+        raise KeyError('존재하지 않는 테이블명입니다.')
+    
     conn = connect_db()
     cur = conn.cursor()
     
     #  여기에 구현할것
-    cur.execute('SELECT name FROM attraction')
-    name_list = cur.fetchall()
+    cur.execute(f'SELECT {attr} FROM {table_name}')
+    result_list = [dict(i)[attr] for i in cur.fetchall()]
     
     conn.commit()
     conn.close()
     
-    return [dict(i)['name'] for i in name_list]
+    return result_list
 
 def get_attraction_name_by_id(attraction_id):
     conn = connect_db()
@@ -204,6 +208,6 @@ def import_bike_station_info():
 
 if __name__ == "__main__":
     # print(get_null_station_id())
-    # print(get_attraction_name())
+    # print(get_attraction_name_ko())
     # print(get_station_info('POI007'))
     print(get_desc('POI007'))

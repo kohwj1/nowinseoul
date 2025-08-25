@@ -61,19 +61,20 @@
         "columnIds": [
           "ZodrB1Xgy3C6s9U0Fe2J7",
           "pEaUVYOMM9RxUwKzkBr0-",
-          "wFyt5NrJxUKKggYAnn8ZH",
+          "eKvfOb4-0xQC0_EFi0Tum",
           "IAhzBHWbLfzvlR6dl0Y77",
           "1j31lUYv7R0lEmVnxv0as",
           "x7MgLBE9s8cmRyr1yn-6z",
           "s3ItOZtfENPlDdVOnD_fm",
           "B7t0SKvEbeX2FZg_3ArRp",
           "9sK4F__RD8Z0BRe8PpcQr",
+          "wFyt5NrJxUKKggYAnn8ZH",
           "mfPtSOsOAk7cIBNMLBhwe"
         ],
         "seqColumnIds": [
           "ZodrB1Xgy3C6s9U0Fe2J7",
           "pEaUVYOMM9RxUwKzkBr0-",
-          "wFyt5NrJxUKKggYAnn8ZH",
+          "eKvfOb4-0xQC0_EFi0Tum",
           "IAhzBHWbLfzvlR6dl0Y77",
           "1j31lUYv7R0lEmVnxv0as",
           "x7MgLBE9s8cmRyr1yn-6z",
@@ -84,6 +85,7 @@
           "gsCCzs1_6EKyNSWj41XQa",
           "77SQ_ITAedVHK4aPXdWE4",
           "2lz64cbwjoY_AqwP6Xyq6",
+          "wFyt5NrJxUKKggYAnn8ZH",
           "mfPtSOsOAk7cIBNMLBhwe"
         ],
         "ui": {
@@ -95,7 +97,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1755953803385,
+          "updateAt": 1756082318528,
           "createAt": 1754985801491
         }
       },
@@ -386,20 +388,20 @@
       "pEaUVYOMM9RxUwKzkBr0-": {
         "id": "pEaUVYOMM9RxUwKzkBr0-",
         "tableId": "mxBecmZzmYWxCQlbFG4cr",
-        "name": "name",
-        "comment": "",
+        "name": "name_ko",
+        "comment": "관광지 한국어명",
         "dataType": "TEXT",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 60,
+          "widthComment": 78,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754985883254,
+          "updateAt": 1756082356684,
           "createAt": 1754985864371
         }
       },
@@ -2282,6 +2284,26 @@
           "updateAt": 1755959752829,
           "createAt": 1755959752829
         }
+      },
+      "eKvfOb4-0xQC0_EFi0Tum": {
+        "id": "eKvfOb4-0xQC0_EFi0Tum",
+        "tableId": "mxBecmZzmYWxCQlbFG4cr",
+        "name": "name_en",
+        "comment": "관광지 영어명",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 68,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756082361464,
+          "createAt": 1756082316291
+        }
       }
     },
     "relationshipEntities": {
@@ -2352,7 +2374,7 @@
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
           "x": 1247.7658000000001,
-          "y": 707.6004,
+          "y": 719.6004,
           "direction": 2
         },
         "end": {
@@ -2410,7 +2432,7 @@
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
           "x": 1011.2658,
-          "y": 855.6004,
+          "y": 879.6004,
           "direction": 8
         },
         "end": {
@@ -2468,7 +2490,7 @@
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
           "x": 774.7658,
-          "y": 707.6004,
+          "y": 719.6004,
           "direction": 1
         },
         "end": {

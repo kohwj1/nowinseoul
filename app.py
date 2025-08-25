@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, url_for
-from models import init_db
 from services.bike_station_fetcher import get_info
 import os
 
@@ -21,7 +20,7 @@ def index():
             {'id':'POI100','name': 'Seoul Grand Park'},
             {'id':'POI101','name': 'Seoul Forest'},
            
-        ])
+    ])
 
 # 지도 페이지
 @app.route('/map')

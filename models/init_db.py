@@ -19,16 +19,17 @@ def init_db():
     cur.execute('''
 CREATE TABLE IF NOT EXISTS attraction
 (
-  id          TEXT    NOT NULL,   -- 관광지 고유식별자
-  name        TEXT    NOT NULL,
-  description TEXT    NULL    ,
-  lat         REAL    NOT NULL,   -- 관광지 위도
-  lng         REAL    NOT NULL,   -- 관광지 경도
+  id          TEXT    NOT NULL, -- 관광지 고유식별자
+  name_ko     TEXT    NOT NULL, -- 관광지 한국어명
+  name_en     TEXT    NULL    , -- 관광지 영어명
+  lat         REAL    NOT NULL, -- 관광지 위도
+  lng         REAL    NOT NULL, -- 관광지 경도
   food        BOOLEAN NULL    ,
   beauty      BOOLEAN NULL    ,
   drama       BOOLEAN NULL    ,
   movie       BOOLEAN NULL    ,
-  insert_dttm TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- 입력일시
+  description TEXT    NULL    ,
+  insert_dttm TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP, -- 입력일시
   PRIMARY KEY (id)
 )''')
 
@@ -136,18 +137,37 @@ def import_attraction():
 
     cur.execute('DELETE FROM attraction')
 
+    # id, name, description, lat, lng 데이터 import
     csv_path = os.path.join(CSV_FOLDER, 'attraction.csv')
     with open(csv_path, newline='', encoding='utf-8') as f: # newline=''은 파일의 줄바꿈 문자 변환을 하지 않고 "있는 그대로" 처리
         reader = csv.DictReader(f.readlines())
         rows = list(reader)
 
-        insert_sql = f"""INSERT INTO attraction (id,name,lat,lng,insert_dttm) 
-                                                VALUES (:id,:name,:lat,:lng,{datetime.now().strftime('%Y%m%d%H%M%S')})"""
+        insert_sql = f"""INSERT INTO attraction (id,name_ko,name_en,description,lat,lng) 
+                                         VALUES (:id,:name_ko,:name_en,:description,:lat,:lng)"""
         cur.executemany(insert_sql, rows)
+
+    print(f"[CSV] attraction.csv → attraction 업로드 완료.")
+
+    # id에 따른 food, beauty, drama, movie 데이터 import
+    csv_path = os.path.join(CSV_FOLDER, 'main_feature.csv')
+    with open(csv_path, newline='', encoding='utf-8') as f: # newline=''은 파일의 줄바꿈 문자 변환을 하지 않고 "있는 그대로" 처리
+        reader = csv.DictReader(f.readlines())
+        rows = list(reader)
+
+        cur.executemany("""UPDATE attraction
+                              SET beauty = :beauty,
+                                  drama = :drama,
+                                  food = :food,
+                                  movie = :movie
+                            WHERE 1=1
+                              AND id = :id
+                        """, rows) # 여러 개의 SQL 명령을 하나씩 반복 실행하는 것
 
     conn.commit()
     conn.close()
-    print(f"[CSV] attraction.csv → attraction 업로드 완료.")
+    print(f"[CSV] main_feature.csv → main_feature 업데이트 완료.")
+
 
 if __name__ == '__main__':
     # 1. 데이터베이스 초기화
@@ -157,4 +177,3 @@ if __name__ == '__main__':
 
     # 2. CSV 파일 업로드 (예시)
     import_attraction()
-    # import_csv('orders', 'orders.csv')
