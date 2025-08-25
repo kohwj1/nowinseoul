@@ -140,3 +140,21 @@ body {
 #map, .leaflet-div-icon { display: flex; justify-content: center; align-items: center; }
 .circle-text { color: #fff; font-weight: 800; font-family: 'Noto Sans KR', Arial, sans-serif; }
 .leaflet-popup { max-width: 20rem; font-family: 'Noto Sans KR', Arial, sans-serif; }
+
+@media (max-width: 47.99rem) {
+  .crowd-density-section,
+  .traffic-conditions-section,
+  .weather-section,
+  .public-bike-section {
+    padding-bottom: 1rem;
+    margin: 0.625rem 1.25rem 1.25rem;
+    border-radius: 0.9375rem;
+    background-color: #eeeeef;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.05);
+  }
+}
+
+.public-bike-section {
+    background-color: #ffffff;
+  }
+
