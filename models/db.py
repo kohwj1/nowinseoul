@@ -35,9 +35,9 @@ def insert_data(table_name, result_list): # fetch api data
                'weather_raw':'id, fcst_dt, fcst_temp, rain_chance',
                'bike_station_info':'id, station_id, station_name_ko'}[table_name]
 
-    place_holder = {'detail_raw': ':id, :realtime_pop, :realtime_pop_dttm',
+    place_holder = {'detail_raw': ':id, :AREA_CONGEST_LVL, :PPLTN_TIME',
                     'density_raw':':id, :FCST_TIME, :FCST_CONGEST_LVL',
-                    'weather_raw':'id, fcst_dt, fcst_temp, rain_chance',
+                    'weather_raw':':id, :FCST_DT, :TEMP, :RAIN_CHANCE',
                     'bike_station_info':':id, :SBIKE_SPOT_ID, :SBIKE_SPOT_NM'}[table_name]
 
     conn = connect_db()

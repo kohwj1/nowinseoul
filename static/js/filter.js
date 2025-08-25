@@ -14,16 +14,16 @@ function placeFilter(keyword, theme, crowd) {
         filtered_data = filtered_data.filter(place => place.name.toLowerCase().includes(keyword.toLowerCase()));
     }
     if (theme.includes('food')) {
-        filtered_data = filtered_data.filter(place => place.food == 1);
+        filtered_data = filtered_data.filter(place => place.food != 0);
     }
     if (theme.includes('drama')) {
-        filtered_data = filtered_data.filter(place => place.drama == 1);
+        filtered_data = filtered_data.filter(place => place.drama != 0);
     }
     if (theme.includes('movie')) {
-        filtered_data = filtered_data.filter(place => place.movie == 1);
+        filtered_data = filtered_data.filter(place => place.movie != 0);
     }
     if (theme.includes('beauty')) {
-        filtered_data = filtered_data.filter(place => place.beauty == 1);
+        filtered_data = filtered_data.filter(place => place.beauty != 0);
     }
     if (crowd !== 'all') {
         filtered_data = filtered_data.filter(place => place.crowd == crowd);
@@ -55,8 +55,6 @@ for (i of filter_items) {
 }
 
 //filter UI 접기/펼치기
-// const mapDataElement = document.getElementById('map-data-json');
-// const originMapData = JSON.parse(mapDataElement.textContent);
 
 const windowwidth = window.innerWidth
 let isFilterDisplayed = false;
