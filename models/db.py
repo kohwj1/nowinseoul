@@ -68,7 +68,6 @@ def get_station_info(attraction_id):
     
     return [dict(r) for r in rows]  # 가져온 사용자 반환
 
-def get_attraction_name_ko():
 def get_data(attr, table_name):
     if table_name not in table_list():
         raise KeyError('존재하지 않는 테이블명입니다.')
@@ -208,6 +207,6 @@ def import_bike_station_info():
 
 if __name__ == "__main__":
     # print(get_null_station_id())
-    # print(get_attraction_name_ko())
+    # print(get_data('name_ko', 'attraction'))
     # print(get_station_info('POI007'))
     print(get_desc('POI007'))

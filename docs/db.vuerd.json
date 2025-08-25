@@ -110,6 +110,7 @@
           "FO02EcjlBQ3VHLbFbGbiH",
           "grKkX9lFn8mNGZHl8OUSl",
           "4sd19l8hdSypSgziqtM2d",
+          "vaACSQArsCxG0NJ3kte4O",
           "RlNTNP3pvmFrBpoJgotyw"
         ],
         "seqColumnIds": [
@@ -141,6 +142,7 @@
           "lYVjwOK9L4lBV9mFG87jS",
           "_nsi4SoVFVBY6UPN_DlUy",
           "QZMVRzlA1Ho2aYCEiB7Cd",
+          "vaACSQArsCxG0NJ3kte4O",
           "RlNTNP3pvmFrBpoJgotyw"
         ],
         "ui": {
@@ -152,7 +154,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1755959751546,
+          "updateAt": 1756097167491,
           "createAt": 1754986061305
         }
       },
@@ -227,12 +229,13 @@
       "u_8DTXn6i4Di7hZM1TRQd": {
         "id": "u_8DTXn6i4Di7hZM1TRQd",
         "name": "detail_raw",
-        "comment": "각 지역 상세 원본 데이터",
+        "comment": "각 지역 상세 원본 데이터 from 실시간 인구데이터 (영문)",
         "columnIds": [
           "o8dv45rAOy5-Cd7of7igD",
           "Q0OllndsCvIndAuxrKU26",
-          "Dq00p2m6JI5_k912mD-LB",
+          "z4vEmvsKx4CNKmNqpN7SE",
           "sjxiSIY0Mv5YnU6Rbgt8U",
+          "zEclgv5nBJrn2ijJqX4C6",
           "xDUU06gFdV_8MZmJ6hFB7"
         ],
         "seqColumnIds": [
@@ -241,27 +244,30 @@
           "lrHi7Fi55HB36HmA2-eP2",
           "Q0OllndsCvIndAuxrKU26",
           "Dq00p2m6JI5_k912mD-LB",
+          "z4vEmvsKx4CNKmNqpN7SE",
           "sjxiSIY0Mv5YnU6Rbgt8U",
           "kTB4g7YvxVfRMwv_JON6P",
+          "f_egVrT9JXULd-NEkn8tg",
+          "zEclgv5nBJrn2ijJqX4C6",
           "xDUU06gFdV_8MZmJ6hFB7"
         ],
         "ui": {
-          "x": 13,
-          "y": 696,
+          "x": 30,
+          "y": 705,
           "zIndex": 352,
           "widthName": 60,
-          "widthComment": 119,
+          "widthComment": 272,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755959761709,
+          "updateAt": 1756097879484,
           "createAt": 1755254823139
         }
       },
       "ouFV2yl6ELM-A8znvwaBm": {
         "id": "ouFV2yl6ELM-A8znvwaBm",
         "name": "weather_raw",
-        "comment": "날씨 예측 원본 테이블",
+        "comment": "날씨 예측 원본 테이블 from 도시 데이터",
         "columnIds": [
           "J93O3_V0b1PdZjwa8iHT4",
           "4g9LywePGktao8AMr_SOS",
@@ -280,22 +286,22 @@
           "kfOqpa_XoPHpLzYktCtCM"
         ],
         "ui": {
-          "x": 1356,
+          "x": 1355,
           "y": 677,
           "zIndex": 386,
           "widthName": 74,
-          "widthComment": 106,
+          "widthComment": 194,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755954025104,
+          "updateAt": 1756097571103,
           "createAt": 1755254924659
         }
       },
       "82NmnsuIZvfZ51UPiDGpW": {
         "id": "82NmnsuIZvfZ51UPiDGpW",
         "name": "density_raw",
-        "comment": "인구밀도 예측 원본 테이블",
+        "comment": "인구밀도 예측 원본 테이블 from 실시간 인구데이터 (영문)",
         "columnIds": [
           "cVkN5a2qIsqMDUO5cmNbV",
           "ByV7b--TKWBNKDUK0ybSi",
@@ -315,11 +321,11 @@
           "y": 962,
           "zIndex": 393,
           "widthName": 70,
-          "widthComment": 126,
+          "widthComment": 279,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755954099723,
+          "updateAt": 1756097556979,
           "createAt": 1755254940856
         }
       },
@@ -709,19 +715,19 @@
         "id": "FO02EcjlBQ3VHLbFbGbiH",
         "tableId": "x1yxu_y3de0VZMAWWYdzr",
         "name": "realtime_pop",
-        "comment": "실시간 인구밀도 수준",
+        "comment": "실시간 인구밀도 수준( 5분마다 갱신 )",
         "dataType": "TEXT",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 76,
-          "widthComment": 102,
+          "widthComment": 181,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754987224157,
+          "updateAt": 1756097281418,
           "createAt": 1754986492686
         }
       },
@@ -829,19 +835,19 @@
         "id": "4sd19l8hdSypSgziqtM2d",
         "tableId": "x1yxu_y3de0VZMAWWYdzr",
         "name": "realtime_road",
-        "comment": "실시간 도로상황 (상세 페이지 진입 시에만 업뎃치기?)",
+        "comment": "실시간 주변 도로 (평균) 혼잡도( 5분마다 갱신 )",
         "dataType": "TEXT",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 80,
-          "widthComment": 256,
+          "widthComment": 228,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1754987790817,
+          "updateAt": 1756097769493,
           "createAt": 1754986754773
         }
       },
@@ -1449,19 +1455,19 @@
         "id": "Q0OllndsCvIndAuxrKU26",
         "tableId": "u_8DTXn6i4Di7hZM1TRQd",
         "name": "realtime_pop",
-        "comment": "실시간 인구밀도 수준",
+        "comment": "실시간 인구밀도 수준 ( 5분마다 갱신 )",
         "dataType": "TEXT",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 76,
-          "widthComment": 102,
+          "widthComment": 184,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755255058604,
+          "updateAt": 1756097276363,
           "createAt": 1755254989176
         }
       },
@@ -1469,19 +1475,19 @@
         "id": "sjxiSIY0Mv5YnU6Rbgt8U",
         "tableId": "u_8DTXn6i4Di7hZM1TRQd",
         "name": "realtime_road",
-        "comment": "실시간 도로상황 (상세 페이지 진입 시에만 업뎃치기?)",
+        "comment": "실시간 주변 도로 (평균) 혼잡도( 5분마다 갱신 )",
         "dataType": "TEXT",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 80,
-          "widthComment": 256,
+          "widthComment": 228,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755255062692,
+          "updateAt": 1756097764102,
           "createAt": 1755254989608
         }
       },
@@ -2230,7 +2236,7 @@
         "tableId": "x1yxu_y3de0VZMAWWYdzr",
         "name": "realtime_pop_dttm",
         "comment": "실시간 인구 데이터 업데이트 시간",
-        "dataType": "",
+        "dataType": "TEXT",
         "default": "",
         "options": 0,
         "ui": {
@@ -2241,7 +2247,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1755959730609,
+          "updateAt": 1756097142403,
           "createAt": 1755959730609
         }
       },
@@ -2303,6 +2309,86 @@
         "meta": {
           "updateAt": 1756082361464,
           "createAt": 1756082316291
+        }
+      },
+      "z4vEmvsKx4CNKmNqpN7SE": {
+        "id": "z4vEmvsKx4CNKmNqpN7SE",
+        "tableId": "u_8DTXn6i4Di7hZM1TRQd",
+        "name": "realtime_pop_dttm",
+        "comment": "실시간 인구 데이터 업데이트 시간",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 109,
+          "widthComment": 161,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756097154493,
+          "createAt": 1756097145349
+        }
+      },
+      "f_egVrT9JXULd-NEkn8tg": {
+        "id": "f_egVrT9JXULd-NEkn8tg",
+        "tableId": "u_8DTXn6i4Di7hZM1TRQd",
+        "name": "realtime_pop_dttm",
+        "comment": "실시간 인구 데이터 업데이트 시간",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 109,
+          "widthComment": 161,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756097165130,
+          "createAt": 1756097165130
+        }
+      },
+      "vaACSQArsCxG0NJ3kte4O": {
+        "id": "vaACSQArsCxG0NJ3kte4O",
+        "tableId": "x1yxu_y3de0VZMAWWYdzr",
+        "name": "realtime_road_dttm",
+        "comment": "실시간 주변 도로 (평균) 혼잡도 데이터 업데이트 시간",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 113,
+          "widthComment": 253,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756097774845,
+          "createAt": 1756097166350
+        }
+      },
+      "zEclgv5nBJrn2ijJqX4C6": {
+        "id": "zEclgv5nBJrn2ijJqX4C6",
+        "tableId": "u_8DTXn6i4Di7hZM1TRQd",
+        "name": "realtime_road_dttm",
+        "comment": "실시간 주변 도로 (평균) 혼잡도 데이터 업데이트 시간",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 113,
+          "widthComment": 253,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756097757499,
+          "createAt": 1756097324233
         }
       }
     },
@@ -2382,7 +2468,7 @@
           "columnIds": [
             "J93O3_V0b1PdZjwa8iHT4"
           ],
-          "x": 1356,
+          "x": 1355,
           "y": 765,
           "direction": 1
         },
@@ -2402,7 +2488,7 @@
             "J93O3_V0b1PdZjwa8iHT4",
             "4g9LywePGktao8AMr_SOS"
           ],
-          "x": 1594.5,
+          "x": 1593.5,
           "y": 677,
           "direction": 4
         },
@@ -2498,8 +2584,8 @@
           "columnIds": [
             "o8dv45rAOy5-Cd7of7igD"
           ],
-          "x": 696,
-          "y": 784,
+          "x": 714,
+          "y": 805,
           "direction": 2
         },
         "meta": {
@@ -2517,8 +2603,8 @@
           "columnIds": [
             "o8dv45rAOy5-Cd7of7igD"
           ],
-          "x": 354.5,
-          "y": 696,
+          "x": 372,
+          "y": 705,
           "direction": 4
         },
         "end": {
@@ -2526,8 +2612,8 @@
           "columnIds": [
             "9G9q1rDKklEm0FA6Ae_FH"
           ],
-          "x": 398.1859,
-          "y": 557.9017,
+          "x": 398.6859,
+          "y": 581.9017,
           "direction": 8
         },
         "meta": {

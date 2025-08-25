@@ -31,11 +31,10 @@ def mapping_id(attraction_name_ko):
 
         fcst_weather = city_data.get('WEATHER_STTS')[0].get('FCST24HOURS') # 날씨예측 목록
 
-
         # **item : item dict 언패킹
         return [  {'id': city_data.get('AREA_CD'), # POI033 서울역
                     **item} for item in fcst_weather]
-        
+
         # map + lambda 조합은 lambda 함수 호출 오버헤드가 있으며,
         # 특히, 람다 내에서 x |= {...} 같은 복합 할당 연산은 추가 작업을 수행하기 때문에 더 무거울 수 있습니다
         # return list(map(lambda x: x |= {'id': city_data.get('AREA_CD')},fcst_weather))

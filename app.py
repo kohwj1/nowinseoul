@@ -10,9 +10,9 @@ app = Flask(__name__, instance_relative_config=True) # instance 폴더가 앱 �
 app.config['DATABASE'] = os.path.join(app.instance_path, 'nowinseoul.db')
 
 # 메인 페이지
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('index.html', data = [
+    data = [
             {'id':'POI095','name': 'Banpo Hangang Park'},
             {'id':'POI096','name': 'Dream Forest'},
             {'id':'POI098','name': 'Seoripul Park·Montmartre Park'},
@@ -20,7 +20,15 @@ def index():
             {'id':'POI100','name': 'Seoul Grand Park'},
             {'id':'POI101','name': 'Seoul Forest'},
            
-    ])
+    ]
+
+    if request.method == "POST":
+        # POST 에 대한 처리
+        tags = request.form["tags"] #list
+        return 
+
+
+    return render_template('index.html', data = data)
 
 # 지도 페이지
 @app.route('/map')
@@ -34,10 +42,9 @@ def detail(id, name):
     data = {"AREA_CD":id,
             "NAME":name,
             # "LAST_UPDATE_DTTM": db.get_id_info(id).get('insert_dttm')
-            "LAST_UPDATE_DTTM" : '20250819231821',
             # DB에 아직 없음 "DESCRIPTION":db.get_id_info(id).get('description'),
             "DESCRIPTION": "Seoul Station, nestled in the heart of South Korea's vibrant capital, is far more than just a transit hub—it's a cultural landmark that beautifully marries the past with the present. As a pivotal gateway to Seoul, this bustling station offers travelers an intriguing blend of modernity and tradition. Whether you're arriving from Incheon Airport or embarking on a high-speed KTX train to explore the rest of Korea, Seoul Station ensures a seamless travel experience with its extensive connections and top-notch amenities. Beyond its role as a transportation center, it invites visitors to delve into the rich history and vibrant culture of Seoul, making it an essential stop for history buffs, culture enthusiasts, and travelers alike.",
-            "WEATHER_STTS": [
+            "WEATHER_STTS": [j # 12개
                 {
                     "FCST_DT": "202508210400",
                     "TEMP": "27",
@@ -219,7 +226,7 @@ def detail(id, name):
 # 메인에서 태그 필터 걸때
 @app.route('/main-feature', methods=['POST'])
 def filter_by_tags():
-    return render_template('index.html', data = {"tags" : ["food", "movie"],
+    data = {"tags" : ["food", "movie"],
         "data":[
             {'id':'POI095','name': 'Banpo Hangang Park'},
             {'id':'POI096','name': 'Dream Forest'},
@@ -228,12 +235,8 @@ def filter_by_tags():
             {'id':'POI100','name': 'Seoul Grand Park'},
             {'id':'POI101','name': 'Seoul Forest'},
         ]
-    })
-
-# 지도에서 조건 걸때
-@app.route('/map-pin', methods=['POST'])
-def filter_pin():
-    return jsonify({"message":"not yet"})
+    }
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
