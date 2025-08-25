@@ -1,10 +1,10 @@
 //커스텀 마커
 function customMarker(crowdLevel) {
     const crowd_icon_url = {
-        'Comfortable':'static/images/ui/marker_0.png', 
-        'Moderate':'static/images/ui/marker_1.png', 
-        'Slightly Crowded':'static/images/ui/marker_2.png', 
-        'Crowded':'static/images/ui/marker_3.png', 
+        'Comfortable':'../static/images/ui/marker_0.png', 
+        'Moderate':'../static/images/ui/marker_1.png', 
+        'Slightly Crowded':'../static/images/ui/marker_2.png', 
+        'Crowded':'../static/images/ui/marker_3.png', 
     }
 
     const marker = L.icon({
