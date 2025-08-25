@@ -1,14 +1,5 @@
-### 실시간 날씨 현황
-# 통신데이터를 바탕으로 전체 인구를 추정하여 사용자에게 제공되기까지 15분 소요
-# - 예) 10시 10분~10시 15분에 집계된 데이터는 전체 인구 추정 과정을 거쳐 10시 30분에 사용자에게 제공
-# 
-# 단위시간(5분) 동안 여러 기지국을 방문할 경우 중복 집계
-# 예를 들어, 어떤 사람이 다음 그림처럼 14시 12분에 A기지국 영역에서 B기지국 영역으로 이동하였을 때,
-# 14시 10분 ~ 14시 15분까지 5분의 단위 시간동안 A기지국(14:10~14:12)과 B기지국(14:12~14:15)에서 모두 집계되므로,
-# 동일한 사람이지만 2명으로 중복 집계
-#
-# An index that calculated the 4 stages of congestion into
-# crowded, slightly crowded, moderate, and comfortable (ref.Seoul Real-Time Population Data API manual_eng.pdf)
+### 실시간 날씨 예측
+
 
 import sys
 sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
@@ -25,41 +16,48 @@ from itertools import chain
 load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
 
-## 실시간 인구밀도 데이터에서 도시ID - 인구밀도 매핑
+## 실시간 도시 데이터에서 도시ID - 인구밀도 매핑
 def mapping_id(attraction_name_ko):
         # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     try:
-        url = f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/citydata_ppltn_eng/1/50/{attraction_name_ko}'
-        # print(f'fetching url :{url}')
+        url = f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/citydata/1/50/{attraction_name_ko}'
+        print(f'fetching url :{url}')
 
-        city_data = utils.fetch(url).get('SeoulRtd.citydata_ppltn')[0]
+        city_data = utils.fetch(url).get('CITYDATA')
         # city_data 전체를 그대로 전달하면 데이터 크기가 커지고 전송 및 처리 비용이 증가합니다.
-        # 필요한 컬럼 2개만 추출해서 전달하면 DB 쓰기 시점에 불필요한 데이터 파싱/처리가 줄어듭니다.
+        # 필요한 컬럼만 추출해서 전달하면 DB 쓰기 시점에 불필요한 데이터 파싱/처리가 줄어듭니다.
 
-        area_code = city_data.get('AREA_CD') # POI033 서울역
-        fcst_ppltn = city_data.get('FCST_PPLTN') # 인구밀도예측 목록
+        fcst_weather = city_data.get('WEATHER_STTS')[0].get('FCST24HOURS') # 날씨예측 목록
 
-        return [{**item, 'id': area_code} for item in fcst_ppltn]
+        # **item : item dict 언패킹
+        return [  {'id': city_data.get('AREA_CD'), # POI033 서울역
+                    **item} for item in fcst_weather]
+
+        # map + lambda 조합은 lambda 함수 호출 오버헤드가 있으며,
+        # 특히, 람다 내에서 x |= {...} 같은 복합 할당 연산은 추가 작업을 수행하기 때문에 더 무거울 수 있습니다
+        # return list(map(lambda x: x |= {'id': city_data.get('AREA_CD')},fcst_weather))
 
   
     except Exception as e:
         print(f'error message : {e}')
         print(f"error url : {url}")
-        return []  # [] 반환해 나중에 필터링 예정
+        return []  # [] 반환해 나중에 When flattened, it disappears.
     
-# id - FCST_PPLTN 예측 목록 생성 함수
+# id - FCST24HOURS 예측 목록 생성 함수
 def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달하는 것이 안전
     with ThreadPoolExecutor() as executor:
         # https://docs.python.org/ko/3/library/itertools.html#itertools.chain.from_iterable
         results = list(chain.from_iterable(executor.map(fn, load)))
 
         return results
-
-def fetch_density():
-    result_list = concurrent_processing(mapping_id,db.get_attraction_name())
-    db.insert_data('density_raw', result_list)
-    print(f'density_raw {len(result_list)}개 데이터 insert 완료 {datetime.now().strftime('%Y%m%d%H%M%S')}')
+@utils.execution_time
+def fetch_weather():
+    result_list = concurrent_processing(mapping_id,db.get_attraction_name()) # 여기까지 21.3초 걸렸음
+    db.insert_data('weather_raw', result_list)
+    print(f'weather_raw {len(result_list)}개 데이터 insert 완료 {datetime.now().strftime('%Y%m%d%H%M%S')}')
+    # weather_raw 1920(24*80)개 데이터 insert 완료 20250824224242
+    # fetch_weather 함수 실행 시간: 30.6초
     return result_list
 
 if __name__ == "__main__":
-    fetch_density()
+    fetch_weather()

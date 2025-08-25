@@ -1,6 +1,4 @@
 import time # 타임 데코레이터
-import requests
-
 def execution_time(func):
     def wrapper(*args, **kwargs):
         start_time = time.time()
@@ -12,7 +10,7 @@ def execution_time(func):
     return wrapper
 
 import requests
-def fetch(url, max_retries=3):
+def fetch(url, max_retries=3) -> dict:
     # https://requests.readthedocs.io/en/latest/user/quickstart/#errors-and-exceptions
     # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     for attempt in range(max_retries):
