@@ -13,7 +13,7 @@ main {
 
 footer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     position:fixed;
     bottom:0px;
@@ -59,7 +59,6 @@ footer {
         max-width: 999px;
         height: 90vh;
     }
-
     #mapFilter {
         /* max-width: 1000px; */
         margin: auto;
