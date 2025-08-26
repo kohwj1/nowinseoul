@@ -10,10 +10,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="{{url_for('static', filename='css/bs/bootstrap.min.css')}}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}"> -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/crowd_density.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}">
   <title>Detailed Page</title>
 </head>
 
@@ -37,6 +34,7 @@
     </div>
 
     <section class="info-grid">
+      <!-- Crowd -->
       <section class="crowd-density-section">
         <div class="info-header">
           <div class="info-tag" id="traffic-tag">
@@ -55,58 +53,66 @@
         </div>
       </section>
 
-        <!--Traffic-->
-        <section class="traffic-conditions-section">
-            <div class="info-tag" id="traffic-tag">{{ traffic_condition }}</div>
-            <div class="info-title">Traffic Conditions</div>
-        </section>
+      <!-- Traffic -->
+      <section class="traffic-conditions-section">
+        <div class="info-tag" id="traffic-tag">{{ traffic_condition }}</div>
+        <div class="info-title">Traffic Conditions</div>
+      </section>
 
-        <!--Weather-->
-        <div class="weather-section">
-  <div class="weather-header">
-    <h2>Weather</h2>
-    <span class="current-temp">
-      {{ data.WEATHER_STTS[0].TEMP }}<span class="unit">°C</span>
-    </span>
-  </div>
+      <!-- Weather -->
+      <div class="weather-section">
+        <div class="weather-header">
+          <div class="left-wrap">
+            <h2>Weather</h2>
+            <!-- ℃/℉ 토글 -->
+            <div class="unit-switch" role="group" aria-label="Temperature unit">
+              <button type="button" class="unit-btn active" data-unit="C">℃</button>
+              <button type="button" class="unit-btn" data-unit="F">℉</button>
+            </div>
+          </div>
 
-  <div class="weather-forecast-container">
-    <div class="weather-forecast">
-      {% for item in data.WEATHER_STTS %}
-      <div class="forecast-item">
-        <span class="time">{{ item.FCST_DT[8:10] }}:00</span>
-        <span class="temp">{{ item.TEMP }}<span class="unit">°C</span></span>
-        <div class="rain-chance-graph"></div>
-        <div class="rain-chance">{{ item.RAIN_CHANCE }}%</div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
+          <span class="current-temp">
+            {{ data.WEATHER_STTS[0].TEMP }}<span class="unit">°C</span>
+          </span>
+        </div>
 
-          <!-- 드래그 트랙 + 썸 (버튼) -->
-        <div class="weather-scroll-controls">
-          <div class="scroll-track" role="slider" aria-label="Forecast scroll"
-              aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-            <!-- <div class="scroll-thumb" aria-hidden="true"></div> -->
+        <div class="weather-forecast-container">
+          <div class="weather-forecast">
+            {% for item in data.WEATHER_STTS %}
+            <div class="forecast-item">
+              <span class="time">{{ item.FCST_DT[8:10] }}:00</span>
+              <span class="temp">{{ item.TEMP }}<span class="unit">°C</span></span>
+              <!-- 🔥 CSS 변수로 강수확률 값 전달 -->
+              <div class="rain-chance-graph" style="--rain: {{ item.RAIN_CHANCE }}"></div>
+              <div class="rain-chance">{{ item.RAIN_CHANCE }}%</div>
+            </div>
+            {% endfor %}
           </div>
         </div>
-        </div>
 
-        <!--Public Bike -->
-        <div class="public-bike-section">
-            <div class="bike-header">
-                <p id="total-bikes">Public bike(s) available</p>
-            </div>
-            <div class="bike-map" id="map"></div>
-            <ul class="bike-list">
-            {% for bike in data.SBIKE_STTS %}
-                <li>
-                    <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
-                    <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
-                </li>
-            {% endfor %}
-            </ul>
+        <!-- 드래그 트랙 -->
+        <div class="weather-scroll-controls">
+          <div class="scroll-track" role="slider" aria-label="Forecast scroll"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          </div>
         </div>
+      </div>
+
+      <!-- Public Bike -->
+      <div class="public-bike-section">
+        <div class="bike-header">
+          <p id="total-bikes">Public bike(s) available</p>
+        </div>
+        <div class="bike-map" id="map"></div>
+        <ul class="bike-list">
+          {% for bike in data.SBIKE_STTS %}
+          <li>
+            <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+            <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </section>
   </div>
 
