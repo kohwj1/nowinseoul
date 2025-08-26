@@ -55,7 +55,7 @@ footer {
 }
 
 #toast {
-    position: absolute;
+    position: fixed;
     width: 250px;
     z-index: 100000;
     border-radius: 20rem;
@@ -68,7 +68,8 @@ footer {
         height: 90vh;
     }
     #mapFilter {
-        /* max-width: 1000px; */
+        max-width: 1000px;
+        width: 100%;
         margin: auto;
         position: fixed;
         bottom: 0px;
@@ -80,6 +81,14 @@ footer {
 @media (min-width:1001px) {
     .main-container {
         display: flex;
+    }
+
+    #toast {
+        left:15%;
+    }
+
+    .accordion-button::after {
+        display: none;
     }
 
     #map {

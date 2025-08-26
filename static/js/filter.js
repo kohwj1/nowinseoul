@@ -49,7 +49,7 @@ function searchPlace() {
 }
 
 function toggleFilter() {
-    if (windowwidth <= 1000) {
+    if (window.innerWidth <= 1000) {
         if (!isFilterDisplayed) {
             filterUI.style.bottom = '36px';
         } else {
@@ -81,7 +81,6 @@ for (i of filter_items) {
 }
 
 //filter UI 접기/펼치기
-const windowwidth = window.innerWidth
 let isFilterDisplayed = false;
 const filterDisplayBtn = document.getElementById('filterDisplay');
 const mapCanvas = document.getElementById('map');
@@ -92,14 +91,24 @@ const filterBody = document.querySelector('#filterDiv .accordion-body');
 filterDisplayBtn.addEventListener('click', toggleFilter);
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (windowwidth <= 1000) {
+    if (window.innerWidth <= 1000) {
         filterUI.style.bottom = 36 + -1 * filterBody.offsetHeight + 'px';
+    } else {
+        document.getElementById('toast').classList.remove('start-50');
     }
     clearMap()
     markOnMap(originMapData)
     heatOnMap(originMapData)
 }
 )
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1000) {
+        document.getElementById('toast').classList.add('start-50');
+    } else {
+        document.getElementById('toast').classList.remove('start-50');
+    }
+})
 
 document.getElementById('btnReset').addEventListener('click', () => {
     clearMap()
