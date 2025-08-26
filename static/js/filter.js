@@ -43,6 +43,9 @@ function searchPlace() {
         heatOnMap(filtered_data);
         openTooltip();
         toggleFilter();
+    } else {
+        const noResultToast = bootstrap.Toast.getOrCreateInstance(document.getElementById('toast'))
+        noResultToast.show()
     }
 }
 
