@@ -1,10 +1,7 @@
-### 실시간 날씨 예측
-# 원천부서 이원재(02-2133-4272)로 문의요청 2025.04.11 13:55 댓글
-# 9월 중순에 api update 예정. 만약, 그 이후에도 느리면 기상청 api 허브에서 행정동/위치 고정시켜서 가져와야함.
-# 날씨만 따로 api제공할 계획 없음(기상청 관할이기 때문)
+### 실시간 주변 도로 종합 현황
+# 
 
 # 서울시 api는 비동기 요청시 (aiohttp) xml로 답변이 옴 (llm은 aiohttp에 헤더가 없아서 그런거라는데..)
-
 import sys
 sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
 from concurrent.futures import ThreadPoolExecutor
@@ -29,11 +26,12 @@ def mapping_id(attraction_dict):
         # city_data 전체를 그대로 전달하면 데이터 크기가 커지고 전송 및 처리 비용이 증가합니다.
         # 필요한 컬럼만 추출해서 전달하면 DB 쓰기 시점에 불필요한 데이터 파싱/처리가 줄어듭니다.
 
-        fcst_weather = city_data.get('WEATHER_STTS')[0].get('FCST24HOURS') # 날씨예측 목록
+        near_road = city_data.get('ROAD_TRAFFIC_STTS',{}).get('AVG_ROAD_DATA',{}) # 실시간 주변도로 평균 상황
 
         # **item : item dict 언패킹
-        return [  {'id': city_data.get('AREA_CD'), # POI033 서울역
-                    **item} for item in fcst_weather]
+        return [{'id': city_data.get('AREA_CD'), # POI033 서울역
+                 'realtime_road' : near_road.get('ROAD_TRAFFIC_IDX',{}),
+                 'realtime_road_dttm' : near_road.get('ROAD_TRAFFIC_TIME',{})}]
 
         # map + lambda 조합은 lambda 함수 호출 오버헤드가 있으며,
         # 특히, 람다 내에서 x |= {...} 같은 복합 할당 연산은 추가 작업을 수행하기 때문에 더 무거울 수 있습니다
@@ -54,13 +52,14 @@ def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달�
 
         return results
 @utils.execution_time
-def fetch_weather():
+def fetch_traffic():
     result_list = concurrent_processing(mapping_id,db.get_data('name_ko', 'attraction')) # 여기까지 21.3초 걸렸음
-    db.insert_data('weather_raw', result_list)
-    print(f'weather_raw {round(len(result_list)/24,1)}개 지역 날씨 예측 데이터 insert 완료 {datetime.now().strftime('%Y.%m.%d %H:%M:%S')}')
+    print(f'{result_list[0]=}')
+    db.update_traffic(result_list)
+    print(f'detail_raw {len(result_list)}개 지역 날씨 예측 데이터 insert 완료 {datetime.now().strftime('%Y.%m.%d %H:%M:%S')}')
     # weather_raw 1920(24*80)개 데이터 insert 완료 20250824224242
-    # fetch_weather 함수 실행 시간: 30.6초
+    # fetch_traffic 함수 실행 시간: 30.6초
     return result_list
 
 if __name__ == "__main__":
-    fetch_weather()
+    fetch_traffic()
