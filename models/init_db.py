@@ -24,6 +24,8 @@ CREATE TABLE IF NOT EXISTS attraction
   name_en     TEXT    NULL    , -- 관광지 영어명
   lat         REAL    NOT NULL, -- 관광지 위도
   lng         REAL    NOT NULL, -- 관광지 경도
+  nx          INTEGER NULL    , -- 예보지점의 X 좌표값 = 동네예보 격자 번호(동서방향)
+  ny          INTEGER NULL    , -- 예보지점의 Y 좌표값 = 동네예보 격자 번호(동서방향)
   food        BOOLEAN NULL    ,
   beauty      BOOLEAN NULL    ,
   drama       BOOLEAN NULL    ,

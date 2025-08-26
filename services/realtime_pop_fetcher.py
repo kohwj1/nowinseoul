@@ -12,7 +12,6 @@
 
 import sys
 sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
-import asyncio
 from concurrent.futures import ThreadPoolExecutor
 import os, utils
 from dotenv import load_dotenv
@@ -23,10 +22,10 @@ load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
 
 ## 실시간 인구밀도 데이터에서 도시ID - 인구밀도 매핑
-def mapping_id(attraction_name_ko):
+def mapping_id(attraction_dict):
         # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     try:
-        url = f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/citydata_ppltn_eng/1/50/{attraction_name_ko}'
+        url = f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/citydata_ppltn_eng/1/50/{attraction_dict.get('name_ko')}'
         print(f'fetching url :{url}')
 
         city_data = utils.fetch(url).get('SeoulRtd.citydata_ppltn')[0]

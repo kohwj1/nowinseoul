@@ -31,6 +31,35 @@ def fetch(url, max_retries=3) -> dict:
     # 재시도 모두 실패한 경우 빈 딕셔너리 반환
     return {}
 
+
+import time
+import functools
+def async_execution_time(func):
+    @functools.wraps(func)
+    async def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        result = await func(*args, **kwargs)
+        end = time.perf_counter()
+        print(f"{func.__name__} 함수 실행 시간: {end - start:.4f}초")
+        return result
+    return wrapper
+
+
+async def async_fetch(session, url, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            headers = {
+                "Accept": "application/json",
+                "Content-Type": "application/json;charset=UTF-8"
+            }
+            async with session.get(url, headers=headers) as response:
+                response.raise_for_status()
+                data = await response.json()
+                return data
+        except Exception as e:
+            print(f"Attempt {attempt + 1}/{max_retries} failed for {url}: {e}")
+    return {}
+
 if __name__ == "__main__":
     url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/보신각'
     fetch(url)
