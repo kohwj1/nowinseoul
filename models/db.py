@@ -72,19 +72,6 @@ def insert_weather(weather_list):
     conn.close()
 
 # 데이터 조회 함수
-def get_station_info(attraction_id):
-    conn = connect_db()
-    cur = conn.cursor()
-    
-    #  여기에 구현할것
-    cur.execute('SELECT id, station_id, station_name_en FROM bike_station_info WHERE id = ?',(attraction_id,))
-    rows = cur.fetchall()
-    
-    conn.commit()
-    conn.close()
-    
-    return [dict(r) for r in rows]  # 가져온 사용자 반환
-
 def get_data(attr, table_name):
     if table_name not in table_list():
         raise KeyError('존재하지 않는 테이블명입니다.')
@@ -101,19 +88,34 @@ def get_data(attr, table_name):
     
     return result_list
 
-def get_attraction_by_id(attr, attraction_id):
+def get_info_by_id(table_name, attraction_id):
     conn = connect_db()
     cur = conn.cursor()
 
     #  여기에 구현할것
-    cur.execute(f"SELECT {attr} FROM attraction WHERE id = ?", (attraction_id,))
-    attr_value = cur.fetchone()  # 사용자 한명만
+    cur.execute(f"SELECT * FROM {table_name} WHERE id = ?", (attraction_id,))
+    attr_value = [dict(i) for i in cur.fetchall()]  # 사용자 한명만
     
     conn.commit()
     conn.close()
     
-    return dict(attr_value)[attr]
+    return attr_value
 
+def get_images(tags:list):
+    conn = connect_db()
+    cur = conn.cursor()
+    
+    if tags:
+        cur.execute(f'SELECT id, name_en AS name FROM attraction ORDER BY {'+'.join(tags)} DESC LIMIT 6')
+    else:
+        cur.execute(f'SELECT id, name_ko FROM attraction ORDER BY food+beauty+drama+movie DESC LIMIT 6')
+    
+    result_list = [dict(i) for i in cur.fetchall()]
+    
+    conn.commit()
+    conn.close()    
+
+    return result_list
 
 # 데이터 수정 함수
 def update_id(station_id_mapping_list):
@@ -237,7 +239,5 @@ def import_bike_station_info():
     print(f"[CSV] bike_station_info.csv → bike_station_info 업로드 완료.")
 
 if __name__ == "__main__":
-    # print(get_null_station_id())
-    # print(get_data('name_ko', 'attraction'))
-    # print(get_station_info('POI007'))
-    print(get_attraction_by_id('description' , 'POI007'))
+    print(get_info_by_id('weather_cache', 'POI007'))
+    # print(get_attraction_by_id('description' , 'POI007'))

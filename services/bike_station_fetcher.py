@@ -42,7 +42,7 @@ def get_info(attraction_id): # POI033 서울역
     # 리스트 안에 원시값(숫자, 문자열 등 불변 객체)만 있다면 사실상 독립적인 리스트가 되고, 내부 요소 변경도 영향을 안 준다.
     # 여기서는 영향을 받아야하므로 얕은카피(.copy())하지 않음
     # 
-    station_id_dict = {s.get('station_id'): s.get('station_name_en') for s in db.get_station_info(attraction_id)}
+    station_id_dict = {s.get('station_id'): s.get('station_name_en') for s in db.get_info_by_id('bike_station_info',attraction_id)}
     # [{'ST-10':'108. Seogyo-dong Intersection'},]
     result_data = []
 
