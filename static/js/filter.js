@@ -4,32 +4,32 @@ function getFilterArgs() {
     const theme = Array.from(document.querySelectorAll('input[name="theme"]:checked')).map((t) => t.value);
     const crowd = document.querySelector('input[name="crowd"]:checked').value;
     // console.log(keyword, theme, crowd)
-    return {keyword: keyword, theme: theme, crowd: crowd}
+    return { keyword: keyword, theme: theme, crowd: crowd }
 }
 
 function placeFilter(keyword, theme, crowd) {
     let filtered_data = originMapData
-    
+
     if (keyword !== '') {
         filtered_data = filtered_data.filter(place => place.name.toLowerCase().includes(keyword.toLowerCase()));
     }
     if (theme.includes('food')) {
-        filtered_data = filtered_data.filter(place => place.food == 1);
+        filtered_data = filtered_data.filter(place => place.food != 0);
     }
     if (theme.includes('drama')) {
-        filtered_data = filtered_data.filter(place => place.drama == 1);
+        filtered_data = filtered_data.filter(place => place.drama != 0);
     }
     if (theme.includes('movie')) {
-        filtered_data = filtered_data.filter(place => place.movie == 1);
+        filtered_data = filtered_data.filter(place => place.movie != 0);
     }
     if (theme.includes('beauty')) {
-        filtered_data = filtered_data.filter(place => place.beauty == 1);
+        filtered_data = filtered_data.filter(place => place.beauty != 0);
     }
     if (crowd !== 'all') {
         filtered_data = filtered_data.filter(place => place.crowd == crowd);
     }
-    
-    console.log(filtered_data)
+
+    // console.log(filtered_data)
     return filtered_data
 }
 
@@ -37,9 +37,35 @@ function searchPlace() {
     const filter_agrs = getFilterArgs()
     const filtered_data = placeFilter(filter_agrs.keyword, filter_agrs.theme, filter_agrs.crowd)
     clearMap()
-    markOnMap(filtered_data);
-    heatOnMap(filtered_data);
-    openTooltip();
+
+    if (filtered_data.length > 0) {
+        markOnMap(filtered_data);
+        heatOnMap(filtered_data);
+        openTooltip();
+        toggleFilter();
+    } else {
+        toastPop('No Search Result')
+    }
+}
+
+function toggleFilter() {
+    if (window.innerWidth <= 1000) {
+        if (!isFilterDisplayed) {
+            filterUI.style.bottom = '36px';
+        } else {
+            filterUI.style.bottom = 36 + -1 * filterBody.offsetHeight + 'px';
+        }
+        filterUI.classList.toggle('move-up');
+        filterDisplayBtn.classList.toggle('collapsed');
+        isFilterDisplayed = !isFilterDisplayed;
+    }
+}
+
+//검색어 미입력, 검색결과 없음 등의 시각 피드백을 주기 위해서 추가했습니다. (BS 토스트 이용)
+function toastPop(message) {
+    document.getElementById('toastMsg').textContent = message
+    const noResultToast = bootstrap.Toast.getOrCreateInstance(document.getElementById('toast'))
+    noResultToast.show()
 }
 
 //필터 UI 조작 시마다 마커 갱신
@@ -55,47 +81,50 @@ for (i of filter_items) {
 }
 
 //filter UI 접기/펼치기
-// const mapDataElement = document.getElementById('map-data-json');
-// const originMapData = JSON.parse(mapDataElement.textContent);
-
-const windowwidth = window.innerWidth
 let isFilterDisplayed = false;
 const filterDisplayBtn = document.getElementById('filterDisplay');
+const mapCanvas = document.getElementById('map');
 const filterUI = document.getElementById('mapFilter');
 const filterDiv = document.getElementById('filterDiv');
 const filterBody = document.querySelector('#filterDiv .accordion-body');
 
-filterDisplayBtn.addEventListener('click', () => {
-    if (windowwidth <= 1000) {
-        if (!isFilterDisplayed) {
-            filterUI.style.bottom = 0 + 'px';
-        } else {
-            filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
-        }
-        filterUI.classList.toggle('move-up');
-        filterDisplayBtn.classList.toggle('collapsed')
-        isFilterDisplayed = !isFilterDisplayed;
-    }
-});
+filterDisplayBtn.addEventListener('click', toggleFilter);
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (windowwidth <= 1000) {
-        filterUI.style.bottom = -1 * filterBody.offsetHeight + 'px';
+    if (window.innerWidth <= 1000) {
+        filterUI.style.bottom = 36 + -1 * filterBody.offsetHeight + 'px';
+    } else {
+        document.getElementById('toast').classList.remove('start-50');
     }
     clearMap()
     markOnMap(originMapData)
     heatOnMap(originMapData)
-    }
+}
 )
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1000) {
+        document.getElementById('toast').classList.add('start-50');
+    } else {
+        document.getElementById('toast').classList.remove('start-50');
+    }
+})
 
 document.getElementById('btnReset').addEventListener('click', () => {
-        clearMap()
-        markOnMap(originMapData)
-        heatOnMap(originMapData)
-    }
+    clearMap()
+    markOnMap(originMapData)
+    heatOnMap(originMapData)
+}
 )
 
-document.getElementById('btnSearch').addEventListener('click', () => searchPlace())
+document.getElementById('btnSearch').addEventListener('click', () => {
+    const keyword = document.getElementById('mapSearch').value;
+    if (keyword == '') {
+        toastPop('Please enter a keyword');
+    } else {
+        searchPlace()
+    }
+})
 document.getElementById('filterForm').addEventListener('submit', (e) => {
     e.preventDefault()
 })

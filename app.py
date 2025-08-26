@@ -173,11 +173,11 @@ def detail(id, name):
                 },
                 {
                     "FCST_TIME": "2025-08-21 05:00",
-                    "FCST_CONGEST_LVL": "Comfortable",
+                    "FCST_CONGEST_LVL": "Moderate",
                 },
                 {
                     "FCST_TIME": "2025-08-21 06:00",
-                    "FCST_CONGEST_LVL": "Comfortable",
+                    "FCST_CONGEST_LVL": "Crowded",
                 },
                 {
                     "FCST_TIME": "2025-08-21 07:00",

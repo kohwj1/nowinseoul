@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <span>Copyright Team Seoul Friends</span>
+        <a href="https://data.seoul.go.kr/dataVisual/seoul/guide.do"><img class="public-data ms-3" src="../static/images/ui/img_opentype01.jpg"></a>
+    </footer>
+</body>
+</html>

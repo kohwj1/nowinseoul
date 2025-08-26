@@ -1,0 +1,37 @@
+/* 헤더(배지 + 타이틀 한 줄) */
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem; /* ← 헤더와 그래프 사이 간격 */
+}
+
+/* 현재 혼잡도 바가 필요한 경우에만 사용 (없으면 이 블록 생략 가능) */
+.current-level-bar {
+  height: 100%;
+  border-radius: 6px;
+  width: 0%;
+  transition: width .3s ease;
+}
+.current-level-bar.comfortable { width:100%; background-color:#22c55e; }
+.current-level-bar.medium      { width:70%;  background-color:#f59e0b; }
+.current-level-bar.congested   { width:40%;  background-color:#ef4444; }
+
+/* 시간대 그라데이션 막대 컨테이너 */
+.progress-bar-container {
+  height: 16px;           /* ← 굵기 조절 */
+  border-radius: 6px;     /* 굵기 따라 적당히 조절 */
+  width: 100%;
+  display: block;
+  background: none;       /* JS가 linear-gradient로 채움 */
+  margin-top: .5rem;
+}
+
+/* 시간 라벨 */
+.time-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.3125rem;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
