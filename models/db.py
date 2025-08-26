@@ -37,7 +37,7 @@ def insert_data(table_name, result_list): # fetch api data
 
     place_holder = {'detail_raw': ':id, :AREA_CONGEST_LVL, :PPLTN_TIME',
                     'density_raw':':id, :FCST_TIME, :FCST_CONGEST_LVL',
-                    'weather_raw':':id, :FCST_DT, :TEMP, :RAIN_CHANCE',
+                    'weather_raw':':id, :fcstDate, :TMP, :POP',
                     'bike_station_info':':id, :SBIKE_SPOT_ID, :SBIKE_SPOT_NM'}[table_name]
 
     conn = connect_db()
@@ -53,7 +53,24 @@ def insert_data(table_name, result_list): # fetch api data
     
     conn.commit()
     conn.close()
+
+def insert_weather(weather_list):
+    conn = connect_db()
+    cur = conn.cursor()
     
+    cur.execute(f'DELETE FROM weather_raw')
+    print(f'{weather_list[0]=}')
+    # cur.executemany : 여러 개의 SQL 명령을 하나씩 반복 실행하는 것
+    cur.executemany(f"""INSERT INTO weather_raw ()
+                        SELECT id, :fcst_dt, :TMP, :POP
+                          FROM attraction
+                         WHERE nx = :nx AND ny = :ny
+                     """, result_list)
+    
+
+    conn.commit()
+    conn.close()
+
 # 데이터 조회 함수
 def get_station_info(attraction_id):
     conn = connect_db()
@@ -77,38 +94,26 @@ def get_data(attr, table_name):
     
     #  여기에 구현할것
     cur.execute(f'SELECT {attr} FROM {table_name}')
-    result_list = [dict(i)[attr] for i in cur.fetchall()]
+    result_list = [dict(i) for i in cur.fetchall()]
     
     conn.commit()
     conn.close()
     
     return result_list
 
-def get_attraction_name_by_id(attraction_id):
+def get_attraction_by_id(attr, attraction_id):
     conn = connect_db()
     cur = conn.cursor()
-    
-    #  여기에 구현할것
-    cur.execute('SELECT name FROM attraction WHERE id = ?', (attraction_id,))
-    attr_name = cur.fetchone()  # 사용자 한명만
-    
-    conn.commit()
-    conn.close()
-    
-    return attr_name
 
-def get_desc(attraction_id):
-    conn = connect_db()
-    cur = conn.cursor()
-    
     #  여기에 구현할것
-    cur.execute('SELECT description FROM attraction WHERE id = ?', (attraction_id,))
-    attr_desc = cur.fetchone()[0] 
+    cur.execute(f"SELECT {attr} FROM attraction WHERE id = ?", (attraction_id,))
+    attr_value = cur.fetchone()  # 사용자 한명만
     
     conn.commit()
     conn.close()
     
-    return attr_desc
+    return dict(attr_value)[attr]
+
 
 # 데이터 수정 함수
 def update_id(station_id_mapping_list):
@@ -128,6 +133,19 @@ def update_id(station_id_mapping_list):
     station_name_ko TEXT : RENT_ID_NM    -- 한국어 대여소명
     station_name_en TEXT : RENT_ID_NM_EN -- 영어 대여소명
     '''
+
+    conn.commit()
+    conn.close()
+
+def update_xy(id_nx_ny_list):
+    conn = connect_db()
+    cur = conn.cursor()
+
+    cur.executemany("""UPDATE attraction
+                          SET nx = :nx,
+                              ny = :ny
+                        WHERE id = :id
+                    """, id_nx_ny_list) # 여러 개의 SQL 명령을 하나씩 반복 실행하는 것
 
     conn.commit()
     conn.close()
@@ -209,4 +227,4 @@ if __name__ == "__main__":
     # print(get_null_station_id())
     # print(get_data('name_ko', 'attraction'))
     # print(get_station_info('POI007'))
-    print(get_desc('POI007'))
+    print(get_attraction_by_id('description' , 'POI007'))

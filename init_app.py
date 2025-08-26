@@ -2,6 +2,7 @@
 
 from models.init_db import *
 from services.init_bike_station import *
+from services.init_weather import *
 
 
 def init_app_fetch_data():
@@ -11,8 +12,11 @@ def init_app_fetch_data():
         os.remove(DB_PATH)
     init_db()
 
-    # 2. CSV 파일 업로드 (예시)
+    # 2. CSV 파일 업로드
     import_attraction()
+
+    # 3. update nx, ny
+    db.update_xy(concurrent_processing(mapping_xy,db.get_data('id,lat,lng', 'attraction')))
 
 
     ## services.init_bike_station

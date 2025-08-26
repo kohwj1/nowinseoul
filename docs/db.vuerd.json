@@ -56,7 +56,7 @@
     "tableEntities": {
       "mxBecmZzmYWxCQlbFG4cr": {
         "id": "mxBecmZzmYWxCQlbFG4cr",
-        "name": "attraction_info",
+        "name": "attraction",
         "comment": "관광지 기본 정보",
         "columnIds": [
           "ZodrB1Xgy3C6s9U0Fe2J7",
@@ -64,6 +64,8 @@
           "eKvfOb4-0xQC0_EFi0Tum",
           "IAhzBHWbLfzvlR6dl0Y77",
           "1j31lUYv7R0lEmVnxv0as",
+          "QoW8soWQM6rVN8hkH7EkZ",
+          "d-DgAafVnna7qOB4QQUzY",
           "x7MgLBE9s8cmRyr1yn-6z",
           "s3ItOZtfENPlDdVOnD_fm",
           "B7t0SKvEbeX2FZg_3ArRp",
@@ -77,6 +79,8 @@
           "eKvfOb4-0xQC0_EFi0Tum",
           "IAhzBHWbLfzvlR6dl0Y77",
           "1j31lUYv7R0lEmVnxv0as",
+          "QoW8soWQM6rVN8hkH7EkZ",
+          "d-DgAafVnna7qOB4QQUzY",
           "x7MgLBE9s8cmRyr1yn-6z",
           "s3ItOZtfENPlDdVOnD_fm",
           "5oRaM91IygPEsrcLXGfqS",
@@ -89,15 +93,15 @@
           "mfPtSOsOAk7cIBNMLBhwe"
         ],
         "ui": {
-          "x": 774.7658,
-          "y": 559.6004,
+          "x": 780.7658,
+          "y": 524.6004,
           "zIndex": 2,
-          "widthName": 85,
+          "widthName": 60,
           "widthComment": 81,
           "color": ""
         },
         "meta": {
-          "updateAt": 1756082318528,
+          "updateAt": 1756125217628,
           "createAt": 1754985801491
         }
       },
@@ -182,15 +186,15 @@
           "SZcoKbsvV8yly0ZpxRCWs"
         ],
         "ui": {
-          "x": 1354.6388,
-          "y": 361.5436,
+          "x": 1490.6388,
+          "y": 360.5436,
           "zIndex": 160,
           "widthName": 88,
           "widthComment": 194,
           "color": ""
         },
         "meta": {
-          "updateAt": 1755954076692,
+          "updateAt": 1756112858663,
           "createAt": 1754986244003
         }
       },
@@ -286,15 +290,15 @@
           "kfOqpa_XoPHpLzYktCtCM"
         ],
         "ui": {
-          "x": 1355,
-          "y": 677,
+          "x": 1505,
+          "y": 688,
           "zIndex": 386,
           "widthName": 74,
           "widthComment": 194,
           "color": ""
         },
         "meta": {
-          "updateAt": 1756097571103,
+          "updateAt": 1756112861397,
           "createAt": 1755254924659
         }
       },
@@ -2390,6 +2394,46 @@
           "updateAt": 1756097757499,
           "createAt": 1756097324233
         }
+      },
+      "QoW8soWQM6rVN8hkH7EkZ": {
+        "id": "QoW8soWQM6rVN8hkH7EkZ",
+        "tableId": "mxBecmZzmYWxCQlbFG4cr",
+        "name": "nx",
+        "comment": "예보지점의 X 좌표값 = 동네예보 격자 번호(동서방향)",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 255,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756112817649,
+          "createAt": 1756112765924
+        }
+      },
+      "d-DgAafVnna7qOB4QQUzY": {
+        "id": "d-DgAafVnna7qOB4QQUzY",
+        "tableId": "mxBecmZzmYWxCQlbFG4cr",
+        "name": "ny",
+        "comment": "예보지점의 Y 좌표값 = 동네예보 격자 번호(동서방향)",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 254,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756112835533,
+          "createAt": 1756112819674
+        }
       }
     },
     "relationshipEntities": {
@@ -2459,8 +2503,8 @@
           "columnIds": [
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
-          "x": 1247.7658000000001,
-          "y": 719.6004,
+          "x": 1420.7658000000001,
+          "y": 708.6004,
           "direction": 2
         },
         "end": {
@@ -2468,8 +2512,8 @@
           "columnIds": [
             "J93O3_V0b1PdZjwa8iHT4"
           ],
-          "x": 1355,
-          "y": 765,
+          "x": 1505,
+          "y": 776,
           "direction": 1
         },
         "meta": {
@@ -2488,8 +2532,8 @@
             "J93O3_V0b1PdZjwa8iHT4",
             "4g9LywePGktao8AMr_SOS"
           ],
-          "x": 1593.5,
-          "y": 677,
+          "x": 1743.5,
+          "y": 688,
           "direction": 4
         },
         "end": {
@@ -2498,8 +2542,8 @@
             "oV9HNKarowslevTQqe6La",
             "MjiHcme9eantdXAc2rkMy"
           ],
-          "x": 1593.1388,
-          "y": 537.5436,
+          "x": 1729.1388,
+          "y": 536.5436,
           "direction": 8
         },
         "meta": {
@@ -2517,8 +2561,8 @@
           "columnIds": [
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
-          "x": 1011.2658,
-          "y": 879.6004,
+          "x": 1100.7658000000001,
+          "y": 892.6004,
           "direction": 8
         },
         "end": {
@@ -2575,8 +2619,8 @@
           "columnIds": [
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
-          "x": 774.7658,
-          "y": 719.6004,
+          "x": 780.7658,
+          "y": 708.6004,
           "direction": 1
         },
         "end": {
@@ -2631,8 +2675,8 @@
           "columnIds": [
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
-          "x": 1011.2658,
-          "y": 559.6004,
+          "x": 1100.7658000000001,
+          "y": 524.6004,
           "direction": 4
         },
         "end": {
