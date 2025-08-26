@@ -18,6 +18,12 @@
 <main>
     <div class="main-container">
         <div class="accordion" id="mapFilter">
+            <div class="toast align-items-center start-50 translate-middle text-bg-dark" role="alert" aria-live="assertive" aria-atomic="true" id="toast">
+                <div class="d-flex">
+                    <div class="toast-body" id="toastMsg"></div>
+                    <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <div class="accordion-button bg-white" type="button" id="filterDisplay">
@@ -28,14 +34,6 @@
                     <form class="accordion-body" id="filterForm">
                         <div class="mb-3">
                             <p class="form-label">Search by place name</p>
-                            <div class="toast align-items-center top-50 start-50 translate-middle text-bg-dark" role="alert" aria-live="assertive" aria-atomic="true" id="toast">
-                                <div class="d-flex">
-                                    <div class="toast-body">
-                                        No search result
-                                    </div>
-                                    <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-                                </div>
-                            </div>
                             <div class="d-flex">
                                 <input type="search" class="form-control me-3" id="mapSearch" name="mapSearch">
                                 <button class="btn btn-primary" id="btnSearch">Search</button>

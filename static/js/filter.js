@@ -44,8 +44,7 @@ function searchPlace() {
         openTooltip();
         toggleFilter();
     } else {
-        const noResultToast = bootstrap.Toast.getOrCreateInstance(document.getElementById('toast'))
-        noResultToast.show()
+        toastPop('No Search Result')
     }
 }
 
@@ -60,6 +59,13 @@ function toggleFilter() {
         filterDisplayBtn.classList.toggle('collapsed');
         isFilterDisplayed = !isFilterDisplayed;
     }
+}
+
+//검색어 미입력, 검색결과 없음 등의 시각 피드백을 주기 위해서 추가했습니다. (BS 토스트 이용)
+function toastPop(message) {
+    document.getElementById('toastMsg').textContent = message
+    const noResultToast = bootstrap.Toast.getOrCreateInstance(document.getElementById('toast'))
+    noResultToast.show()
 }
 
 //필터 UI 조작 시마다 마커 갱신
@@ -105,7 +111,7 @@ document.getElementById('btnReset').addEventListener('click', () => {
 document.getElementById('btnSearch').addEventListener('click', () => {
     const keyword = document.getElementById('mapSearch').value;
     if (keyword == '') {
-        return;
+        toastPop('Please enter a keyword');
     } else {
         searchPlace()
     }
