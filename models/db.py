@@ -150,6 +150,19 @@ def update_xy(id_nx_ny_list):
     conn.commit()
     conn.close()
 
+def update_traffic(id_traffic_list):
+    conn = connect_db()
+    cur = conn.cursor()
+
+    cur.executemany("""UPDATE detail_raw
+                          SET realtime_road = :realtime_road,
+                              realtime_road_dttm = :realtime_road_dttm
+                        WHERE id = :id
+                    """, id_traffic_list) # 여러 개의 SQL 명령을 하나씩 반복 실행하는 것
+
+    conn.commit()
+    conn.close()
+
 # 데이터 삭제 함수    
 def delete_table(table_name):
     if table_name not in table_list():
