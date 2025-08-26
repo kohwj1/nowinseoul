@@ -54,6 +54,14 @@ footer {
     height:20px;
 }
 
+#toast {
+    position: absolute;
+    width: 250px;
+    z-index: 100000;
+    border-radius: 20rem;
+    opacity: 0.7;
+}
+
 @media (max-width:1000px) {
     #map {
         max-width: 999px;
