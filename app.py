@@ -1,5 +1,6 @@
-from flask import Flask, render_template, jsonify, url_for
+from flask import Flask, render_template, jsonify, url_for, request
 from services.bike_station_fetcher import get_info
+from models import db
 import os
 
 #테스트 데이터 불러오기 위한 모듈입니다. 배포 전 삭제 필요!
@@ -12,21 +13,7 @@ app.config['DATABASE'] = os.path.join(app.instance_path, 'nowinseoul.db')
 # 메인 페이지
 @app.route('/', methods=['GET','POST'])
 def index():
-    data = [
-            {'id':'POI095','name': 'Banpo Hangang Park'},
-            {'id':'POI096','name': 'Dream Forest'},
-            {'id':'POI098','name': 'Seoripul Park·Montmartre Park'},
-            {'id':'POI099','name': 'Seoul Plaza'},
-            {'id':'POI100','name': 'Seoul Grand Park'},
-            {'id':'POI101','name': 'Seoul Forest'},
-           
-    ]
-
-    if request.method == "POST":
-        # POST 에 대한 처리
-        tags = request.form["tags"] #list
-        return 
-
+    data = db.get_images([])
 
     return render_template('index.html', data = data)
 
@@ -37,186 +24,29 @@ def browse_on_map():
     return render_template('onmap.html', data={"data":mapdata})
 
 # 상세 페이지
-@app.route('/detail/<id>/<name>')
-def detail(id, name):
-    data = {"AREA_CD":id,
-            "NAME":name,
-            # "LAST_UPDATE_DTTM": db.get_id_info(id).get('insert_dttm')
-            # DB에 아직 없음 "DESCRIPTION":db.get_id_info(id).get('description'),
-            "DESCRIPTION": "Seoul Station, nestled in the heart of South Korea's vibrant capital, is far more than just a transit hub—it's a cultural landmark that beautifully marries the past with the present. As a pivotal gateway to Seoul, this bustling station offers travelers an intriguing blend of modernity and tradition. Whether you're arriving from Incheon Airport or embarking on a high-speed KTX train to explore the rest of Korea, Seoul Station ensures a seamless travel experience with its extensive connections and top-notch amenities. Beyond its role as a transportation center, it invites visitors to delve into the rich history and vibrant culture of Seoul, making it an essential stop for history buffs, culture enthusiasts, and travelers alike.",
-            "WEATHER_STTS": [j # 12개
-                {
-                    "FCST_DT": "202508210400",
-                    "TEMP": "27",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508210500",
-                    "TEMP": "27",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508210600",
-                    "TEMP": "26",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508210700",
-                    "TEMP": "26",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508210800",
-                    "TEMP": "26",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508210900",
-                    "TEMP": "27",
-                    "RAIN_CHANCE": "60",
-                },
-                {
-                    "FCST_DT": "202508211000",
-                    "PRECPT_TYPE": "소나기",
-                    "RAIN_CHANCE": "60",
-                },
-                {
-                    "FCST_DT": "202508211100",
-                    "TEMP": "30",
-                    "RAIN_CHANCE": "60",
-                },
-                {
-                    "FCST_DT": "202508211200",
-                    "TEMP": "30",
-                    "RAIN_CHANCE": "30",
-                },
-                {
-                    "FCST_DT": "202508211300",
-                    "TEMP": "31",
-                    "RAIN_CHANCE": "30",
-                },
-                {
-                    "FCST_DT": "202508211400",
-                    "TEMP": "31",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508211500",
-                    "TEMP": "31",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508211600",
-                    "TEMP": "31",
-                    "RAIN_CHANCE": "0",
-                },
-                {
-                    "FCST_DT": "202508211700",
-                    "TEMP": "31",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508211800",
-                    "TEMP": "31",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508211900",
-                    "TEMP": "29",
-                    "RAIN_CHANCE": "0",
-                },
-                {
-                    "FCST_DT": "202508212000",
-                    "TEMP": "29",
-                    "RAIN_CHANCE": "0",
-                },
-                {
-                    "FCST_DT": "202508212100",
-                    "TEMP": "28",
-                    "RAIN_CHANCE": "0",
-                },
-                {
-                    "FCST_DT": "202508212200",
-                    "TEMP": "28",
-                    "RAIN_CHANCE": "0",
-                },
-                {
-                    "FCST_DT": "202508212300",
-                    "TEMP": "27",
-                    "RAIN_CHANCE": "20",
-                },
-                {
-                    "FCST_DT": "202508220000",
-                    "TEMP": "27",
-                    "RAIN_CHANCE": "0",
-                },
-                {
-                    "FCST_DT": "202508220100",
-                    "TEMP": "27",
-                    "RAIN_CHANCE": "30",
-                },
-                {
-                    "FCST_DT": "202508220200",
-                    "TEMP": "26",
-                    "RAIN_CHANCE": "30",
-                },
-                {
-                    "FCST_DT": "202508220300",
-                    "TEMP": "26",
-                    "RAIN_CHANCE": "30",
-                }
+@app.route('/detail/<attraction_id>')
+def detail(attraction_id):
+    attraction_info_by_id = db.get_info_by_id('attraction', attraction_id)
+    if not attraction_info_by_id:
+        return '404'
+        
+    data = {"AREA_CD" : attraction_id,
+            "NAME" : attraction_info_by_id[0].get('name_en'),
+            "DESCRIPTION": attraction_info_by_id[0].get('description'),
+            "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
+                              "TEMP": str(d.get('fcst_temp')),
+                              "RAIN_CHANCE": str(d.get('rain_chance'))}
+                              for d in db.get_info_by_id('weather_cache',attraction_id)
+            ], # 12개
+            "AREA_PPLTN":[{"FCST_TIME": d.get('realtime_pop_dttm'),
+                           "FCST_CONGEST_LVL": d.get('realtime_pop')}
+                              for d in db.get_info_by_id('detail_cache',attraction_id)
             ],
-            "AREA_PPLTN":[
-                {
-                    "FCST_TIME": "2025-08-21 04:00",
-                    "FCST_CONGEST_LVL": "Comfortable",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 05:00",
-                    "FCST_CONGEST_LVL": "Moderate",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 06:00",
-                    "FCST_CONGEST_LVL": "Crowded",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 07:00",
-                    "FCST_CONGEST_LVL": "Comfortable",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 08:00",
-                    "FCST_CONGEST_LVL": "Comfortable",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 09:00",
-                    "FCST_CONGEST_LVL": "Moderate",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 10:00",
-                    "FCST_CONGEST_LVL": "Crowded",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 11:00",
-                    "FCST_CONGEST_LVL": "Crowded",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 12:00",
-                    "FCST_CONGEST_LVL": "Crowded",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 13:00",
-                    "FCST_CONGEST_LVL": "Crowded",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 14:00",
-                    "FCST_CONGEST_LVL": "Crowded",
-                },
-                {
-                    "FCST_TIME": "2025-08-21 15:00",
-                    "FCST_CONGEST_LVL": "Crowded",
-                }
+            "ROAD_TRAFFIC_STTS":[{"ROAD_TRAFFIC_TIME": d.get('realtime_road_dttm'),
+                                  "ROAD_TRAFFIC_IDX": d.get('realtime_road')}
+                              for d in db.get_info_by_id('detail_cache',attraction_id)
             ],
-            "SBIKE_STTS":get_info(id)
+            "SBIKE_STTS":get_info(attraction_id)
     }
     print(data)
     return render_template('detail_page.html', data=data)
@@ -226,15 +56,9 @@ def detail(id, name):
 # 메인에서 태그 필터 걸때
 @app.route('/main-feature', methods=['POST'])
 def filter_by_tags():
-    data = {"tags" : ["food", "movie"],
-        "data":[
-            {'id':'POI095','name': 'Banpo Hangang Park'},
-            {'id':'POI096','name': 'Dream Forest'},
-            {'id':'POI098','name': 'Seoripul Park·Montmartre Park'},
-            {'id':'POI099','name': 'Seoul Plaza'},
-            {'id':'POI100','name': 'Seoul Grand Park'},
-            {'id':'POI101','name': 'Seoul Forest'},
-        ]
+    tags = request.form.get('tags')
+    data = {"tags" : tags,
+            "data" : db.get_images(tags)
     }
     return jsonify(data)
 
