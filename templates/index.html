@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Now in Seoul</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="../static/css/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#ffffff">
+  <title>Now in Seoul</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="../static/css/bs/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <link rel="stylesheet" href="../static/css/index.css"/>
 </head>
 <body>
 
-    <div class="header-image">
-        <img src="../static/images/ui/main.png" alt="Now in Seoul Main Image">
-        <div class="header-text-container">
-            <h1 class="header-text">Now in Seoul</h1>
-            <p class="header-subtitle">See What’s Happening Right Now in Seoul!</p>
-        </div>
+  <div class="header-image">
+    <img src="../static/images/ui/main.png" alt="Now in Seoul Main Image"/>
+    <div class="header-text-container">
+      <h1 class="header-text">Now in Seoul</h1>
+      <p class="header-subtitle">See What’s Happening Right Now in Seoul!</p>
+    </div>
+  </div>
+
+  <form class="tag-form">
+    <div class="mb-3 flex-wrap" role="group" aria-label="Theme filter">
+      <input type="checkbox" class="mapfilter btn-check" id="food" name="tag" value="Food" autocomplete="off"/>
+      <label class="btn btn-outline-primary btn-sm mb-1" for="food">#Food</label>
+
+      <input type="checkbox" class="mapfilter btn-check" id="drama" name="tag" value="Drama" autocomplete="off"/>
+      <label class="btn btn-outline-primary btn-sm mb-1" for="drama">#Drama</label>
+
+      <input type="checkbox" class="mapfilter btn-check" id="beauty" name="tag" value="Beauty" autocomplete="off"/>
+      <label class="btn btn-outline-primary btn-sm mb-1" for="beauty">#Beauty</label>
+
+      <input type="checkbox" class="mapfilter btn-check" id="movie" name="tag" value="Movie" autocomplete="off"/>
+      <label class="btn btn-outline-primary btn-sm mb-1" for="movie">#Movie</label>
     </div>
 
-    <div class="container">
-        <form class="tag-form">
-            <div class="tag-group">
-                <input type="checkbox" class="tag-filter btn-check" id="food" name="tag" value="Food">
-                <label class="btn btn-outline-secondary rounded-pill m-1" for="food">#Food</label>
-
-                <input type="checkbox" class="tag-filter btn-check" id="drama" name="tag" value="Drama">
-                <label class="btn btn-outline-secondary rounded-pill m-1" for="drama">#Drama</label>
-
-                <input type="checkbox" class="tag-filter btn-check" id="beauty" name="tag" value="Beauty">
-                <label class="btn btn-outline-secondary rounded-pill m-1" for="beauty">#Beauty</label>
-                
-                <input type="checkbox" class="tag-filter btn-check" id="movie" name="tag" value="Movie">
-                <label class="btn btn-outline-secondary rounded-pill m-1" for="movie">#Movie</label>
-            </div>
-            <div class="map-button-container pc-only">
-                <a href="/map" class="map-button">Browse on a Map</a>
-            </div>
-        </form>
-
-        <div class="content">
-            {% for item in data %}
-            <div class="card">
-                <a href="{{ url_for('detail', id=item.id, name=item.name) }}">
-                <div class="card-image-container">
-                    <img src="../static/images/attraction/{{ item.id }}.jpg" alt="main image" class="card-image">
-                    <div class="card-title">{{ item.name }}</div>
-                </div>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div class="map-button-container mobile-only">
-            <a href="/map" class="map-button">Browse on a Map</a>
-        </div>
+    <!-- 데스크톱 전용 지도 버튼 -->
+    <div class="map-button-container d-none d-md-flex">
+      <a href="/map" class="btn btn-primary">Browse on a Map</a>
     </div>
+  </form>
 
-    <script src="../static/js/pagination.js"></script>
+    <div class="container"> 
+        <div class="content"> 
+            {% for item in data %} 
+            <div class="card"> 
+                <a href="{{ url_for('detail', id=item.id, name=item.name) }}"> 
+                    <img src="../static/images/attraction/{{ item.id }}.jpg" alt="main image" class="card-image"/> 
+                    <div class="card-title">{{ item.name }}</div> 
+                </a> 
+            </div> 
+            {% endfor %} 
+        </div>
+
+    <div class="mobile-map-cta d-md-none">
+      <a href="/map" class="btn btn-primary w-100">Browse on a Map</a>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>
