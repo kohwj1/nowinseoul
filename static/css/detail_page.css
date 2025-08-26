@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans KR', Arial, sans-serif;
-  background-color: #f0f2f5;
+  background-color: #ffffff;
 }
 
 .page-container {
@@ -155,6 +155,171 @@ body {
 }
 
 .public-bike-section {
-    background-color: #ffffff;
-  }
+  background-color: #ffffff;
+}
 
+/* ====== 레이아웃 공통 ====== */
+.additional-info-section {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ====== Weather 카드 ====== */
+.weather-section{
+  background:#eef0ff; border-radius:12px; padding:15px 16px;
+  box-shadow:0 2px 6px rgba(17,24,39,.06);
+  overflow:visible; /* 폭 확장 시 잘리지 않음 */
+}
+
+/* 헤더 */
+.weather-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.weather-header h2{ font-size:1.1rem; font-weight:700; color:#1f2937; margin:0; }
+.current-temp{ font-size:1.5rem; font-weight:800; color:#111827; letter-spacing:.2px; }
+
+/* 예보 리스트(그래프는 그대로 고정, 컨테이너만 스크롤) */
+.weather-forecast-container{ scrollbar-width:none; }
+.weather-forecast-container::-webkit-scrollbar{ display:none; }
+
+.weather-forecast{
+  display:flex; align-items:flex-end; gap:0.6rem;
+  overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:8px;
+  overscroll-behavior-x: contain;
+}
+
+.forecast-item{ flex:0 0 auto; width:15%; display:flex; flex-direction:column; align-items:center; text-align:center; }
+.forecast-item .time{ font-size:.8rem; color:#6b7280; margin-bottom:2px; }
+.forecast-item .temp{ font-size:.9rem; font-weight:700; color:#374151; margin-bottom:6px; }
+
+/* 강수 그래프 — 막대형(bar) */
+.rain-chance-graph {
+  width: 100%;
+  max-width: 20px;       /* 막대 폭 */
+  height: 80px;          /* 전체 높이 */
+  background: #e5e7eb;   /* 배경(회색) */
+  border-radius: 3px;    /* 완전 네모면 0 */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.rain-chance-graph::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: calc(var(--rain, 0) * 1%);   /* JS에서 --rain(0~100) 세팅 */
+  background: #0ea5e9;
+  transition: height .3s ease;
+}
+.rain-chance{ font-size:.75rem; color:#06b6d4; font-weight:700; }
+
+/* 데스크톱 살짝 확대(선택) */
+@media (min-width:48rem){
+  .forecast-item .time{ font-size:1rem; margin-bottom:6px; }
+  .forecast-item .temp{ font-size:1.1rem; margin-bottom:8px; }
+  .rain-chance-graph{ max-width:30px; height:100px; margin-bottom:10px; }
+  .rain-chance{ font-size:.95rem; }
+}
+
+@media (max-width:47.99rem){
+  .weather-forecast { gap: 1rem; }
+}
+
+/* 헤더(배지 + 타이틀 한 줄) */
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem; /* ← 헤더와 그래프 사이 간격 */
+}
+
+/* 현재 혼잡도 바가 필요한 경우에만 사용 (없으면 이 블록 생략 가능) */
+.current-level-bar {
+  height: 100%;
+  border-radius: 6px;
+  width: 0%;
+  transition: width .3s ease;
+}
+.current-level-bar.comfortable { width:100%; background-color:#22c55e; }
+.current-level-bar.medium      { width:70%;  background-color:#f59e0b; }
+.current-level-bar.congested   { width:40%;  background-color:#ef4444; }
+
+/* 시간대 그라데이션 막대 컨테이너 */
+.progress-bar-container {
+  height: 16px;           /* ← 굵기 조절 */
+  border-radius: 6px;     /* 굵기 따라 적당히 조절 */
+  width: 100%;
+  display: block;
+  background: none;       /* JS가 linear-gradient로 채움 */
+  margin-top: .5rem;
+}
+
+/* 시간 라벨 */
+.time-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.3125rem;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* ========== ℃/℉ 토글: 세그먼트 + 슬라이딩 썸 ========== */
+.weather-header .left-wrap { display:flex; align-items:center; gap:.5rem; }
+
+.unit-switch{
+  --border:#d1d5db;
+  --thumb:#111827;     /* 썸(활성 배경) 색 */
+  --text:#374151;      /* 일반 텍스트 */
+  --text-active:#fff;  /* 활성 텍스트 */
+
+  position:relative;
+  display:inline-grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  padding:2px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:inset 0 0 0 1px var(--border);
+}
+.unit-switch::before{
+  content:"";
+  position:absolute;
+  top:2px; bottom:2px; left:2px;
+  width:calc(50% - 4px);           /* 트랙의 절반 */
+  border-radius:999px;
+  background:var(--thumb);
+  box-shadow:0 2px 6px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.2);
+  transition:transform .22s ease;
+}
+
+/* 두 번째 버튼이 active면 썸을 오른쪽으로 이동 (지원 브라우저에서) */
+.unit-switch:has(.unit-btn[data-unit="F"].active)::before{ transform:translateX(100%); }
+
+/* 버튼 */
+.unit-btn{
+  appearance:none;
+  border:0;
+  background:transparent;
+  padding:.35rem .9rem;
+  font-size:.85rem;
+  font-weight:700;
+  letter-spacing:.2px;
+  color:var(--text);
+  cursor:pointer;
+  position:relative;   /* 썸 위에서도 클릭 가능하도록 */
+  z-index:1;
+  border-radius:999px; /* 포커스 링용 */
+}
+.unit-btn:hover{ color:#0f172a; }
+.unit-btn:focus-visible{
+  outline:2px solid #111827;
+  outline-offset:2px;
+}
+
+/* 활성 텍스트 색 반전 */
+.unit-btn.active{ color:var(--text-active); }
+
+/* 작은 화면에서 컴팩트 */
+@media (max-width: 480px){
+  .unit-btn{ padding:.3rem .7rem; font-size:.8rem; }
+}
