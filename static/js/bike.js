@@ -3,10 +3,15 @@ function circleOnMap(marker_data, map) {
     try {
         for (m of marker_data) {
             if (m.SBIKE_PARKING_CNT != 0) {
-                L.circleMarker([m.SBIKE_X, m.SBIKE_Y], {radius: 15, color: '#33a758', fillColor: '#33a758', fillOpacity: 1})
-                .addTo(map)
-                L.marker([m.SBIKE_X, m.SBIKE_Y],{icon: L.divIcon({html: `<div class="circle-text">${m.SBIKE_PARKING_CNT}</div>`, iconSize: [0, 0], iconAnchor: [0, 0],})})
+                L.marker([m.SBIKE_X, m.SBIKE_Y], {icon: L.icon({
+                    iconUrl: '../../static/images/ui/marker_bicycle.png',
+                    iconSize: [30, 36],
+                    iconAnchor: [22, 15],
+                    popupAnchor: [-7, 2]
+                })})
                 .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br>${m.SBIKE_PARKING_CNT} bike(s)`)
+                .addTo(map)
+                L.marker([m.SBIKE_X, m.SBIKE_Y],{icon: L.divIcon({html: `<div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${m.SBIKE_PARKING_CNT}</div>`, iconSize: [0, 0], iconAnchor: [-10, 12],})})
                 .addTo(map)
         }
     }
