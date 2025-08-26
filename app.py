@@ -28,8 +28,8 @@ def browse_on_map():
 def detail(attraction_id):
     attraction_info_by_id = db.get_info_by_id('attraction', attraction_id)
     if not attraction_info_by_id:
-        return '404'
-        
+        return render_template('404.html'), 404
+
     data = {"AREA_CD" : attraction_id,
             "NAME" : attraction_info_by_id[0].get('name_en'),
             "DESCRIPTION": attraction_info_by_id[0].get('description'),
@@ -61,6 +61,13 @@ def filter_by_tags():
             "data" : db.get_images(tags)
     }
     return jsonify(data)
+
+# --------------------------------------------
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
