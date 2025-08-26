@@ -1,0 +1,15 @@
+footer {
+    font-family: "Noto Sans KR";
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position:fixed;
+    bottom:0px;
+    z-index: 999999;
+    background-color: #fff;
+    padding: 0.4rem;
+}
+
+.public-data {
+    height: 24px;
+}
