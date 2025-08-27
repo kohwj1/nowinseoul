@@ -4,14 +4,13 @@ from models import db
 import os
 
 #테스트 데이터 불러오기 위한 모듈입니다. 배포 전 삭제 필요!
-import json
 from testgen.test_map_data_generator import mapdata_generator
 
 app = Flask(__name__, instance_relative_config=True) # instance 폴더가 앱 설정과 리소스 파일들의 기준 경로로 사용됩
 app.config['DATABASE'] = os.path.join(app.instance_path, 'nowinseoul.db')
 
 # 메인 페이지
-@app.route('/', methods=['GET','POST'])
+@app.route('/')
 def index():
     data = db.get_images([])
 

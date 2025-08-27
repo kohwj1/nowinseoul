@@ -4,8 +4,8 @@
 
 # fetch가 주된 작업이면 스레드 관리 오버헤드가 성능 저하를 일으킬 수 있기 때문에 비동기로만 작업
 
-import sys
-sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import os,utils,aiohttp,asyncio
 from dotenv import load_dotenv
 from models import db

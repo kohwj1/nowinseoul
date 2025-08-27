@@ -108,7 +108,7 @@ def get_images(tags:list):
     if tags:
         cur.execute(f'SELECT id, name_en AS name FROM attraction ORDER BY {'+'.join(tags)} DESC LIMIT 6')
     else:
-        cur.execute(f'SELECT id, name_ko FROM attraction ORDER BY food+beauty+drama+movie DESC LIMIT 6')
+        cur.execute(f'SELECT id, name_en AS name FROM attraction ORDER BY food+beauty+drama+movie DESC LIMIT 6')
     
     result_list = [dict(i) for i in cur.fetchall()]
     

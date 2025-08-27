@@ -2,8 +2,8 @@
 
 # pip install googletrans
 # https://pypi.org/project/googletrans/
-import sys
-sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from concurrent.futures import ThreadPoolExecutor
 import os, utils
 from dotenv import load_dotenv

@@ -2,8 +2,8 @@
 # 
 
 # 서울시 api는 비동기 요청시 (aiohttp) xml로 답변이 옴 (llm은 aiohttp에 헤더가 없아서 그런거라는데..)
-import sys
-sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from concurrent.futures import ThreadPoolExecutor
 import os, utils
 from dotenv import load_dotenv
