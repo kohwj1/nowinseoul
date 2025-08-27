@@ -173,6 +173,10 @@ body {
     min-width: 0;
     text-align: center;
   }
+
+  .content .card:last-child {
+    margin-bottom: calc(90px + env(safe-area-inset-bottom, 0));
+  }
   
   .container {
     flex: 1;
@@ -239,17 +243,11 @@ body {
 
 
 @media (min-width: 1001px) {
-  .content {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 16px 40px;
-  }
-
   .btn-outline-primary {
     border-radius: 10px;
     padding: 0.3rem 0.5rem;
     font-weight: 400;
     font-size: 0.9rem;
-    transition: all 0.2s ease;
     border-width: 1px;
     min-width: 180px;
     min-height: 20px;
@@ -284,7 +282,7 @@ body {
   .content {
     grid-template-columns: repeat(3, 1fr);
     padding: 0 8px 40px;
-    gap: 12px;
+    gap: 25px;
     margin-bottom: 0;   
   }
 }
