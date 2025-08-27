@@ -54,23 +54,6 @@ def insert_data(table_name, result_list): # fetch api data
     conn.commit()
     conn.close()
 
-def insert_weather(weather_list):
-    conn = connect_db()
-    cur = conn.cursor()
-    
-    cur.execute(f'DELETE FROM weather_raw')
-    print(f'{weather_list[0]=}')
-    # cur.executemany : 여러 개의 SQL 명령을 하나씩 반복 실행하는 것
-    cur.executemany(f"""INSERT INTO weather_raw ()
-                        SELECT id, :fcst_dt, :TMP, :POP
-                          FROM attraction
-                         WHERE nx = :nx AND ny = :ny
-                     """, result_list)
-    
-
-    conn.commit()
-    conn.close()
-
 # 데이터 조회 함수
 def get_data(attr, table_name):
     if table_name not in table_list():
@@ -99,6 +82,31 @@ def get_info_by_id(table_name, attraction_id):
     conn.commit()
     conn.close()
     
+    return attr_value
+
+def get_info_for_map():
+    conn = connect_db()
+    cur = conn.cursor()
+
+    #  여기에 구현할것
+    # [{'id': 'POI001', 'name': 'Gangnam MICE Special Tourist Zone', 'crowd': 'Crowded', 'beauty': '241', 'food': '25', 'drama': '18', 'movie': '14', 'lat': '37.512693', 'lng': '127.0624'},]
+    cur.execute(f"""SELECT att.id
+                         , att.name_en AS name
+                         , dtl.realtime_pop AS crowd
+                         , att.beauty
+                         , att.food
+                         , att.drama
+                         , att.movie
+                         , att.lat
+                         , att.lng
+                      FROM attraction att
+                      JOIN detail_cache dtl ON att.id = dtl.id
+                 """)
+    attr_value = [dict(i) for i in cur.fetchall()]  # 사용자 한명만
+    
+    conn.commit()
+    conn.close()
+
     return attr_value
 
 def get_images(tags:list):
@@ -180,25 +188,8 @@ def delete_table(table_name):
     
     conn.commit()
     conn.close()
-    
-def delete_user_by_age(age):
-    conn = connect_db()
-    cur = conn.cursor()
-    
-    cur.execute('DELETE FROM users WHERE age=?', (age,))
-    
-    conn.commit()
-    conn.close()
-    
-def delete_user_by_id(id):
-    conn = connect_db()
-    cur = conn.cursor()
-    
-    cur.execute('DELETE FROM users WHERE id=?', (id,))
-    
-    conn.commit()
-    conn.close()
 
+# 현재 호출 안함    
 def download_csv(table_name):
     conn = connect_db()
     cur = conn.cursor()
@@ -218,6 +209,7 @@ def download_csv(table_name):
 
     conn.close()
 
+# csv -> table
 def import_bike_station_info():
     conn = connect_db()
     cur = conn.cursor()

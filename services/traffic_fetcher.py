@@ -41,7 +41,7 @@ def mapping_id(attraction_dict):
     except Exception as e:
         print(f'error message : {e}')
         print(f"error url : {url}")
-        print(f'resolution message : {attraction_name_ko}의 날씨 정보를 제공하지 않습니다')
+        print(f'resolution message : {attraction_dict.get('name_ko')}의 날씨 정보를 제공하지 않습니다')
         return []  # [] 반환해 나중에 When flattened, it disappears.
     
 # FCST24HOURS 날씨 예측 목록 생성 함수

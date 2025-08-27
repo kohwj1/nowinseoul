@@ -174,10 +174,14 @@ def import_attraction():
 
 
 if __name__ == '__main__':
+    ## models.init_db
     # 1. 데이터베이스 초기화
     if os.path.exists(DB_PATH):
-        os.remove(DB_PATH)
+        os.mkdir('instance')
     init_db()
 
-    # 2. CSV 파일 업로드 (예시)
+    # 2. CSV 파일 업로드
     import_attraction()
+
+    # 3. update nx, ny
+    asyncio.run(main())
