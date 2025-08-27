@@ -7,8 +7,8 @@
 # 보유기간	2008년 10월 30일 17:00KST(시행일 기준) ~ 현재
 # 생산주기	2시부터 3시간 간격(일 8회) : 2 5 8 11 14 17 20 23
 
-import sys
-sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from concurrent.futures import ThreadPoolExecutor
 import os, utils
 from dotenv import load_dotenv

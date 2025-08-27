@@ -2,8 +2,8 @@
 # api_client에서 가져온 1시간 간격 데이터를 DB 캐싱 테이블로 ETL 처리
 # 데이터 정제, 저장, 오류처리 로직 등
 
-import sys
-sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from models import db
 from datetime import datetime
 

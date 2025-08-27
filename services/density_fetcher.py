@@ -9,8 +9,8 @@
 # An index that calculated the 4 stages of congestion into
 # crowded, slightly crowded, moderate, and comfortable (ref.Seoul Real-Time Population Data API manual_eng.pdf)
 
-import sys
-sys.path.append('/Users/seSAC/src/nowinseoul/nowinseoul')
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from concurrent.futures import ThreadPoolExecutor
 import os, utils
 from dotenv import load_dotenv
