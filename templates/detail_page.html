@@ -1,130 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block title %} {{ data.NAME }} :: Now in Seoul{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="{{url_for('static', filename='css/bs/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}">
-  <title>Detailed Page</title>
-</head>
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}">
+{% endblock %}
 
-<body>
-  <div class="top-section">
-    <button class="back-button">
-      <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/ui/back-button.png') }}" alt="뒤로가기"></a>
-    </button>
-    <img src="{{ url_for('static', filename='images/attraction/' + data.AREA_CD + '.jpg') }}" alt="배경 이미지" class="background-image-cover">
-    <div class="hero-text">
-      <h1 id="location-name">{{ data.NAME }}</h1>
+{% block content %}
+<div class="top-section">
+ <button class="back-button" onclick="history.back()">
+    <img src="{{ url_for('static', filename='images/ui/back-button.png') }}" alt="뒤로가기">
+  </button>
+  <img src="{{ url_for('static', filename='images/attraction/' + data.AREA_CD + '.jpg') }}" 
+       alt="배경 이미지" class="background-image-cover">
+  <div class="hero-text">
+    <h1 id="location-name">{{ data.NAME }}</h1>
+  </div>
+</div>
+
+<div class="page-container">
+  <!-- 1) 이미지 설명 -->
+  <div class="content-section">
+    <div class="text-container">
+      <p id="location-description">{{ data.DESCRIPTION }}</p>
     </div>
+    <button id="read-more-btn">Read more</button>
   </div>
 
-  <div class="page-container">
-    <div class="content-section">
-      <div class="text-container">
-        <p id="location-description">{{ data.DESCRIPTION }}</p>
-      </div>
-      <button id="read-more-btn">Read more</button>
-    </div>
-
-    <section class="info-grid">
-      <!-- Crowd -->
-      <section class="crowd-density-section">
-        <div class="info-header">
+  <!-- 2) 그리드 컨테이너 -->
+  <section class="info-grid">
+    <!-- 좌측: Crowd -->
+    <section class="crowd-density-section">
+      <div class="info-header">
+        {% if data.LIVE_PPLTN_STTS %}
           <div class="info-tag" id="traffic-tag">
-            {{ data.AREA_PPLTN[0].FCST_CONGEST_LVL }}
+            {{ data.LIVE_PPLTN_STTS.AREA_CONGEST_LVL }}
           </div>
-          <div class="info-title">Crowd Density</div>
-        </div>
-
-        <div class="progress-bar-container" id="crowd-density-bar"></div>
-
-        <div class="time-labels">
-          <span id="time-now">Now</span>
-          <span id="time-1">--</span>
-          <span id="time-2">--</span>
-          <span id="time-3">--</span>
-        </div>
-      </section>
-
-      <!-- Traffic -->
-      <section class="traffic-conditions-section">
-        <div class="info-tag" id="traffic-tag">{{ traffic_condition }}</div>
-        <div class="info-title">Traffic Conditions</div>
-      </section>
-
-      <!-- Weather -->
-      <div class="weather-section">
-        <div class="weather-header">
-          <div class="left-wrap">
-            <h2>Weather</h2>
-            <!-- ℃/℉ 토글 -->
-            <div class="unit-switch" role="group" aria-label="Temperature unit">
-              <button type="button" class="unit-btn active" data-unit="C">℃</button>
-              <button type="button" class="unit-btn" data-unit="F">℉</button>
-            </div>
-          </div>
-
-          <span class="current-temp">
-            {{ data.WEATHER_STTS[0].TEMP }}<span class="unit">°C</span>
-          </span>
-        </div>
-
-        <div class="weather-forecast-container">
-          <div class="weather-forecast">
-            {% for item in data.WEATHER_STTS %}
-            <div class="forecast-item">
-              <span class="time">{{ item.FCST_DT[8:10] }}:00</span>
-              <span class="temp">{{ item.TEMP }}<span class="unit">°C</span></span>
-              <div class="rain-chance-graph" style="--rain: {{ item.RAIN_CHANCE }}"></div>
-              <div class="rain-chance">{{ item.RAIN_CHANCE }}%</div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-
-        <div class="weather-scroll-controls">
-          <div class="scroll-track" role="slider" aria-label="Forecast scroll"
-               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-          </div>
-        </div>
+        {% else %}
+          <div class="info-tag">No Data</div>
+        {% endif %}
+        <div class="info-title">Crowd Density</div>
       </div>
 
-      <!-- Public Bike -->
-      <div class="public-bike-section">
-        <div class="bike-header">
-          <p id="total-bikes">Public bike(s) available</p>
-        </div>
-        <div class="bike-map" id="map"></div>
-        <ul class="bike-list">
-          {% for bike in data.SBIKE_STTS %}
-          <li>
-            <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
-            <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="progress-bar-container" id="crowd-density-bar"></div>
+
+      <div class="time-labels">
+        <span id="time-now">Now</span>
+        <span id="time-1">--</span>
+        <span id="time-2">--</span>
+        <span id="time-3">--</span>
       </div>
     </section>
-  </div>
 
-  <script>
-    const bikeList = {{ data | tojson }};
-    const pageData = {{ data | tojson }};
-    var crowdData = pageData.AREA_PPLTN;
-    var bikeData = pageData.SBIKE_STTS;
-    var weatherData = pageData.WEATHER_STTS;
-  </script>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/bike.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/crowd_density.js') }}"></script>  
-  <script src="{{ url_for('static', filename='js/Weather.js') }}"></script>  
-</body>
-</html>
+    <!-- 우측: Traffic -->
+    <section class="traffic-conditions-section">
+      <div class="info-tag" id="traffic-tag">{{ traffic_condition }}</div>
+      <div class="info-title">Traffic Conditions</div>
+    </section>
+
+    <!-- 그 아래: Weather -->
+    <div class="weather-section">
+      <div class="weather-header">
+        <div class="left-wrap">
+          <h2>Weather</h2>
+          <div class="unit-switch" role="group" aria-label="Temperature unit">
+            <button type="button" class="unit-btn active" data-unit="C">℃</button>
+            <button type="button" class="unit-btn" data-unit="F">℉</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="weather-forecast-container">
+        <div class="weather-forecast">
+          {% for item in data.WEATHER_STTS %}
+          <div class="forecast-item">
+            <span class="time">{{ item.FCST_DT[8:10] }}:00</span>
+            <span class="temp">{{ item.TEMP }}<span class="unit">°C</span></span>
+            <div class="rain-chance-graph" style="--rain: {{ item.RAIN_CHANCE }}"></div>
+            <div class="rain-chance">{{ item.RAIN_CHANCE }}%</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="weather-scroll-controls">
+        <div class="scroll-track" role="slider" aria-label="Forecast scroll"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+        </div>
+      </div>
+    </div>
+
+    <!-- 마지막: Bikes -->
+    <div class="public-bike-section">
+      <div class="bike-header">
+        <p id="total-bikes">Public bike(s) available</p>
+      </div>
+      <div class="bike-map" id="map"></div>
+      <ul class="bike-list">
+        {% for bike in data.SBIKE_STTS %}
+        <li>
+          <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+          <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+  const bikeList  = {{ data | tojson }};
+  const pageData  = {{ data | tojson }};
+  const crowdData = pageData.FCST_PPLTN;
+  const bikeData  = pageData.SBIKE_STTS;
+  const weatherData = pageData.WEATHER_STTS;
+</script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bike.js') }}"></script>
+<script src="{{ url_for('static', filename='js/crowd_density.js') }}"></script>  
+<script src="{{ url_for('static', filename='js/Weather.js') }}"></script>  
+{% endblock %}
