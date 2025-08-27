@@ -3,11 +3,8 @@ from services.bike_station_fetcher import get_info
 from models import db
 import os
 
-#테스트 데이터 불러오기 위한 모듈입니다. 배포 전 삭제 필요!
-from testgen.test_map_data_generator import mapdata_generator
 
-app = Flask(__name__, instance_relative_config=True) # instance 폴더가 앱 설정과 리소스 파일들의 기준 경로로 사용됩
-app.config['DATABASE'] = os.path.join(app.instance_path, 'nowinseoul.db')
+app = Flask(__name__)
 
 # 메인 페이지
 @app.route('/')
@@ -21,8 +18,7 @@ def index():
 def browse_on_map():
     # [{'id': 'POI001', 'name': 'Gangnam MICE Special Tourist Zone', 'crowd': 'Crowded', 'beauty': '241', 'food': '25', 'drama': '18', 'movie': '14', 'lat': '37.512693', 'lng': '127.0624'},]
     data = db.get_info_for_map()
-    print(data[0])
-    
+        
     return render_template('onmap.html', data=data)
 
 # 상세 페이지
