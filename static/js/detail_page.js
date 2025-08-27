@@ -15,3 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
     totalBikesHeader.textContent = `${total} Public bike(s) available`;
   }
 });
+
+// 뒤로 가기 버튼
+function goBack() {
+  if (document.referrer !== "") {
+    history.back();
+  } else {
+    window.location.href = "{{ url_for('index') }}"; // 메인으로 이동
+  }
+}
