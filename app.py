@@ -21,6 +21,7 @@ def index():
 @app.route('/map')
 def browse_on_map():
     mapdata = mapdata_generator()
+    
     return render_template('onmap.html', data={"data":mapdata})
 
 # 상세 페이지
@@ -28,6 +29,7 @@ def browse_on_map():
 def detail(attraction_id):
     attraction_info_by_id = db.get_info_by_id('attraction', attraction_id)
     if not attraction_info_by_id:
+
         return render_template('404.html'), 404
 
     data = {"AREA_CD" : attraction_id,
@@ -48,7 +50,7 @@ def detail(attraction_id):
             ],
             "SBIKE_STTS":get_info(attraction_id)
     }
-    print(data)
+
     return render_template('detail_page.html', data=data)
 
 # --------------------------------------------
@@ -60,6 +62,7 @@ def filter_by_tags():
     data = {"tags" : tags,
             "data" : db.get_images(tags)
     }
+
     return jsonify(data)
 
 # --------------------------------------------
@@ -68,6 +71,7 @@ def filter_by_tags():
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
+
     return render_template('404.html'), 404
 
 if __name__ == '__main__':
