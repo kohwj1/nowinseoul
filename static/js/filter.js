@@ -14,16 +14,16 @@ function placeFilter(keyword, theme, crowd) {
         filtered_data = filtered_data.filter(place => place.name.toLowerCase().includes(keyword.toLowerCase()));
     }
     if (theme.includes('food')) {
-        filtered_data = filtered_data.filter(place => place.food != 0);
+        filtered_data = filtered_data.filter(place => place.food != null || place.food != 0);
     }
     if (theme.includes('drama')) {
-        filtered_data = filtered_data.filter(place => place.drama != 0);
+        filtered_data = filtered_data.filter(place => place.drama != null || place.drama != 0);
     }
     if (theme.includes('movie')) {
-        filtered_data = filtered_data.filter(place => place.movie != 0);
+        filtered_data = filtered_data.filter(place => place.movie != null || place.movie != 0);
     }
     if (theme.includes('beauty')) {
-        filtered_data = filtered_data.filter(place => place.beauty != 0);
+        filtered_data = filtered_data.filter(place => place.beauty != null || place.beauty != 0);
     }
     if (crowd !== 'all') {
         filtered_data = filtered_data.filter(place => place.crowd == crowd);
