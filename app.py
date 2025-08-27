@@ -64,6 +64,7 @@ def filter_by_tags():
 
 # --------------------------------------------
 
+# https://flask.palletsprojects.com/en/stable/errorhandling/
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
