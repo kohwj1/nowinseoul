@@ -3,7 +3,7 @@ function customMarker(crowdLevel) {
     const crowd_icon_url = {
         'Comfortable':'../static/images/ui/marker_0.png', 
         'Moderate':'../static/images/ui/marker_1.png', 
-        'Slightly Crowded':'../static/images/ui/marker_2.png', 
+        'Slightly crowded':'../static/images/ui/marker_2.png', 
         'Crowded':'../static/images/ui/marker_3.png', 
     }
 
@@ -21,7 +21,7 @@ function heatLevel(crowdLevel) {
     const crowd_level_value = {
         'Comfortable': 0.25, 
         'Moderate': 0.5, 
-        'Slightly Crowded': 0.75, 
+        'Slightly crowded': 0.75, 
         'Crowded': 1, 
     }
     return crowd_level_value[crowdLevel]
@@ -39,7 +39,7 @@ function clearMap() {
 //맵에 마킹
 function markOnMap(marker_data) {
     for (m of marker_data) {
-        L.marker([m.lat, m.lng], {icon: customMarker(m.crowd)})
+        L.marker([m.lat, m.lng], {icon: customMarker(m['crowd'])})
         .bindPopup(`<strong>${m.name}</strong><br>${m.crowd}<br><br><a class="gotoDetail" href="/detail/${m.id}">&gt;&gt; Go to Detail</a>`)
         .addTo(map)
     }
