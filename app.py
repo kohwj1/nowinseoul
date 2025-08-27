@@ -19,9 +19,11 @@ def index():
 # 지도 페이지
 @app.route('/map')
 def browse_on_map():
-    mapdata = mapdata_generator()
+    # [{'id': 'POI001', 'name': 'Gangnam MICE Special Tourist Zone', 'crowd': 'Crowded', 'beauty': '241', 'food': '25', 'drama': '18', 'movie': '14', 'lat': '37.512693', 'lng': '127.0624'},]
+    data = db.get_info_for_map()
+    print(data[0])
     
-    return render_template('onmap.html', data={"data":mapdata})
+    return render_template('onmap.html', data=data)
 
 # 상세 페이지
 @app.route('/detail/<attraction_id>')
@@ -34,19 +36,28 @@ def detail(attraction_id):
     data = {"AREA_CD" : attraction_id,
             "NAME" : attraction_info_by_id[0].get('name_en'),
             "DESCRIPTION": attraction_info_by_id[0].get('description'),
+            # 날씨 예측
             "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
                               "TEMP": str(d.get('fcst_temp')),
                               "RAIN_CHANCE": str(d.get('rain_chance'))}
                               for d in db.get_info_by_id('weather_cache',attraction_id)
             ], # 12개
-            "AREA_PPLTN":[{"FCST_TIME": d.get('realtime_pop_dttm'),
-                           "FCST_CONGEST_LVL": d.get('realtime_pop')}
-                              for d in db.get_info_by_id('detail_cache',attraction_id)
+            # 인구밀도 예측
+            "FCST_PPLTN":[{"FCST_TIME": d.get('fcst_dt'),
+                           "FCST_CONGEST_LVL": d.get('level')}
+                              for d in db.get_info_by_id('density_cache',attraction_id)
             ],
+            # 실시간 인구밀도
+            "LIVE_PPLTN_STTS":[{"PPLTN_TIME": d.get('realtime_pop_dttm'),
+                                "AREA_CONGEST_LVL": d.get('realtime_pop')}
+                                   for d in db.get_info_by_id('detail_cache',attraction_id)
+            ],
+            # 실시간 주변도로 혼잡도
             "ROAD_TRAFFIC_STTS":[{"ROAD_TRAFFIC_TIME": d.get('realtime_road_dttm'),
                                   "ROAD_TRAFFIC_IDX": d.get('realtime_road')}
                               for d in db.get_info_by_id('detail_cache',attraction_id)
             ],
+            # 주변 따릉이
             "SBIKE_STTS":get_info(attraction_id)
     }
 

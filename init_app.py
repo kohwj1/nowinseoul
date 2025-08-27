@@ -9,7 +9,7 @@ def init_app_fetch_data():
     ## models.init_db
     # 1. 데이터베이스 초기화
     if os.path.exists(DB_PATH):
-        os.remove(DB_PATH)
+        os.mkdir('instance')
     init_db()
 
     # 2. CSV 파일 업로드
@@ -29,6 +29,8 @@ def init_app_before_translation():
     db.download_csv('bike_station_info')
     print("bike_station_info.csv export 완료")
     print("구글 시트에서 영문번역하되 '1문' ~ '6문' -> 'Gate 1' ~ 'Gate 6'으로 바꾸기")
+    print("구글 시트에서 영문번역하되 '381. 장충체육관' -> '381. Jangchung Arena'으로 바꾸기")
+    print("구글 시트에서 영문번역하되 '2003. 사육신공원앞' -> '2003. In front of Sayuksin Park'으로 바꾸기")
 
 def init_app_after_translation():    
     ## 3. import csv

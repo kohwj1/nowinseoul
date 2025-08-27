@@ -51,7 +51,9 @@ if __name__ == "__main__":
     pass
     ## 1. 실시간 도시 데이터에서 도시ID - 대여소ID 매핑
     db.insert_data('bike_station_info',concurrent_processing(mapping_id,db.get_data('name_ko', 'attraction')))
+
     ## 2. csv로 Export
     # db.download_csv('bike_station_info')
+    
     ## 3. import csv
     db.import_bike_station_info()
