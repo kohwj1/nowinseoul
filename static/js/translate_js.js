@@ -74,3 +74,15 @@ function translateTraffic(language, text) {
     }
     return trans_data['en'][text];
 }
+
+function translateBike(language) {
+    const trans_data = {
+        'ko': '대',
+        'ja': '台',
+        'en': ' bike(s)',
+    }
+    if (trans_data.hasOwnProperty(language)) {
+        return trans_data[language];
+    }
+    return trans_data['en'];
+}
