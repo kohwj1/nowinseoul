@@ -17,6 +17,9 @@ function initPage() {
     const total = bikeData.reduce((s, st) => s + (parseInt(st.SBIKE_PARKING_CNT, 10) || 0), 0);
     const result = totalBikesHeader.innerText.replace('--counts--', total);
     totalBikesHeader.textContent = result;
+  } else {
+    const result = totalBikesHeader.innerText.replace('--counts--', 0);
+    totalBikesHeader.textContent = result;
   }
 }
 
