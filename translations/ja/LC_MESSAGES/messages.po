@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-28 16:09+0900\n"
-"PO-Revision-Date: 2025-08-28 16:09+0900\n"
+"POT-Creation-Date: 2025-08-28 17:35+0900\n"
+"PO-Revision-Date: 2025-08-28 17:35+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -18,35 +18,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/onmap_babel.html:25
+#: templates/detail_page.html:42
+msgid "crowd-density"
+msgstr "混雑度"
+
+#: templates/detail_page.html:48
+msgid "now"
+msgstr "現在"
+
+#: templates/detail_page.html:67
+msgid "traffic-conditions"
+msgstr "渋滞情報"
+
+#: templates/detail_page.html:77
+msgid "weather"
+msgstr "天気"
+
+#: templates/detail_page.html:110
+msgid "public-bike-available"
+msgstr "公共自転車--counts--台使用可能"
+
+#: templates/onmap.html:25
 msgid "search-label"
 msgstr "場所名で検索"
 
-#: templates/onmap_babel.html:38
+#: templates/onmap.html:38
 msgid "theme-label"
 msgstr "テーマ"
 
-#: templates/onmap_babel.html:55
+#: templates/onmap.html:55
 msgid "crowd-level"
 msgstr "混雑度"
 
-#: templates/onmap_babel.html:59
+#: templates/onmap.html:59
 msgid "crowd-all"
 msgstr "全て"
 
-#: templates/onmap_babel.html:62
+#: templates/onmap.html:62
 msgid "crowd-comfortable"
 msgstr "余裕"
 
-#: templates/onmap_babel.html:65
+#: templates/onmap.html:65
 msgid "crowd-moderate"
 msgstr "普通"
 
-#: templates/onmap_babel.html:68
+#: templates/onmap.html:68
 msgid "crowd-slightlycrowded"
 msgstr "少々混雑"
 
-#: templates/onmap_babel.html:71
+#: templates/onmap.html:71
 msgid "crowd-crowded"
 msgstr "混雑"
 
