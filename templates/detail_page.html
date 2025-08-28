@@ -39,13 +39,13 @@
           {% else %}
             <div class="info-tag">No Data</div>
           {% endif %}
-          <div class="info-title">Crowd Density</div>
+          <div class="info-title">{{ _('crowd-density') }}</div>
         </div>
 
         <div class="progress-bar-container" id="crowd-density-bar"></div>
 
         <div class="time-labels">
-          <span id="time-now">Now</span>
+          <span id="time-now">{{ _('now') }}</span>
           <span id="time-1">--</span>
           <span id="time-2">--</span>
           <span id="time-3">--</span>
@@ -64,7 +64,7 @@
           {% else %}
             <div class="info-tag">No Data</div>
           {% endif %}
-          <div class="info-title">Traffic Conditions</div>
+          <div class="info-title">{{ _('traffic-conditions') }}</div>
         </div>
       </div>
     </section>
@@ -74,7 +74,7 @@
       <div class="surface">
         <div class="weather-header">
           <div class="left-wrap">
-            <h2>Weather</h2>
+            <h2>{{ _('weather') }}</h2>
             <div class="unit-switch" role="group" aria-label="Temperature unit">
               <button type="button" class="unit-btn active" data-unit="C">℃</button>
               <button type="button" class="unit-btn" data-unit="F">℉</button>
@@ -107,7 +107,7 @@
     <div class="public-bike-section">
       <div class="surface">
         <div class="bike-header">
-          <p id="total-bikes">Public bike(s) available</p>
+          <p id="total-bikes">{{ _('public-bike-available') }}</p>
         </div>
         <div class="bike-map" id="map"></div>
         <ul class="bike-list">
@@ -125,13 +125,14 @@
 </div>
 
 <script>
-  const bikeList  = {{ data | tojson }};
+  const userLocale = navigator.language;
   const pageData  = {{ data | tojson }};
   const crowdData = pageData.FCST_PPLTN;
   const bikeData  = pageData.SBIKE_STTS;
   const weatherData = pageData.WEATHER_STTS;
 </script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='js/translate_js.js') }}"></script>
 <script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bike.js') }}"></script>
 <script src="{{ url_for('static', filename='js/crowd_density.js') }}"></script>  
