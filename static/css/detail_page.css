@@ -3,13 +3,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans KR', Arial, sans-serif;
-  background-color: #ffffff;
 }
 
 .page-container {
   max-width: 31.25rem;
   margin: 0 auto;
-  background-color: #ffffff;
 }
 
 /*========== 2. 상단 이미지 및 제목 섹션 ==========*/
@@ -155,7 +153,7 @@ body {
   .info-grid > .traffic-conditions-section,
   .info-grid > .weather-section,
   .info-grid > .public-bike-section {
-    margin: 0 !important;
+    /* margin: 0 !important; */
     width: 100%;
     justify-self: stretch;
   }
@@ -170,7 +168,7 @@ body {
 .crowd-density-section,
 .traffic-conditions-section {
   padding: 1.25rem 1rem;
-  margin: 0.625rem 1.25rem 1.25rem;
+  margin: 0;
   border-radius: 0.9375rem;
   background-color: #ffffff;
   border: 1px solid #dcdcdc;
@@ -262,12 +260,12 @@ body {
 .bike-map {
   width: 100%;
   height: 25rem;
-  background-color: #e0e0e0;
+  /* background-color: #e0e0e0; */
   border-radius: 0.625rem;
   margin-bottom: 1rem;
   position: relative;
   overflow: hidden;
-  margin-bottom: 5rem;  /* 하단 여백 확보 */
+  margin-bottom: 1rem;  /* 하단 여백 확보 */
 }
 
 .bike-list {
@@ -346,10 +344,10 @@ body {
     height: 20rem;
   }
 }
-
+/* 
 .public-bike-section {
   background-color: #ffffff;
-}
+} */
 
 /* ====== 레이아웃 공통 ====== */
 .additional-info-section {
@@ -361,7 +359,6 @@ body {
 
 /* ====== Weather 카드 ====== */
 .weather-section {
-  background: #ffffff;
   border-radius: 12px;
   padding: 15px 16px;
   overflow: visible;
@@ -482,7 +479,7 @@ body {
 
 .crowd-density-section,
 .traffic-conditions-section {
-  margin: 0.625rem 1.25rem 1.25rem;
+  margin: 0;
   padding: 0;
   background: transparent;
   border: 0;
