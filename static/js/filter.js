@@ -14,16 +14,16 @@ function placeFilter(keyword, theme, crowd) {
         filtered_data = filtered_data.filter(place => place.name.toLowerCase().includes(keyword.toLowerCase()));
     }
     if (theme.includes('food')) {
-        filtered_data = filtered_data.filter(place => place.food != null || place.food != 0);
+        filtered_data = filtered_data.filter(place => place.food != null && place.food != 0);
     }
     if (theme.includes('drama')) {
-        filtered_data = filtered_data.filter(place => place.drama != null || place.drama != 0);
+        filtered_data = filtered_data.filter(place => place.drama != null && place.drama != 0);
     }
     if (theme.includes('movie')) {
-        filtered_data = filtered_data.filter(place => place.movie != null || place.movie != 0);
+        filtered_data = filtered_data.filter(place => place.movie != null && place.movie != 0);
     }
     if (theme.includes('beauty')) {
-        filtered_data = filtered_data.filter(place => place.beauty != null || place.beauty != 0);
+        filtered_data = filtered_data.filter(place => place.beauty != null && place.beauty != 0);
     }
     if (crowd !== 'all') {
         filtered_data = filtered_data.filter(place => place.crowd == crowd);
@@ -33,6 +33,7 @@ function placeFilter(keyword, theme, crowd) {
     return filtered_data
 }
 
+//키워드 검색 함수
 function searchPlace() {
     const filter_agrs = getFilterArgs()
     const filtered_data = placeFilter(filter_agrs.keyword, filter_agrs.theme, filter_agrs.crowd)
@@ -44,10 +45,11 @@ function searchPlace() {
         openTooltip();
         toggleFilter();
     } else {
-        toastPop('No Search Result')
+        toastPop(translateToast(userLocale.language, 'No Search Result'))
     }
 }
 
+//1000px 이하일 떄 필터 접었다 폈다 하는 함수
 function toggleFilter() {
     if (window.innerWidth <= 1000) {
         if (!isFilterDisplayed) {
@@ -120,7 +122,7 @@ document.getElementById('btnReset').addEventListener('click', () => {
 document.getElementById('btnSearch').addEventListener('click', () => {
     const keyword = document.getElementById('mapSearch').value;
     if (keyword == '') {
-        toastPop('Please enter a keyword');
+        toastPop(translateToast(userLocale.language, 'Please enter a keyword'));
     } else {
         searchPlace()
     }
