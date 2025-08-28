@@ -15,7 +15,7 @@ body {
   position: relative;
   height: 20rem;
   color: #fff;
-  width: 100vw;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -298,6 +298,9 @@ body {
   margin-right: 0.75rem;
   font-size: 1rem;
 }
+.bike-count-list.bike-zero {
+  background-color: #aaa;
+}
 
 .bike-station-name {
   font-size: 0.9rem;
@@ -330,7 +333,6 @@ body {
   .public-bike-section {
     padding-bottom: 1rem;
     margin: 0.625rem 1.25rem 1.25rem;
-    background-color: #ffffff;
     border-radius: 0.9375rem;
     border: 1px solid #dcdcdc;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
@@ -344,10 +346,6 @@ body {
     height: 20rem;
   }
 }
-/* 
-.public-bike-section {
-  background-color: #ffffff;
-} */
 
 /* ====== 레이아웃 공통 ====== */
 .additional-info-section {
@@ -493,7 +491,6 @@ body {
 .traffic-conditions-section .surface {
   padding: 1.25rem 1rem;
   border-radius: 0.9375rem;
-  background: #fff;
   border: 1px solid #dcdcdc;
   box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
 }
