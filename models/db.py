@@ -1,6 +1,5 @@
-import sqlite3, os, csv, time, sys
+import sqlite3, os, csv
 from dotenv import load_dotenv
-from datetime import datetime
 
 
 load_dotenv()  # .env 파일의 환경변수 로드
@@ -232,6 +231,45 @@ def import_bike_station_info():
     conn.commit()
     conn.close()
     print(f"[CSV] bike_station_info.csv → bike_station_info 업로드 완료.")
+
+## Singleton pattern 객체로
+# 인스턴스가 여러 번 생성되어도 실제 객체는 하나만 생성되어
+# 여러 모듈에서 반복되는 DB 조회 없이 공유하는 리스트를 효과적으로 관리
+
+class Attractions : # 80개 attraction 목록
+    _instance = None
+    _attractions = None
+
+    """ __new__
+    - 객체를 실제로 새로 생성하는 메서드입니다.
+    - 클래스가 호출될 때 가장 먼저 실행되며, 메모리에 객체를 할당하고 그 객체를 반환합니다.
+    - 클래스 메서드처럼 cls를 첫 인자로 받아 해당 클래스의 인스턴스를 생성합니다.
+
+    클래스 호출 시 __new__(cls, ...)가 먼저 실행되어 객체 생성 및 반환  
+    반환된 객체를 인자로 __init__(self, ...)가 실행되어 초기화
+
+    __init__
+    - 생성된 객체를 초기화하는 메서드입니다.
+    - __new__가 반환한 인스턴스를 인자로 받아 속성 초기화 등 후처리를 합니다.
+    - 보통 객체 생성 후 객체 속성을 설정하는 용도로 많이 쓰입니다.
+    - self가 첫 인자로 들어갑니다.
+    """
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(Attractions, cls).__new__(cls) # 최초 한 번만 리스트 로드
+            cls._instance._attractions = cls._instance.get_station() 
+        return cls._instance # _instance가 이미 존재하므로 새 객체를 만들지 않고 기존 객체를 반환합니다.
+
+    def get_station(self):
+        return get_data('name_ko', 'attraction')
+
+    def __call__(self):
+        # 인스턴스를 함수처럼 Attractions() 형태로 호출하면 리스트 반환 
+        # 호출될 때마다 특정 동작을 하도록 설계할 수 있어, 상태를 유지하거나 내부 데이터를 간단히 반환하는 등 유용합니다.
+        # 없으면 인스턴스는 함수처럼 호출될 수 없고, 호출하면 TypeError가 발생합니다.
+        # Attractions._attractions나 Attractions.get_attractions() 같은 명시적 메서드 호출로 충분하다면 __call__은 불필요
+        return self._attractions
+
 
 if __name__ == "__main__":        
     # print(get_info_by_id('weather_cache', 'POI007'))
