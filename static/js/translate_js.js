@@ -50,3 +50,27 @@ function translateCrowd(language, text) {
     }
     return trans_data['en'][text];
 }
+
+function translateTraffic(language, text) {
+    const trans_data = {
+        'ko': {
+                '원활':'원활',
+                '서행':'서행',
+                '정체':'정체'
+            },
+        'ja': {
+                '원활':'順調',
+                '서행':'混雑',
+                '정체':'渋滞'
+            },
+        'en': {
+                '원활':'Free flow',
+                '서행':'Slow',
+                '정체':'Congested'
+            },
+    }
+    if (trans_data.hasOwnProperty(language)) {
+        return trans_data[language][text];
+    }
+    return trans_data['en'][text];
+}

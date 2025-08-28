@@ -30,66 +30,64 @@ document.addEventListener('DOMContentLoaded', function () {
     const usingFallback = startIdx === -1;
     if (usingFallback) startIdx = 0;
 
-    const window = rows.slice(startIdx, startIdx + 4);  
-    if (!window.length) return;
+    const window = rows.slice(startIdx, startIdx + 11);  
+    if (!crowdData.length) return;
 
-    const level = window[0].lvl;
+    // const level = window[0].lvl;
 
     // --- 뱃지 텍스트 변환 ---
-    const levelText = (level === 'Moderate') ? 'Medium'
-                     : (level === 'Slightly crowded') ? 'Slightly Crowded'
-                     : level;
+    // const levelText = translateCrowd(userLocale, badgeEl.innerText)
 
     // --- CSS 클래스 매핑 ---
-    const cls = level === 'Comfortable'      ? 'comfortable'
-              : level === 'Moderate'         ? 'medium'
-              : level === 'Slightly crowded' ? 'slightly'
-              : level === 'Crowded'          ? 'congested'
-              : '';
+    // const cls = level === 'Comfortable'      ? 'comfortable'
+    //           : level === 'Moderate'         ? 'medium'
+    //           : level === 'Slightly crowded' ? 'slightly'
+    //           : level === 'Crowded'          ? 'congested'
+    //           : '';
 
     if (badgeEl) {
-      badgeEl.textContent = levelText;
-      badgeEl.classList && badgeEl.classList.remove('comfortable','medium','slightly','congested');
-      if (cls && badgeEl.classList) badgeEl.classList.add(cls);
-    }
-
-    if (timeLabels[0]) {
-      timeLabels[0].textContent = usingFallback ? hhmm(window[0].dt) : 'Now';
-    }
-    for (let i = 1; i < 4; i++) {
-      timeLabels[i].textContent = window[i] ? hhmm(window[i].dt) : '--';
-    }
-
-    // --- 색상 매핑 ---
-    const colorOf = (lvl) => (
-      lvl === 'Comfortable'      ? '#22c55e' : // 초록
-      lvl === 'Moderate'         ? '#facc15' : // 노랑
-      lvl === 'Slightly crowded' ? '#f97316' : // 주황
-      lvl === 'Crowded'          ? '#ef4444' : // 빨강
-                                  '#a3a3a3'   // 기본 회색
-    );
-
-    const n = window.length;
-    const step = 100 / n;
-    const softStops = [];
-
-    window.forEach((r, i) => {
-      const c = colorOf(r.lvl);
-      const from = Math.round(i * step);
-      const to   = Math.round((i + 1) * step);
-
-      softStops.push(`${c} ${from}%`);
-
-      if (i < n - 1) {
-          const nextColor = colorOf(window[i+1].lvl);
-          softStops.push(`${c} ${to-1}%`);
-          softStops.push(`${nextColor} ${to+1}%`);
+      const current_level_en = document.getElementById('crowd-tag').innerText;
+      const current_level = translateCrowd(userLocale, current_level_en);
+      badgeEl.textContent = current_level;
+      // badgeEl.classList && badgeEl.classList.remove('comfortable','medium','slightly','congested');
+      // if (cls && badgeEl.classList) badgeEl.classList.add(cls);
+      for (let i = 1; i < 4; i++) {
+        timeLabels[i].textContent = window[i] ? hhmm(window[i].dt) : '--';
       }
+  
+      // --- 색상 매핑 ---
+      const colorOf = (lvl) => (
+        lvl === 'Comfortable'      ? '#22c55e' : // 초록
+        lvl === 'Moderate'         ? '#facc15' : // 노랑
+        lvl === 'Slightly crowded' ? '#f97316' : // 주황
+        lvl === 'Crowded'          ? '#ef4444' : // 빨강
+                                    '#a3a3a3'   // 기본 회색
+      );
+  
+      // const n = window.length;
+      // const step = 100 / n;
+      const softStops = [colorOf(current_level_en)];
+  
+      // window.forEach((r, i) => {
+      //   const c = colorOf(r.lvl);
+      //   const from = Math.round(i * step);
+      //   const to   = Math.round((i + 1) * step);
+  
+      //   softStops.push(`${c} ${from}%`);
+  
+      //   if (i < n - 1) {
+      //       softStops.push(`${c}`);
+      //   }
+  
+      //   if (i === n - 1) softStops.push(`${c} ${to}%`);
+      // });
+  
+      for (t of window) {
+        softStops.push(colorOf(t.lvl));
+      }
+      progressBar.style.background = `linear-gradient(to right, ${softStops.join(', ')})`;
+      progressBar.innerHTML = ''; 
+    }
 
-      if (i === n - 1) softStops.push(`${c} ${to}%`);
-    });
-
-    progressBar.style.background = `linear-gradient(to right, ${softStops.join(', ')})`;
-    progressBar.innerHTML = ''; 
   })();
 });

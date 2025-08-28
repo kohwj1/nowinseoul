@@ -195,14 +195,14 @@ body {
 
 /* Crowd Density */
 .info-tag.comfortable { background-color: #22c55e; color: #fff; }
-.info-tag.medium      { background-color: #facc15; color: #fff; }
-.info-tag.slightly    { background-color: #f97316; color: #fff; }
-.info-tag.congested   { background-color: #ef4444; color: #fff; }
+.info-tag.moderate      { background-color: #facc15; color: #fff; }
+.info-tag.slightlycrowded   { background-color: #f97316; color: #fff; }
+.info-tag.crowded   { background-color: #ef4444; color: #fff; }
 
 /* Traffic Conditions → 동일한 디자인을 info-tag에도 적용 */
 .info-tag.free { background:#22c55e; color:#fff; }      /* 원활 */
 .info-tag.slow { background:#f59e0b; color:#fff; }      /* 서행 */
-.info-tag.tcongested { background:#ef4444; color:#fff; }/* 정체 */
+.info-tag.congested { background:#ef4444; color:#fff; }/* 정체 */
 
 /* 레이아웃: PC 그리드 */
 @media (min-width: 48rem) {
@@ -518,7 +518,7 @@ body {
 }
 
 /* 현재 혼잡도 바가 필요한 경우에만 사용 (없으면 이 블록 생략 가능) */
-.current-level-bar {
+/* .current-level-bar {
   height: 100%;
   border-radius: 6px;
   width: 0%;
@@ -530,7 +530,7 @@ body {
   background-color: #22c55e;
 }
 
-.current-level-bar.medium {
+.current-level-bar.moderate {
   width: 70%;
   background-color: #f59e0b;
 }
@@ -538,7 +538,7 @@ body {
 .current-level-bar.congested {
   width: 40%;
   background-color: #ef4444;
-}
+} */
 
 /* 시간대 그라데이션 막대 컨테이너 */
 .progress-bar-container {

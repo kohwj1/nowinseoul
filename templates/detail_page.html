@@ -33,7 +33,7 @@
       <div class="surface">
         <div class="info-header">
           {% if data.LIVE_PPLTN_STTS %}
-            <div class="info-tag" id="crowd-tag">
+            <div class="info-tag {{ data.LIVE_PPLTN_STTS[0].AREA_CONGEST_LVL.lower().replace(' ','') }}" id="crowd-tag">
               {{ data.LIVE_PPLTN_STTS[0].AREA_CONGEST_LVL }}
             </div>
           {% else %}
