@@ -1,0 +1,52 @@
+# English translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-08-28 16:09+0900\n"
+"PO-Revision-Date: 2025-08-28 16:09+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/onmap_babel.html:25
+msgid "search-label"
+msgstr "Search by place name"
+
+#: templates/onmap_babel.html:38
+msgid "theme-label"
+msgstr "Theme"
+
+#: templates/onmap_babel.html:55
+msgid "crowd-level"
+msgstr "Crowd Density"
+
+#: templates/onmap_babel.html:59
+msgid "crowd-all"
+msgstr "All"
+
+#: templates/onmap_babel.html:62
+msgid "crowd-comfortable"
+msgstr "Comfortable"
+
+#: templates/onmap_babel.html:65
+msgid "crowd-moderate"
+msgstr "Moderate"
+
+#: templates/onmap_babel.html:68
+msgid "crowd-slightlycrowded"
+msgstr "Slightly crowded"
+
+#: templates/onmap_babel.html:71
+msgid "crowd-crowded"
+msgstr "Crowded"
+
