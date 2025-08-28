@@ -85,14 +85,14 @@ def get_info_by_id(table_name, attraction_id):
     
     return attr_value
 
-def get_info_for_map():
+def get_info_for_map(my_locale):
     conn = connect_db()
     cur = conn.cursor()
 
     #  여기에 구현할것
     # [{'id': 'POI001', 'name': 'Gangnam MICE Special Tourist Zone', 'crowd': 'Crowded', 'beauty': '241', 'food': '25', 'drama': '18', 'movie': '14', 'lat': '37.512693', 'lng': '127.0624'},]
     cur.execute(f"""SELECT att.id
-                         , att.name_en AS name
+                         , att.name_{my_locale} AS name
                          , dtl.realtime_pop AS crowd
                          , att.beauty
                          , att.food
@@ -111,14 +111,14 @@ def get_info_for_map():
 
     return attr_value
 
-def get_images(tags:list):
+def get_images(tags:list, my_locale):
     conn = connect_db()
     cur = conn.cursor()
     
     if tags:
-        cur.execute(f'SELECT id, name_en AS name FROM attraction ORDER BY {'+'.join(tags)} DESC LIMIT 6')
+        cur.execute(f'SELECT id, name_{my_locale} AS name FROM attraction ORDER BY {'+'.join(tags)} DESC LIMIT 6')
     else:
-        cur.execute(f'SELECT id, name_en AS name FROM attraction ORDER BY food+beauty+drama+movie DESC LIMIT 6')
+        cur.execute(f'SELECT id, name_{my_locale} AS name FROM attraction ORDER BY food+beauty+drama+movie DESC LIMIT 6')
     
     result_list = [dict(i) for i in cur.fetchall()]
     

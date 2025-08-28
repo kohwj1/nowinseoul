@@ -19,7 +19,7 @@ babel.init_app(app, locale_selector=get_locale)
 @app.route('/')
 def index():
     print(f'{get_client_ip()} 에서 방문했습니다. {get_locale()} 언어로된 데이터를 서빙합니다.')
-    data = db.get_images([])
+    data = db.get_images([],get_locale())
 
     return render_template('index.html', data = data)
 
@@ -34,7 +34,7 @@ def get_client_ip():
 @app.route('/map')
 def browse_on_map():
     # [{'id': 'POI001', 'name': 'Gangnam MICE Special Tourist Zone', 'crowd': 'Crowded', 'beauty': '241', 'food': '25', 'drama': '18', 'movie': '14', 'lat': '37.512693', 'lng': '127.0624'},]
-    data = db.get_info_for_map()
+    data = db.get_info_for_map(get_locale())
         
     return render_template('onmap.html', data=data)
 
@@ -47,7 +47,7 @@ def detail(attraction_id):
         return render_template('404.html'), 404
 
     data = {"AREA_CD" : attraction_id,
-            "NAME" : attraction_info_by_id[0].get('name_en'),
+            "NAME" : attraction_info_by_id[0].get('name_'+get_locale()),
             "DESCRIPTION": attraction_info_by_id[0].get('desc_'+get_locale()),
             # 날씨 예측
             "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
