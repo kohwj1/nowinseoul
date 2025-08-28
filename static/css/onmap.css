@@ -61,6 +61,10 @@ main {
         transition: bottom 0.5s ease;
         z-index: 99999;
     }
+
+    #btnReset {
+        width: 100%;
+    }
 }
 
 @media (min-width:1001px) {
