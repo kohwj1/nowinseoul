@@ -20,7 +20,7 @@ def mapping_id(attraction_dict):
         # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     try:
         url = f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/citydata/1/50/{attraction_dict.get('name_ko')}'
-        print(f'fetching url :{url}')
+        # print(f'fetching url :{url}')
 
         city_data = utils.fetch(url).get('CITYDATA')
         # city_data 전체를 그대로 전달하면 데이터 크기가 커지고 전송 및 처리 비용이 증가합니다.
@@ -44,7 +44,7 @@ def mapping_id(attraction_dict):
         print(f'resolution message : {attraction_dict.get('name_ko')}의 날씨 정보를 제공하지 않습니다')
         return []  # [] 반환해 나중에 When flattened, it disappears.
     
-# FCST24HOURS 날씨 예측 목록 생성 함수
+# 주변도로 생성 함수
 def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달하는 것이 안전
     with ThreadPoolExecutor() as executor:
         # https://docs.python.org/ko/3/library/itertools.html#itertools.chain.from_iterable
@@ -56,7 +56,7 @@ def fetch_traffic():
     result_list = concurrent_processing(mapping_id,db.get_data('name_ko', 'attraction')) # 여기까지 21.3초 걸렸음
     print(f'{result_list[0]=}')
     db.update_traffic(result_list)
-    print(f'detail_raw {len(result_list)}개 지역 날씨 예측 데이터 insert 완료 {datetime.now().strftime('%Y.%m.%d %H:%M:%S')}')
+    print(f'detail_raw {len(result_list)}개 실시간 주변 도로 데이터 insert 완료 {datetime.now().strftime('%Y.%m.%d %H:%M:%S')}')
     # weather_raw 1920(24*80)개 데이터 insert 완료 20250824224242
     # fetch_traffic 함수 실행 시간: 30.6초
     return result_list

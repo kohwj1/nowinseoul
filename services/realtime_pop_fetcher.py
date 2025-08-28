@@ -26,7 +26,7 @@ def mapping_id(attraction_dict):
         # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     try:
         url = f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/citydata_ppltn_eng/1/50/{attraction_dict.get('name_ko')}'
-        print(f'fetching url :{url}')
+        # print(f'fetching url :{url}')
 
         city_data = utils.fetch(url).get('SeoulRtd.citydata_ppltn')[0]
         # city_data 전체를 그대로 전달하면 데이터 크기가 커지고 전송 및 처리 비용이 증가합니다.

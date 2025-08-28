@@ -6,7 +6,7 @@ from datetime import datetime
 load_dotenv()  # .env 파일의 환경변수 로드
 
 DATABASE = os.getenv('DATABASE')
-DB_PATH = os.path.join('instance',DATABASE)  # 데이터베이스 파일 경로
+DB_PATH = os.path.join('/','Users','seSAC','src','nowinseoul','nowinseoul','instance',DATABASE)  # 데이터베이스 파일 경로
 
 
 # db에 접속하는 함수
@@ -232,4 +232,4 @@ def import_bike_station_info():
 
 if __name__ == "__main__":
     print(get_info_by_id('weather_cache', 'POI007'))
-    # print(get_attraction_by_id('description' , 'POI007'))
+    # print(get_attraction_by_id('desc_ko' , 'POI007'))

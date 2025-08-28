@@ -1,7 +1,7 @@
  # 앱 초기 설치 및 셋업 함수 모음
 
 from models import init_db, db
-from services import density_fetcher, etl, init_bike_station,init_weather,realtime_pop_fetcher,traffic_fetcher,weather_fetcher
+from services import density_fetcher, etl, init_bike_station,init_weather,realtime_pop_fetcher,realtime_traffic_fetcher,weather_fetcher
 import os, asyncio
 
 def init_app_fetch_data():
@@ -65,8 +65,8 @@ if __name__ == "__main__":
     ## realtime_pop_fetcher
     realtime_pop_fetcher.fetch_realtime_pop()
 
-    ## traffic_fetcher
-    traffic_fetcher.fetch_traffic()
+    ## realtime_traffic_fetcher
+    realtime_traffic_fetcher.fetch_traffic()
 
     ## weather_fetcher
     asyncio.run(weather_fetcher.make_weather_dataset())
