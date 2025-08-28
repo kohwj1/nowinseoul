@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS attraction
   id          TEXT    NOT NULL,  -- 관광지 고유식별자
   name_ko     TEXT    NOT NULL,  -- 관광지 한국어명
   name_en     TEXT    NULL    ,  -- 관광지 영어명
+  name_ja     TEXT    NULL    ,  -- 관광지 영어명
   lat         REAL    NOT NULL,  -- 관광지 위도
   lng         REAL    NOT NULL,  -- 관광지 경도
   nx          INTEGER NULL    ,  -- 예보지점의 X 좌표값 = 동네예보 격자 번호(동서방향)
@@ -152,8 +153,8 @@ def import_attraction():
         reader = csv.DictReader(f.readlines())
         rows = list(reader)
 
-        insert_sql = f"""INSERT INTO attraction (id,name_ko,name_en,lat,lng,desc_ko,desc_en,desc_ja) 
-                                         VALUES (:id,:name_ko,:name_en,:lat,:lng,:desc_ko,:desc_en,:desc_ja)"""
+        insert_sql = f"""INSERT INTO attraction (id,name_ko,name_en,name_ja,lat,lng,desc_ko,desc_en,desc_ja) 
+                                         VALUES (:id,:name_ko,:name_en,:name_ja,:lat,:lng,:desc_ko,:desc_en,:desc_ja)"""
         cur.executemany(insert_sql, rows)
 
     print(f"[CSV] attraction.csv → attraction 업로드 완료.")
