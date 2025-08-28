@@ -113,7 +113,11 @@
         <ul class="bike-list">
           {% for bike in data.SBIKE_STTS %}
           <li>
-            <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+            {% if bike.SBIKE_PARKING_CNT == '0' %}
+              <span class="bike-count-list bike-zero">{{bike.SBIKE_PARKING_CNT}}</span>
+            {% else %}
+              <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+            {% endif %}
             <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
           </li>
           {% endfor %}
