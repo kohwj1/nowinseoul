@@ -84,7 +84,7 @@ def detail(attraction_id):
 def filter_by_tags():
     tags = request.form.get('tags')
     data = {"tags" : tags,
-            "data" : db.get_images(tags)
+            "data" : db.get_images(tags, get_locale())
     }
 
     return jsonify(data)
