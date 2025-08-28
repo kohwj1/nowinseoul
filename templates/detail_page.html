@@ -8,7 +8,7 @@
 
 {% block content %}
 <div class="top-section">
- <button class="back-button" onclick="history.back()">
+  <button class="back-button" onclick="goBack()">
     <img src="{{ url_for('static', filename='images/ui/back-button.png') }}" alt="뒤로가기">
   </button>
   <img src="{{ url_for('static', filename='images/attraction/' + data.AREA_CD + '.jpg') }}" 
@@ -19,7 +19,6 @@
 </div>
 
 <div class="page-container">
-  <!-- 1) 이미지 설명 -->
   <div class="content-section">
     <div class="text-container">
       <p id="location-description">{{ data.DESCRIPTION }}</p>
@@ -27,84 +26,101 @@
     <button id="read-more-btn">Read more</button>
   </div>
 
-  <!-- 2) 그리드 컨테이너 -->
   <section class="info-grid">
-    <!-- 좌측: Crowd -->
+    
+    <!-- Crowd -->
     <section class="crowd-density-section">
-      <div class="info-header">
-        {% if data.LIVE_PPLTN_STTS %}
-          <div class="info-tag" id="traffic-tag">
-            {{ data.LIVE_PPLTN_STTS.AREA_CONGEST_LVL }}
-          </div>
-        {% else %}
-          <div class="info-tag">No Data</div>
-        {% endif %}
-        <div class="info-title">Crowd Density</div>
-      </div>
+      <div class="surface">
+        <div class="info-header">
+          {% if data.LIVE_PPLTN_STTS %}
+            <div class="info-tag" id="crowd-tag">
+              {{ data.LIVE_PPLTN_STTS[0].AREA_CONGEST_LVL }}
+            </div>
+          {% else %}
+            <div class="info-tag">No Data</div>
+          {% endif %}
+          <div class="info-title">Crowd Density</div>
+        </div>
 
-      <div class="progress-bar-container" id="crowd-density-bar"></div>
+        <div class="progress-bar-container" id="crowd-density-bar"></div>
 
-      <div class="time-labels">
-        <span id="time-now">Now</span>
-        <span id="time-1">--</span>
-        <span id="time-2">--</span>
-        <span id="time-3">--</span>
+        <div class="time-labels">
+          <span id="time-now">Now</span>
+          <span id="time-1">--</span>
+          <span id="time-2">--</span>
+          <span id="time-3">--</span>
+        </div>
       </div>
     </section>
 
-    <!-- 우측: Traffic -->
+    <!-- Traffic -->
     <section class="traffic-conditions-section">
-      <div class="info-tag" id="traffic-tag">{{ traffic_condition }}</div>
-      <div class="info-title">Traffic Conditions</div>
+      <div class="surface">
+        <div class="info-header">
+          {% if data.ROAD_TRAFFIC_STTS %}
+            <div class="info-tag" id="road-traffic-tag">
+              {{ data.ROAD_TRAFFIC_STTS[0].ROAD_TRAFFIC_IDX or 'No Data' }}
+            </div>
+          {% else %}
+            <div class="info-tag">No Data</div>
+          {% endif %}
+          <div class="info-title">Traffic Conditions</div>
+        </div>
+      </div>
     </section>
 
-    <!-- 그 아래: Weather -->
+    <!-- Weather -->
     <div class="weather-section">
-      <div class="weather-header">
-        <div class="left-wrap">
-          <h2>Weather</h2>
-          <div class="unit-switch" role="group" aria-label="Temperature unit">
-            <button type="button" class="unit-btn active" data-unit="C">℃</button>
-            <button type="button" class="unit-btn" data-unit="F">℉</button>
+      <div class="surface">
+        <div class="weather-header">
+          <div class="left-wrap">
+            <h2>Weather</h2>
+            <div class="unit-switch" role="group" aria-label="Temperature unit">
+              <button type="button" class="unit-btn active" data-unit="C">℃</button>
+              <button type="button" class="unit-btn" data-unit="F">℉</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="weather-forecast-container">
-        <div class="weather-forecast">
-          {% for item in data.WEATHER_STTS %}
-          <div class="forecast-item">
-            <span class="time">{{ item.FCST_DT[8:10] }}:00</span>
-            <span class="temp">{{ item.TEMP }}<span class="unit">°C</span></span>
-            <div class="rain-chance-graph" style="--rain: {{ item.RAIN_CHANCE }}"></div>
-            <div class="rain-chance">{{ item.RAIN_CHANCE }}%</div>
+        <div class="weather-forecast-container">
+          <div class="weather-forecast">
+            {% for item in data.WEATHER_STTS %}
+            <div class="forecast-item">
+              <span class="time">{{ item.FCST_DT[8:10] }}:00</span>
+              <span class="temp">{{ item.TEMP }}<span class="unit">°C</span></span>
+              <div class="rain-chance-graph" style="--rain: {{ item.RAIN_CHANCE }}"></div>
+              <div class="rain-chance">{{ item.RAIN_CHANCE }}%</div>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
-      </div>
 
-      <div class="weather-scroll-controls">
-        <div class="scroll-track" role="slider" aria-label="Forecast scroll"
-             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+        <div class="weather-scroll-controls">
+          <div class="scroll-track" role="slider" aria-label="Forecast scroll"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 마지막: Bikes -->
+    <!-- Bikes -->
     <div class="public-bike-section">
-      <div class="bike-header">
-        <p id="total-bikes">Public bike(s) available</p>
+      <div class="surface">
+        <div class="bike-header">
+          <p id="total-bikes">Public bike(s) available</p>
+        </div>
+        <div class="bike-map" id="map"></div>
+        <ul class="bike-list">
+          {% for bike in data.SBIKE_STTS %}
+          <li>
+            <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+            <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
-      <div class="bike-map" id="map"></div>
-      <ul class="bike-list">
-        {% for bike in data.SBIKE_STTS %}
-        <li>
-          <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
-          <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
-        </li>
-        {% endfor %}
-      </ul>
     </div>
+
   </section>
 </div>
 
@@ -119,5 +135,6 @@
 <script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bike.js') }}"></script>
 <script src="{{ url_for('static', filename='js/crowd_density.js') }}"></script>  
+<script src="{{ url_for('static', filename='js/traffic.js') }}"></script>
 <script src="{{ url_for('static', filename='js/Weather.js') }}"></script>  
 {% endblock %}
