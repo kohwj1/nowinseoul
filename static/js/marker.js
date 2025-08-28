@@ -40,7 +40,7 @@ function clearMap() {
 function markOnMap(marker_data) {
     for (m of marker_data) {
         L.marker([m.lat, m.lng], {icon: customMarker(m['crowd'])})
-        .bindPopup(`<strong>${m.name}</strong><br>${m.crowd}<br><br><a class="gotoDetail" href="/detail/${m.id}">&gt;&gt; Go to Detail</a>`)
+        .bindPopup(`<strong>${m.name}</strong><br>${translateCrowd(userLocale.language, m.crowd)}<br><br><a class="gotoDetail" href="/detail/${m.id}">&gt;&gt; ${translateCrowd(userLocale.language, 'Go to Detail')}</a>`)
         .addTo(map)
     }
 }
