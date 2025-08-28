@@ -45,7 +45,7 @@ function searchPlace() {
         openTooltip();
         toggleFilter();
     } else {
-        toastPop(translateToast(userLocale.language, 'No Search Result'))
+        toastPop(translateToast(userLocale, 'No Search Result'))
     }
 }
 
@@ -122,7 +122,7 @@ document.getElementById('btnReset').addEventListener('click', () => {
 document.getElementById('btnSearch').addEventListener('click', () => {
     const keyword = document.getElementById('mapSearch').value;
     if (keyword == '') {
-        toastPop(translateToast(userLocale.language, 'Please enter a keyword'));
+        toastPop(translateToast(userLocale, 'Please enter a keyword'));
     } else {
         searchPlace()
     }
