@@ -33,26 +33,7 @@ body {
   z-index: 0;
 }
 
-.back-button {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  z-index: 2;
-  width: 2.1875rem;
-  height: 2.1875rem;
-  border-radius: 50%;
-  background-color: rgba(251, 251, 251, 0.5);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.back-button img {
-  width: 1.25rem;
-  height: 1.25rem;
-}
+.back-button { display: none; }
 
 .hero-text {
   position: absolute;
@@ -117,6 +98,30 @@ body {
     font-size: 16px;
     line-height: 1.7rem;
     margin-top: 5px;
+    padding: 0 5px;
+  }
+
+ .back-button {
+    display: flex;
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    border-radius: 50%;
+    background-color: rgba(251, 251, 251, 0.5);
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;          
+    touch-action: manipulation; 
+  }
+
+  .back-button img {
+    width: 1.25rem;
+    height: 1.25rem;
+    pointer-events: none;
   }
 }
 
@@ -141,7 +146,22 @@ body {
       "bike    bike";
     gap: 1rem;
     margin: 0 1rem 1rem;
-    align-items: stretch;            /* ← 높이 동일하게 늘려줌 */
+    padding: 5px 25px;
+    margin-top: -2.5rem;
+    /* align-items: stretch;          */
+  }
+
+  .info-grid > .crowd-density-section,
+  .info-grid > .traffic-conditions-section,
+  .info-grid > .weather-section,
+  .info-grid > .public-bike-section {
+    margin: 0 !important;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  #location-description {
+  padding: 0 25px;
   }
 
 }
@@ -153,8 +173,8 @@ body {
   margin: 0.625rem 1.25rem 1.25rem;
   border-radius: 0.9375rem;
   background-color: #ffffff;
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
   border: 1px solid #dcdcdc;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 .info-title {
@@ -172,27 +192,19 @@ body {
   border-radius: 999px;
   font-weight: 700;
   width: max-content;
+  font-size: .875rem;
 }
 
-.info-tag.comfortable {
-  background-color: #22c55e; /* 초록 */
-  color: #fff;
-}
+/* Crowd Density */
+.info-tag.comfortable { background-color: #22c55e; color: #fff; }
+.info-tag.medium      { background-color: #facc15; color: #fff; }
+.info-tag.slightly    { background-color: #f97316; color: #fff; }
+.info-tag.congested   { background-color: #ef4444; color: #fff; }
 
-.info-tag.medium {
-  background-color: #facc15; /* 노랑 */
-  color: #fff;
-}
-
-.info-tag.slightly {
-  background-color: #f97316; /* 주황 */
-  color: #fff;
-}
-
-.info-tag.congested {
-  background-color: #ef4444; /* 빨강 */
-  color: #fff;
-}
+/* Traffic Conditions → 동일한 디자인을 info-tag에도 적용 */
+.info-tag.free { background:#22c55e; color:#fff; }      /* 원활 */
+.info-tag.slow { background:#f59e0b; color:#fff; }      /* 서행 */
+.info-tag.tcongested { background:#ef4444; color:#fff; }/* 정체 */
 
 /* 레이아웃: PC 그리드 */
 @media (min-width: 48rem) {
@@ -222,11 +234,8 @@ body {
   .weather-section         { grid-area: weather; }
   .public-bike-section     { grid-area: bike; }
 
-  .crowd-density-section,
-  .traffic-conditions-section,
-  .public-bike-section,
-  .weather-section {
-    padding: 1rem;
+  .public-bike-section {
+    margin-bottom: 5rem;
   }
 }
 
@@ -235,9 +244,9 @@ body {
   background-color: #ffffff;
   border-radius: 0.9375rem;
   padding: 1rem;
-  box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
   border: 1px solid #dcdcdc;
   margin-bottom: 2rem;
+  box-shadow: inset 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
 }
 
 .bike-header {
@@ -258,6 +267,7 @@ body {
   margin-bottom: 1rem;
   position: relative;
   overflow: hidden;
+  margin-bottom: 5rem;  /* 하단 여백 확보 */
 }
 
 .bike-list {
@@ -323,11 +333,15 @@ body {
     padding-bottom: 1rem;
     margin: 0.625rem 1.25rem 1.25rem;
     background-color: #ffffff;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.05);
     border-radius: 0.9375rem;
     border: 1px solid #dcdcdc;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .public-bike-section {
     margin-bottom: 3rem;
   }
+
   .bike-map {
     height: 20rem;
   }
@@ -350,10 +364,10 @@ body {
   background: #ffffff;
   border-radius: 12px;
   padding: 15px 16px;
-  box-shadow: 0 2px 6px rgba(17,24,39,.06);
   overflow: visible;
   border-radius: 0.9375rem;
   border: 1px solid #dcdcdc;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 헤더 */
@@ -465,6 +479,31 @@ body {
   .rain-chance {
     font-size: .95rem;
   }
+
+.crowd-density-section,
+.traffic-conditions-section {
+  margin: 0.625rem 1.25rem 1.25rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  display: grid; 
+  align-content: start;
+}
+
+/* 실제 카드 표면 (crowd/traffic만) */
+.crowd-density-section .surface,
+.traffic-conditions-section .surface {
+  padding: 1.25rem 1rem;
+  border-radius: 0.9375rem;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+
+/* 행 높이가 커도 내부는 위로 붙이기 */
+.crowd-density-section,
+.traffic-conditions-section { display: grid; align-content: start; }
 }
 
 @media (max-width:47.99rem) {
