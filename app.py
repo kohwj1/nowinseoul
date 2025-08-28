@@ -31,7 +31,7 @@ def detail(attraction_id):
 
     data = {"AREA_CD" : attraction_id,
             "NAME" : attraction_info_by_id[0].get('name_en'),
-            "DESCRIPTION": attraction_info_by_id[0].get('description'),
+            "DESCRIPTION": attraction_info_by_id[0].get('desc_ko'),
             # 날씨 예측
             "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
                               "TEMP": str(d.get('fcst_temp')),

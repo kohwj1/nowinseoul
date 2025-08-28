@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS attraction
   beauty      BOOLEAN NULL    ,
   drama       BOOLEAN NULL    ,
   movie       BOOLEAN NULL    ,
-  description TEXT    NULL    ,
+  desc_ko TEXT    NULL    ,
   insert_dttm TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP, -- 입력일시
   PRIMARY KEY (id)
 )''')
@@ -141,14 +141,14 @@ def import_attraction():
 
     cur.execute('DELETE FROM attraction')
 
-    # id, name, description, lat, lng 데이터 import
+    # id, name, desc_ko, lat, lng 데이터 import
     csv_path = os.path.join(CSV_FOLDER, 'attraction.csv')
     with open(csv_path, newline='', encoding='utf-8') as f: # newline=''은 파일의 줄바꿈 문자 변환을 하지 않고 "있는 그대로" 처리
         reader = csv.DictReader(f.readlines())
         rows = list(reader)
 
-        insert_sql = f"""INSERT INTO attraction (id,name_ko,name_en,description,lat,lng) 
-                                         VALUES (:id,:name_ko,:name_en,:description,:lat,:lng)"""
+        insert_sql = f"""INSERT INTO attraction (id,name_ko,name_en,desc_ko,lat,lng) 
+                                         VALUES (:id,:name_ko,:name_en,:desc_ko,:lat,:lng)"""
         cur.executemany(insert_sql, rows)
 
     print(f"[CSV] attraction.csv → attraction 업로드 완료.")

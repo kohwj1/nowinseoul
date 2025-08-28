@@ -20,3 +20,6 @@ bike_station_fetcher_everyday.py
 
 # 개발
 test/*
+
+# 스케줄러
+*.sh

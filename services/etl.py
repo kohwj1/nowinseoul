@@ -28,16 +28,19 @@ def raw_to_cache_etl(domain):
 
 if __name__ == "__main__":
     domain_type = ['detail', 'weather','density']
-    # guidance = f"""raw_to_cache_etl('detail') 처럼 작성하세요.
-    #     domain에는 {'/'.join(domain_type)}가 있습니다"""
+    guidance = f"""python etl.py detail 이렇게 작성하세요.
+        domain에는 detail / weather / density 가 있습니다
+        """
 
-    # try:
-    #     domain = sys.argv[1]
-    #     print(f'Is {domain=} in domain_type? {domain in domain_type}')
-    # else:
-    #     raise KeyError(guidance)
+    args = [ i for i in sys.argv if i ]
 
-    # raw_to_cache_etl(domain)
-    for d in domain_type:
-        raw_to_cache_etl(d)
+    if len(args) == 1:
+        print(guidance)
+        print('지금은 detail, weather, density 모두 etl 됩니다')
+        for d in domain_type:
+            raw_to_cache_etl(d)
+    elif len(args) == 2:    
+        raw_to_cache_etl( args[1] )
+    except:
+        raise KeyError(guidance)
 

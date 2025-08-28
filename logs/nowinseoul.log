@@ -1,0 +1,591 @@
+[2025-08-28 12:06:01] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI059', 'AREA_CONGEST_LVL': 'Moderate', 'PPLTN_TIME': '2025-08-28 11:40'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828120602
+fetch_realtime_pop 함수 실행 시간: 1.0초
+
+[2025-08-28 12:06:02] - services/realtime_traffic_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/광화문광장'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/강서한강공원'
+
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:05'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:06:21
+fetch_traffic 함수 실행 시간: 18.3초
+
+[2025-08-28 12:06:21] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828120621
+
+[2025-08-28 12:07:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI098', 'AREA_CONGEST_LVL': 'Slightly crowded', 'PPLTN_TIME': '2025-08-28 11:40'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828120701
+fetch_realtime_pop 함수 실행 시간: 1.0초
+
+[2025-08-28 12:07:01] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:05'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:07:13
+fetch_traffic 함수 실행 시간: 11.4초
+
+[2025-08-28 12:07:13] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828120713
+
+[2025-08-28 12:08:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI122', 'AREA_CONGEST_LVL': 'Moderate', 'PPLTN_TIME': '2025-08-28 11:40'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828120802
+fetch_realtime_pop 함수 실행 시간: 1.0초
+
+[2025-08-28 12:08:02] - services/realtime_traffic_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/잠실한강공원'
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:05'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:08:19
+fetch_traffic 함수 실행 시간: 17.0초
+
+[2025-08-28 12:08:19] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828120819
+
+[2025-08-28 12:09:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI078', 'AREA_CONGEST_LVL': 'Slightly crowded', 'PPLTN_TIME': '2025-08-28 11:45'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828120901
+fetch_realtime_pop 함수 실행 시간: 0.9초
+
+[2025-08-28 12:09:01] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:05'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:09:13
+fetch_traffic 함수 실행 시간: 10.8초
+
+[2025-08-28 12:09:13] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828120913
+
+[2025-08-28 12:10:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/명동 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울 암사동 유적'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/종로·청계 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/보신각'
+
+
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울식물원·마곡나루역'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/건대입구역'
+
+
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/보신각'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신촌·이대역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/역삼역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/광장(전통)시장'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/북창동 먹자골목'
+result_list[0]={'id': 'POI074', 'AREA_CONGEST_LVL': 'Moderate', 'PPLTN_TIME': '2025-08-28 11:45'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828121040
+fetch_realtime_pop 함수 실행 시간: 39.4초
+
+[2025-08-28 12:10:40] - services/realtime_traffic_fetcher.py 
+
+[2025-08-28 12:11:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI111', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 11:45'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828121104
+fetch_realtime_pop 함수 실행 시간: 3.9초
+
+[2025-08-28 12:11:04] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:10'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:11:05
+fetch_traffic 함수 실행 시간: 24.9초
+
+[2025-08-28 12:11:05] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828121105
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:10'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:11:25
+fetch_traffic 함수 실행 시간: 20.4초
+
+[2025-08-28 12:11:25] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828121125
+
+[2025-08-28 12:12:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI110', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 11:45'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828121203
+fetch_realtime_pop 함수 실행 시간: 2.3초
+
+[2025-08-28 12:12:03] - services/realtime_traffic_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/남산공원'
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:10'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:12:25
+fetch_traffic 함수 실행 시간: 22.0초
+
+[2025-08-28 12:12:25] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828121225
+
+[2025-08-28 12:13:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/인사동'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신촌 스타광장'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/홍제폭포'
+
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/청와대'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/송리단길·호수단길'
+result_list[0]={'id': 'POI109', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 11:45'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828121305
+fetch_realtime_pop 함수 실행 시간: 4.4초
+
+[2025-08-28 12:13:05] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:10'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:13:20
+fetch_traffic 함수 실행 시간: 14.7초
+
+[2025-08-28 12:13:20] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828121320
+
+[2025-08-28 12:14:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI067', 'AREA_CONGEST_LVL': 'Slightly crowded', 'PPLTN_TIME': '2025-08-28 11:50'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828121402
+fetch_realtime_pop 함수 실행 시간: 1.0초
+
+[2025-08-28 12:14:02] - services/realtime_traffic_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/이촌한강공원'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/잠실종합운동장'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/잠실한강공원'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/잠원한강공원'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/청계산'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/청와대'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/이촌한강공원'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/북창동 먹자골목'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/잠실종합운동장'
+
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/잠실한강공원'
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:10'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:14:20
+fetch_traffic 함수 실행 시간: 17.8초
+
+[2025-08-28 12:14:20] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828121420
+
+[2025-08-28 12:15:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/홍대 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울 암사동 유적'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울식물원·마곡나루역'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/고속터미널역'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/종로·청계 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/보신각'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강남 MICE 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/건대입구역'
+
+
+
+
+
+
+
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/경복궁'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/삼각지역'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/종로·청계 관광특구'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/삼각지역'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강남 MICE 관광특구'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울 암사동 유적'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/고속터미널역'
+
+
+
+
+Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강남 MICE 관광특구'Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/고속터미널역'Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/삼각지역'
+
+
+error message : 'NoneType' object is not subscriptableerror message : 'NoneType' object is not subscriptableerror message : 'NoneType' object is not subscriptable
+
+
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강남 MICE 관광특구
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/삼각지역error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/고속터미널역
+
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울역'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/가로수길'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/노량진'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/가로수길'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/광장(전통)시장'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/덕수궁길·정동길'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/광장(전통)시장'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/덕수궁길·정동길'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/압구정로데오거리'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/여의도'
+
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/성수카페거리'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서촌'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/이태원 앤틱가구거리'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/용리단길'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/성수카페거리'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/여의도'
+
+
+
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/청량리 제기동 일대 전통시장'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/북서울꿈의숲'
+result_list[0]={'id': 'POI095', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 11:50'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 77개 데이터 insert 완료 20250828121517
+fetch_realtime_pop 함수 실행 시간: 17.1초
+
+[2025-08-28 12:15:18] - services/realtime_traffic_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/뚝섬한강공원'
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:15'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:15:51
+fetch_traffic 함수 실행 시간: 33.3초
+
+[2025-08-28 12:15:51] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828121551
+
+[2025-08-28 12:16:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI089', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 11:50'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828121602
+fetch_realtime_pop 함수 실행 시간: 0.9초
+
+[2025-08-28 12:16:02] - services/realtime_traffic_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/홍제폭포'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/올림픽공원'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/홍제폭포'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/올림픽공원'Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/홍제폭포'
+
+error message : 'NoneType' object has no attribute 'get'
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/홍제폭포
+resolution message : 홍제폭포의 날씨 정보를 제공하지 않습니다
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:15'}
+detail_raw 79개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:16:18
+fetch_traffic 함수 실행 시간: 15.5초
+
+[2025-08-28 12:16:18] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828121618
+
+[2025-08-28 12:25:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울식물원·마곡나루역'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/경복궁'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/고속터미널역'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/보신각'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/홍대 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/명동 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/삼각지역'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/창덕궁·종묘'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/종로·청계 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울 암사동 유적'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강남 MICE 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/건대입구역'
+
+
+
+
+
+
+
+
+
+
+
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/창덕궁·종묘'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/삼각지역'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울식물원·마곡나루역'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/건대입구역'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/보신각'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강남 MICE 관광특구'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/경복궁'
+
+
+
+
+
+
+Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/보신각'Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/삼각지역'Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/경복궁'
+
+
+error message : 'NoneType' object is not subscriptableerror message : 'NoneType' object is not subscriptableerror message : 'NoneType' object is not subscriptable
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/보신각
+
+
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/삼각지역error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/경복궁
+
+Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강남 MICE 관광특구'
+error message : 'NoneType' object is not subscriptable
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강남 MICE 관광특구
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신림역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/역삼역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/가락시장'
+result_list[0]={'id': 'POI099', 'AREA_CONGEST_LVL': 'Slightly crowded', 'PPLTN_TIME': '2025-08-28 12:00'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 76개 데이터 insert 완료 20250828122526
+fetch_realtime_pop 함수 실행 시간: 25.3초
+
+[2025-08-28 12:25:26] - services/realtime_traffic_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/노량진'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/국립중앙박물관·용산가족공원'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/노들섬'
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:25'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:25:57
+fetch_traffic 함수 실행 시간: 30.5초
+
+[2025-08-28 12:25:57] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828122557
+
+[2025-08-28 12:26:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI063', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 12:00'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828122602
+fetch_realtime_pop 함수 실행 시간: 1.1초
+
+[2025-08-28 12:26:02] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '정체', 'realtime_road_dttm': '2025-08-28 12:25'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:26:20
+fetch_traffic 함수 실행 시간: 17.6초
+
+[2025-08-28 12:26:20] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828122620
+
+[2025-08-28 12:27:00] - services/density_fetcher.py 
+result_list[0]={'id': 'POI001', 'FCST_TIME': '2025-08-28 13:00', 'FCST_CONGEST_LVL': 'Slightly crowded', 'FCST_PPLTN_MIN': '24000', 'FCST_PPLTN_MAX': '26000'}
+table_name='density_raw' columns='id, fcst_dt, level' place_holder=':id, :FCST_TIME, :FCST_CONGEST_LVL'
+density_raw 864개 데이터 insert 완료 20250828122702
+
+[2025-08-28 12:27:02] - services/etl.py density 
+Is domain='density' in domain_type? True
+density_raw -> density_cache etl 수행 완료 20250828122702
+
+[2025-08-28 12:28:00] - services/weather_fetcher.py 
+처리할 지역 수: 18
+비동기 fetch 시작 - 18개 지역
+비동기 fetch 완료, 데이터 처리 시작
+처리 완료: 216개 날씨 예측 데이터
+완료 시간: 2025.08.28 12:28:01
+result_list[0]={'nx': '61', 'ny': '126', 'fcstDate': '202508281200', 'TMP': '30', 'POP': '30', 'id': 'POI001'}
+table_name='weather_raw' columns='id, fcst_dt, fcst_temp, rain_chance' place_holder=':id, :fcstDate, :TMP, :POP'
+make_weather_dataset 함수 실행 시간: 0.3975초
+최종 결과 샘플: result[0]={'nx': '61', 'ny': '126', 'fcstDate': '202508281200', 'TMP': '30', 'POP': '30'}
+
+[2025-08-28 12:28:01] - services/etl.py weather 
+Is domain='weather' in domain_type? True
+weather_raw -> weather_cache etl 수행 완료 20250828122802
+
+[2025-08-28 12:30:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/명동 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/종로·청계 관광특구'Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/건대입구역'
+
+
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/건대입구역'Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/종로·청계 관광특구'
+
+Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/건대입구역'
+error message : 'NoneType' object is not subscriptable
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/건대입구역
+Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/종로·청계 관광특구'
+error message : 'NoneType' object is not subscriptable
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/종로·청계 관광특구
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신논현역·논현역'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신논현역·논현역'
+Attempt 3/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신논현역·논현역'
+error message : 'NoneType' object is not subscriptable
+error url : http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신논현역·논현역
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/북서울꿈의숲'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울대공원'
+result_list[0]={'id': 'POI060', 'AREA_CONGEST_LVL': 'Slightly crowded', 'PPLTN_TIME': '2025-08-28 12:05'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 77개 데이터 insert 완료 20250828123027
+fetch_realtime_pop 함수 실행 시간: 27.0초
+
+[2025-08-28 12:30:27] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '서행', 'realtime_road_dttm': '2025-08-28 12:30'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:30:55
+fetch_traffic 함수 실행 시간: 28.1초
+
+[2025-08-28 12:30:56] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828123056
+
+[2025-08-28 12:31:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI085', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 12:05'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828123102
+fetch_realtime_pop 함수 실행 시간: 1.5초
+
+[2025-08-28 12:31:02] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '서행', 'realtime_road_dttm': '2025-08-28 12:30'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:31:20
+fetch_traffic 함수 실행 시간: 17.8초
+
+[2025-08-28 12:31:20] - services/etl.py detail 
+Is domain='detail' in domain_type? True
+detail_raw -> detail_cache etl 수행 완료 20250828123120
+
+[2025-08-28 12:32:00] - services/density_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울 암사동 유적'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/용산역'
+result_list[0]={'id': 'POI001', 'FCST_TIME': '2025-08-28 13:00', 'FCST_CONGEST_LVL': 'Slightly crowded', 'FCST_PPLTN_MIN': '24000', 'FCST_PPLTN_MAX': '26000'}
+table_name='density_raw' columns='id, fcst_dt, level' place_holder=':id, :FCST_TIME, :FCST_CONGEST_LVL'
+density_raw 864개 데이터 insert 완료 20250828123204
+
+[2025-08-28 12:32:04] - services/etl.py density 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 39
+    except:
+    ^^^^^^
+SyntaxError: invalid syntax
+
+[2025-08-28 12:33:00] - services/weather_fetcher.py 
+처리할 지역 수: 18
+비동기 fetch 시작 - 18개 지역
+비동기 fetch 완료, 데이터 처리 시작
+처리 완료: 216개 날씨 예측 데이터
+완료 시간: 2025.08.28 12:33:01
+result_list[0]={'nx': '61', 'ny': '126', 'fcstDate': '202508281200', 'TMP': '30', 'POP': '30', 'id': 'POI001'}
+table_name='weather_raw' columns='id, fcst_dt, fcst_temp, rain_chance' place_holder=':id, :fcstDate, :TMP, :POP'
+make_weather_dataset 함수 실행 시간: 0.3925초
+최종 결과 샘플: result[0]={'nx': '61', 'ny': '126', 'fcstDate': '202508281200', 'TMP': '30', 'POP': '30'}
+
+[2025-08-28 12:33:01] - services/etl.py weather 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 39
+    except:
+    ^^^^^^
+SyntaxError: invalid syntax
+
+[2025-08-28 12:35:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/왕십리역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/합정역'
+result_list[0]={'id': 'POI091', 'AREA_CONGEST_LVL': 'Moderate', 'PPLTN_TIME': '2025-08-28 12:10'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828123530
+fetch_realtime_pop 함수 실행 시간: 29.8초
+
+[2025-08-28 12:35:30] - services/realtime_traffic_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/보신각'
+result_list[0]={'id': 'POI001', 'realtime_road': '서행', 'realtime_road_dttm': '2025-08-28 12:35'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:35:59
+fetch_traffic 함수 실행 시간: 28.4초
+
+[2025-08-28 12:35:59] - services/etl.py detail 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 37
+    if len(args) = 1:
+       ^^^^^^^^^
+SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?
+
+[2025-08-28 12:36:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서대문독립공원'
+result_list[0]={'id': 'POI066', 'AREA_CONGEST_LVL': 'Slightly crowded', 'PPLTN_TIME': '2025-08-28 12:10'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828123602
+fetch_realtime_pop 함수 실행 시간: 1.9초
+
+[2025-08-28 12:36:03] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '서행', 'realtime_road_dttm': '2025-08-28 12:35'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:36:19
+fetch_traffic 함수 실행 시간: 16.2초
+
+[2025-08-28 12:36:19] - services/etl.py detail 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 37
+    if len(args) = 1:
+       ^^^^^^^^^
+SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?
+
+[2025-08-28 12:37:00] - services/density_fetcher.py 
+result_list[0]={'id': 'POI001', 'FCST_TIME': '2025-08-28 13:00', 'FCST_CONGEST_LVL': 'Slightly crowded', 'FCST_PPLTN_MIN': '24000', 'FCST_PPLTN_MAX': '26000'}
+table_name='density_raw' columns='id, fcst_dt, level' place_holder=':id, :FCST_TIME, :FCST_CONGEST_LVL'
+density_raw 864개 데이터 insert 완료 20250828123702
+
+[2025-08-28 12:37:02] - services/etl.py density 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 37
+    if len(args) = 1:
+       ^^^^^^^^^
+SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?
+
+[2025-08-28 12:38:00] - services/weather_fetcher.py 
+처리할 지역 수: 18
+비동기 fetch 시작 - 18개 지역
+비동기 fetch 완료, 데이터 처리 시작
+처리 완료: 216개 날씨 예측 데이터
+완료 시간: 2025.08.28 12:38:01
+result_list[0]={'nx': '61', 'ny': '126', 'fcstDate': '202508281200', 'TMP': '30', 'POP': '30', 'id': 'POI001'}
+table_name='weather_raw' columns='id, fcst_dt, fcst_temp, rain_chance' place_holder=':id, :fcstDate, :TMP, :POP'
+make_weather_dataset 함수 실행 시간: 0.4989초
+최종 결과 샘플: result[0]={'nx': '61', 'ny': '126', 'fcstDate': '202508281200', 'TMP': '30', 'POP': '30'}
+
+[2025-08-28 12:38:01] - services/etl.py weather 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 37
+    if len(args) = 1:
+       ^^^^^^^^^
+SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?
+
+[2025-08-28 12:40:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/창덕궁·종묘'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/경복궁'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신림역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신촌·이대역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/강서한강공원'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/올림픽공원'
+result_list[0]={'id': 'POI111', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 12:15'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828124045
+fetch_realtime_pop 함수 실행 시간: 44.0초
+
+[2025-08-28 12:40:45] - services/realtime_traffic_fetcher.py 
+
+[2025-08-28 12:41:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/광나루한강공원'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/여의도한강공원'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata/1/50/보라매공원'
+result_list[0]={'id': 'POI110', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 12:15'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828124111
+fetch_realtime_pop 함수 실행 시간: 10.8초
+
+[2025-08-28 12:41:11] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '서행', 'realtime_road_dttm': '2025-08-28 12:40'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:41:15
+fetch_traffic 함수 실행 시간: 30.0초
+
+[2025-08-28 12:41:15] - services/etl.py detail 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 37
+    if len(args) = 1:
+       ^^^^^^^^^
+SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?
+result_list[0]={'id': 'POI001', 'realtime_road': '서행', 'realtime_road_dttm': '2025-08-28 12:40'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:41:37
+fetch_traffic 함수 실행 시간: 25.0초
+
+[2025-08-28 12:41:37] - services/etl.py detail 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 37
+    if len(args) = 1:
+       ^^^^^^^^^
+SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?
+
+[2025-08-28 12:42:00] - services/density_fetcher.py 
+result_list[0]={'id': 'POI001', 'FCST_TIME': '2025-08-28 13:00', 'FCST_CONGEST_LVL': 'Slightly crowded', 'FCST_PPLTN_MIN': '24000', 'FCST_PPLTN_MAX': '26000'}
+table_name='density_raw' columns='id, fcst_dt, level' place_holder=':id, :FCST_TIME, :FCST_CONGEST_LVL'
+density_raw 864개 데이터 insert 완료 20250828124202
+
+[2025-08-28 12:42:02] - services/etl.py density 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 37
+    if len(args) = 1:
+       ^^^^^^^^^
+SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?
+
+[2025-08-28 12:43:00] - services/weather_fetcher.py 
+처리할 지역 수: 18
+비동기 fetch 시작 - 18개 지역
+비동기 fetch 완료, 데이터 처리 시작
+처리 완료: 216개 날씨 예측 데이터
+완료 시간: 2025.08.28 12:43:01
+result_list[0]={'nx': '61', 'ny': '126', 'fcstDate': '202508281200', 'TMP': '30', 'POP': '30', 'id': 'POI001'}
+table_name='weather_raw' columns='id, fcst_dt, fcst_temp, rain_chance' place_holder=':id, :fcstDate, :TMP, :POP'
+make_weather_dataset 함수 실행 시간: 0.4673초
+최종 결과 샘플: result[0]={'nx': '61', 'ny': '126', 'fcstDate': '202508281200', 'TMP': '30', 'POP': '30'}
+
+[2025-08-28 12:43:01] - services/etl.py weather 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 37
+    if len(args) = 1:
+       ^^^^^^^^^
+SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?
+
+[2025-08-28 12:45:00] - services/realtime_pop_fetcher.py 
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울역'
+Attempt 2/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/서울역'
+Attempt 1/3 - Unexpected err=JSONDecodeError('Expecting value: line 1 column 1 (char 0)'), type(err)=<class 'requests.exceptions.JSONDecodeError'>, url='http://openapi.seoul.go.kr:8088/46715879706a67793230514e72755a/json/citydata_ppltn_eng/1/50/신림역'
+result_list[0]={'id': 'POI100', 'AREA_CONGEST_LVL': 'Comfortable', 'PPLTN_TIME': '2025-08-28 12:20'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828124524
+fetch_realtime_pop 함수 실행 시간: 23.2초
+
+[2025-08-28 12:45:24] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '서행', 'realtime_road_dttm': '2025-08-28 12:45'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:45:53
+fetch_traffic 함수 실행 시간: 29.2초
+
+[2025-08-28 12:45:53] - services/etl.py detail 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 44
+    except:
+    ^^^^^^
+SyntaxError: invalid syntax
+
+[2025-08-28 12:46:00] - services/realtime_pop_fetcher.py 
+result_list[0]={'id': 'POI122', 'AREA_CONGEST_LVL': 'Moderate', 'PPLTN_TIME': '2025-08-28 12:20'}
+table_name='detail_raw' columns='id, realtime_pop, realtime_pop_dttm' place_holder=':id, :AREA_CONGEST_LVL, :PPLTN_TIME'
+detail_raw 80개 데이터 insert 완료 20250828124603
+fetch_realtime_pop 함수 실행 시간: 2.2초
+
+[2025-08-28 12:46:03] - services/realtime_traffic_fetcher.py 
+result_list[0]={'id': 'POI001', 'realtime_road': '서행', 'realtime_road_dttm': '2025-08-28 12:45'}
+detail_raw 80개 실시간 주변 도로 데이터 insert 완료 2025.08.28 12:46:25
+fetch_traffic 함수 실행 시간: 21.6초
+
+[2025-08-28 12:46:25] - services/etl.py detail 
+  File "/Users/seSAC/src/nowinseoul/nowinseoul/services/etl.py", line 44
+    except:
+    ^^^^^^
+SyntaxError: invalid syntax
