@@ -31,7 +31,9 @@ def detail(attraction_id):
 
     data = {"AREA_CD" : attraction_id,
             "NAME" : attraction_info_by_id[0].get('name_en'),
-            "DESCRIPTION": attraction_info_by_id[0].get('desc_en'),
+            "DESC_KO": attraction_info_by_id[0].get('desc_ko'),
+            "DESC_EN": attraction_info_by_id[0].get('desc_en'),
+            "DESC_JA": attraction_info_by_id[0].get('desc_ja'),
             # 날씨 예측
             "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
                               "TEMP": str(d.get('fcst_temp')),
@@ -54,6 +56,7 @@ def detail(attraction_id):
                               for d in db.get_info_by_id('detail_cache',attraction_id)
             ],
             # 주변 따릉이
+            # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
             "SBIKE_STTS":get_info(attraction_id)
     }
 

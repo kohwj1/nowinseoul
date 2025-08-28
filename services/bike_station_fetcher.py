@@ -17,7 +17,9 @@ if not API_KEY:
 def parking_info(api_data, station_id_dict):
     station_id = api_data.get("stationId") # 'ST-10'
     if station_id in station_id_dict:
-        value = {'SBIKE_SPOT_NM' : station_id_dict.get(station_id), # station_name_en(대여소 영어 이름)
+        value = {'SBIKE_SPOT_NM_KO' : station_id_dict.get(station_id).get('station_name_ko'), # station_name_ko(대여소 영어 이름)
+                 'SBIKE_SPOT_NM_EN' : station_id_dict.get(station_id).get('station_name_en'), # station_name_en(대여소 영어 이름)
+                 'SBIKE_SPOT_NM_JA' : station_id_dict.get(station_id).get('station_name_ja'), # station_name_ja(대여소 영어 이름)
                  'SBIKE_PARKING_CNT' : api_data.get('parkingBikeTotCnt'),
                  'SBIKE_X' : api_data.get('stationLatitude'),
                  'SBIKE_Y' : api_data.get('stationLongitude')
@@ -43,7 +45,9 @@ def get_info(attraction_id): # POI033 서울역
     # 리스트 안에 원시값(숫자, 문자열 등 불변 객체)만 있다면 사실상 독립적인 리스트가 되고, 내부 요소 변경도 영향을 안 준다.
     # 여기서는 영향을 받아야하므로 얕은카피(.copy())하지 않음
     # 
-    station_id_dict = {s.get('station_id'): s.get('station_name_en') for s in db.get_info_by_id('bike_station_info',attraction_id)}
+    station_id_dict = {s.get('station_id'): { 'station_name_ko' : s.get('station_name_ko')
+                                             ,'station_name_en' : s.get('station_name_en')
+                                             ,'station_name_ja' : s.get('station_name_ja')} for s in db.get_info_by_id('bike_station_info',attraction_id)}
     # [{'ST-10':'108. Seogyo-dong Intersection'},]
     result_data = []
 
@@ -61,6 +65,7 @@ def get_info(attraction_id): # POI033 서울역
         bike_station_info = concurrent_processing(parking_info, data.get('row'),station_id_dict)
         result_data.extend(list(bike_station_info.values()))
     
+    print(f'{result_data[0]=}')
     return result_data
 
 if __name__ == "__main__":

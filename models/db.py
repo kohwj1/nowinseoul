@@ -105,6 +105,7 @@ def get_info_for_map():
                       JOIN detail_cache dtl ON att.id = dtl.id
                  """)
     attr_value = [dict(i) for i in cur.fetchall()]  # 사용자 한명만
+    print(attr_value[0])
     
     conn.commit()
     conn.close()
@@ -233,5 +234,5 @@ def import_bike_station_info():
     print(f"[CSV] bike_station_info.csv → bike_station_info 업로드 완료.")
 
 if __name__ == "__main__":        
-    print(get_info_by_id('weather_cache', 'POI007'))
-    # print(get_attraction_by_id('desc_en' , 'POI007'))
+    # print(get_info_by_id('weather_cache', 'POI007'))
+    get_info_for_map()
