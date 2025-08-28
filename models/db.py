@@ -1,4 +1,4 @@
-import sqlite3, os, csv, time
+import sqlite3, os, csv, time, sys
 from dotenv import load_dotenv
 from datetime import datetime
 
@@ -6,6 +6,8 @@ from datetime import datetime
 load_dotenv()  # .env 파일의 환경변수 로드
 
 DATABASE = os.getenv('DATABASE')
+if not DATABASE:
+    print(f'.env 파일에서 DATABASE를 입력하세요')
 DB_PATH = os.path.join('/','Users','seSAC','src','nowinseoul','nowinseoul','instance',DATABASE)  # 데이터베이스 파일 경로
 
 
@@ -221,8 +223,8 @@ def import_bike_station_info():
         reader = csv.DictReader(f.readlines())
         rows = list(reader)
 
-        insert_sql = f"""INSERT INTO bike_station_info (id,station_id,station_name_ko,station_name_en) 
-                                                VALUES (:id,:station_id,:station_name_ko,:station_name_en)"""
+        insert_sql = f"""INSERT INTO bike_station_info (id,station_id,station_name_ko,station_name_en,station_name_ja) 
+                                                VALUES (:id,:station_id,:station_name_ko,:station_name_en,:station_name_ja)"""
     
         cur.executemany(insert_sql, rows)
 
@@ -230,6 +232,6 @@ def import_bike_station_info():
     conn.close()
     print(f"[CSV] bike_station_info.csv → bike_station_info 업로드 완료.")
 
-if __name__ == "__main__":
+if __name__ == "__main__":        
     print(get_info_by_id('weather_cache', 'POI007'))
-    # print(get_attraction_by_id('desc_ko' , 'POI007'))
+    # print(get_attraction_by_id('desc_en' , 'POI007'))

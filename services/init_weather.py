@@ -14,7 +14,8 @@ from itertools import chain
 
 load_dotenv()  # .env 파일의 환경변수 로드
 WEATHER_API_KEY = os.getenv('WEATHER_API_KEY')
-
+if not WEATHER_API_KEY:
+    print(f'.env 파일에서 WEATHER_API_KEY를 입력하세요')
 
 # I/O 바운드 작업은 비동기 처리
 async def fetch_url(session, url):
@@ -27,7 +28,7 @@ async def mapping_xy(attraction_dict, session):
         # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     try:
         url = f'https://apihub.kma.go.kr/api/typ01/cgi-bin/url/nph-dfs_xy_lonlat?lat={attraction_dict.get('lat')}&lon={attraction_dict.get('lng')}&authKey={WEATHER_API_KEY}'
-        print(f'fetching url : {url}')
+        # print(f'fetching url : {url}')
         text = await fetch_url(session, url)
 
         # 간단한 문자열 처리이므로 동기 처리로 변경: 오버헤드 최소화

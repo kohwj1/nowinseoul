@@ -20,6 +20,8 @@ from models import db
 
 load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
+if not API_KEY:
+    print(f'.env 파일에서 API_KEY를 입력하세요')
 
 ## 실시간 인구밀도 데이터에서 도시ID - 인구밀도 매핑
 def mapping_id(attraction_dict):

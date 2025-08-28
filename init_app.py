@@ -7,7 +7,7 @@ import os, asyncio
 def init_app_fetch_data():
     ## models.init_db
     # 1. 데이터베이스 초기화
-    if not os.path.exists(db.DB_PATH):
+    if not os.path.exists('instance'):
         os.mkdir('instance')
         print('instance folder를 추가했습니다.')
 

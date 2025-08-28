@@ -1,339 +1,339 @@
-id,station_id,station_name_ko,station_name_en,station_name_en_trans
-POI003,ST-1668,433. 을지로입구역 2번출구,"433. Euljiro 1-ga Station, Exit 2","433. Euljiro 1-ga Station, Exit 2"
-POI003,ST-1774,468.웨스틴 조선호텔,468. Westin Chosun Hotel,468. Westin Chosun Hotel
-POI003,ST-134,318. 광교사거리 남측,318. South side of Gwanggyo Intersection,318. South side of Gwanggyo Intersection
-POI003,ST-126,310. 청계광장 옆,310. Next to Cheonggye Plaza,310. Next to Cheonggye Plaza
-POI003,ST-136,320. 을지로입구역 4번출구 앞,320. In front of Exit 4 of Euljiro 1-ga Station,320. In front of Exit 4 of Euljiro 1-ga Station
-POI003,ST-1773,467.한국은행,467. Bank of Korea,467. Bank of Korea
-POI003,ST-140,324. 신세계백화점 본점 앞,324. In front of Shinsegae Department Store Main Branch,324. In front of Shinsegae Department Store Main Branch
-POI003,ST-147,331. 을지로2가 사거리 북측,331. North side of Euljiro 2-ga intersection,331. North side of Euljiro 2-ga intersection
-POI003,ST-1435,398. 을지로3가역 3번출구,"398. Euljiro 3-ga Station, Exit 3","398. Euljiro 3-ga Station, Exit 3"
-POI003,ST-137,321. KEB 하나금융그룹 명동사옥 옆,321. Next to KEB Hana Financial Group's Myeongdong building,321. Next to KEB Hana Financial Group's Myeongdong building
-POI003,ST-138,322. 명동성당 앞,322. In front of Myeongdong Cathedral,322. In front of Myeongdong Cathedral
-POI003,ST-2422,3013.서울지방고용노동청 앞,3013. In front of Seoul Regional Employment and Labor Office,3013. In front of Seoul Regional Employment and Labor Office
-POI003,ST-2520,4774. 을지로입구역 8번출구,"4774. Euljiro 1-ga Station, Exit 8","4774. Euljiro 1-ga Station, Exit 8"
-POI003,ST-2521,4775. 을지로지하쇼핑센터,4775. Euljiro Underground Shopping Center,4775. Euljiro Underground Shopping Center
-POI003,ST-2522,4776. 신세계면세점,4776. Shinsegae Duty Free,4776. Shinsegae Duty Free
-POI003,ST-2527,4791. 명동역9번 출구,4791. Myeongdong Station Exit 9,4791. Myeongdong Station Exit 9
-POI003,ST-2517,4762. 국제빌딩,4762. International Building,4762. International Building
-POI003,ST-2693,4796. 서울시청,4796. Seoul City Hall,4796. Seoul City Hall
-POI003,ST-1772,466.롯데호텔,466. Lotte Hotel,466. Lotte Hotel
-POI006,ST-181,368. SK 서린빌딩 앞,368. In front of SK Seorin Building,368. In front of SK Seorin Building
-POI006,ST-1611,458. 광화문역 5번출구,458. Gwanghwamun Station Exit 5,458. Gwanghwamun Station Exit 5
-POI006,ST-1432,397. 종묘공영주차장 건너편,397. Across from Jongmyo Public Parking Lot,397. Across from Jongmyo Public Parking Lot
-POI006,ST-151,335. 종로3가역 15번출구 뒤,335. Behind Exit 15 of Jongno 3-ga Station,335. Behind Exit 15 of Jongno 3-ga Station
-POI006,ST-145,329. 청계2가 사거리 옆,329. Next to Cheonggye 2-ga intersection,329. Next to Cheonggye 2-ga intersection
-POI006,ST-336,385. 종각역 5번출구,385. Jonggak Station Exit 5,385. Jonggak Station Exit 5
-POI006,ST-1372,393. 동대문역 8번 출구,393. Dongdaemun Station Exit 8,393. Dongdaemun Station Exit 8
-POI006,ST-1608,455. 종로6가역 버스정류장(동대문 방향),455. Jongno 6-ga Station Bus Stop (Dongdaemun Direction),455. Jongno 6-ga Station Bus Stop (Dongdaemun Direction)
-POI006,ST-1812,3415.동대문역6번출구,3415. Dongdaemun Station Exit 6,3415. Dongdaemun Station Exit 6
-POI006,ST-1829,3432.종로2가 사거리,3432. Jongno 2-ga intersection,3432. Jongno 2-ga intersection
-POI006,ST-1809,3412.세운상가,3412. Seun Shopping Mall,3412. Seun Shopping Mall
-POI006,ST-2513,4707. 청계3가 사거리,4707. Cheonggye 3-ga Intersection,4707. Cheonggye 3-ga Intersection
-POI007,ST-6,104. 합정역 1번출구 앞,104. In front of Exit 1 of Hapjeong Station,104. In front of Exit 1 of Hapjeong Station
-POI007,ST-2152,493.홍대입구역 6번출구,493. Hongik University Station Exit 6,493. Hongik University Station Exit 6
-POI007,ST-20,114. 홍대입구역 8번출구 앞,114. In front of Hongik University Station Exit 8,114. In front of Hongik University Station Exit 8
-POI007,ST-10,108. 서교동 사거리,108. Seogyo-dong Intersection,108. Seogyo-dong Intersection
-POI007,ST-2168,3010.홍대입구역 3번출구,3010. Hongik University Station Exit 3,3010. Hongik University Station Exit 3
-POI007,ST-2167,3009. 홍대입구역 사거리,3009. Hongik University Station Intersection,3009. Hongik University Station Intersection
-POI007,ST-2534,4211. 시석빌딩 앞,4211. In front of Siseok Building,4211. In front of Siseok Building
-POI007,ST-2532,4208. 스타벅스(동교동) 앞,4208. In front of Starbucks (Donggyo-dong),4208. In front of Starbucks (Donggyo-dong)
-POI007,ST-18,113. 홍대입구역 2번출구 앞,113. In front of Hongik University Station Exit 2,113. In front of Hongik University Station Exit 2
-POI010,ST-132,316. 종각역 1번출구 앞,316. In front of Exit 1 of Jonggak Station,316. In front of Exit 1 of Jonggak Station
-POI010,ST-336,385. 종각역 5번출구,385. Jonggak Station Exit 5,385. Jonggak Station Exit 5
-POI010,ST-1805,3408.종로타워빌딩,3408. Jongno Tower Building,3408. Jongno Tower Building
-POI010,ST-2472,4708. 조계사앞사거리,4708. Jogyesa Temple Intersection,4708. Jogyesa Temple Intersection
-POI011,ST-491,1007.암사동 선사유적지,1007. Amsa-dong Prehistoric Site,1007. Amsa-dong Prehistoric Site
-POI011,ST-1686,3539. 서원마을,3539. Seowon Village,3539. Seowon Village
-POI012,ST-153,337. 창경궁 입구,337. Entrance to Changgyeonggung Palace,337. Entrance to Changgyeonggung Palace
-POI012,ST-174,359. 원남동사거리,359. Wonnam-dong Intersection,359. Wonnam-dong Intersection
-POI012,ST-154,338. 세운스퀘어 앞,338. In front of Seun Square,338. In front of Seun Square
-POI012,ST-1808,3411.종묘,3411. Seed,3411. Seed
-POI012,ST-1810,3413.종로플레이스,3413. Jongno Place,3413. Jongno Place
-POI012,ST-1807,3410.종로3가역 8번출구,3410. Jongno 3-ga Station Exit 8,3410. Jongno 3-ga Station Exit 8
-POI012,ST-155,339. 종로4가 사거리,339. Jongno 4-ga Intersection,339. Jongno 4-ga Intersection
-POI015,ST-98,501. 광진구의회 앞,501. In front of Gwangjin-gu Council,501. In front of Gwangjin-gu Council
-POI015,ST-1660,3533. 건대입구역 사거리(롯데백화점),3533. Konkuk University Station Intersection (Lotte Department Store),3533. Konkuk University Station Intersection (Lotte Department Store)
-POI015,ST-1661,3534. 건대입구역 5번출구 뒤,3534. Behind exit 5 of Konkuk University Station,3534. Behind exit 5 of Konkuk University Station
-POI017,ST-2667,4316. 고속터미널역 3번출구,4316. Express Bus Terminal Station Exit 3,4316. Express Bus Terminal Station Exit 3
-POI030,ST-2173,849. 삼각지 자이아파트,849. Samgakji Zia Apartment,849. Samgakji Zia Apartment
-POI030,ST-2172,848. 삼각지12번 출구,848. Samgakji Exit 12,848. Samgakji Exit 12
-POI030,ST-2451,4620. 삼각지역 14번 출구 앞(교통섬),4620. In front of Exit 14 of Samgakji Station (traffic island),4620. In front of Exit 14 of Samgakji Station (traffic island)
-POI032,ST-2031,2715.마곡나루역 2번 출구,2715. Magoknaru Station Exit 2,2715. Magoknaru Station Exit 2
-POI032,ST-1718,2701. 마곡나루역 5번출구 뒤편,2701. Behind Exit 5 of Magoknaru Station,2701. Behind Exit 5 of Magoknaru Station
-POI032,ST-2042,2725.서울식물원 식물문화센터,2725. Seoul Botanical Garden Plant Culture Center,2725. Seoul Botanical Garden Plant Culture Center
-POI032,ST-2044,2727.서울식물원 잔디마당 앞,2727. In front of the lawn of Seoul Botanical Garden,2727. In front of the lawn of Seoul Botanical Garden
-POI032,ST-2045,2728.마곡나루역 3번 출구,2728. Magoknaru Station Exit 3,2728. Magoknaru Station Exit 3
-POI032,ST-3261,5098. LG사이언스파크 W4동,5098. LG Science Park W4 Building,5098. LG Science Park W4 Building
-POI032,ST-3259,5097. LG사이언스파크 E2동,5097. LG Science Park E2 Building,5097. LG Science Park E2 Building
-POI032,ST-3324,6177. 마곡롯데캐슬르웨스트,6177. Magok Lotte Castle West,6177. Magok Lotte Castle West
-POI033,ST-194,379. 서울역9번출구,379. Seoul Station Exit 9,379. Seoul Station Exit 9
-POI033,ST-1670,435. SK 남산빌딩,435. SK Namsan Building,435. SK Namsan Building
-POI033,ST-1791,485.서울역5번출구,485. Seoul Station Exit 5,485. Seoul Station Exit 5
-POI033,ST-2430,4760. 서울역 7번출구,4760. Seoul Station Exit 7,4760. Seoul Station Exit 7
-POI033,ST-2786,4794. 서울역 서부교차로(3),4794. Seoul Station West Intersection (3),4794. Seoul Station West Intersection (3)
-POI037,ST-1926,2542.신논현타워 앞,2542. In front of Shinnonhyeon Tower,2542. In front of Shinnonhyeon Tower
-POI037,ST-787,2302. 교보타워 버스정류장(신논현역 3번출구 후면),2302. Kyobo Tower Bus Stop (behind Exit 3 of Sinnonhyeon Station),2302. Kyobo Tower Bus Stop (behind Exit 3 of Sinnonhyeon Station)
-POI037,ST-3332,4347. 논현지하보도,4347. Nonhyeon Underpass,4347. Nonhyeon Underpass
-POI039,ST-976,2136. 신림역 8번출구,2136. Sillim Station Exit 8,2136. Sillim Station Exit 8
-POI039,ST-1270,2175. 신림동걷고싶은문화의거리입구,2175. Entrance to Sillim-dong's Walking Culture Street,2175. Entrance to Sillim-dong's Walking Culture Street
-POI039,ST-702,2102. 봉림교 교통섬,2102. Bongnim Bridge Traffic Island,2102. Bongnim Bridge Traffic Island
-POI040,ST-36,134. 연세로 명물길,134. Famous street in Yeonsei,134. Famous street in Yeonsei
-POI040,ST-37,135. 명물길 원형무대 앞,135. In front of the circular stage on Myeongmul-gil,135. In front of the circular stage on Myeongmul-gil
-POI040,ST-31,129. 신촌역(2호선) 6번출구 옆,129. Next to Exit 6 of Sinchon Station (Line 2),129. Next to Exit 6 of Sinchon Station (Line 2)
-POI040,ST-32,130. 신촌역(2호선) 7번출구 앞,130. In front of Exit 7 of Sinchon Station (Line 2),130. In front of Exit 7 of Sinchon Station (Line 2)
-POI040,ST-39,137. 신촌기차역입구 교차로,137. Sinchon Station Entrance Intersection,137. Sinchon Station Entrance Intersection
-POI040,ST-2201,3116.신촌역 4번출구,3116. Sinchon Station Exit 4,3116. Sinchon Station Exit 4
-POI040,ST-3021,4248. 신촌 교보빌딩,4248. Kyobo Building in Sinchon,4248. Kyobo Building in Sinchon
-POI040,ST-3140,4274. 신촌 파랑고래 입구,4274. Sinchon Blue Whale Entrance,4274. Sinchon Blue Whale Entrance
-POI040,ST-30,128. 신촌역(2호선) 1번출구 옆,128. Next to Exit 1 of Sinchon Station (Line 2),128. Next to Exit 1 of Sinchon Station (Line 2)
-POI040,ST-207,150. 서강대역 2번출구 앞,150. In front of Exit 2 of Sogang University Station,150. In front of Exit 2 of Sogang University Station
-POI042,ST-1680,2410. 포스코피앤에스타워 (역삼역 3번출구 부근),2410. POSCO P&S Tower (near Exit 3 of Yeoksam Station),2410. POSCO P&S Tower (near Exit 3 of Yeoksam Station)
-POI042,ST-1896,2430.강남파이낸스센터앞(역삼역2번출구),2430. In front of Gangnam Finance Center (Yeoksam Station Exit 2),2430. In front of Gangnam Finance Center (Yeoksam Station Exit 2)
-POI042,ST-959,2349. 역삼빌딩 앞(하나은행 옆),2349. In front of Yeoksam Building (next to Hana Bank),2349. In front of Yeoksam Building (next to Hana Bank)
-POI045,ST-241,525. 한양대병원사거리,525. Hanyang University Hospital Intersection,525. Hanyang University Hospital Intersection
-POI045,ST-360,559. 왕십리역 4번 출구 건너편,559. Across from Wangsimni Station Exit 4,559. Across from Wangsimni Station Exit 4
-POI045,ST-2327,3545.한양대역 1번출구,3545. Hanyang University Station Exit 1,3545. Hanyang University Station Exit 1
-POI045,ST-2343,3561.행당동 삼부APT후문,3561. Haengdang-dong Sambu APT back door,3561. Haengdang-dong Sambu APT back door
-POI045,ST-359,558. 성동광진 교육지원청 앞,558. In front of Seongdong Gwangjin Office of Education,558. In front of Seongdong Gwangjin Office of Education
-POI046,ST-1615,845. 용산 선인상가,845. Yongsan Seonin Shopping Mall,845. Yongsan Seonin Shopping Mall
-POI046,ST-2177,853.용산역 맞은편,853. Across from Yongsan Station,853. Across from Yongsan Station
-POI046,ST-2437,4604. 원효로다목적체육관 앞,4604. In front of Wonhyo-ro Multipurpose Gymnasium,4604. In front of Wonhyo-ro Multipurpose Gymnasium
-POI046,ST-2448,4617. 동원베네스트 건너편,4617. Across from Dongwon Benest,4617. Across from Dongwon Benest
-POI046,ST-2447,4616. 신용산지하차도 앞,4616. In front of Sinyongsan Underpass,4616. In front of Sinyongsan Underpass
-POI046,ST-327,806. 전자랜드 본관 앞,806. In front of the main building of Electronic Land,806. In front of the main building of Electronic Land
-POI053,ST-7,105. 합정역 5번출구 앞,105. In front of Exit 5 of Hapjeong Station,105. In front of Exit 5 of Hapjeong Station
-POI053,ST-2156,497.합정동주민센터 앞,497. In front of Hapjeong-dong Community Center,497. In front of Hapjeong-dong Community Center
-POI053,ST-8,106. 합정역 7번출구 앞,106. In front of Exit 7 of Hapjeong Station,106. In front of Exit 7 of Hapjeong Station
-POI053,ST-2534,4211. 시석빌딩 앞,4211. In front of Siseok Building,4211. In front of Siseok Building
-POI054,ST-158,342. 대학로 마로니에공원,342. Daehakro Marronnier Park,342. Daehakro Marronnier Park
-POI054,ST-173,358. 성균관대입구 사거리 A,358. Sungkyunkwan University Entrance Intersection A,358. Sungkyunkwan University Entrance Intersection A
-POI054,ST-157,341. 혜화역 3번출구 뒤,341. Behind Exit 3 of Hyehwa Station,341. Behind Exit 3 of Hyehwa Station
-POI054,ST-1816,3419.국립어린이과학관,3419. National Children's Science Museum,3419. National Children's Science Museum
-POI054,ST-1817,3420. 성균관대입구 사거리 B,3420. Sungkyunkwan University Entrance Intersection B,3420. Sungkyunkwan University Entrance Intersection B
-POI054,ST-1818,3421.혜화역 1번출구,3421. Hyehwa Station Exit 1,3421. Hyehwa Station Exit 1
-POI058,ST-1076,1257. 가락시장역 사거리,1257. Garak Market Station Intersection,1257. Garak Market Station Intersection
-POI058,ST-2410,2659.서울친환경유통센터,2659. Seoul Eco-Friendly Distribution Center,2659. Seoul Eco-Friendly Distribution Center
-POI058,ST-2409,2658.가락몰 업무동,2658. Garak Mall Business Building,2658. Garak Mall Business Building
-POI058,ST-2591,4480. 가락시장 남1문 사거리,4480. Garak Market South Gate 1 Intersection,4480. Garak Market South Gate 1 Intersection
-POI058,ST-2606,4854. 가락시장역 2번 출구,4854. Garak Market Station Exit 2,4854. Garak Market Station Exit 2
-POI059,ST-1171,2362. 신사동 가로수길 입구,2362. Entrance to Garosu-gil in Sinsa-dong,2362. Entrance to Garosu-gil in Sinsa-dong
-POI059,ST-2673,3606. 신사동주민센터 옆,3606. Next to Shinsa-dong Community Center,3606. Next to Shinsa-dong Community Center
-POI059,ST-3066,4903. 신사스퀘어,4903. Shinsa Square,4903. Shinsa Square
-POI059,ST-3078,4907. 극동스포츠 앞,4907. In front of Far East Sports,4907. In front of Far East Sports
-POI063,ST-1150,2058. 동작경찰서,2058. Dongjak Police Station,2058. Dongjak Police Station
-POI063,ST-877,2003. 사육신공원앞,2003. In front of Sayuksin Park,2003. In front of Sayuksin Park
-POI063,ST-1545,2070. 노량진역 2번 출구 앞,2070. In front of Exit 2 of Noryangjin Station,2070. In front of Exit 2 of Noryangjin Station
-POI063,ST-683,2002. 노들역 1번출구,2002. Nodeul Station Exit 1,2002. Nodeul Station Exit 1
-POI063,ST-699,2050. 노량진역 5번출구,2050. Noryangjin Station Exit 5,2050. Noryangjin Station Exit 5
-POI064,ST-2923,4715. 돈의문 박물관 마을,4715. Donuimun Museum Village,4715. Donuimun Museum Village
-POI064,ST-977,391. 시립미술관,391. City Art Museum,391. City Art Museum
-POI064,ST-116,300. 정동사거리,300. Jeongdong Intersection,300. Jeongdong Intersection
-POI066,ST-979,451. 청와대앞길,451. Cheongwadae-gil,451. Cheongwadae-gil
-POI066,ST-168,352. 중앙고입구 삼거리,352. Jungang High School Entrance Intersection,352. Jungang High School Entrance Intersection
-POI066,ST-1759,465. 삼청공원 앞,465. In front of Samcheong Park,465. In front of Samcheong Park
-POI066,ST-170,354. 포르투갈 대사관 앞,354. In front of the Portuguese Embassy,354. In front of the Portuguese Embassy
-POI066,ST-130,314. 국립현대미술관,314. National Museum of Modern and Contemporary Art,314. National Museum of Modern and Contemporary Art
-POI066,ST-1756,464. 삼청동 골목,464. Samcheong-dong Alley,464. Samcheong-dong Alley
-POI066,ST-169,353. 재동초교 앞 삼거리,353. Three-way intersection in front of Jaedong Elementary School,353. Three-way intersection in front of Jaedong Elementary School
-POI066,ST-1804,3407.안국동사거리(신),3407. Anguk-dong Intersection (New),3407. Anguk-dong Intersection (New)
-POI066,ST-3090,4719. 종로문화원 건너편,4719. Across from Jongno Cultural Center,4719. Across from Jongno Cultural Center
-POI066,ST-2565,4705. 웰니스센터(민방위교육장 앞),4705. Wellness Center (in front of the Civil Defense Training Center),4705. Wellness Center (in front of the Civil Defense Training Center)
-POI067,ST-978,450. 효자동 삼거리,450. Hyoja-dong intersection,450. Hyoja-dong intersection
-POI067,ST-165,349. 어린이도서관,349. Children's Library,349. Children's Library
-POI067,ST-3354,4721. 통인시장 정자,4721. Tongin Market Pavilion,4721. Tongin Market Pavilion
-POI067,ST-2473,4710. 자교교회 앞,4710. In front of Jagyo Church,4710. In front of Jagyo Church
-POI068,ST-112,514. 성수사거리 버스정류장 앞,514. In front of Seongsu Intersection bus stop,514. In front of Seongsu Intersection bus stop
-POI068,ST-506,589. 성수역3번출구,589. Seongsu Station Exit 3,589. Seongsu Station Exit 3
-POI068,ST-482,587. 유니베라 앞,587. In front of Univera,587. In front of Univera
-POI068,ST-111,513. 뚝섬역 5번 출구 정류소 옆,513. Next to the bus stop at Exit 5 of Ttukseom Station,513. Next to the bus stop at Exit 5 of Ttukseom Station
-POI068,ST-2330,3548.뚝섬역 6번출구,3548. Ttukseom Station Exit 6,3548. Ttukseom Station Exit 6
-POI068,ST-3325,4398. 유원지식산업센터 앞,4398. In front of the Yuwon Knowledge Industry Center,4398. In front of the Yuwon Knowledge Industry Center
-POI068,ST-3121,4387. 성수역 1번출구 주변,4387. Around Seongsu Station Exit 1,4387. Around Seongsu Station Exit 1
-POI068,ST-3003,4377. 우영테크노센터 앞,4377. In front of Wooyoung Techno Center,4377. In front of Wooyoung Techno Center
-POI068,ST-3326,4399. 더리브 세종타워 앞,4399. In front of The Live Sejong Tower,4399. In front of The Live Sejong Tower
-POI071,ST-1174,2365. K+ 타워 앞,2365. In front of K+ Tower,2365. In front of K+ Tower
-POI071,ST-1895,2429.압구정로데오역 6번출구,2429. Apgujeong Rodeo Station Exit 6,2429. Apgujeong Rodeo Station Exit 6
-POI071,ST-794,2310. 청담동 맥도날드 옆(위치),2310. Next to McDonald's in Cheongdam-dong (location),2310. Next to McDonald's in Cheongdam-dong (location)
-POI072,ST-64,215. 여의도고교 앞,215. In front of Yeouido High School,215. In front of Yeouido High School
-POI072,ST-50,204. 국회의사당역 5번출구 옆,204. Next to Exit 5 of National Assembly Station,204. Next to Exit 5 of National Assembly Station
-POI072,ST-73,207. 여의나루역 1번출구 앞,207. In front of Exit 1 of Yeouinaru Station,207. In front of Exit 1 of Yeouinaru Station
-POI072,ST-47,202. 국민일보 앞,202. In front of the Kookmin Ilbo,202. In front of the Kookmin Ilbo
-POI072,ST-72,226. 샛강역 1번출구 앞,226. In front of Exit 1 of Saetgang Station,226. In front of Exit 1 of Saetgang Station
-POI072,ST-60,214. 금융감독원 앞,214. In front of the Financial Supervisory Service,214. In front of the Financial Supervisory Service
-POI072,ST-55,209. 유진투자증권빌딩 앞,209. In front of Eugene Investment & Securities Building,209. In front of Eugene Investment & Securities Building
-POI072,ST-59,213. KT앞,213. In front of KT,213. In front of KT
-POI072,ST-52,205. 산업은행 앞,205. In front of the Industrial Bank of Korea,205. In front of the Industrial Bank of Korea
-POI072,ST-68,222. 시범아파트버스정류장 옆,222. Next to the demonstration apartment bus stop,222. Next to the demonstration apartment bus stop
-POI072,ST-414,260. 여의도 마리나선착장 앞,260. In front of Yeouido Marina Pier,260. In front of Yeouido Marina Pier
-POI072,ST-424,270. 증권거래소후문교차로,270. Stock Exchange Back Gate Intersection,270. Stock Exchange Back Gate Intersection
-POI072,ST-296,248. 초원아파트 앞,248. In front of Chowon Apartment,248. In front of Chowon Apartment
-POI072,ST-51,203. 국회의사당역 3번출구 옆,203. Next to Exit 3 of National Assembly Station,203. Next to Exit 3 of National Assembly Station
-POI072,ST-1969,297.국회3문,297. National Assembly Gate 3,297. National Assembly 3rd Question
-POI072,ST-425,271. 샛강생태공원방문자센터 앞,271. In front of Saetgang Ecological Park Visitor Center,271. In front of Saetgang Ecological Park Visitor Center
-POI072,ST-70,224. 롯데캐슬 앞,224. In front of Lotte Castle,224. In front of Lotte Castle
-POI072,ST-53,206. KBS 앞,206. In front of KBS,206. In front of KBS
-POI072,ST-62,219. 롯데캐슬엠파이어 옆,219. Next to Lotte Castle Empire,219. Next to Lotte Castle Empire
-POI072,ST-63,220. 미성아파트 A동 앞,220. In front of Building A of Miseong Apartment,220. In front of Building A of Miseong Apartment
-POI072,ST-67,221. 여의도초교 앞,221. In front of Yeouido Elementary School,221. In front of Yeouido Elementary School
-POI072,ST-1970,298.KBS 연구동 건너편,298. Across from KBS Research Building,298. Across from KBS Research Building
-POI072,ST-297,249. 여의도중학교 옆,249. Next to Yeouido Middle School,249. Next to Yeouido Middle School
-POI072,ST-1971,299.여의도 순복음교회,299. Yoido Full Gospel Church,299. Yoido Full Gospel Church
-POI072,ST-71,225. 앙카라공원 앞,225. In front of Ankara Park,225. In front of Ankara Park
-POI072,ST-46,201. 진미파라곤 앞,201. In front of Jinmi Paragon,201. In front of Jinmi Paragon
-POI072,ST-66,217. NH농협은행 앞,217. In front of NH Nonghyup Bank,217. In front of NH Nonghyup Bank
-POI072,ST-69,223. 진주아파트상가 앞,223. In front of Jinju Apartment Shopping Center,223. In front of Jinju Apartment Shopping Center
-POI072,ST-3239,5870. LG트윈타워 앞,5870. In front of LG Twin Towers,5870. In front of LG Twin Towers
-POI072,ST-3061,5853. 여의도역2번출구 앞,5853. In front of Exit 2 of Yeouido Station,5853. In front of Exit 2 of Yeouido Station
-POI072,ST-3319,5880. 국회박물관,5880. National Assembly Museum,5880. National Assembly Museum
-POI072,ST-3377,5889.의원회관출입구 앞,5889. In front of the entrance to the National Assembly Building,5889. In front of the entrance to the National Assembly Building
-POI072,ST-3318,5879. 국회도서관 2문 앞,5879. In front of Gate 2 of the National Assembly Library,5879. In front of Gate 2 of the National Assembly Library
-POI072,ST-3383,5892.국회의사당본관 좌측,5892. Left side of the main building of the National Assembly,5892. Left side of the main building of the National Assembly
-POI072,ST-2899,4589. KRX한국거래소(1),4589. KRX Korea Exchange (1),4589. KRX Korea Exchange (1)
-POI072,ST-2646,4582. 국회도서관,4582. Library of Congress,4582. Library of Congress
-POI072,ST-2645,4581. 국회소통관,4581. National Assembly Communications Officer,4581. National Assembly Communications Officer
-POI072,ST-2647,4583. 의정관,4583. Council Hall,4583. Council Hall
-POI072,ST-2814,4564. 63스퀘어,4564. 63 square,4564. 63 square
-POI072,ST-3375,5888.여의도성당,5888. Yeouido Cathedral,5888. Yeouido Cathedral
-POI072,ST-2813,4563. 여의도 은하아파트,4563. Eunha Apartment in Yeouido,4563. Eunha Apartment in Yeouido
-POI072,ST-2694,4585. 국회6문,4585. the National Assembly Gate 6,4585. Six questions of the National Assembly
-POI072,ST-3160,5859. 여의도 삼부아파트,5859. Sambu Apartment in Yeouido,5859. Sambu Apartment in Yeouido
-POI072,ST-3315,5878. 우리은행 앞,5878. In front of Woori Bank,5878. In front of Woori Bank
-POI072,ST-2648,4584. 국회2문,4584. National Assembly Gate 2,4584. National Assembly 2nd Question
-POI072,ST-2644,4580. 국회제2의원회관,4580. National Assembly Building 2,4580. National Assembly Building 2
-POI072,ST-2643,4579. 국회의사당 본관,4579. National Assembly Building,4579. National Assembly Building
-POI072,ST-45,200. 국회의원회관,200. National Assembly Members' Hall,200. National Assembly Members' Hall
-POI073,ST-9,107. 수협 연남동지점,107. Suhyup Yeonnam-dong Branch,107. Suhyup Yeonnam-dong Branch
-POI073,ST-2979,4233. 코오롱아파트사거리,4233. Kolon Apartment Intersection,4233. Kolon Apartment Intersection
-POI076,ST-435,816. 신용산역 6번출구 앞,816. In front of Exit 6 of Sinyongsan Station,816. In front of Exit 6 of Sinyongsan Station
-POI076,ST-436,817. 삼각지역 4번출구 앞,817. In front of Exit 4 of Samgakji Station,817. In front of Exit 4 of Samgakji Station
-POI077,ST-2446,4615. 크라운호텔앞 버스정류소,4615. Bus stop in front of Crown Hotel,4615. Bus stop in front of Crown Hotel
-POI077,ST-3056,4634. 이태원역 3번 출구,4634. Itaewon Station Exit 3,4634. Itaewon Station Exit 3
-POI078,ST-142,326. 안국역 5번출구 앞,326. In front of Exit 5 of Anguk Station,326. In front of Exit 5 of Anguk Station
-POI078,ST-143,327. 낙원상가 옆,327. Next to Paradise Shopping Mall,327. Next to Paradise Shopping Mall
-POI078,ST-1607,454. 종로2가 버스정류장 (종각방향),454. Jongno 2-ga Bus Stop (Jonggak direction),454. Jongno 2-ga Bus Stop (Jonggak direction)
-POI078,ST-1805,3408.종로타워빌딩,3408. Jongno Tower Building,3408. Jongno Tower Building
-POI080,ST-1895,2429.압구정로데오역 6번출구,2429. Apgujeong Rodeo Station Exit 6,2429. Apgujeong Rodeo Station Exit 6
-POI080,ST-794,2310. 청담동 맥도날드 옆(위치),2310. Next to McDonald's in Cheongdam-dong (location),2310. Next to McDonald's in Cheongdam-dong (location)
-POI081,ST-2276,676.FITI시험연구원 앞,676. In front of FITI Testing and Research Institute,676. In front of FITI Testing and Research Institute
-POI081,ST-407,640. 동대문경찰서 교차로,640. Dongdaemun Police Station Intersection,640. Dongdaemun Police Station Intersection
-POI081,ST-400,633. 청량리 기업은행 앞,633. In front of the Industrial Bank of Korea in Cheongnyangni,633. In front of the Industrial Bank of Korea in Cheongnyangni
-POI081,ST-3206,4134. 제기동 현대아파트 앞,4134. In front of Hyundai Apartments in Jegi-dong,4134. In front of Hyundai Apartments in Jegi-dong
-POI082,ST-331,810. 이태원지하보도,810. Itaewon Underground Passage,810. Itaewon Underground Passage
-POI083,ST-1781,475.DDP 패션몰,475.DDP Fashion Mall,475.DDP Fashion Mall
-POI083,ST-1780,474.동대문역사문화공원역 1번출구 뒤편,474. Behind Exit 1 of Dongdaemun History & Culture Park Station,474. Behind Exit 1 of Dongdaemun History & Culture Park Station
-POI083,ST-163,347. 동대문역사문화공원역 9번출구 앞,347. In front of Exit 9 of Dongdaemun History and Culture Park Station,347. In front of Exit 9 of Dongdaemun History and Culture Park Station
-POI083,ST-2431,4765. 동대문디자인플라자,4765. Dongdaemun Design Plaza,4765. Dongdaemun Design Plaza
-POI084,ST-80,405. DMC빌 앞,405. In front of DMC Building,405. In front of DMC Building
-POI084,ST-95,415. DMC역 9번출구 앞,415. In front of Exit 9 of DMC Station,415. In front of Exit 9 of DMC Station
-POI084,ST-94,414. 상암동주민센터 옆,414. Next to Sangam-dong Community Center,414. Next to Sangam-dong Community Center
-POI084,ST-2148,489.구룡근린공원,489. Guryong Neighborhood Park,489. Guryong Neighborhood Park
-POI084,ST-991,425. DMC첨단산업센터,425. DMC Advanced Industry Center,425. DMC Advanced Industry Center
-POI084,ST-2165,3007.MBC 앞,3007. In front of MBC,3007. In front of MBC
-POI084,ST-2166,3008.DMC역7번출구,3008.DMC Station Exit 7,3008.DMC Station Exit 7
-POI084,ST-2537,4214. JTBC 앞,4214. In front of JTBC,4214. In front of JTBC
-POI084,ST-2974,4218. 디지털매직스페이스,4218. Digital Magic Space,4218. Digital Magic Space
-POI084,ST-2981,4238. 상암한샘빌딩앞,4238. In front of Sangam Hanssem Building,4238. In front of Sangam Hanssem Building
-POI084,ST-90,411. DMC홍보관,411. DMC Promotion Center,411. DMC Promotion Center
-POI084,ST-2149,490.가온문화공원,490. Gaon Cultural Park,490. Gaon Cultural Park
-POI084,ST-91,412. DMC산학협력연구센터 앞,412. In front of the DMC Industry-Academic Cooperation Research Center,412. In front of the DMC Industry-Academic Cooperation Research Center
-POI084,ST-93,417. DMC역 2번출구 옆,417. Next to Exit 2 of DMC Station,417. Next to Exit 2 of DMC Station
-POI084,ST-84,408. LG CNS앞,408. In front of LG CNS,408. In front of LG CNS
-POI084,ST-86,409. 누리꿈스퀘어 옆,409. Next to Nuri Dream Square,409. Next to Nuri Dream Square
-POI086,ST-675,1928. 고척스카이돔구장 광장,1928. Gocheok Sky Dome Stadium Plaza,1928. Gocheok Sky Dome Stadium Plaza
-POI089,ST-2179,855.이촌역5번출구 앞,855. In front of Exit 5 of Ichon Station,855. In front of Exit 5 of Ichon Station
-POI089,ST-2187,863.이촌역2번 출구,863. Ichon Station Exit 2,863. Ichon Station Exit 2
-POI091,ST-196,381. 장충체육관,381. Jangchung Arena,381. Jangchung Arena
-POI091,ST-186,371. 동대입구역 6번출구 뒤,371. Behind Exit 6 of Dongdaemun Station,371. Behind Exit 6 of Dongdaemun Station
-POI091,ST-3054,4621. 남산도서관 앞,4621. In front of Namsan Library,4621. In front of Namsan Library
-POI091,ST-2183,859.남산공원 야외식물원 앞,859. In front of Namsan Park Outdoor Botanical Garden,859. In front of Namsan Park Outdoor Botanical Garden
-POI092,ST-2239,869.노들섬 동측 앞,869. In front of the east side of Nodeul Island,869. In front of the east side of Nodeul Island
-POI092,ST-2240,870.노들섬 서측 앞,870. In front of the west side of Nodeul Island,870. In front of the west side of Nodeul Island
-POI092,ST-2438,"4605. 노들섬 다목적홀(동쪽) 숲, 앞","4605. Nodeul Island Multipurpose Hall (East) Forest, Front","4605. Nodeul Island Multipurpose Hall (East) Forest, Front"
-POI093,ST-3390,5153.한강버스 뚝섬 선착장,5153. Hangang Bus Ttukseom Ferry Terminal,5153. Hangang Bus Ttukseom Ferry Terminal
-POI094,ST-7,105. 합정역 5번출구 앞,105. In front of Exit 5 of Hapjeong Station,105. In front of Exit 5 of Hapjeong Station
-POI094,ST-2905,4217. 한강공원 망원나들목,"4217. Mangwon IC, Hangang Park","4217. Mangwon IC, Hangang Park"
-POI094,ST-3388,5515.한강버스 망원 선착장,5515. Han River Bus Mangwon Pier,5515. Han River Bus Mangwon Pier
-POI096,ST-2610,3718. 번동3단지 버스정류장,3718. Beondong 3rd Complex Bus Stop,3718. Beondong 3rd Complex Bus Stop
-POI096,ST-1725,1548. 북서울 꿈의숲 서문,1548. West Gate of Dream Forest in Bukhansan,1548. West Gate of Dream Forest in Bukhansan
-POI096,ST-2401,1571.북서울 꿈의 숲 입구,1571. Entrance to the Dream Forest in Buk Seoul,1571. Entrance to the Dream Forest in Buk Seoul
-POI098,ST-2667,4316. 고속터미널역 3번출구,4316. Express Bus Terminal Station Exit 3,4316. Express Bus Terminal Station Exit 3
-POI098,ST-3009,4327. 몽마르뜨공원입구,4327. Entrance to Montmartre Park,4327. Entrance to Montmartre Park
-POI098,ST-2663,4312. 반포미도2차아파트 옆,4312. Next to Banpo Mido 2nd Apartment,4312. Next to Banpo Mido 2nd Apartment
-POI099,ST-185,370. 시청역(2호선) 9번출구 뒤,370. Behind Exit 9 of City Hall Station (Line 2),370. Behind Exit 9 of City Hall Station (Line 2)
-POI101,ST-107,510. 뚝도아리수정수센터 버스정류소 옆,510. Next to the Ttukdo Arisu Purification Center bus stop,510. Next to the Ttukdo Arisu Purification Center bus stop
-POI101,ST-2334,3552.서울숲 공영주차장앞,3552. In front of Seoul Forest Public Parking Lot,3552. In front of Seoul Forest Public Parking Lot
-POI101,ST-1199,3515. 서울숲 관리사무소,3515. Seoul Forest Management Office,3515. Seoul Forest Management Office
-POI101,ST-3393,4401.뚝섬유수지 공영주차장,4401. Ttukseom Suji Public Parking Lot,4401. Ttukseom Suji Public Parking Lot
-POI104,ST-384,573. 구의문주차장 앞,573. In front of Guuimun Parking Lot,573. In front of Guuimun Parking Lot
-POI104,ST-385,574. 아차산역4번출구,574. Achasan Station Exit 4,574. Achasan Station Exit 4
-POI104,ST-1192,3507. 어린이회관,3507. Children's Hall,3507. Children's Hall
-POI104,ST-2541,3853. 어린이대공원역 2번출구,3853. Children's Grand Park Station Exit 2,3853. Children's Grand Park Station Exit 2
-POI104,ST-2542,3860. 건국대학교 정문 앞,3860. In front of the main gate of Konkuk University,3860. In front of the main gate of Konkuk University
-POI104,ST-1603,3529. 어린이대공원정문,3529. Children's Grand Park Main Gate,3529. Children's Grand Park Main Gate
-POI104,ST-2312,3573.광나루안전체험관,3573. Gwangnaru Safety Experience Center,3573. Gwangnaru Safety Experience Center
-POI106,ST-92,413. 상암월드컵파크 3단지 후문,"413. Sangam World Cup Park Complex 3, back gate","413. Sangam World Cup Park Complex 3, back gate"
-POI106,ST-344,186. 월드컵공원,186. World Cup Park,186. World Cup Park
-POI106,ST-443,199. 서울 월드컵 경기장,199. Seoul World Cup Stadium,199. Seoul World Cup Stadium
-POI106,ST-87,419. 홈플러스 마포점 앞,419. In front of Homeplus Mapo branch,419. In front of Homeplus Mapo branch
-POI106,ST-85,420. 서울시 공공자전거 상암센터,420. Seoul Public Bicycle Sangam Center,420. Seoul Public Bicycle Sangam Center
-POI106,ST-1754,440. 하늘공원 입구,440. Sky Park Entrance,440. Sky Park Entrance
-POI106,ST-89,418. 월드컵경기장역 3번출구 옆,418. Next to Exit 3 of World Cup Stadium Station,418. Next to Exit 3 of World Cup Stadium Station
-POI106,ST-2166,3008.DMC역7번출구,3008.DMC Station Exit 7,3008.DMC Station Exit 7
-POI107,ST-370,569. 응봉현대아파트 정류소,569. Eungbong Hyundai Apartment Bus Stop,569. Eungbong Hyundai Apartment Bus Stop
-POI107,ST-1599,3525. 금호스포츠센터앞,3525. In front of Geumho Sports Center,3525. In front of Geumho Sports Center
-POI107,ST-1195,3511. 응봉역 1번출구,3511. Eungbong Station Exit 1,3511. Eungbong Station Exit 1
-POI110,ST-3391,5784.한강버스 잠실 선착장,5784. Hangang Bus Jamsil Pier,5784. Hangang Bus Jamsil Pier
-POI111,ST-3389,4940.한강버스 압구정 선착장,4940. Hangang Bus Apgujeong Ferry Terminal,4940. Hangang Bus Apgujeong Ferry Terminal
-POI112,ST-925,2203. 청계산입구역 2번출구,2203. Cheonggyesan Station Exit 2,2203. Cheonggyesan Station Exit 2
-POI112,ST-3216,4338.새정이마을버스정류장 앞,4338. In front of Saejeong Village Bus Stop,4338. In front of Saejeong Village Bus Stop
-POI113,ST-978,450. 효자동 삼거리,450. Hyoja-dong intersection,450. Hyoja-dong intersection
-POI114,ST-1774,468.웨스틴 조선호텔,468. Westin Chosun Hotel,468. Westin Chosun Hotel
-POI114,ST-1773,467.한국은행,467. Bank of Korea,467. Bank of Korea
-POI114,ST-140,324. 신세계백화점 본점 앞,324. In front of Shinsegae Department Store Main Branch,324. In front of Shinsegae Department Store Main Branch
-POI115,ST-1776,470.회현역 7번출구,470. Hoehyeon Station Exit 7,470. Hoehyeon Station Exit 7
-POI115,ST-140,324. 신세계백화점 본점 앞,324. In front of Shinsegae Department Store Main Branch,324. In front of Shinsegae Department Store Main Branch
-POI115,ST-2522,4776. 신세계면세점,4776. Shinsegae Duty Free,4776. Shinsegae Duty Free
-POI116,ST-150,334. 종로3가역 2번출구 뒤,334. Behind Exit 2 of Jongno 3-ga Station,334. Behind Exit 2 of Jongno 3-ga Station
-POI116,ST-143,327. 낙원상가 옆,327. Next to Paradise Shopping Mall,327. Next to Paradise Shopping Mall
-POI116,ST-1807,3410.종로3가역 8번출구,3410. Jongno 3-ga Station Exit 8,3410. Jongno 3-ga Station Exit 8
-POI116,ST-2623,4713. 현대 뜨레비앙 아파트 앞,4713. In front of Hyundai Treviang Apartments,4713. In front of Hyundai Treviang Apartments
-POI120,ST-891,1210. 롯데월드타워(잠실역2번출구 쪽),1210. Lotte World Tower (Jamsil Station Exit 2),1210. Lotte World Tower (Jamsil Station Exit 2)
-POI120,ST-1087,1268. 몽촌토성역 1번출구 옆,1268. Next to Exit 1 of Mongchontoseong Station,1268. Next to Exit 1 of Mongchontoseong Station
-POI120,ST-1586,1297. 석촌호수교차로(동호 팔각정 앞),1297. Seokchon Lake Intersection (in front of Dongho Palgakjeong),1297. Seokchon Lake Intersection (in front of Dongho Palgakjeong)
-POI120,ST-1585,1296. 석촌호수교차로 (송파나루근린공원 앞),1296. Seokchon Lake Intersection (in front of Songpanaru Neighborhood Park),1296. Seokchon Lake Intersection (in front of Songpanaru Neighborhood Park)
-POI120,ST-1409,1278. 송파구청 교차로,1278. Songpa-gu Office Intersection,1278. Songpa-gu Office Intersection
-POI120,ST-551,1233. 잠실3거리(갤러리아팰리스),1233. Jamsil 3-way intersection (Galleria Palace),1233. Jamsil 3-way intersection (Galleria Palace)
-POI120,ST-550,1232. 잠실주공 521동 건너편,1232. Across from Jamsil Public Housing Building 521,1232. Across from Jamsil Public Housing Building 521
-POI120,ST-1590,2601. 석촌호수 아뜰리에,2601. Seokchon Lake Atelier,2601. Seokchon Lake Atelier
-POI120,ST-1719,2621. 한성백제역 2번 출구,2621. Hanseong Baekje Station Exit 2,2621. Hanseong Baekje Station Exit 2
-POI120,ST-1868,2647.잠실 자전거 수리센터 앞,2647. In front of Jamsil Bicycle Repair Center,2647. In front of Jamsil Bicycle Repair Center
-POI120,ST-1681,2608. 송파구청,2608. Songpa-gu Office,2608. Songpa-gu Office
-POI120,ST-2797,4865. 한성백제역 1번출구 뒤,4865. Behind Exit 1 of Hanseong Baekje Station,4865. Behind Exit 1 of Hanseong Baekje Station
-POI120,ST-2833,4868. 석촌호수 서호 남단,"4868. Seokchon Lake, West Lake, Southern End","4868. Seokchon Lake, West Lake, Southern End"
-POI120,ST-2876,4870. 몽촌토성역 3번 출구,4870. Mongchontoseong Station Exit 3,4870. Mongchontoseong Station Exit 3
-POI120,ST-3214,5768.방이삼거리,5768. Bangi Intersection,5768. Bangi Intersection
-POI121,ST-1866,2639.석촌역 8번출구,2639. Seokchon Station Exit 8,2639. Seokchon Station Exit 8
-POI121,ST-2833,4868. 석촌호수 서호 남단,"4868. Seokchon Lake, West Lake, Southern End","4868. Seokchon Lake, West Lake, Southern End"
-POI122,ST-2201,3116.신촌역 4번출구,3116. Sinchon Station Exit 4,3116. Sinchon Station Exit 4
-POI122,ST-30,128. 신촌역(2호선) 1번출구 옆,128. Next to Exit 1 of Sinchon Station (Line 2),128. Next to Exit 1 of Sinchon Station (Line 2)
-POI123,ST-3117,4181. 보라매공원역 2번출구,4181. Boramae Park Station Exit 2,4181. Boramae Park Station Exit 2
-POI123,ST-3105,4179. 보라매병원역 1번출구,4179. Boramae Hospital Station Exit 1,4179. Boramae Hospital Station Exit 1
-POI124,ST-180,367. 독립문역 3-1번출구,367. Dongnimmun Station Exit 3-1,367. Dongnimmun Station Exit 3-1
-POI124,ST-2199,3113. 독립문 앞,3113. In front of Independence Gate,3113. In front of Independence Gate
-POI124,ST-1824,3427.인왕산 아이파크 정문,3427. Inwangsan I-Park Main Gate,3427. Inwangsan I-Park Main Gate
-POI124,ST-1823,3426.독립문역 2번출구 뒤,3426. Behind Exit 2 of Dongnimmun Station,3426. Behind Exit 2 of Dongnimmun Station
-POI126,ST-414,260. 여의도 마리나선착장 앞,260. In front of Yeouido Marina Pier,260. In front of Yeouido Marina Pier
-POI126,ST-1969,297.국회3문,297. National Assembly Gate 3,297. National Assembly 3rd Question
-POI127,ST-1087,1268. 몽촌토성역 1번출구 옆,1268. Next to Exit 1 of Mongchontoseong Station,1268. Next to Exit 1 of Mongchontoseong Station
-POI127,ST-1086,1267. 올림픽공원 남2문 앞,1267. In front of Olympic Park South Gate 2,1267. In front of Olympic Park South Gate 2
-POI127,ST-1719,2621. 한성백제역 2번 출구,2621. Hanseong Baekje Station Exit 2,2621. Hanseong Baekje Station Exit 2
-POI127,ST-1720,2622. 올림픽공원역 3번출구,2622. Olympic Park Station Exit 3,2622. Olympic Park Station Exit 3
-POI127,ST-2592,4481. 올림픽공원 북2문 B,4481. Olympic Park North Gate 2 B,4481. Olympic Park North Gate 2 B
-POI127,ST-3069,5751. 송파여성축구장,5751. Songpa Women's Soccer Stadium,5751. Songpa Women's Soccer Stadium
-POI127,ST-2797,4865. 한성백제역 1번출구 뒤,4865. Behind Exit 1 of Hanseong Baekje Station,4865. Behind Exit 1 of Hanseong Baekje Station
-POI127,ST-2580,4464. 올림픽공원 북2문 A,4464. Olympic Park North Gate 2 A,4464. Olympic Park North Gate 2 A
-POI127,ST-3300,5781. 올림픽공원 수영장,5781. Olympic Park Swimming Pool,5781. Olympic Park Swimming Pool
-POI127,ST-2756,4862. 성내교 남단,4862. South end of Seongnae Bridge,4862. South end of Seongnae Bridge
-POI127,ST-2621,4857. 올림픽공원 장미광장,4857. Olympic Park Rose Square,4857. Olympic Park Rose Square
-POI127,ST-2608,4856. 올림픽공원 서1문 앞,4856. In front of Olympic Park West Gate 1,4856. In front of Olympic Park West Gate 1
+id,station_id,station_name_ko,station_name_en,station_name_en_trans,station_name_ja
+POI003,ST-1668,433. 을지로입구역 2번출구,"433. Euljiro 1-ga Station, Exit 2","433. Euljiro 1-ga Station, Exit 2",433.乙支路入口駅2番出口
+POI003,ST-1774,468.웨스틴 조선호텔,468. Westin Chosun Hotel,468. Westin Chosun Hotel,468.ウェスティン朝鮮ホテル
+POI003,ST-134,318. 광교사거리 남측,318. South side of Gwanggyo Intersection,318. South side of Gwanggyo Intersection,318. 光橋交差点南側
+POI003,ST-126,310. 청계광장 옆,310. Next to Cheonggye Plaza,310. Next to Cheonggye Plaza,310.清渓広場の隣
+POI003,ST-136,320. 을지로입구역 4번출구 앞,320. In front of Exit 4 of Euljiro 1-ga Station,320. In front of Exit 4 of Euljiro 1-ga Station,320.乙支路入口駅4番出口前
+POI003,ST-1773,467.한국은행,467. Bank of Korea,467. Bank of Korea,467.韓国銀行
+POI003,ST-140,324. 신세계백화점 본점 앞,324. In front of Shinsegae Department Store Main Branch,324. In front of Shinsegae Department Store Main Branch,324.新世界百貨店本店前
+POI003,ST-147,331. 을지로2가 사거리 북측,331. North side of Euljiro 2-ga intersection,331. North side of Euljiro 2-ga intersection,331.乙支路2街交差点北側
+POI003,ST-1435,398. 을지로3가역 3번출구,"398. Euljiro 3-ga Station, Exit 3","398. Euljiro 3-ga Station, Exit 3",398.乙支路3街駅3番出口
+POI003,ST-137,321. KEB 하나금융그룹 명동사옥 옆,321. Next to KEB Hana Financial Group's Myeongdong building,321. Next to KEB Hana Financial Group's Myeongdong building,321. KEB花金融グループ明洞社屋の隣
+POI003,ST-138,322. 명동성당 앞,322. In front of Myeongdong Cathedral,322. In front of Myeongdong Cathedral,322.明洞大聖堂の前
+POI003,ST-2422,3013.서울지방고용노동청 앞,3013. In front of Seoul Regional Employment and Labor Office,3013. In front of Seoul Regional Employment and Labor Office,3013.ソウル地方雇用労働庁前
+POI003,ST-2520,4774. 을지로입구역 8번출구,"4774. Euljiro 1-ga Station, Exit 8","4774. Euljiro 1-ga Station, Exit 8",4774.乙支路入口駅8番出口
+POI003,ST-2521,4775. 을지로지하쇼핑센터,4775. Euljiro Underground Shopping Center,4775. Euljiro Underground Shopping Center,4775.乙支路地下ショッピングセンター
+POI003,ST-2522,4776. 신세계면세점,4776. Shinsegae Duty Free,4776. Shinsegae Duty Free,4776. 新世界免税店
+POI003,ST-2527,4791. 명동역9번 출구,4791. Myeongdong Station Exit 9,4791. Myeongdong Station Exit 9,4791.明洞駅9番出口
+POI003,ST-2517,4762. 국제빌딩,4762. International Building,4762. International Building,4762. 国際ビル
+POI003,ST-2693,4796. 서울시청,4796. Seoul City Hall,4796. Seoul City Hall,4796.ソウル市役所
+POI003,ST-1772,466.롯데호텔,466. Lotte Hotel,466. Lotte Hotel,466.ロッテホテル
+POI006,ST-181,368. SK 서린빌딩 앞,368. In front of SK Seorin Building,368. In front of SK Seorin Building,368. SKサリンビル前
+POI006,ST-1611,458. 광화문역 5번출구,458. Gwanghwamun Station Exit 5,458. Gwanghwamun Station Exit 5,458.光化門駅5番出口
+POI006,ST-1432,397. 종묘공영주차장 건너편,397. Across from Jongmyo Public Parking Lot,397. Across from Jongmyo Public Parking Lot,397.ジョンミョ公営駐車場を渡る
+POI006,ST-151,335. 종로3가역 15번출구 뒤,335. Behind Exit 15 of Jongno 3-ga Station,335. Behind Exit 15 of Jongno 3-ga Station,335.鍾路3街駅15番出口の後
+POI006,ST-145,329. 청계2가 사거리 옆,329. Next to Cheonggye 2-ga intersection,329. Next to Cheonggye 2-ga intersection,329.清渓2街交差点の隣
+POI006,ST-336,385. 종각역 5번출구,385. Jonggak Station Exit 5,385. Jonggak Station Exit 5,385.鐘閣駅5番出口
+POI006,ST-1372,393. 동대문역 8번 출구,393. Dongdaemun Station Exit 8,393. Dongdaemun Station Exit 8,393.東大門駅8番出口
+POI006,ST-1608,455. 종로6가역 버스정류장(동대문 방향),455. Jongno 6-ga Station Bus Stop (Dongdaemun Direction),455. Jongno 6-ga Station Bus Stop (Dongdaemun Direction),455. 鍾路6街駅バス停（東大門方向）
+POI006,ST-1812,3415.동대문역6번출구,3415. Dongdaemun Station Exit 6,3415. Dongdaemun Station Exit 6,3415.東大門駅6番出口
+POI006,ST-1829,3432.종로2가 사거리,3432. Jongno 2-ga intersection,3432. Jongno 2-ga intersection,3432.鍾路2街交差点
+POI006,ST-1809,3412.세운상가,3412. Seun Shopping Mall,3412. Seun Shopping Mall,3412.セウン商店街
+POI006,ST-2513,4707. 청계3가 사거리,4707. Cheonggye 3-ga Intersection,4707. Cheonggye 3-ga Intersection,4707.清渓3街交差点
+POI007,ST-6,104. 합정역 1번출구 앞,104. In front of Exit 1 of Hapjeong Station,104. In front of Exit 1 of Hapjeong Station,104.ハプジョン駅1番出口前
+POI007,ST-2152,493.홍대입구역 6번출구,493. Hongik University Station Exit 6,493. Hongik University Station Exit 6,493.弘大入口駅6番出口
+POI007,ST-20,114. 홍대입구역 8번출구 앞,114. In front of Hongik University Station Exit 8,114. In front of Hongik University Station Exit 8,114.弘大入口駅8番出口前
+POI007,ST-10,108. 서교동 사거리,108. Seogyo-dong Intersection,108. Seogyo-dong Intersection,108.西橋洞交差点
+POI007,ST-2168,3010.홍대입구역 3번출구,3010. Hongik University Station Exit 3,3010. Hongik University Station Exit 3,3010.弘大入口駅3番出口
+POI007,ST-2167,3009. 홍대입구역 사거리,3009. Hongik University Station Intersection,3009. Hongik University Station Intersection,3009.弘大入口駅交差点
+POI007,ST-2534,4211. 시석빌딩 앞,4211. In front of Siseok Building,4211. In front of Siseok Building,4211. 市石ビル前
+POI007,ST-2532,4208. 스타벅스(동교동) 앞,4208. In front of Starbucks (Donggyo-dong),4208. In front of Starbucks (Donggyo-dong),4208.スターバックス（東京洞）前
+POI007,ST-18,113. 홍대입구역 2번출구 앞,113. In front of Hongik University Station Exit 2,113. In front of Hongik University Station Exit 2,113.弘大入口駅2番出口前
+POI010,ST-132,316. 종각역 1번출구 앞,316. In front of Exit 1 of Jonggak Station,316. In front of Exit 1 of Jonggak Station,316.ジョンガク駅1番出口前
+POI010,ST-336,385. 종각역 5번출구,385. Jonggak Station Exit 5,385. Jonggak Station Exit 5,385.鐘閣駅5番出口
+POI010,ST-1805,3408.종로타워빌딩,3408. Jongno Tower Building,3408. Jongno Tower Building,3408.鍾路タワービル
+POI010,ST-2472,4708. 조계사앞사거리,4708. Jogyesa Temple Intersection,4708. Jogyesa Temple Intersection,4708. 曹渓寺前交差点
+POI011,ST-491,1007.암사동 선사유적지,1007. Amsa-dong Prehistoric Site,1007. Amsa-dong Prehistoric Site,1007.アムサドン先史遺跡
+POI011,ST-1686,3539. 서원마을,3539. Seowon Village,3539. Seowon Village,3539. 西原村
+POI012,ST-153,337. 창경궁 입구,337. Entrance to Changgyeonggung Palace,337. Entrance to Changgyeonggung Palace,337. 昌慶宮の入り口
+POI012,ST-174,359. 원남동사거리,359. Wonnam-dong Intersection,359. Wonnam-dong Intersection,359.ウォンナム洞交差点
+POI012,ST-154,338. 세운스퀘어 앞,338. In front of Seun Square,338. In front of Seun Square,338.セウンスクエア前
+POI012,ST-1808,3411.종묘,3411. Seed,3411. Seed,3411.ジョンミョ
+POI012,ST-1810,3413.종로플레이스,3413. Jongno Place,3413. Jongno Place,3413.鍾路プレイス
+POI012,ST-1807,3410.종로3가역 8번출구,3410. Jongno 3-ga Station Exit 8,3410. Jongno 3-ga Station Exit 8,3410.鍾路3街駅8番出口
+POI012,ST-155,339. 종로4가 사거리,339. Jongno 4-ga Intersection,339. Jongno 4-ga Intersection,339.鍾路4街交差点
+POI015,ST-98,501. 광진구의회 앞,501. In front of Gwangjin-gu Council,501. In front of Gwangjin-gu Council,501.光津区議会前
+POI015,ST-1660,3533. 건대입구역 사거리(롯데백화점),3533. Konkuk University Station Intersection (Lotte Department Store),3533. Konkuk University Station Intersection (Lotte Department Store),3533. 建大入口駅交差点(ロッテ百貨店)
+POI015,ST-1661,3534. 건대입구역 5번출구 뒤,3534. Behind exit 5 of Konkuk University Station,3534. Behind exit 5 of Konkuk University Station,3534. 建大入口駅5番出口の後
+POI017,ST-2667,4316. 고속터미널역 3번출구,4316. Express Bus Terminal Station Exit 3,4316. Express Bus Terminal Station Exit 3,4316. 高速ターミナル駅3番出口
+POI030,ST-2173,849. 삼각지 자이아파트,849. Samgakji Zia Apartment,849. Samgakji Zia Apartment,849. 三角地ジャイアパート
+POI030,ST-2172,848. 삼각지12번 출구,848. Samgakji Exit 12,848. Samgakji Exit 12,848.三角地12番出口
+POI030,ST-2451,4620. 삼각지역 14번 출구 앞(교통섬),4620. In front of Exit 14 of Samgakji Station (traffic island),4620. In front of Exit 14 of Samgakji Station (traffic island),4620. 三角地域14番出口前（交通島）
+POI032,ST-2031,2715.마곡나루역 2번 출구,2715. Magoknaru Station Exit 2,2715. Magoknaru Station Exit 2,2715.マゴックナル駅2番出口
+POI032,ST-1718,2701. 마곡나루역 5번출구 뒤편,2701. Behind Exit 5 of Magoknaru Station,2701. Behind Exit 5 of Magoknaru Station,2701. マゴックナル駅5番出口の裏側
+POI032,ST-2042,2725.서울식물원 식물문화센터,2725. Seoul Botanical Garden Plant Culture Center,2725. Seoul Botanical Garden Plant Culture Center,2725.ソウル植物園植物文化センター
+POI032,ST-2044,2727.서울식물원 잔디마당 앞,2727. In front of the lawn of Seoul Botanical Garden,2727. In front of the lawn of Seoul Botanical Garden,2727.ソウル植物園の芝生庭の前
+POI032,ST-2045,2728.마곡나루역 3번 출구,2728. Magoknaru Station Exit 3,2728. Magoknaru Station Exit 3,2728.マゴックナル駅3番出口
+POI032,ST-3261,5098. LG사이언스파크 W4동,5098. LG Science Park W4 Building,5098. LG Science Park W4 Building,5098. LGサイエンスパークW4棟
+POI032,ST-3259,5097. LG사이언스파크 E2동,5097. LG Science Park E2 Building,5097. LG Science Park E2 Building,5097. LGサイエンスパークE2ドン
+POI032,ST-3324,6177. 마곡롯데캐슬르웨스트,6177. Magok Lotte Castle West,6177. Magok Lotte Castle West,6177.マゴックロッテキャッスルウエスト
+POI033,ST-194,379. 서울역9번출구,379. Seoul Station Exit 9,379. Seoul Station Exit 9,379.ソウル駅9番出口
+POI033,ST-1670,435. SK 남산빌딩,435. SK Namsan Building,435. SK Namsan Building,435. SK南山ビル
+POI033,ST-1791,485.서울역5번출구,485. Seoul Station Exit 5,485. Seoul Station Exit 5,485.ソウル駅5番出口
+POI033,ST-2430,4760. 서울역 7번출구,4760. Seoul Station Exit 7,4760. Seoul Station Exit 7,4760.ソウル駅7番出口
+POI033,ST-2786,4794. 서울역 서부교차로(3),4794. Seoul Station West Intersection (3),4794. Seoul Station West Intersection (3),4794. ソウル駅西部交差点(3)
+POI037,ST-1926,2542.신논현타워 앞,2542. In front of Shinnonhyeon Tower,2542. In front of Shinnonhyeon Tower,2542.新ノン県タワー前
+POI037,ST-787,2302. 교보타워 버스정류장(신논현역 3번출구 후면),2302. Kyobo Tower Bus Stop (behind Exit 3 of Sinnonhyeon Station),2302. Kyobo Tower Bus Stop (behind Exit 3 of Sinnonhyeon Station),2302.京保タワーバス停（新ノンヒョン駅3番出口後面）
+POI037,ST-3332,4347. 논현지하보도,4347. Nonhyeon Underpass,4347. Nonhyeon Underpass,4347. ノン現地下報道
+POI039,ST-976,2136. 신림역 8번출구,2136. Sillim Station Exit 8,2136. Sillim Station Exit 8,2136. 新林駅8番出口
+POI039,ST-1270,2175. 신림동걷고싶은문화의거리입구,2175. Entrance to Sillim-dong's Walking Culture Street,2175. Entrance to Sillim-dong's Walking Culture Street,2175.新林洞を歩きたい文化の街の入り口
+POI039,ST-702,2102. 봉림교 교통섬,2102. Bongnim Bridge Traffic Island,2102. Bongnim Bridge Traffic Island,2102. 奉林橋交通島
+POI040,ST-36,134. 연세로 명물길,134. Famous street in Yeonsei,134. Famous street in Yeonsei,134. 延世で名物道
+POI040,ST-37,135. 명물길 원형무대 앞,135. In front of the circular stage on Myeongmul-gil,135. In front of the circular stage on Myeongmul-gil,135.名物道原型舞台前
+POI040,ST-31,129. 신촌역(2호선) 6번출구 옆,129. Next to Exit 6 of Sinchon Station (Line 2),129. Next to Exit 6 of Sinchon Station (Line 2),129.新村駅（2号線）6番出口の横
+POI040,ST-32,130. 신촌역(2호선) 7번출구 앞,130. In front of Exit 7 of Sinchon Station (Line 2),130. In front of Exit 7 of Sinchon Station (Line 2),130.新村駅（2号線）7番出口前
+POI040,ST-39,137. 신촌기차역입구 교차로,137. Sinchon Station Entrance Intersection,137. Sinchon Station Entrance Intersection,137.新村鉄道駅入口交差点
+POI040,ST-2201,3116.신촌역 4번출구,3116. Sinchon Station Exit 4,3116. Sinchon Station Exit 4,3116.新村駅4番出口
+POI040,ST-3021,4248. 신촌 교보빌딩,4248. Kyobo Building in Sinchon,4248. Kyobo Building in Sinchon,4248. 新村京保ビル
+POI040,ST-3140,4274. 신촌 파랑고래 입구,4274. Sinchon Blue Whale Entrance,4274. Sinchon Blue Whale Entrance,4274. 新村青鯨入口
+POI040,ST-30,128. 신촌역(2호선) 1번출구 옆,128. Next to Exit 1 of Sinchon Station (Line 2),128. Next to Exit 1 of Sinchon Station (Line 2),128.新村駅（2号線）1番出口の横
+POI040,ST-207,150. 서강대역 2번출구 앞,150. In front of Exit 2 of Sogang University Station,150. In front of Exit 2 of Sogang University Station,150. 西江帯2番出口前
+POI042,ST-1680,2410. 포스코피앤에스타워 (역삼역 3번출구 부근),2410. POSCO P&S Tower (near Exit 3 of Yeoksam Station),2410. POSCO P&S Tower (near Exit 3 of Yeoksam Station),2410. ポスコピアンエスタワー（駅三駅3番出口付近）
+POI042,ST-1896,2430.강남파이낸스센터앞(역삼역2번출구),2430. In front of Gangnam Finance Center (Yeoksam Station Exit 2),2430. In front of Gangnam Finance Center (Yeoksam Station Exit 2),2430.江南ファイナンスセンター前（駅三駅2番出口）
+POI042,ST-959,2349. 역삼빌딩 앞(하나은행 옆),2349. In front of Yeoksam Building (next to Hana Bank),2349. In front of Yeoksam Building (next to Hana Bank),2349. 駅三ビル前(花銀行横)
+POI045,ST-241,525. 한양대병원사거리,525. Hanyang University Hospital Intersection,525. Hanyang University Hospital Intersection,525.漢陽大病院交差点
+POI045,ST-360,559. 왕십리역 4번 출구 건너편,559. Across from Wangsimni Station Exit 4,559. Across from Wangsimni Station Exit 4,559. 王十里駅4番出口を渡る
+POI045,ST-2327,3545.한양대역 1번출구,3545. Hanyang University Station Exit 1,3545. Hanyang University Station Exit 1,3545.漢陽帯1番出口
+POI045,ST-2343,3561.행당동 삼부APT후문,3561. Haengdang-dong Sambu APT back door,3561. Haengdang-dong Sambu APT back door,3561.行党洞三部APT後門
+POI045,ST-359,558. 성동광진 교육지원청 앞,558. In front of Seongdong Gwangjin Office of Education,558. In front of Seongdong Gwangjin Office of Education,558.城東広津教育支援庁前
+POI046,ST-1615,845. 용산 선인상가,845. Yongsan Seonin Shopping Mall,845. Yongsan Seonin Shopping Mall,845. 龍山サイン街
+POI046,ST-2177,853.용산역 맞은편,853. Across from Yongsan Station,853. Across from Yongsan Station,853.龍山駅の向かい
+POI046,ST-2437,4604. 원효로다목적체육관 앞,4604. In front of Wonhyo-ro Multipurpose Gymnasium,4604. In front of Wonhyo-ro Multipurpose Gymnasium,4604.ウォンヒョロ多目的体育館前
+POI046,ST-2448,4617. 동원베네스트 건너편,4617. Across from Dongwon Benest,4617. Across from Dongwon Benest,4617. ドンウォンベネストを渡る
+POI046,ST-2447,4616. 신용산지하차도 앞,4616. In front of Sinyongsan Underpass,4616. In front of Sinyongsan Underpass,4616. 信用山地下車も前
+POI046,ST-327,806. 전자랜드 본관 앞,806. In front of the main building of Electronic Land,806. In front of the main building of Electronic Land,806. 電子ランド本館前
+POI053,ST-7,105. 합정역 5번출구 앞,105. In front of Exit 5 of Hapjeong Station,105. In front of Exit 5 of Hapjeong Station,105.ハプジョン駅5番出口前
+POI053,ST-2156,497.합정동주민센터 앞,497. In front of Hapjeong-dong Community Center,497. In front of Hapjeong-dong Community Center,497.ハプジョンドン住民センターの前
+POI053,ST-8,106. 합정역 7번출구 앞,106. In front of Exit 7 of Hapjeong Station,106. In front of Exit 7 of Hapjeong Station,106.ハプジョン駅7番出口前
+POI053,ST-2534,4211. 시석빌딩 앞,4211. In front of Siseok Building,4211. In front of Siseok Building,4211. 市石ビル前
+POI054,ST-158,342. 대학로 마로니에공원,342. Daehakro Marronnier Park,342. Daehakro Marronnier Park,342. 大学路マロニエ公園
+POI054,ST-173,358. 성균관대입구 사거리 A,358. Sungkyunkwan University Entrance Intersection A,358. Sungkyunkwan University Entrance Intersection A,358.成均館大入口交差点A
+POI054,ST-157,341. 혜화역 3번출구 뒤,341. Behind Exit 3 of Hyehwa Station,341. Behind Exit 3 of Hyehwa Station,341.ヘファ駅3番出口の後
+POI054,ST-1816,3419.국립어린이과학관,3419. National Children's Science Museum,3419. National Children's Science Museum,3419.国立子供科学館
+POI054,ST-1817,3420. 성균관대입구 사거리 B,3420. Sungkyunkwan University Entrance Intersection B,3420. Sungkyunkwan University Entrance Intersection B,3420.成均館大入口交差点B
+POI054,ST-1818,3421.혜화역 1번출구,3421. Hyehwa Station Exit 1,3421. Hyehwa Station Exit 1,3421.ヘファ駅1番出口
+POI058,ST-1076,1257. 가락시장역 사거리,1257. Garak Market Station Intersection,1257. Garak Market Station Intersection,1257.ガラク市場駅交差点
+POI058,ST-2410,2659.서울친환경유통센터,2659. Seoul Eco-Friendly Distribution Center,2659. Seoul Eco-Friendly Distribution Center,2659.ソウル環境に配慮した流通センター
+POI058,ST-2409,2658.가락몰 업무동,2658. Garak Mall Business Building,2658. Garak Mall Business Building,2658.ガラックモール業務洞
+POI058,ST-2591,4480. 가락시장 남1문 사거리,4480. Garak Market South Gate 1 Intersection,4480. Garak Market South Gate 1 Intersection,4480.ガラック市場南1門交差点
+POI058,ST-2606,4854. 가락시장역 2번 출구,4854. Garak Market Station Exit 2,4854. Garak Market Station Exit 2,4854.ガラク市場駅2番出口
+POI059,ST-1171,2362. 신사동 가로수길 입구,2362. Entrance to Garosu-gil in Sinsa-dong,2362. Entrance to Garosu-gil in Sinsa-dong,2362. 新沙洞カロスキル入口
+POI059,ST-2673,3606. 신사동주민센터 옆,3606. Next to Shinsa-dong Community Center,3606. Next to Shinsa-dong Community Center,3606. 新沙洞住民センターの隣
+POI059,ST-3066,4903. 신사스퀘어,4903. Shinsa Square,4903. Shinsa Square,4903. 神社スクエア
+POI059,ST-3078,4907. 극동스포츠 앞,4907. In front of Far East Sports,4907. In front of Far East Sports,4907.極東スポーツ前
+POI063,ST-1150,2058. 동작경찰서,2058. Dongjak Police Station,2058. Dongjak Police Station,2058. 運用警察署
+POI063,ST-877,2003. 사육신공원앞,2003. In front of Saryushin Park,2003. In front of Saryushin Park,2003. 飼育神公園前
+POI063,ST-1545,2070. 노량진역 2번 출구 앞,2070. In front of Exit 2 of Noryangjin Station,2070. In front of Exit 2 of Noryangjin Station,2070. ノリャンジン駅2番出口前
+POI063,ST-683,2002. 노들역 1번출구,2002. Nodeul Station Exit 1,2002. Nodeul Station Exit 1,2002.ノードル駅1番出口
+POI063,ST-699,2050. 노량진역 5번출구,2050. Noryangjin Station Exit 5,2050. Noryangjin Station Exit 5,2050. ノリャンジン駅5番出口
+POI064,ST-2923,4715. 돈의문 박물관 마을,4715. Donuimun Museum Village,4715. Donuimun Museum Village,4715. 金義門博物館村
+POI064,ST-977,391. 시립미술관,391. City Art Museum,391. City Art Museum,391. 市立美術館
+POI064,ST-116,300. 정동사거리,300. Jeongdong Intersection,300. Jeongdong Intersection,300.チョンドン交差点
+POI066,ST-979,451. 청와대앞길,451. Cheongwadae-gil,451. Cheongwadae-gil,451.大統領府前の道
+POI066,ST-168,352. 중앙고입구 삼거리,352. Jungang High School Entrance Intersection,352. Jungang High School Entrance Intersection,352.中央高入口三叉路
+POI066,ST-1759,465. 삼청공원 앞,465. In front of Samcheong Park,465. In front of Samcheong Park,465. 三清公園前
+POI066,ST-170,354. 포르투갈 대사관 앞,354. In front of the Portuguese Embassy,354. In front of the Portuguese Embassy,354. ポルトガル大使館前
+POI066,ST-130,314. 국립현대미술관,314. National Museum of Modern and Contemporary Art,314. National Museum of Modern and Contemporary Art,314. 国立現代美術館
+POI066,ST-1756,464. 삼청동 골목,464. Samcheong-dong Alley,464. Samcheong-dong Alley,464. 三清洞路地
+POI066,ST-169,353. 재동초교 앞 삼거리,353. Three-way intersection in front of Jaedong Elementary School,353. Three-way intersection in front of Jaedong Elementary School,353. 再東小学校前の三通り
+POI066,ST-1804,3407.안국동사거리(신),3407. Anguk-dong Intersection (New),3407. Anguk-dong Intersection (New),3407.安国洞交差点（神）
+POI066,ST-3090,4719. 종로문화원 건너편,4719. Across from Jongno Cultural Center,4719. Across from Jongno Cultural Center,4719. 鍾路文化院を渡る
+POI066,ST-2565,4705. 웰니스센터(민방위교육장 앞),4705. Wellness Center (in front of the Civil Defense Training Center),4705. Wellness Center (in front of the Civil Defense Training Center),4705. ウェルネスセンター(民防衛教育場前)
+POI067,ST-978,450. 효자동 삼거리,450. Hyoja-dong intersection,450. Hyoja-dong intersection,450. ヒョジャドン三叉路
+POI067,ST-165,349. 어린이도서관,349. Children's Library,349. Children's Library,349. 子ども図書館
+POI067,ST-3354,4721. 통인시장 정자,4721. Tongin Market Pavilion,4721. Tongin Market Pavilion,4721. 統人市場精子
+POI067,ST-2473,4710. 자교교회 앞,4710. In front of Jagyo Church,4710. In front of Jagyo Church,4710. 自教教会の前
+POI068,ST-112,514. 성수사거리 버스정류장 앞,514. In front of Seongsu Intersection bus stop,514. In front of Seongsu Intersection bus stop,514.聖水交差点バス停前
+POI068,ST-506,589. 성수역3번출구,589. Seongsu Station Exit 3,589. Seongsu Station Exit 3,589. 城水駅3番出口
+POI068,ST-482,587. 유니베라 앞,587. In front of Univera,587. In front of Univera,587. ユニベラ前
+POI068,ST-111,513. 뚝섬역 5번 출구 정류소 옆,513. Next to the bus stop at Exit 5 of Ttukseom Station,513. Next to the bus stop at Exit 5 of Ttukseom Station,513. トゥクソム駅5番出口停留所の隣
+POI068,ST-2330,3548.뚝섬역 6번출구,3548. Ttukseom Station Exit 6,3548. Ttukseom Station Exit 6,3548.トゥクソム駅6番出口
+POI068,ST-3325,4398. 유원지식산업센터 앞,4398. In front of the Yuwon Knowledge Industry Center,4398. In front of the Yuwon Knowledge Industry Center,4398. 遊園知識産業センター前
+POI068,ST-3121,4387. 성수역 1번출구 주변,4387. Around Seongsu Station Exit 1,4387. Around Seongsu Station Exit 1,4387. 城水駅1番出口周辺
+POI068,ST-3003,4377. 우영테크노센터 앞,4377. In front of Wooyoung Techno Center,4377. In front of Wooyoung Techno Center,4377.ウヨンテクノセンター前
+POI068,ST-3326,4399. 더리브 세종타워 앞,4399. In front of The Live Sejong Tower,4399. In front of The Live Sejong Tower,4399. ダリブ世宗タワー前
+POI071,ST-1174,2365. K+ 타워 앞,2365. In front of K+ Tower,2365. In front of K+ Tower,2365. K+ タワー前
+POI071,ST-1895,2429.압구정로데오역 6번출구,2429. Apgujeong Rodeo Station Exit 6,2429. Apgujeong Rodeo Station Exit 6,2429.狎鴎亭ロデオ駅6番出口
+POI071,ST-794,2310. 청담동 맥도날드 옆(위치),2310. Next to McDonald's in Cheongdam-dong (location),2310. Next to McDonald's in Cheongdam-dong (location),2310. 清潭洞マクドナルドの横（位置）
+POI072,ST-64,215. 여의도고교 앞,215. In front of Yeouido High School,215. In front of Yeouido High School,215.汝矣島高校前
+POI072,ST-50,204. 국회의사당역 5번출구 옆,204. Next to Exit 5 of National Assembly Station,204. Next to Exit 5 of National Assembly Station,204.国会議事堂駅5番出口の隣
+POI072,ST-73,207. 여의나루역 1번출구 앞,207. In front of Exit 1 of Yeouinaru Station,207. In front of Exit 1 of Yeouinaru Station,207.ヨイナル駅1番出口前
+POI072,ST-47,202. 국민일보 앞,202. In front of the Kookmin Ilbo,202. In front of the Kookmin Ilbo,202.国民日報前
+POI072,ST-72,226. 샛강역 1번출구 앞,226. In front of Exit 1 of Saetgang Station,226. In front of Exit 1 of Saetgang Station,226. シャッガン駅1番出口前
+POI072,ST-60,214. 금융감독원 앞,214. In front of the Financial Supervisory Service,214. In front of the Financial Supervisory Service,214.金融監督院前
+POI072,ST-55,209. 유진투자증권빌딩 앞,209. In front of Eugene Investment & Securities Building,209. In front of Eugene Investment & Securities Building,209.ユージン投資証券ビル前
+POI072,ST-59,213. KT앞,213. In front of KT,213. In front of KT,213. KT前
+POI072,ST-52,205. 산업은행 앞,205. In front of the Industrial Bank of Korea,205. In front of the Industrial Bank of Korea,205. 産業銀行前
+POI072,ST-68,222. 시범아파트버스정류장 옆,222. Next to the demonstration apartment bus stop,222. Next to the demonstration apartment bus stop,222. パイロットアパートバス停の隣
+POI072,ST-414,260. 여의도 마리나선착장 앞,260. In front of Yeouido Marina Pier,260. In front of Yeouido Marina Pier,260.汝矣島マリーナ船着場前
+POI072,ST-424,270. 증권거래소후문교차로,270. Stock Exchange Back Gate Intersection,270. Stock Exchange Back Gate Intersection,270. 証券取引小후門交差点
+POI072,ST-296,248. 초원아파트 앞,248. In front of Chowon Apartment,248. In front of Chowon Apartment,248. 草原アパートの前
+POI072,ST-51,203. 국회의사당역 3번출구 옆,203. Next to Exit 3 of National Assembly Station,203. Next to Exit 3 of National Assembly Station,203.国会議事堂駅3番出口の隣
+POI072,ST-1969,297.국회3문,297. National Assembly Gate 3,297. National Assembly 3rd Question,297.国会3門
+POI072,ST-425,271. 샛강생태공원방문자센터 앞,271. In front of Saetgang Ecological Park Visitor Center,271. In front of Saetgang Ecological Park Visitor Center,271. シャンガン生態公園訪問者センター前
+POI072,ST-70,224. 롯데캐슬 앞,224. In front of Lotte Castle,224. In front of Lotte Castle,224. ロッテキャッスル前
+POI072,ST-53,206. KBS 앞,206. In front of KBS,206. In front of KBS,206. KBSの前
+POI072,ST-62,219. 롯데캐슬엠파이어 옆,219. Next to Lotte Castle Empire,219. Next to Lotte Castle Empire,219.ロッテキャッスルエンパイアの隣
+POI072,ST-63,220. 미성아파트 A동 앞,220. In front of Building A of Miseong Apartment,220. In front of Building A of Miseong Apartment,220.未成アパートA棟前
+POI072,ST-67,221. 여의도초교 앞,221. In front of Yeouido Elementary School,221. In front of Yeouido Elementary School,221.汝矣島小学校前
+POI072,ST-1970,298.KBS 연구동 건너편,298. Across from KBS Research Building,298. Across from KBS Research Building,298.KBS研究洞を渡る
+POI072,ST-297,249. 여의도중학교 옆,249. Next to Yeouido Middle School,249. Next to Yeouido Middle School,249.汝矣島中学校の隣
+POI072,ST-1971,299.여의도 순복음교회,299. Yoido Full Gospel Church,299. Yoido Full Gospel Church,299.ヨイド純福音教会
+POI072,ST-71,225. 앙카라공원 앞,225. In front of Ankara Park,225. In front of Ankara Park,225. アンカラ公園前
+POI072,ST-46,201. 진미파라곤 앞,201. In front of Jinmi Paragon,201. In front of Jinmi Paragon,201.ジンミパラゴン前
+POI072,ST-66,217. NH농협은행 앞,217. In front of NH Nonghyup Bank,217. In front of NH Nonghyup Bank,217. NH農協銀行前
+POI072,ST-69,223. 진주아파트상가 앞,223. In front of Jinju Apartment Shopping Center,223. In front of Jinju Apartment Shopping Center,223.真珠アパート商店街前
+POI072,ST-3239,5870. LG트윈타워 앞,5870. In front of LG Twin Towers,5870. In front of LG Twin Towers,5870. LGツインタワー前
+POI072,ST-3061,5853. 여의도역2번출구 앞,5853. In front of Exit 2 of Yeouido Station,5853. In front of Exit 2 of Yeouido Station,5853.汝矣島駅2番出口前
+POI072,ST-3319,5880. 국회박물관,5880. National Assembly Museum,5880. National Assembly Museum,5880. 国会博物館
+POI072,ST-3377,5889.의원회관출입구 앞,5889. In front of the entrance to the National Assembly Building,5889. In front of the entrance to the National Assembly Building,5889. 議員会館出入口前
+POI072,ST-3318,5879. 국회도서관 2문 앞,5879. In front of Gate 2 of the National Assembly Library,5879. In front of Gate 2 of the National Assembly Library,5879. 国会図書館2門前
+POI072,ST-3383,5892.국회의사당본관 좌측,5892. Left side of the main building of the National Assembly,5892. Left side of the main building of the National Assembly,5892.国会議事堂本館左側
+POI072,ST-2899,4589. KRX한국거래소(1),4589. KRX Korea Exchange (1),4589. KRX Korea Exchange (1),4589. KRX韓国取引所(1)
+POI072,ST-2646,4582. 국회도서관,4582. Library of Congress,4582. Library of Congress,4582. 国会図書館
+POI072,ST-2645,4581. 국회소통관,4581. National Assembly Communications Officer,4581. National Assembly Communications Officer,4581. 国会疎通管
+POI072,ST-2647,4583. 의정관,4583. Council Hall,4583. Council Hall,4583. 議定官
+POI072,ST-2814,4564. 63스퀘어,4564. 63 square,4564. 63 square,4564. 63スクエア
+POI072,ST-3375,5888.여의도성당,5888. Yeouido Cathedral,5888. Yeouido Cathedral,5888.ヨイド大聖堂
+POI072,ST-2813,4563. 여의도 은하아파트,4563. Eunha Apartment in Yeouido,4563. Eunha Apartment in Yeouido,4563.汝矣島銀河アパート
+POI072,ST-2694,4585. 국회6문,4585. the National Assembly Gate 6,4585. Six questions of the National Assembly,4585. 国会6門
+POI072,ST-3160,5859. 여의도 삼부아파트,5859. Sambu Apartment in Yeouido,5859. Sambu Apartment in Yeouido,5859.汝矣島三部アパート
+POI072,ST-3315,5878. 우리은행 앞,5878. In front of Woori Bank,5878. In front of Woori Bank,5878.ウリ銀行前
+POI072,ST-2648,4584. 국회2문,4584. National Assembly Gate 2,4584. National Assembly 2nd Question,4584. 国会2門
+POI072,ST-2644,4580. 국회제2의원회관,4580. National Assembly Building 2,4580. National Assembly Building 2,4580. 国会第2議員会館
+POI072,ST-2643,4579. 국회의사당 본관,4579. National Assembly Building,4579. National Assembly Building,4579. 国会議事堂本館
+POI072,ST-45,200. 국회의원회관,200. National Assembly Members' Hall,200. National Assembly Members' Hall,200. 国会議員会館
+POI073,ST-9,107. 수협 연남동지점,107. Suhyup Yeonnam-dong Branch,107. Suhyup Yeonnam-dong Branch,107. 水峡延南洞支店
+POI073,ST-2979,4233. 코오롱아파트사거리,4233. Kolon Apartment Intersection,4233. Kolon Apartment Intersection,4233. コーロンアパート交差点
+POI076,ST-435,816. 신용산역 6번출구 앞,816. In front of Exit 6 of Sinyongsan Station,816. In front of Exit 6 of Sinyongsan Station,816. 信用山駅6番出口前
+POI076,ST-436,817. 삼각지역 4번출구 앞,817. In front of Exit 4 of Samgakji Station,817. In front of Exit 4 of Samgakji Station,817.三角地域4番出口前
+POI077,ST-2446,4615. 크라운호텔앞 버스정류소,4615. Bus stop in front of Crown Hotel,4615. Bus stop in front of Crown Hotel,4615. クラウンホテル前のバス停
+POI077,ST-3056,4634. 이태원역 3번 출구,4634. Itaewon Station Exit 3,4634. Itaewon Station Exit 3,4634.梨泰院駅3番出口
+POI078,ST-142,326. 안국역 5번출구 앞,326. In front of Exit 5 of Anguk Station,326. In front of Exit 5 of Anguk Station,326.安国駅5番出口前
+POI078,ST-143,327. 낙원상가 옆,327. Next to Paradise Shopping Mall,327. Next to Paradise Shopping Mall,327.楽園商店街の隣
+POI078,ST-1607,454. 종로2가 버스정류장 (종각방향),454. Jongno 2-ga Bus Stop (Jonggak direction),454. Jongno 2-ga Bus Stop (Jonggak direction),454. 鍾路2街バス停（終角方向）
+POI078,ST-1805,3408.종로타워빌딩,3408. Jongno Tower Building,3408. Jongno Tower Building,3408.鍾路タワービル
+POI080,ST-1895,2429.압구정로데오역 6번출구,2429. Apgujeong Rodeo Station Exit 6,2429. Apgujeong Rodeo Station Exit 6,2429.狎鴎亭ロデオ駅6番出口
+POI080,ST-794,2310. 청담동 맥도날드 옆(위치),2310. Next to McDonald's in Cheongdam-dong (location),2310. Next to McDonald's in Cheongdam-dong (location),2310. 清潭洞マクドナルドの横（位置）
+POI081,ST-2276,676.FITI시험연구원 앞,676. In front of FITI Testing and Research Institute,676. In front of FITI Testing and Research Institute,676.FITI試験研究院前
+POI081,ST-407,640. 동대문경찰서 교차로,640. Dongdaemun Police Station Intersection,640. Dongdaemun Police Station Intersection,640.東大門警察署交差点
+POI081,ST-400,633. 청량리 기업은행 앞,633. In front of the Industrial Bank of Korea in Cheongnyangni,633. In front of the Industrial Bank of Korea in Cheongnyangni,633.清涼里企業銀行前
+POI081,ST-3206,4134. 제기동 현대아파트 앞,4134. In front of Hyundai Apartments in Jegi-dong,4134. In front of Hyundai Apartments in Jegi-dong,4134. ジェギドン現代アパートの前
+POI082,ST-331,810. 이태원지하보도,810. Itaewon Underground Passage,810. Itaewon Underground Walkway,810.イテウォン地下報道
+POI083,ST-1781,475.DDP 패션몰,475.DDP Fashion Mall,475.DDP Fashion Mall,475.DDPファッションモール
+POI083,ST-1780,474.동대문역사문화공원역 1번출구 뒤편,474. Behind Exit 1 of Dongdaemun History & Culture Park Station,474. Behind Exit 1 of Dongdaemun History & Culture Park Station,474.東大門歴史文化公園駅1番出口の裏側
+POI083,ST-163,347. 동대문역사문화공원역 9번출구 앞,347. In front of Exit 9 of Dongdaemun History and Culture Park Station,347. In front of Exit 9 of Dongdaemun History and Culture Park Station,347.東大門歴史文化公園駅9番出口前
+POI083,ST-2431,4765. 동대문디자인플라자,4765. Dongdaemun Design Plaza,4765. Dongdaemun Design Plaza,4765.東大門デザインプラザ
+POI084,ST-80,405. DMC빌 앞,405. In front of DMC Building,405. In front of DMC Building,405. DMCビル前
+POI084,ST-95,415. DMC역 9번출구 앞,415. In front of Exit 9 of DMC Station,415. In front of Exit 9 of DMC Station,415. DMC駅9番出口前
+POI084,ST-94,414. 상암동주민센터 옆,414. Next to Sangam-dong Community Center,414. Next to Sangam-dong Community Center,414. 上岩洞住民センターの隣
+POI084,ST-2148,489.구룡근린공원,489. Guryong Neighborhood Park,489. Guryong Neighborhood Park,489.九龍近隣公園
+POI084,ST-991,425. DMC첨단산업센터,425. DMC Advanced Industry Center,425. DMC Advanced Industry Center,425. DMC先端産業センター
+POI084,ST-2165,3007.MBC 앞,3007. In front of MBC,3007. In front of MBC,3007.MBC前
+POI084,ST-2166,3008.DMC역7번출구,3008.DMC Station Exit 7,3008.DMC Station Exit 7,3008.DMC駅7番出口
+POI084,ST-2537,4214. JTBC 앞,4214. In front of JTBC,4214. In front of JTBC,4214. JTBCの前
+POI084,ST-2974,4218. 디지털매직스페이스,4218. Digital Magic Space,4218. Digital Magic Space,4218. デジタルマジックスペース
+POI084,ST-2981,4238. 상암한샘빌딩앞,4238. In front of Sangam Hanssem Building,4238. In front of Sangam Hanssem Building,4238.サンアムハンサムビル前
+POI084,ST-90,411. DMC홍보관,411. DMC Promotion Center,411. DMC Promotion Center,411. DMC広報館
+POI084,ST-2149,490.가온문화공원,490. Gaon Cultural Park,490. Gaon Cultural Park,490.加温文化公園
+POI084,ST-91,412. DMC산학협력연구센터 앞,412. In front of the DMC Industry-Academic Cooperation Research Center,412. In front of the DMC Industry-Academic Cooperation Research Center,412. DMC産学協力研究センター前
+POI084,ST-93,417. DMC역 2번출구 옆,417. Next to Exit 2 of DMC Station,417. Next to Exit 2 of DMC Station,417. DMC駅2番出口の横
+POI084,ST-84,408. LG CNS앞,408. In front of LG CNS,408. In front of LG CNS,408. LG CNSの前
+POI084,ST-86,409. 누리꿈스퀘어 옆,409. Next to Nuri Dream Square,409. Next to Nuri Dream Square,409.ヌリ夢スクエアの隣
+POI086,ST-675,1928. 고척스카이돔구장 광장,1928. Gocheok Sky Dome Stadium Plaza,1928. Gocheok Sky Dome Stadium Plaza,1928. 高尺スカイドーム球場広場
+POI089,ST-2179,855.이촌역5번출구 앞,855. In front of Exit 5 of Ichon Station,855. In front of Exit 5 of Ichon Station,855.利村駅5番出口前
+POI089,ST-2187,863.이촌역2번 출구,863. Ichon Station Exit 2,863. Ichon Station Exit 2,863.利村駅2番出口
+POI091,ST-196,381. 장충체육관,381. Jangchung Arena,381. Jangchung Gymnasium,381. 腸虫体育館
+POI091,ST-186,371. 동대입구역 6번출구 뒤,371. Behind Exit 6 of Dongdaemun Station,371. Behind Exit 6 of Dongdaemun Station,371.東大入口駅6番出口の後
+POI091,ST-3054,4621. 남산도서관 앞,4621. In front of Namsan Library,4621. In front of Namsan Library,4621.南山図書館前
+POI091,ST-2183,859.남산공원 야외식물원 앞,859. In front of Namsan Park Outdoor Botanical Garden,859. In front of Namsan Park Outdoor Botanical Garden,859.南山公園野外植物園前
+POI092,ST-2239,869.노들섬 동측 앞,869. In front of the east side of Nodeul Island,869. In front of the east side of Nodeul Island,869.ノードル島東側前
+POI092,ST-2240,870.노들섬 서측 앞,870. In front of the west side of Nodeul Island,870. In front of the west side of Nodeul Island,870.ノドル島西側前
+POI092,ST-2438,"4605. 노들섬 다목적홀(동쪽) 숲, 앞","4605. Nodeul Island Multipurpose Hall (East) Forest, Front","4605. Nodeul Island Multipurpose Hall (East) Forest, Front",4605. ノドル島多目的ホール（東）の森、前
+POI093,ST-3390,5153.한강버스 뚝섬 선착장,5153. Hangang Bus Ttukseom Ferry Terminal,5153. Hangang Bus Ttukseom Ferry Terminal,5153.漢江バストゥクソム船着場
+POI094,ST-7,105. 합정역 5번출구 앞,105. In front of Exit 5 of Hapjeong Station,105. In front of Exit 5 of Hapjeong Station,105.ハプジョン駅5番出口前
+POI094,ST-2905,4217. 한강공원 망원나들목,"4217. Mangwon IC, Hangang Park","4217. Mangwon IC, Hangang Park",4217.漢江公園望遠のナドル首
+POI094,ST-3388,5515.한강버스 망원 선착장,5515. Han River Bus Mangwon Pier,5515. Han River Bus Mangwon Pier,5515.漢江バス望遠船着場
+POI096,ST-2610,3718. 번동3단지 버스정류장,3718. Beondong 3rd Complex Bus Stop,3718. Beondong 3rd Complex Bus Stop,3718. 繁華街3団地バス停
+POI096,ST-1725,1548. 북서울 꿈의숲 서문,1548. West Gate of Dream Forest in Bukhansan,1548. West Gate of Dream Forest in Bukhansan,1548. 北ソウル夢の森序文
+POI096,ST-2401,1571.북서울 꿈의 숲 입구,1571. Entrance to the Dream Forest in Buk Seoul,1571. Entrance to the Dream Forest in Buk Seoul,1571.北ソウル夢の森の入り口
+POI098,ST-2667,4316. 고속터미널역 3번출구,4316. Express Bus Terminal Station Exit 3,4316. Express Bus Terminal Station Exit 3,4316. 高速ターミナル駅3番出口
+POI098,ST-3009,4327. 몽마르뜨공원입구,4327. Entrance to Montmartre Park,4327. Entrance to Montmartre Park,4327. モンマルトル公園入口
+POI098,ST-2663,4312. 반포미도2차아파트 옆,4312. Next to Banpo Mido 2nd Apartment,4312. Next to Banpo Mido 2nd Apartment,4312.バンポミド2次アパートの隣
+POI099,ST-185,370. 시청역(2호선) 9번출구 뒤,370. Behind Exit 9 of City Hall Station (Line 2),370. Behind Exit 9 of City Hall Station (Line 2),370.市役所駅（2号線）9番出口の後
+POI101,ST-107,510. 뚝도아리수정수센터 버스정류소 옆,510. Next to the Ttukdo Arisu Purification Center bus stop,510. Next to the Ttukdo Arisu Purification Center bus stop,510.トングアリ水浄水センターバス停の隣
+POI101,ST-2334,3552.서울숲 공영주차장앞,3552. In front of Seoul Forest Public Parking Lot,3552. In front of Seoul Forest Public Parking Lot,3552.ソウル森公営駐車場前
+POI101,ST-1199,3515. 서울숲 관리사무소,3515. Seoul Forest Management Office,3515. Seoul Forest Management Office,3515.ソウル林管理事務所
+POI101,ST-3393,4401.뚝섬유수지 공영주차장,4401. Ttukseom Suji Public Parking Lot,4401. Ttukseom Suji Public Parking Lot,4401.トゥク繊維樹脂公営駐車場
+POI104,ST-384,573. 구의문주차장 앞,573. In front of Guuimun Parking Lot,573. In front of Guuimun Parking Lot,573.区義門駐車場前
+POI104,ST-385,574. 아차산역4번출구,574. Achasan Station Exit 4,574. Achasan Station Exit 4,574. アチャサン駅4番出口
+POI104,ST-1192,3507. 어린이회관,3507. Children's Hall,3507. Children's Hall,3507. 子ども会館
+POI104,ST-2541,3853. 어린이대공원역 2번출구,3853. Children's Grand Park Station Exit 2,3853. Children's Grand Park Station Exit 2,3853. こども大公園駅2番出口
+POI104,ST-2542,3860. 건국대학교 정문 앞,3860. In front of the main gate of Konkuk University,3860. In front of the main gate of Konkuk University,3860.建国大学正門前
+POI104,ST-1603,3529. 어린이대공원정문,3529. Children's Grand Park Main Gate,3529. Children's Grand Park Main Gate,3529. 子供大公園正門
+POI104,ST-2312,3573.광나루안전체험관,3573. Gwangnaru Safety Experience Center,3573. Gwangnaru Safety Experience Center,3573.光ナル安全体験館
+POI106,ST-92,413. 상암월드컵파크 3단지 후문,"413. Sangam World Cup Park Complex 3, back gate","413. Sangam World Cup Park Complex 3, back gate",413.サンアムワールドカップパーク3団地後門
+POI106,ST-344,186. 월드컵공원,186. World Cup Park,186. World Cup Park,186.ワールドカップ公園
+POI106,ST-443,199. 서울 월드컵 경기장,199. Seoul World Cup Stadium,199. Seoul World Cup Stadium,199.ソウルワールドカップスタジアム
+POI106,ST-87,419. 홈플러스 마포점 앞,419. In front of Homeplus Mapo branch,419. In front of Homeplus Mapo branch,419. ホームプラス麻浦店前
+POI106,ST-85,420. 서울시 공공자전거 상암센터,420. Seoul Public Bicycle Sangam Center,420. Seoul Public Bicycle Sangam Center,420.ソウル市公共自転車サンアムセンター
+POI106,ST-1754,440. 하늘공원 입구,440. Sky Park Entrance,440. Sky Park Entrance,440. 空公園入口
+POI106,ST-89,418. 월드컵경기장역 3번출구 옆,418. Next to Exit 3 of World Cup Stadium Station,418. Next to Exit 3 of World Cup Stadium Station,418.ワールドカップ競技場駅3番出口の横
+POI106,ST-2166,3008.DMC역7번출구,3008.DMC Station Exit 7,3008.DMC Station Exit 7,3008.DMC駅7番出口
+POI107,ST-370,569. 응봉현대아파트 정류소,569. Eungbong Hyundai Apartment Bus Stop,569. Eungbong Hyundai Apartment Bus Stop,569. 応奉現代アパート停留所
+POI107,ST-1599,3525. 금호스포츠센터앞,3525. In front of Geumho Sports Center,3525. In front of Geumho Sports Center,3525. クムホスポーツセンター前
+POI107,ST-1195,3511. 응봉역 1번출구,3511. Eungbong Station Exit 1,3511. Eungbong Station Exit 1,3511. 応奉駅1番出口
+POI110,ST-3391,5784.한강버스 잠실 선착장,5784. Hangang Bus Jamsil Pier,5784. Hangang Bus Jamsil Pier,5784.漢江バス蚕室マリーナ
+POI111,ST-3389,4940.한강버스 압구정 선착장,4940. Hangang Bus Apgujeong Ferry Terminal,4940. Hangang Bus Apgujeong Ferry Terminal,4940.漢江バス狎鴎亭船着場
+POI112,ST-925,2203. 청계산입구역 2번출구,2203. Cheonggyesan Station Exit 2,2203. Cheonggyesan Station Exit 2,2203.清渓山入口駅2番出口
+POI112,ST-3216,4338.새정이마을버스정류장 앞,4338. In front of Saejeong Village Bus Stop,4338. In front of Saejeong Village Bus Stop,4338.新町村バス停前
+POI113,ST-978,450. 효자동 삼거리,450. Hyoja-dong intersection,450. Hyoja-dong intersection,450. ヒョジャドン三叉路
+POI114,ST-1774,468.웨스틴 조선호텔,468. Westin Chosun Hotel,468. Westin Chosun Hotel,468.ウェスティン朝鮮ホテル
+POI114,ST-1773,467.한국은행,467. Bank of Korea,467. Bank of Korea,467.韓国銀行
+POI114,ST-140,324. 신세계백화점 본점 앞,324. In front of Shinsegae Department Store Main Branch,324. In front of Shinsegae Department Store Main Branch,324.新世界百貨店本店前
+POI115,ST-1776,470.회현역 7번출구,470. Hoehyeon Station Exit 7,470. Hoehyeon Station Exit 7,470.会現駅7番出口
+POI115,ST-140,324. 신세계백화점 본점 앞,324. In front of Shinsegae Department Store Main Branch,324. In front of Shinsegae Department Store Main Branch,324.新世界百貨店本店前
+POI115,ST-2522,4776. 신세계면세점,4776. Shinsegae Duty Free,4776. Shinsegae Duty Free,4776. 新世界免税店
+POI116,ST-150,334. 종로3가역 2번출구 뒤,334. Behind Exit 2 of Jongno 3-ga Station,334. Behind Exit 2 of Jongno 3-ga Station,334.鍾路3街駅2番出口の後
+POI116,ST-143,327. 낙원상가 옆,327. Next to Paradise Shopping Mall,327. Next to Paradise Shopping Mall,327.楽園商店街の隣
+POI116,ST-1807,3410.종로3가역 8번출구,3410. Jongno 3-ga Station Exit 8,3410. Jongno 3-ga Station Exit 8,3410.鍾路3街駅8番出口
+POI116,ST-2623,4713. 현대 뜨레비앙 아파트 앞,4713. In front of Hyundai Treviang Apartments,4713. In front of Hyundai Treviang Apartments,4713. 現代トレビアンアパートの前
+POI120,ST-891,1210. 롯데월드타워(잠실역2번출구 쪽),1210. Lotte World Tower (Jamsil Station Exit 2),1210. Lotte World Tower (Jamsil Station Exit 2),1210. ロッテワールドタワー（チャムシル駅2番出口側）
+POI120,ST-1087,1268. 몽촌토성역 1번출구 옆,1268. Next to Exit 1 of Mongchontoseong Station,1268. Next to Exit 1 of Mongchontoseong Station,1268. モンチョン土城駅1番出口の隣
+POI120,ST-1586,1297. 석촌호수교차로(동호 팔각정 앞),1297. Seokchon Lake Intersection (in front of Dongho Palgakjeong),1297. Seokchon Lake Intersection (in front of Dongho Palgakjeong),1297. 石村湖水交差点（東湖八角町前）
+POI120,ST-1585,1296. 석촌호수교차로 (송파나루근린공원 앞),1296. Seokchon Lake Intersection (in front of Songpanaru Neighborhood Park),1296. Seokchon Lake Intersection (in front of Songpanaru Neighborhood Park),1296. 石村湖交差点（松坡ナル近隣公園前）
+POI120,ST-1409,1278. 송파구청 교차로,1278. Songpa-gu Office Intersection,1278. Songpa-gu Office Intersection,1278. 松坡区庁交差点
+POI120,ST-551,1233. 잠실3거리(갤러리아팰리스),1233. Jamsil 3-way intersection (Galleria Palace),1233. Jamsil 3-way intersection (Galleria Palace),1233.チャムシル3通り（ギャラリアパレス）
+POI120,ST-550,1232. 잠실주공 521동 건너편,1232. Across from Jamsil Public Housing Building 521,1232. Across from Jamsil Public Housing Building 521,1232.チャムシルジュゴン521棟を渡る
+POI120,ST-1590,2601. 석촌호수 아뜰리에,2601. Seokchon Lake Atelier,2601. Seokchon Lake Atelier,2601.石村湖アトリエ
+POI120,ST-1719,2621. 한성백제역 2번 출구,2621. Hanseong Baekje Station Exit 2,2621. Hanseong Baekje Station Exit 2,2621.漢城百済駅2番出口
+POI120,ST-1868,2647.잠실 자전거 수리센터 앞,2647. In front of Jamsil Bicycle Repair Center,2647. In front of Jamsil Bicycle Repair Center,2647.チャムシル自転車修理センター前
+POI120,ST-1681,2608. 송파구청,2608. Songpa-gu Office,2608. Songpa-gu Office,2608. 松坡区役所
+POI120,ST-2797,4865. 한성백제역 1번출구 뒤,4865. Behind Exit 1 of Hanseong Baekje Station,4865. Behind Exit 1 of Hanseong Baekje Station,4865.漢城百済駅1番出口の後
+POI120,ST-2833,4868. 석촌호수 서호 남단,"4868. Seokchon Lake, West Lake, Southern End","4868. Seokchon Lake, West Lake, Southern End",4868. 石村湖西湖南端
+POI120,ST-2876,4870. 몽촌토성역 3번 출구,4870. Mongchontoseong Station Exit 3,4870. Mongchontoseong Station Exit 3,4870. モンチョン土城駅3番出口
+POI120,ST-3214,5768.방이삼거리,5768. Bangi Intersection,5768. Bangi Intersection,5768.部屋が三通り
+POI121,ST-1866,2639.석촌역 8번출구,2639. Seokchon Station Exit 8,2639. Seokchon Station Exit 8,2639.石村駅8番出口
+POI121,ST-2833,4868. 석촌호수 서호 남단,"4868. Seokchon Lake, West Lake, Southern End","4868. Seokchon Lake, West Lake, Southern End",4868. 石村湖西湖南端
+POI122,ST-2201,3116.신촌역 4번출구,3116. Sinchon Station Exit 4,3116. Sinchon Station Exit 4,3116.新村駅4番出口
+POI122,ST-30,128. 신촌역(2호선) 1번출구 옆,128. Next to Exit 1 of Sinchon Station (Line 2),128. Next to Exit 1 of Sinchon Station (Line 2),128.新村駅（2号線）1番出口の横
+POI123,ST-3117,4181. 보라매공원역 2번출구,4181. Boramae Park Station Exit 2,4181. Boramae Park Station Exit 2,4181. ボラメ公園駅2番出口
+POI123,ST-3105,4179. 보라매병원역 1번출구,4179. Boramae Hospital Station Exit 1,4179. Boramae Hospital Station Exit 1,4179. ボラメ病院駅1番出口
+POI124,ST-180,367. 독립문역 3-1번출구,367. Dongnimmun Station Exit 3-1,367. Dongnimmun Station Exit 3-1,367.独立門駅3-1番出口
+POI124,ST-2199,3113. 독립문 앞,3113. In front of Independence Gate,3113. In front of Independence Gate,3113. 独立門前
+POI124,ST-1824,3427.인왕산 아이파크 정문,3427. Inwangsan I-Park Main Gate,3427. Inwangsan I-Park Main Gate,3427.仁王山アイパーク正門
+POI124,ST-1823,3426.독립문역 2번출구 뒤,3426. Behind Exit 2 of Dongnimmun Station,3426. Behind Exit 2 of Dongnimmun Station,3426.独立門駅2番出口の後
+POI126,ST-414,260. 여의도 마리나선착장 앞,260. In front of Yeouido Marina Pier,260. In front of Yeouido Marina Pier,260.汝矣島マリーナ船着場前
+POI126,ST-1969,297.국회3문,297. National Assembly Gate 3,297. National Assembly 3rd Question,297.国会3門
+POI127,ST-1087,1268. 몽촌토성역 1번출구 옆,1268. Next to Exit 1 of Mongchontoseong Station,1268. Next to Exit 1 of Mongchontoseong Station,1268. モンチョン土城駅1番出口の隣
+POI127,ST-1086,1267. 올림픽공원 남2문 앞,1267. In front of Olympic Park South Gate 2,1267. In front of Olympic Park South Gate 2,1267. オリンピック公園南2門前
+POI127,ST-1719,2621. 한성백제역 2번 출구,2621. Hanseong Baekje Station Exit 2,2621. Hanseong Baekje Station Exit 2,2621.漢城百済駅2番出口
+POI127,ST-1720,2622. 올림픽공원역 3번출구,2622. Olympic Park Station Exit 3,2622. Olympic Park Station Exit 3,2622. オリンピック公園駅3番出口
+POI127,ST-2592,4481. 올림픽공원 북2문 B,4481. Olympic Park North Gate 2 B,4481. Olympic Park North Gate 2 B,4481.オリンピック公園北2門B
+POI127,ST-3069,5751. 송파여성축구장,5751. Songpa Women's Soccer Stadium,5751. Songpa Women's Soccer Stadium,5751. 松坡女子サッカー場
+POI127,ST-2797,4865. 한성백제역 1번출구 뒤,4865. Behind Exit 1 of Hanseong Baekje Station,4865. Behind Exit 1 of Hanseong Baekje Station,4865.漢城百済駅1番出口の後
+POI127,ST-2580,4464. 올림픽공원 북2문 A,4464. Olympic Park North Gate 2 A,4464. Olympic Park North Gate 2 A,4464. オリンピック公園北2門A
+POI127,ST-3300,5781. 올림픽공원 수영장,5781. Olympic Park Swimming Pool,5781. Olympic Park Swimming Pool,5781. オリンピック公園プール
+POI127,ST-2756,4862. 성내교 남단,4862. South end of Seongnae Bridge,4862. South end of Seongnae Bridge,4862. 城内校南端
+POI127,ST-2621,4857. 올림픽공원 장미광장,4857. Olympic Park Rose Square,4857. Olympic Park Rose Square,4857. オリンピック公園バラ広場
+POI127,ST-2608,4856. 올림픽공원 서1문 앞,4856. In front of Olympic Park West Gate 1,4856. In front of Olympic Park West Gate 1,4856. オリンピック公園西1門前

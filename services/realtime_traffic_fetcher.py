@@ -14,6 +14,8 @@ from itertools import chain
 
 load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
+if not API_KEY:
+    print(f'.env 파일에서 API_KEY를 입력하세요')
 
 ## 실시간 도시 데이터에서 날씨 예측정보 fetch
 def mapping_id(attraction_dict):

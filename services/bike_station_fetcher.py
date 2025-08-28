@@ -11,7 +11,8 @@ from itertools import repeat
 
 load_dotenv()  # .env 파일의 환경변수 로드
 API_KEY = os.getenv('API_KEY')
-
+if not API_KEY:
+    print(f'.env 파일에서 API_KEY를 입력하세요')
 
 def parking_info(api_data, station_id_dict):
     station_id = api_data.get("stationId") # 'ST-10'
@@ -63,4 +64,5 @@ def get_info(attraction_id): # POI033 서울역
     return result_data
 
 if __name__ == "__main__":
-    print(get_info("POI033")) # POI033 서울역
+    result_bike_station_list = get_info("POI033") # POI033 서울역
+    print(f'{result_bike_station_list=}')
