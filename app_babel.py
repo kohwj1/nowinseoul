@@ -28,7 +28,7 @@ def browse_on_map():
     # [{'id': 'POI001', 'name': 'Gangnam MICE Special Tourist Zone', 'crowd': 'Crowded', 'beauty': '241', 'food': '25', 'drama': '18', 'movie': '14', 'lat': '37.512693', 'lng': '127.0624'},]
     data = db.get_info_for_map()
         
-    return render_template('onmap_babel.html', data=data, language={'language': get_locale()})
+    return render_template('onmap_babel.html', data = data)
 
 # 상세 페이지
 @app.route('/detail/<attraction_id>')
