@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const MAP = {
     '원활':      { en: 'Free Flow',  cls: 'free' },
     '서행':      { en: 'Slow',       cls: 'slow' },
-    '정체':      { en: 'Congested',  cls: 'tcongested' },
+    '정체':      { en: 'Congested',  cls: 'congested' },
     'FREE':      { en: 'Free Flow',  cls: 'free' },
     'FREE FLOW': { en: 'Free Flow',  cls: 'free' },
     'SLOW':      { en: 'Slow',       cls: 'slow' },
-    'CONGESTED': { en: 'Congested',  cls: 'tcongested' }
+    'CONGESTED': { en: 'Congested',  cls: 'congested' }
   };
 
   const key = (raw || '').toString().trim().toUpperCase();
