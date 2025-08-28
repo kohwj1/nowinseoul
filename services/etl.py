@@ -19,8 +19,8 @@ def raw_to_cache_etl(domain):
     # transform 
     # load
     cursor.execute(f'DELETE FROM {domain}_cache')
-    cursor.executemany(f"""INSERT INTO {domain}_cache ({', '.join(columns)}, insert_dttm)
-                                             VALUES ({', '.join(map(lambda x: ':' + x, columns))}, {datetime.now().strftime("%Y%m%d%H%M%S")})""", rows)
+    cursor.executemany(f"""INSERT INTO {domain}_cache ({', '.join(columns)})
+                                             VALUES ({', '.join(map(lambda x: ':' + x, columns))})""", rows)
     
     conn.commit()
     conn.close()
@@ -41,6 +41,6 @@ if __name__ == "__main__":
             raw_to_cache_etl(d)
     elif len(args) == 2:    
         raw_to_cache_etl( args[1] )
-    except:
-        raise KeyError(guidance)
-
+    else:
+        print(guidance)
+        sys.exit()

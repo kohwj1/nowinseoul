@@ -21,6 +21,8 @@ import asyncio, aiohttp
 
 load_dotenv()  # .env 파일의 환경변수 로드
 WEATHER_API_KEY = os.getenv('WEATHER_API_KEY')
+if not WEATHER_API_KEY:
+    print(f'.env 파일에서 WEATHER_API_KEY를 입력하세요')
 
 
 # 비동기 fetch 함수
