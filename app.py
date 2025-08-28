@@ -1,17 +1,34 @@
-from flask import Flask, render_template, jsonify, url_for, request
+from flask import Flask, render_template, jsonify, request
+from flask_babel import Babel
 from services.bike_station_fetcher import get_info
 from models import db
-import os
 
 
 app = Flask(__name__)
 
+babel = Babel(app)
+
+def get_locale():
+    return request.accept_languages[0][0] #이걸 이용해서 ko, en, ja로 케이스 분기처리되면 됩니다!
+
+babel.init_app(app, locale_selector=get_locale)
+
+
+
 # 메인 페이지
 @app.route('/')
 def index():
+    print(f'{get_client_ip()} 에서 방문했습니다. {get_locale()} 언어로된 데이터를 서빙합니다.')
     data = db.get_images([])
 
     return render_template('index.html', data = data)
+
+def get_client_ip():
+    # X-Forwarded-For 헤더: 클라이언트가 프록시 서버를 거칠 때 원래 IP 정보가 담긴 헤더
+    # X-Real-IP 헤더: 일부 프록시(예: Nginx)에서 설정하는 클라이언트 IP
+    # 둘 다 없으면 request.remote_addr가 fallback(일반적으로 직접 연결 IP) 없으면 remote_addr 사용
+    ip = request.headers.get('X-Forwarded-For', request.headers.get('X-Real-IP', request.remote_addr))
+    return f"Client IP: {ip}"
 
 # 지도 페이지
 @app.route('/map')
@@ -31,9 +48,7 @@ def detail(attraction_id):
 
     data = {"AREA_CD" : attraction_id,
             "NAME" : attraction_info_by_id[0].get('name_en'),
-            "DESC_KO": attraction_info_by_id[0].get('desc_ko'),
-            "DESC_EN": attraction_info_by_id[0].get('desc_en'),
-            "DESC_JA": attraction_info_by_id[0].get('desc_ja'),
+            "DESCRIPTION": attraction_info_by_id[0].get('desc_'+get_locale()),
             # 날씨 예측
             "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
                               "TEMP": str(d.get('fcst_temp')),
@@ -57,7 +72,7 @@ def detail(attraction_id):
             ],
             # 주변 따릉이
             # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
-            "SBIKE_STTS":get_info(attraction_id)
+            "SBIKE_STTS":get_info(attraction_id, get_locale())
     }
 
     return render_template('detail_page.html', data=data)
