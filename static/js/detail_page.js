@@ -15,7 +15,8 @@ function initPage() {
   const totalBikesHeader = document.getElementById('total-bikes');
   if (totalBikesHeader && Array.isArray(bikeData) && bikeData.length > 0) {
     const total = bikeData.reduce((s, st) => s + (parseInt(st.SBIKE_PARKING_CNT, 10) || 0), 0);
-    totalBikesHeader.textContent = `${total} Public bike(s) available`;
+    const result = totalBikesHeader.innerText.replace('--counts--', total);
+    totalBikesHeader.textContent = result;
   }
 }
 
@@ -34,6 +35,6 @@ function goBack() {
   if (document.referrer !== "") {
     history.back();
   } else {
-    window.location.href = "{{ url_for('index') }}"; // 메인으로 이동
+    window.location.href = "/"; // 메인으로 이동
   }
 }

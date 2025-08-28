@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (tagEl) {
     // 혹시 붙어있을 수 있는 상태 클래스들 제거
-    tagEl.classList.remove('free','slow','tcongested','comfortable','medium','slightly','congested','tag-free','tag-slow','tag-congested');
+    tagEl.classList.remove('free','slow','congested','comfortable','medium','slightly','congested','tag-free','tag-slow','tag-congested');
 
     if (hit) {
-      tagEl.textContent = hit.en;
+      tagEl.textContent = translateTraffic(userLocale, raw);
       tagEl.classList.add(hit.cls); // free / slow / tcongested
     } else {
       tagEl.textContent = 'No Data';
