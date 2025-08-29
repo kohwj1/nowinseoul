@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hit) {
       tagEl.textContent = translateTraffic(userLocale, raw);
-      tagEl.classList.add(hit.cls); // free / slow / tcongested
+      tagEl.classList.add(hit.cls);
     } else {
       tagEl.textContent = 'No Data';
     }
