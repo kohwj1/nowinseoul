@@ -24,3 +24,6 @@ test/*
 # 스케줄러
 *.sh
 *.crontab
+
+#미사용리소스
+origin_images/
