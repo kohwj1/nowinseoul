@@ -9,7 +9,10 @@ app = Flask(__name__)
 babel = Babel(app)
 
 def get_locale():
-    return request.accept_languages[0][0] #이걸 이용해서 ko, en, ja로 케이스 분기처리되면 됩니다!
+    lang = request.accept_languages.best_match(['en', 'ko', 'ja'])
+    if lang:
+        return lang.split('-')[0] 
+    return 'en'
 
 babel.init_app(app, locale_selector=get_locale)
 
