@@ -57,6 +57,7 @@ body {
 #location-description {
   font-size: 18px;
   line-height: 2.2rem;
+  color: #666;
 }
 
 /* 모바일 read more */
