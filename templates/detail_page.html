@@ -42,28 +42,33 @@
           <div class="info-title">{{ _('crowd-density') }}</div>
         </div>
 
-        <div class="progress-bar-container" id="crowd-density-bar"></div>
-
-        <div class="time-labels">
-          <span id="time-now">{{ _('now') }}</span>
-        </div>
+        {% if data.FCST_PPLTN | length != 0 %}
+          <div class="progress-bar-container" id="crowd-density-bar"></div>
+          <div class="time-labels">
+            <span id="time-now">{{ _('now') }}</span>
+          </div>
+        {% else %}
+          <div class="pb-3" id="no-forecast-mgs">{{ _('no-forecast') }}</div>
+        {% endif %}
       </div>
     </section>
 
     <!-- Traffic -->
     <section class="traffic-conditions-section">
       <div class="surface">
+        {% if data.ROAD_TRAFFIC_STTS %}
         <div class="info-header">
-          {% if data.ROAD_TRAFFIC_STTS %}
-            <div class="info-tag" id="road-traffic-tag">
-              {{ data.ROAD_TRAFFIC_STTS[0].ROAD_TRAFFIC_IDX or 'No Data' }}
-            </div>
-          {% else %}
-            <div class="info-tag">No Data</div>
-          {% endif %}
+          <div class="info-tag" id="road-traffic-tag">{{ data.ROAD_TRAFFIC_STTS[0].ROAD_TRAFFIC_IDX or 'No Data' }}</div>
           <div class="info-title">{{ _('traffic-conditions') }}</div>
         </div>
-        <div class="pb-3" id="traffic-msg">&nbsp;</div>
+        <div class="pb-3" id="traffic-msg">{{ _('traffic-msg') }}</div>
+        {% else %}
+        <div class="info-header">
+          <div class="info-tag" id="road-traffic-tag">No Data</div>
+          <div class="info-title">{{ _('traffic-conditions') }}</div>
+        </div>
+        <div id="traffic-msg">>{{ _('no-forecast') }}</div>
+        {% endif %}
       </div>
     </section>
 
