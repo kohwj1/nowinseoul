@@ -39,6 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         new_label.textContent = item.FCST_TIME.split(' ')[1];
         label_area.appendChild(new_label);
       })
+      progressBar.style.background = `linear-gradient(to right, ${softStops.join(', ')})`;
     }
-    progressBar.style.background = `linear-gradient(to right, ${softStops.join(', ')})`;
 });
