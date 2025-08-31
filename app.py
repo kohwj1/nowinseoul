@@ -14,6 +14,7 @@ def get_locale():
     # try to guess the language from the user accept
     # header the browser transmits.  We support ko/en/ja in this
     # example.  The best match wins.
+    
     return request.accept_languages.best_match(['ko', 'en', 'ja']) or 'en'
     # 이걸 이용해서 ko, en, ja로 케이스 분기처리되면 됩니다!
 

@@ -11,8 +11,8 @@
   <button class="back-button" onclick="goBack()">
     <img src="{{ url_for('static', filename='images/ui/back-button.png') }}" alt="뒤로가기">
   </button>
-  <img src="{{ url_for('static', filename='images/attraction/' + data.AREA_CD + '.jpg') }}" 
-       alt="배경 이미지" class="background-image-cover">
+  <img src="{{ url_for('static', filename='images/attraction/' + data.AREA_CD + '.jpg') }}" alt="배경 이미지" class="background-image-cover">
+  <div class="header-overlay"></div>
   <div class="hero-text">
     <h1 id="location-name">{{ data.NAME }}</h1>
   </div>
@@ -33,39 +33,42 @@
       <div class="surface">
         <div class="info-header">
           {% if data.LIVE_PPLTN_STTS %}
-            <div class="info-tag" id="crowd-tag">
+            <div class="info-tag {{ data.LIVE_PPLTN_STTS[0].AREA_CONGEST_LVL.lower().replace(' ','') }}" id="crowd-tag">
               {{ data.LIVE_PPLTN_STTS[0].AREA_CONGEST_LVL }}
             </div>
           {% else %}
             <div class="info-tag">No Data</div>
           {% endif %}
-          <div class="info-title">Crowd Density</div>
+          <div class="info-title">{{ _('crowd-density') }}</div>
         </div>
 
-        <div class="progress-bar-container" id="crowd-density-bar"></div>
-
-        <div class="time-labels">
-          <span id="time-now">Now</span>
-          <span id="time-1">--</span>
-          <span id="time-2">--</span>
-          <span id="time-3">--</span>
-        </div>
+        {% if data.FCST_PPLTN | length != 0 %}
+          <div class="progress-bar-container" id="crowd-density-bar"></div>
+          <div class="time-labels">
+            <span id="time-now">{{ _('now') }}</span>
+          </div>
+        {% else %}
+          <div class="ps-2 pb-3" id="no-forecast-mgs">No Data</div>
+        {% endif %}
       </div>
     </section>
 
     <!-- Traffic -->
     <section class="traffic-conditions-section">
       <div class="surface">
+        {% if data.ROAD_TRAFFIC_STTS %}
         <div class="info-header">
-          {% if data.ROAD_TRAFFIC_STTS %}
-            <div class="info-tag" id="road-traffic-tag">
-              {{ data.ROAD_TRAFFIC_STTS[0].ROAD_TRAFFIC_IDX or 'No Data' }}
-            </div>
-          {% else %}
-            <div class="info-tag">No Data</div>
-          {% endif %}
-          <div class="info-title">Traffic Conditions</div>
+          <div class="info-tag" id="road-traffic-tag">{{ data.ROAD_TRAFFIC_STTS[0].ROAD_TRAFFIC_IDX or 'No Data' }}</div>
+          <div class="info-title">{{ _('traffic-conditions') }}</div>
         </div>
+        <div class="ps-2 pb-3" id="traffic-msg"></div>
+        {% else %}
+        <div class="info-header">
+          <div class="info-tag" id="road-traffic-tag">No Data</div>
+          <div class="info-title">{{ _('traffic-conditions') }}</div>
+        </div>
+        <div id="traffic-msg">No Data</div>
+        {% endif %}
       </div>
     </section>
 
@@ -74,7 +77,7 @@
       <div class="surface">
         <div class="weather-header">
           <div class="left-wrap">
-            <h2>Weather</h2>
+            <h2>{{ _('weather') }}</h2>
             <div class="unit-switch" role="group" aria-label="Temperature unit">
               <button type="button" class="unit-btn active" data-unit="C">℃</button>
               <button type="button" class="unit-btn" data-unit="F">℉</button>
@@ -107,13 +110,17 @@
     <div class="public-bike-section">
       <div class="surface">
         <div class="bike-header">
-          <p id="total-bikes">Public bike(s) available</p>
+          <p id="total-bikes">{{ _('public-bike-available') }}</p>
         </div>
         <div class="bike-map" id="map"></div>
         <ul class="bike-list">
           {% for bike in data.SBIKE_STTS %}
           <li>
-            <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+            {% if bike.SBIKE_PARKING_CNT == '0' %}
+              <span class="bike-count-list bike-zero">{{bike.SBIKE_PARKING_CNT}}</span>
+            {% else %}
+              <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
+            {% endif %}
             <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
           </li>
           {% endfor %}
@@ -125,13 +132,14 @@
 </div>
 
 <script>
-  const bikeList  = {{ data | tojson }};
+  const userLocale = navigator.language;
   const pageData  = {{ data | tojson }};
   const crowdData = pageData.FCST_PPLTN;
   const bikeData  = pageData.SBIKE_STTS;
   const weatherData = pageData.WEATHER_STTS;
 </script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='js/translate_js.js') }}"></script>
 <script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bike.js') }}"></script>
 <script src="{{ url_for('static', filename='js/crowd_density.js') }}"></script>  
