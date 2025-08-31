@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-28 17:35+0900\n"
-"PO-Revision-Date: 2025-08-28 17:35+0900\n"
+"POT-Creation-Date: 2025-08-31 18:02+0900\n"
+"PO-Revision-Date: 2025-08-31 18:02+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -26,17 +26,21 @@ msgstr "Crowd Density"
 msgid "now"
 msgstr "Now"
 
-#: templates/detail_page.html:67
+#: templates/detail_page.html:51 templates/detail_page.html:70
+msgid "no-forecast"
+msgstr "No Data"
+
+#: templates/detail_page.html:62 templates/detail_page.html:68
 msgid "traffic-conditions"
 msgstr "Traffic Conditions"
 
-#: templates/detail_page.html:77
+#: templates/detail_page.html:80
 msgid "weather"
 msgstr "Weather"
 
-#: templates/detail_page.html:110
+#: templates/detail_page.html:113
 msgid "public-bike-available"
-msgstr "--counts-- Public Bike(s) available"
+msgstr "--counts-- Public bike(s) available"
 
 #: templates/onmap.html:25
 msgid "search-label"
@@ -64,7 +68,7 @@ msgstr "Moderate"
 
 #: templates/onmap.html:68
 msgid "crowd-slightlycrowded"
-msgstr "Slightly crowded"
+msgstr "Slightly Crowded"
 
 #: templates/onmap.html:71
 msgid "crowd-crowded"

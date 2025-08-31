@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-28 17:35+0900\n"
-"PO-Revision-Date: 2025-08-28 17:35+0900\n"
+"POT-Creation-Date: 2025-08-31 18:02+0900\n"
+"PO-Revision-Date: 2025-08-31 18:02+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ko\n"
 "Language-Team: ko <LL@li.org>\n"
@@ -26,15 +26,19 @@ msgstr "혼잡도"
 msgid "now"
 msgstr "현재"
 
-#: templates/detail_page.html:67
+#: templates/detail_page.html:51 templates/detail_page.html:70
+msgid "no-forecast"
+msgstr "예측 데이터가 제공되지 않는 지역입니다"
+
+#: templates/detail_page.html:62 templates/detail_page.html:68
 msgid "traffic-conditions"
 msgstr "교통 상황"
 
-#: templates/detail_page.html:77
+#: templates/detail_page.html:80
 msgid "weather"
 msgstr "날씨"
 
-#: templates/detail_page.html:110
+#: templates/detail_page.html:113
 msgid "public-bike-available"
 msgstr "공공자전거 --counts--대 사용 가능"
 
@@ -64,7 +68,7 @@ msgstr "보통"
 
 #: templates/onmap.html:68
 msgid "crowd-slightlycrowded"
-msgstr "조금 혼잡"
+msgstr "조금 붐빔"
 
 #: templates/onmap.html:71
 msgid "crowd-crowded"

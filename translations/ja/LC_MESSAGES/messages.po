@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-28 17:35+0900\n"
-"PO-Revision-Date: 2025-08-28 17:35+0900\n"
+"POT-Creation-Date: 2025-08-31 18:02+0900\n"
+"PO-Revision-Date: 2025-08-31 18:02+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -26,15 +26,19 @@ msgstr "混雑度"
 msgid "now"
 msgstr "現在"
 
-#: templates/detail_page.html:67
-msgid "traffic-conditions"
-msgstr "渋滞情報"
+#: templates/detail_page.html:51 templates/detail_page.html:70
+msgid "no-forecast"
+msgstr "予測データがありません"
 
-#: templates/detail_page.html:77
+#: templates/detail_page.html:62 templates/detail_page.html:68
+msgid "traffic-conditions"
+msgstr "交通情報"
+
+#: templates/detail_page.html:80
 msgid "weather"
 msgstr "天気"
 
-#: templates/detail_page.html:110
+#: templates/detail_page.html:113
 msgid "public-bike-available"
 msgstr "公共自転車--counts--台使用可能"
 
