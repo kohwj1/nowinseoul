@@ -1,5 +1,6 @@
 import sqlite3, os, csv
 from dotenv import load_dotenv
+from itertools import chain, combinations
 
 
 load_dotenv()  # .env 파일의 환경변수 로드
@@ -54,6 +55,7 @@ def insert_data(table_name, result_list): # fetch api data
     
     conn.commit()
     conn.close()
+
 
 # 데이터 조회 함수
 def get_data(attr, table_name):
@@ -111,21 +113,35 @@ def get_info_for_map(my_locale):
 
     return attr_value
 
-def get_images(tags:list, my_locale):
+def get_images(tags:list):
     conn = connect_db()
     cur = conn.cursor()
     
-    if tags:
-        cur.execute(f'SELECT id, name_{my_locale} AS name FROM attraction ORDER BY {'+'.join(tags)} DESC LIMIT 6')
-    else:
-        cur.execute(f'SELECT id, name_{my_locale} AS name FROM attraction ORDER BY food+beauty+drama+movie DESC LIMIT 6')
-    
+    cur.execute(f'SELECT id, name_ko, name_en, name_ja FROM attraction ORDER BY {'+'.join(tags)} DESC LIMIT 6')
     result_list = [dict(i) for i in cur.fetchall()]
     
     conn.commit()
     conn.close()    
 
     return result_list
+        
+def generate_tag_cases():
+    """태그 조합별 목록 생성"""
+    # from itertools import chain, combinations
+    tag_cases = {"ko":dict(),"en":dict(),"ja":dict(),}
+    tags = ["food", "beauty", "drama", "movie"]
+
+    for c in range(1,len(tags)+1):
+        for combi in combinations(tags,c):
+            combi_key = "_".join(combi)
+            images = get_images(list(combi))
+            # print(f'{images=}')
+            tag_cases['ko'].update({combi_key:[ {"id" : d.get('id'), "name":d.get("name_ko")} for d in images]})
+            tag_cases['en'].update({combi_key:[ {"id" : d.get('id'), "name":d.get("name_en")} for d in images]})
+            tag_cases['ja'].update({combi_key:[ {"id" : d.get('id'), "name":d.get("name_ja")} for d in images]})
+    
+    return tag_cases
+            
 
 # 데이터 수정 함수
 def update_id(station_id_mapping_list):
@@ -168,7 +184,8 @@ def update_traffic(id_traffic_list):
 
     cur.executemany("""UPDATE detail_raw
                           SET realtime_road = :realtime_road,
-                              realtime_road_dttm = :realtime_road_dttm
+                              realtime_road_dttm = :realtime_road_dttm,
+                              realtime_road_msg = :realtime_road_msg
                         WHERE id = :id
                     """, id_traffic_list) # 여러 개의 SQL 명령을 하나씩 반복 실행하는 것
 
@@ -236,7 +253,7 @@ def import_bike_station_info():
 # 인스턴스가 여러 번 생성되어도 실제 객체는 하나만 생성되어
 # 여러 모듈에서 반복되는 DB 조회 없이 공유하는 리스트를 효과적으로 관리
 
-class Attractions : # 80개 attraction 목록
+class Attractions : 
     _instance = None
     _attractions = None
 
@@ -260,7 +277,7 @@ class Attractions : # 80개 attraction 목록
             cls._instance._attractions = cls._instance.get_station() 
         return cls._instance # _instance가 이미 존재하므로 새 객체를 만들지 않고 기존 객체를 반환합니다.
 
-    def get_station(self):
+    def get_station(self): # 80개 attraction 목록
         return get_data('name_ko', 'attraction')
 
     def __call__(self):
@@ -273,4 +290,5 @@ class Attractions : # 80개 attraction 목록
 
 if __name__ == "__main__":        
     # print(get_info_by_id('weather_cache', 'POI007'))
-    get_info_for_map()
+    # get_info_for_map()
+    print(generate_tag_cases())

@@ -119,6 +119,7 @@
           "grKkX9lFn8mNGZHl8OUSl",
           "4sd19l8hdSypSgziqtM2d",
           "vaACSQArsCxG0NJ3kte4O",
+          "hZn7Omza7mo_S3Z37VPQU",
           "RlNTNP3pvmFrBpoJgotyw"
         ],
         "seqColumnIds": [
@@ -151,6 +152,7 @@
           "_nsi4SoVFVBY6UPN_DlUy",
           "QZMVRzlA1Ho2aYCEiB7Cd",
           "vaACSQArsCxG0NJ3kte4O",
+          "hZn7Omza7mo_S3Z37VPQU",
           "RlNTNP3pvmFrBpoJgotyw"
         ],
         "ui": {
@@ -162,7 +164,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1756097167491,
+          "updateAt": 1756448482109,
           "createAt": 1754986061305
         }
       },
@@ -244,6 +246,7 @@
           "z4vEmvsKx4CNKmNqpN7SE",
           "sjxiSIY0Mv5YnU6Rbgt8U",
           "zEclgv5nBJrn2ijJqX4C6",
+          "QsFNf9RyQpjcn9SvlNDMh",
           "xDUU06gFdV_8MZmJ6hFB7"
         ],
         "seqColumnIds": [
@@ -257,18 +260,19 @@
           "kTB4g7YvxVfRMwv_JON6P",
           "f_egVrT9JXULd-NEkn8tg",
           "zEclgv5nBJrn2ijJqX4C6",
+          "QsFNf9RyQpjcn9SvlNDMh",
           "xDUU06gFdV_8MZmJ6hFB7"
         ],
         "ui": {
-          "x": 30,
-          "y": 705,
+          "x": 6,
+          "y": 764,
           "zIndex": 352,
           "widthName": 60,
           "widthComment": 272,
           "color": ""
         },
         "meta": {
-          "updateAt": 1756097879484,
+          "updateAt": 1756448432086,
           "createAt": 1755254823139
         }
       },
@@ -1014,7 +1018,7 @@
           "widthName": 67,
           "widthComment": 60,
           "widthDataType": 60,
-          "widthDefault": 133
+          "widthDefault": 155
         },
         "meta": {
           "updateAt": 1755953618583,
@@ -1054,7 +1058,7 @@
           "widthName": 67,
           "widthComment": 60,
           "widthDataType": 60,
-          "widthDefault": 133
+          "widthDefault": 155
         },
         "meta": {
           "updateAt": 1755953653725,
@@ -1074,7 +1078,7 @@
           "widthName": 67,
           "widthComment": 60,
           "widthDataType": 60,
-          "widthDefault": 133
+          "widthDefault": 155
         },
         "meta": {
           "updateAt": 1755953629811,
@@ -1614,7 +1618,7 @@
           "widthName": 67,
           "widthComment": 60,
           "widthDataType": 60,
-          "widthDefault": 133
+          "widthDefault": 155
         },
         "meta": {
           "updateAt": 1755953657143,
@@ -1694,7 +1698,7 @@
           "widthName": 67,
           "widthComment": 60,
           "widthDataType": 60,
-          "widthDefault": 133
+          "widthDefault": 155
         },
         "meta": {
           "updateAt": 1755953632415,
@@ -1994,7 +1998,7 @@
           "widthName": 67,
           "widthComment": 60,
           "widthDataType": 60,
-          "widthDefault": 133
+          "widthDefault": 155
         },
         "meta": {
           "updateAt": 1755953627020,
@@ -2274,7 +2278,7 @@
           "widthName": 67,
           "widthComment": 60,
           "widthDataType": 60,
-          "widthDefault": 133
+          "widthDefault": 155
         },
         "meta": {
           "updateAt": 1755959749729,
@@ -2294,7 +2298,7 @@
           "widthName": 67,
           "widthComment": 60,
           "widthDataType": 60,
-          "widthDefault": 133
+          "widthDefault": 155
         },
         "meta": {
           "updateAt": 1755959752829,
@@ -2500,6 +2504,46 @@
           "updateAt": 1756357004921,
           "createAt": 1756356975489
         }
+      },
+      "QsFNf9RyQpjcn9SvlNDMh": {
+        "id": "QsFNf9RyQpjcn9SvlNDMh",
+        "tableId": "u_8DTXn6i4Di7hZM1TRQd",
+        "name": "realtime_road_msg",
+        "comment": "실시간 주변 도로 (평균) 혼잡도 관련 메세지",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 111,
+          "widthComment": 208,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756448465176,
+          "createAt": 1756448406152
+        }
+      },
+      "hZn7Omza7mo_S3Z37VPQU": {
+        "id": "hZn7Omza7mo_S3Z37VPQU",
+        "tableId": "x1yxu_y3de0VZMAWWYdzr",
+        "name": "realtime_road_msg",
+        "comment": "실시간 주변 도로 (평균) 혼잡도 관련 메세지",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 111,
+          "widthComment": 208,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1756448475762,
+          "createAt": 1756448475761
+        }
       }
     },
     "relationshipEntities": {
@@ -2513,7 +2557,7 @@
           "columnIds": [
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
-          "x": 1420.7658000000001,
+          "x": 1442.7658000000001,
           "y": 732.6004,
           "direction": 2
         },
@@ -2542,7 +2586,7 @@
             "J93O3_V0b1PdZjwa8iHT4",
             "4g9LywePGktao8AMr_SOS"
           ],
-          "x": 1743.5,
+          "x": 1754.5,
           "y": 688,
           "direction": 4
         },
@@ -2552,7 +2596,7 @@
             "oV9HNKarowslevTQqe6La",
             "MjiHcme9eantdXAc2rkMy"
           ],
-          "x": 1729.1388,
+          "x": 1740.1388,
           "y": 536.5436,
           "direction": 8
         },
@@ -2571,7 +2615,7 @@
           "columnIds": [
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
-          "x": 1100.7658000000001,
+          "x": 1111.7658000000001,
           "y": 940.6004,
           "direction": 8
         },
@@ -2580,7 +2624,7 @@
           "columnIds": [
             "cVkN5a2qIsqMDUO5cmNbV"
           ],
-          "x": 1038.5,
+          "x": 1049.5,
           "y": 1081,
           "direction": 4
         },
@@ -2600,7 +2644,7 @@
             "cVkN5a2qIsqMDUO5cmNbV",
             "ByV7b--TKWBNKDUK0ybSi"
           ],
-          "x": 1275,
+          "x": 1297,
           "y": 1157,
           "direction": 2
         },
@@ -2638,8 +2682,8 @@
           "columnIds": [
             "o8dv45rAOy5-Cd7of7igD"
           ],
-          "x": 714,
-          "y": 805,
+          "x": 712,
+          "y": 876,
           "direction": 2
         },
         "meta": {
@@ -2657,8 +2701,8 @@
           "columnIds": [
             "o8dv45rAOy5-Cd7of7igD"
           ],
-          "x": 372,
-          "y": 705,
+          "x": 359,
+          "y": 764,
           "direction": 4
         },
         "end": {
@@ -2666,8 +2710,8 @@
           "columnIds": [
             "9G9q1rDKklEm0FA6Ae_FH"
           ],
-          "x": 398.6859,
-          "y": 581.9017,
+          "x": 409.6859,
+          "y": 605.9017,
           "direction": 8
         },
         "meta": {
@@ -2685,7 +2729,7 @@
           "columnIds": [
             "ZodrB1Xgy3C6s9U0Fe2J7"
           ],
-          "x": 1100.7658000000001,
+          "x": 1111.7658000000001,
           "y": 524.6004,
           "direction": 4
         },
@@ -2694,7 +2738,7 @@
           "columnIds": [
             "kYBD7y3AMgyymzTORgkB6"
           ],
-          "x": 1111.5,
+          "x": 1122.5,
           "y": 410,
           "direction": 8
         },

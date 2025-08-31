@@ -1,25 +1,37 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, current_app
 from flask_babel import Babel
 from services.bike_station_fetcher import get_info
 from models import db
 
 
-app = Flask(__name__)
+app = Flask(__name__) # 앱 인스턴스 : 앱 전체의 생명주기 동안 존재하는 단일 객체
 
+# 다국어 지원
 babel = Babel(app)
 
 def get_locale():
-    return request.accept_languages[0][0] #이걸 이용해서 ko, en, ja로 케이스 분기처리되면 됩니다!
+    # https://python-babel.github.io/flask-babel/
+    # try to guess the language from the user accept
+    # header the browser transmits.  We support ko/en/ja in this
+    # example.  The best match wins.
+    return request.accept_languages.best_match(['ko', 'en', 'ja']) or 'en'
+    # 이걸 이용해서 ko, en, ja로 케이스 분기처리되면 됩니다!
 
 babel.init_app(app, locale_selector=get_locale)
 
+# 앱 시작할 때, 언어별 tag조합별 id/name 목록을 생성해서 current_app에 캐싱
+@app.before_request
+def initialize_cache():
+    current_app.config['tag_cases'] = db.generate_tag_cases()
 
 
 # 메인 페이지
 @app.route('/')
 def index():
-    print(f'{get_client_ip()} 에서 방문했습니다. {get_locale()} 언어로된 데이터를 서빙합니다.')
-    data = db.get_images([],get_locale())
+    print(f'\n{get_client_ip()} 에서 방문했습니다.')
+    
+    data = current_app.config.get('tag_cases', {}).get(get_locale(), {})
+    print(f'{data=}')
 
     return render_template('index.html', data = data)
 
@@ -53,7 +65,7 @@ def detail(attraction_id):
             "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
                               "TEMP": str(d.get('fcst_temp')),
                               "RAIN_CHANCE": str(d.get('rain_chance'))}
-                              for d in db.get_info_by_id('weather_cache',attraction_id)
+                                for d in db.get_info_by_id('weather_cache',attraction_id)
             ], # 12개
             # 인구밀도 예측
             "FCST_PPLTN":[{"FCST_TIME": d.get('fcst_dt'),
@@ -63,12 +75,13 @@ def detail(attraction_id):
             # 실시간 인구밀도
             "LIVE_PPLTN_STTS":[{"PPLTN_TIME": d.get('realtime_pop_dttm'),
                                 "AREA_CONGEST_LVL": d.get('realtime_pop')}
-                                   for d in db.get_info_by_id('detail_cache',attraction_id)
+                                    for d in db.get_info_by_id('detail_cache',attraction_id)
             ],
             # 실시간 주변도로 혼잡도
-            "ROAD_TRAFFIC_STTS":[{"ROAD_TRAFFIC_TIME": d.get('realtime_road_dttm'),
-                                  "ROAD_TRAFFIC_IDX": d.get('realtime_road')}
-                              for d in db.get_info_by_id('detail_cache',attraction_id)
+            "ROAD_TRAFFIC_STTS":[{"ROAD_TRAFFIC_TIME" : d.get('realtime_road_dttm'),
+                                  "ROAD_TRAFFIC_IDX" : d.get('realtime_road'),
+                                  "ROAD_MSG" : d.get('realtime_road_msg')}
+                                    for d in db.get_info_by_id('detail_cache',attraction_id)
             ],
             # 주변 따릉이
             # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
@@ -76,18 +89,6 @@ def detail(attraction_id):
     }
 
     return render_template('detail_page.html', data=data)
-
-# --------------------------------------------
-
-# 메인에서 태그 필터 걸때
-@app.route('/main-feature', methods=['POST'])
-def filter_by_tags():
-    tags = request.form.get('tags')
-    data = {"tags" : tags,
-            "data" : db.get_images(tags, get_locale())
-    }
-
-    return jsonify(data)
 
 # --------------------------------------------
 
