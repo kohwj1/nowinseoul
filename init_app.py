@@ -27,7 +27,7 @@ def init_app_fetch_data():
         return 
 
     ## 1. 실시간 도시 데이터에서 도시ID - 대여소ID 매핑
-    db.insert_data('bike_station_info',init_bike_station.concurrent_processing(init_bike_station.mapping_id,db.get_data('name_ko', 'attraction')))
+    db.insert_data('bike_station_info',init_bike_station.concurrent_processing(init_bike_station.mapping_id,db.Attractions()))
     print('bike_station_info')
 
 def init_app_before_translation():

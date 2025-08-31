@@ -57,7 +57,7 @@ def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달�
         return results
 @utils.execution_time
 def fetch_traffic():
-    result_list = concurrent_processing(mapping_id,db.get_data('name_ko', 'attraction')) # 여기까지 21.3초 걸렸음
+    result_list = concurrent_processing(mapping_id,db.Attractions()) # 여기까지 21.3초 걸렸음
     print(f'{result_list[0]=}')
     db.update_traffic(result_list)
     print(f'detail_raw {len(result_list)}개 실시간 주변 도로 데이터 insert 완료 {datetime.now().strftime('%Y.%m.%d %H:%M:%S')}')

@@ -253,7 +253,7 @@ def import_bike_station_info():
 # 인스턴스가 여러 번 생성되어도 실제 객체는 하나만 생성되어
 # 여러 모듈에서 반복되는 DB 조회 없이 공유하는 리스트를 효과적으로 관리
 
-class Attractions : 
+class Attractions: 
     _instance = None
     _attractions = None
 
@@ -278,7 +278,7 @@ class Attractions :
         return cls._instance # _instance가 이미 존재하므로 새 객체를 만들지 않고 기존 객체를 반환합니다.
 
     def get_station(self): # 80개 attraction 목록
-        return get_data('name_ko', 'attraction')
+        return [ d.get('name_ko') for d in get_data('name_ko', 'attraction')]
 
     def __call__(self):
         # 인스턴스를 함수처럼 Attractions() 형태로 호출하면 리스트 반환 
@@ -286,9 +286,18 @@ class Attractions :
         # 없으면 인스턴스는 함수처럼 호출될 수 없고, 호출하면 TypeError가 발생합니다.
         # Attractions._attractions나 Attractions.get_attractions() 같은 명시적 메서드 호출로 충분하다면 __call__은 불필요
         return self._attractions
+    
+    def __iter__(self):
+        # 내부 리스트의 iterator 반환
+        return iter(self._attractions)
+
+    def __repr__(self):
+        return repr(self._attractions)
 
 
 if __name__ == "__main__":        
     # print(get_info_by_id('weather_cache', 'POI007'))
     # get_info_for_map()
-    print(generate_tag_cases())
+    # print(generate_tag_cases())
+
+    print(f'{Attractions()=}')

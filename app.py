@@ -32,7 +32,7 @@ def index():
     print(f'\n{get_client_ip()} 에서 방문했습니다.')
     
     data = current_app.config.get('tag_cases', {}).get(get_locale(), {})
-    print(f'{data=}')
+    # print(f'{data=}')
 
     return render_template('index.html', data = data)
 
