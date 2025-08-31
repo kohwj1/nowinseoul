@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tagEl = document.querySelector('.traffic-conditions-section .info-tag');
+  const trafficMsg = document.getElementById('traffic-msg');
   const road = Array.isArray(window.pageData?.ROAD_TRAFFIC_STTS)
-    ? window.pageData.ROAD_TRAFFIC_STTS[0] : null;
+ ? window.pageData.ROAD_TRAFFIC_STTS[0] : null;
 
   let raw = (road && (road.ROAD_TRAFFIC_IDX ?? road.road_traffic_idx)) 
             || (tagEl ? tagEl.textContent.trim() : '');
@@ -24,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     tagEl.classList.remove('free','slow','congested','comfortable','medium','slightly','congested','tag-free','tag-slow','tag-congested');
 
     if (hit) {
-      tagEl.textContent = translateTraffic(userLocale, raw);
+      tagEl.textContent = translateTraffic(userLocale, raw)[0];
+      trafficMsg.textContent = translateTraffic(userLocale, raw)[1];
       tagEl.classList.add(hit.cls);
     } else {
       tagEl.textContent = 'No Data';

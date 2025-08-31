@@ -54,19 +54,19 @@ function translateCrowd(language, text) {
 function translateTraffic(language, text) {
     const trans_data = {
         'ko': {
-                '원활':'원활',
-                '서행':'서행',
-                '정체':'정체'
+                '원활':['원활', '해당 장소로 이동·진입하는 도로가 크게 막히지 않아요.'],
+                '서행':['서행', '해당 장소로 이동·진입 시 시간이 다소 소요될 수 있어요.'],
+                '정체':['정체', 'congested-ko']
             },
         'ja': {
-                '원활':'順調',
-                '서행':'混雑',
-                '정체':'渋滞'
+                '원활':['渋滞なし', '現地へ通行する道路状況は問題ありません。'],
+                '서행':['混雑', '現地への進入に時間がかかっています。'],
+                '정체':['渋滞', 'congested-ja']
             },
         'en': {
-                '원활':'Free flow',
-                '서행':'Slow',
-                '정체':'Congested'
+                '원활':['Free flow', "Roadways heading toward or entering the corresponding place aren't congested."],
+                '서행':['Slow', "It may take some time when on route to or entering the corresponding place."],
+                '정체':['Congested', "congested-en"]
             },
     }
     if (trans_data.hasOwnProperty(language)) {
