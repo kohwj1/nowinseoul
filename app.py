@@ -27,11 +27,14 @@ def initialize_cache():
 
 
 # 메인 페이지
-@app.route('/')
+@app.route('/', methods = ['GET','POST'])
 def index():
     print(f'\n{get_client_ip()} 에서 방문했습니다.')
-    
-    data = current_app.config.get('tag_cases', {}).get(get_locale(), {})
+    page_language = get_locale() # browser locale 값이 기본값
+    if request.method == "POST":
+        page_language = request.form.get('language','en')
+
+    data = current_app.config.get('tag_cases', {}).get(page_language, {})
     # print(f'{data=}')
 
     return render_template('index.html', data = data)
@@ -44,24 +47,32 @@ def get_client_ip():
     return f"Client IP: {ip}"
 
 # 지도 페이지
-@app.route('/map')
+@app.route('/map', methods = ['GET','POST'])
 def browse_on_map():
+    page_language = get_locale() # browser locale 값이 기본값
+    if request.method == "POST":
+        page_language = request.form.get('language','en')
+
     # [{'id': 'POI001', 'name': 'Gangnam MICE Special Tourist Zone', 'crowd': 'Crowded', 'beauty': '241', 'food': '25', 'drama': '18', 'movie': '14', 'lat': '37.512693', 'lng': '127.0624'},]
-    data = db.get_info_for_map(get_locale())
+    data = db.get_info_for_map(page_language)
         
     return render_template('onmap.html', data=data)
 
 # 상세 페이지
-@app.route('/detail/<attraction_id>')
+@app.route('/detail/<attraction_id>', methods = ['GET','POST'])
 def detail(attraction_id):
+    page_language = get_locale() # browser locale 값이 기본값
+    if request.method == "POST":
+        page_language = request.form.get('language','en')
+
     attraction_info_by_id = db.get_info_by_id('attraction', attraction_id)
     if not attraction_info_by_id:
 
         return render_template('404.html'), 404
 
     data = {"AREA_CD" : attraction_id,
-            "NAME" : attraction_info_by_id[0].get('name_'+get_locale()),
-            "DESCRIPTION": attraction_info_by_id[0].get('desc_'+get_locale()),
+            "NAME" : attraction_info_by_id[0].get('name_' + page_language),
+            "DESCRIPTION": attraction_info_by_id[0].get('desc_' + page_language),
             # 날씨 예측
             "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
                               "TEMP": str(d.get('fcst_temp')),
@@ -86,7 +97,7 @@ def detail(attraction_id):
             ],
             # 주변 따릉이
             # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
-            "SBIKE_STTS":get_info(attraction_id, get_locale())
+            "SBIKE_STTS":get_info(attraction_id, page_languague)
     }
 
     return render_template('detail_page.html', data=data)
