@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block title %}Now in Seoul{% endblock %}
 
 {% block head %}
@@ -17,7 +16,7 @@
 
 <form class="tag-form">
   <div class="mb-3 flex-wrap" role="group" aria-label="Theme filter">
-    <input type="checkbox" class="mapfilter btn-check" id="food" name="tag" value="Food" autocomplete="off" />
+    <input type="checkbox" class="mapfilter btn-check" id="food"  name="tag" value="Food"  autocomplete="off" />
     <label class="btn btn-outline-primary btn-sm mb-1" for="food">#Food</label>
 
     <input type="checkbox" class="mapfilter btn-check" id="drama" name="tag" value="Drama" autocomplete="off" />
@@ -30,29 +29,23 @@
     <label class="btn btn-outline-primary btn-sm mb-1" for="movie">#Movie</label>
   </div>
 
-  <!-- 데스크톱 전용 지도 버튼 -->
   <div class="map-button-container d-none d-md-flex">
     <a href="{{ url_for('browse_on_map') }}" class="btn btn-primary">Browse on a Map</a>
   </div>
 </form>
 
 <div class="container">
-  <div class="content">
-    {% for item in data %}
-    <div class="card">
-      <a href="{{ url_for('detail', attraction_id=item.id) }}">
-        <img src="{{ url_for('static', filename='images/attraction/' ~ item.id ~ '.jpg') }}" 
-             alt="main image" class="card-image" />
-        <div class="card-title">{{ item.name }}</div>
-      </a>
-    </div>
-    {% endfor %}
-  </div>
+  <!-- JS 사용해서 여기에 이미지 삽입  -->
+  <div id="attractions-container" class="content"></div>
 
   <div class="mobile-map-cta d-md-none">
     <a href="{{ url_for('browse_on_map') }}" class="btn btn-primary w-100">Browse on a Map</a>
   </div>
 </div>
+
+<script>
+  window.attractionData = {{ data | tojson }};
+</script>
 
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
