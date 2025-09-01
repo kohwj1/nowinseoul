@@ -1,3 +1,5 @@
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import sqlite3, csv, os, db
 from dotenv import load_dotenv
 from datetime import datetime

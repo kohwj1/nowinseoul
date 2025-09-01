@@ -20,6 +20,7 @@ def get_locale():
 
 babel.init_app(app, locale_selector=get_locale)
 
+# https://flask.palletsprojects.com/en/stable/appcontext/
 # 앱 시작할 때, 언어별 tag조합별 id/name 목록을 생성해서 current_app에 캐싱
 @app.before_request
 def initialize_cache():
