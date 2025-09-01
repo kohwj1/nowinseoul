@@ -5,7 +5,7 @@ def execution_time(func):
         result = func(*args, **kwargs)
         end_time = time.time()
         execut_time = end_time - start_time
-        print(f"{func.__name__} 함수 실행 시간: {round((execut_time)%60,1)}초")
+        print(f"{func.__name__} 함수 실행 시간: {round((execut_time)%60,9)}초")
         return result
     return wrapper
 

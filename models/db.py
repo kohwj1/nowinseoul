@@ -1,4 +1,4 @@
-import sqlite3, os, csv
+import sqlite3, csv, os
 from dotenv import load_dotenv
 from itertools import chain, combinations
 
@@ -124,18 +124,20 @@ def get_images(tags:list):
     conn.close()    
 
     return result_list
-        
+
 def generate_tag_cases():
     """태그 조합별 목록 생성"""
     # from itertools import chain, combinations
-    tag_cases = {"ko":dict(),"en":dict(),"ja":dict(),}
+    tag_cases = {"ko":dict(),"en":dict(),"ja":dict()}
     tags = ["food", "beauty", "drama", "movie"]
 
     for c in range(1,len(tags)+1):
         for combi in combinations(tags,c):
             combi_key = "_".join(combi)
             images = get_images(list(combi))
+            # for d in images: # for 문 사용시 0.010932922초
             # print(f'{images=}')
+            # List Comprension 사용시 0.011126041초
             tag_cases['ko'].update({combi_key:[ {"id" : d.get('id'), "name":d.get("name_ko")} for d in images]})
             tag_cases['en'].update({combi_key:[ {"id" : d.get('id'), "name":d.get("name_en")} for d in images]})
             tag_cases['ja'].update({combi_key:[ {"id" : d.get('id'), "name":d.get("name_ja")} for d in images]})
@@ -299,5 +301,5 @@ if __name__ == "__main__":
     # print(get_info_by_id('weather_cache', 'POI007'))
     # get_info_for_map()
     # print(generate_tag_cases())
-
-    print(f'{Attractions()=}')
+    generate_tag_cases()
+    # print(f'{Attractions()=}')
