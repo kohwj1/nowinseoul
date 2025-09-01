@@ -280,7 +280,7 @@ class Attractions:
         return cls._instance # _instance가 이미 존재하므로 새 객체를 만들지 않고 기존 객체를 반환합니다.
 
     def get_station(self): # 80개 attraction 목록
-        return [ d.get('name_ko') for d in get_data('name_ko', 'attraction')]
+        return get_data('name_ko', 'attraction')
 
     def __call__(self):
         # 인스턴스를 함수처럼 Attractions() 형태로 호출하면 리스트 반환 

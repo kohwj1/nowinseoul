@@ -1,6 +1,4 @@
-import sys, os
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import sqlite3, csv, os, db
+import sqlite3, csv, os
 from dotenv import load_dotenv
 from datetime import datetime
 from flask import current_app
@@ -180,10 +178,6 @@ def import_attraction():
     conn.commit()
     conn.close()
     print(f"[CSV] main_feature.csv → main_feature 업데이트 완료.")
-
-    # Tag 정보는 csv에서 업데이트 하므로 csv import 후에 refresh
-    current_app.config['tag_cases'] = db.generate_tag_cases()
-    print(f"[tag_cases] current_app.config[]._tag_cases 업데이트 완료.")
 
 
 if __name__ == '__main__':
