@@ -9,7 +9,7 @@ function circleOnMap(marker_data, map) {
                     iconAnchor: [22, 15],
                     popupAnchor: [-7, 2]
                 })})
-                .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br>${m.SBIKE_PARKING_CNT}${translateBike(userLocale)}`)
+                .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br>${m.SBIKE_PARKING_CNT}${translateBike(userLocale())}`)
                 .addTo(map)
                 L.marker([m.SBIKE_X, m.SBIKE_Y],{icon: L.divIcon({html: `<div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${m.SBIKE_PARKING_CNT}</div>`, iconSize: [0, 0], iconAnchor: [-10, 12],})})
                 .addTo(map)
@@ -20,7 +20,7 @@ function circleOnMap(marker_data, map) {
                     iconAnchor: [22, 15],
                     popupAnchor: [-7, 2]
                 })})
-                .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br>${m.SBIKE_PARKING_CNT}${translateBike(userLocale)}`)
+                .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br>${m.SBIKE_PARKING_CNT}${translateBike(userLocale())}`)
                 .addTo(map)
                 L.marker([m.SBIKE_X, m.SBIKE_Y],{icon: L.divIcon({html: `<div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">${m.SBIKE_PARKING_CNT}</div>`, iconSize: [0, 0], iconAnchor: [-10, 12],})})
                 .addTo(map)

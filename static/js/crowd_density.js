@@ -21,7 +21,7 @@ function colorMap(level) {
 document.addEventListener('DOMContentLoaded', () => {
   // --- Crowd Density ---
     if (originCrowdLevel) {
-      const displayLevel = translateCrowd(userLocale, originCrowdLevel);
+      const displayLevel = translateCrowd(userLocale(), originCrowdLevel);
       badgeEl.textContent = displayLevel;
     };
     const softStops = [colorMap(originCrowdLevel)];

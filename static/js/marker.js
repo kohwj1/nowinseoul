@@ -1,5 +1,14 @@
-const userLocale = navigator.language
-// console.log(userLocale)
+function userLocale() {
+    const url = new URL(window.location.href);
+    const pathName = url.pathname;
+    const pathSegments = pathName.split('/');
+    console.log(pathSegments)
+
+    if (pathSegments.length === 0) {
+        return 'en'
+    }
+    return pathSegments[1];
+}
 
 //커스텀 마커
 function customMarker(crowdLevel) {
@@ -43,7 +52,7 @@ function clearMap() {
 function markOnMap(marker_data) {
     for (m of marker_data) {
         L.marker([m.lat, m.lng], {icon: customMarker(m['crowd'])})
-        .bindPopup(`<strong>${m.name}</strong><br>${translateCrowd(userLocale, m.crowd)}<br><br><a class="gotoDetail" href="/detail/${m.id}">&gt;&gt; ${translateCrowd(userLocale, 'Go to Detail')}</a>`)
+        .bindPopup(`<strong>${m.name}</strong><br>${translateCrowd(userLocale(), m.crowd)}<br><br><a class="gotoDetail" href="detail/${m.id}">&gt;&gt; ${translateCrowd(userLocale(), 'Go to Detail')}</a>`)
         .addTo(map)
     }
 }

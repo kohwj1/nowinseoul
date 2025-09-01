@@ -1,3 +1,15 @@
+function userLocale() {
+    const url = new URL(window.location.href);
+    const pathName = url.pathname;
+    const pathSegments = pathName.split('/');
+    console.log(pathSegments)
+
+    if (pathSegments.length === 0) {
+        return 'en'
+    }
+    return pathSegments[1];
+}
+
 function initPage() {
   // --- read more ---
   const textContainer = document.querySelector('.text-container');

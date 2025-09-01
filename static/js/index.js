@@ -1,3 +1,16 @@
+function userLocale() {
+    const url = new URL(window.location.href);
+    const pathName = url.pathname;
+    const pathSegments = pathName.split('/');
+    console.log(pathSegments)
+
+    if (pathSegments.length === 0) {
+        return 'en'
+    }
+    return pathSegments[1];
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const checkboxes = document.querySelectorAll('.mapfilter');
   const container  = document.getElementById('attractions-container');
@@ -43,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const name = item.name || item['name'];
       return `
         <div class="card">
-          <a href="/detail/${encodeURIComponent(id)}">
+          <a href="detail/${encodeURIComponent(id)}">
             <img src="/static/images/attraction/${encodeURIComponent(id)}.jpg"
                  alt="${escapeHtml(name)}" class="card-image" />
             <div class="card-title">${escapeHtml(name)}</div>

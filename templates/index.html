@@ -10,7 +10,7 @@
   <img src="{{ url_for('static', filename='images/ui/main.png') }}" alt="Now in Seoul Main Image" />
   <div class="header-text-container">
     <h1 class="header-text">Now in Seoul</h1>
-    <p class="header-subtitle">See What’s Happening Right Now in Seoul!</p>
+    <p class="header-subtitle">See What's Happening Right Now in Seoul!</p>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
   </div>
 
   <div class="map-button-container d-none d-md-flex">
-    <a href="{{ url_for('browse_on_map') }}" class="btn btn-primary">Browse on a Map</a>
+    <a href="{{ url_for('main.browse_on_map', locale=locale) }}" class="btn btn-primary">{{_('browse-on-map')}}</a>
   </div>
 </form>
 
@@ -39,7 +39,7 @@
   <div id="attractions-container" class="content"></div>
 
   <div class="mobile-map-cta d-md-none">
-    <a href="{{ url_for('browse_on_map') }}" class="btn btn-primary w-100">Browse on a Map</a>
+    <a href="{{ url_for('main.browse_on_map', locale=locale) }}" class="btn btn-primary w-100">{{_('browse-on-map')}}</a>
   </div>
 </div>
 

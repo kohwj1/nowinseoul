@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     tagEl.classList.remove('free','slow','congested','comfortable','medium','slightly','congested','tag-free','tag-slow','tag-congested');
 
     if (hit) {
-      tagEl.textContent = translateTraffic(userLocale, raw)[0];
-      trafficMsg.textContent = translateTraffic(userLocale, raw)[1];
+      tagEl.textContent = translateTraffic(userLocale(), raw)[0];
+      trafficMsg.textContent = translateTraffic(userLocale(), raw)[1];
       tagEl.classList.add(hit.cls);
     } else {
       tagEl.textContent = 'No Data';
