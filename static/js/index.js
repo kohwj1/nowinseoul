@@ -1,24 +1,24 @@
-const langSelectBox = document.getElementById('lang-select');
+// const langSelectBox = document.getElementById('lang-select');
 
-function userLocale() {
-    const url = new URL(window.location.href);
-    const pathName = url.pathname;
-    const pathSegments = pathName.split('/');
-    console.log(pathSegments)
+// function userLocale() {
+//     const url = new URL(window.location.href);
+//     const pathName = url.pathname;
+//     const pathSegments = pathName.split('/');
+//     console.log(pathSegments)
 
-    if (pathSegments.length === 0) {
-        return 'en'
-    }
-    return pathSegments[1];
-}
+//     if (pathSegments.length === 0) {
+//         return 'en'
+//     }
+//     return pathSegments[1];
+// }
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const locale = userLocale()
-  console.log(locale)
+  // const locale = userLocale()
+  // console.log(locale)
   const checkboxes = document.querySelectorAll('.mapfilter');
   const container  = document.getElementById('attractions-container');
-  document.getElementById(locale).setAttribute('selected','');
+  // document.getElementById(locale).setAttribute('selected','');
 
   const attractionData = window.attractionData || {};
 
