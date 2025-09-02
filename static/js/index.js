@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const attractionData = window.attractionData || {};
 
   // (초기/전체해제 시 사용) 지금은 movie이지만 나중에 가장 높은 검색량을 나타내는 변수가 생기면 그것과 교체 
-  const DEFAULT_TAG = 'movie';
+  const DEFAULT_TAG = 'food_beauty_drama_movie';
 
   // 백엔드가 조합 키를 만들 때 쓴 기준 순서 
   const BACKEND_ORDER = ['food', 'beauty', 'drama', 'movie'];
