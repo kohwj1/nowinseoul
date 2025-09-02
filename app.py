@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, current_app
+from flask import Flask, render_template, jsonify, request, current_app, redirect, url_for, Blueprint
 from flask_babel import Babel
 from services.bike_station_fetcher import get_info
 from models import db
@@ -6,16 +6,22 @@ from models import db
 
 app = Flask(__name__) # 앱 인스턴스 : 앱 전체의 생명주기 동안 존재하는 단일 객체
 
+app.config['BABEL_DEFAULT_LOCALE'] = 'en'
+app.config['BABEL_SUPPORTED_LOCALES'] = ['ko', 'en', 'ja']
+
 # 다국어 지원
 babel = Babel(app)
 
 def get_locale():
+    # https://flask.palletsprojects.com/en/stable/api/#flask.Request.view_args
+    path_lang = request.view_args.get('locale', False)
+    if path_lang in current_app.config['BABEL_SUPPORTED_LOCALES']:
+        return path_lang
+
     # https://python-babel.github.io/flask-babel/
-    # try to guess the language from the user accept
-    # header the browser transmits.  We support ko/en/ja in this
-    # example.  The best match wins.
-    
-    return request.accept_languages.best_match(['ko', 'en', 'ja']) or 'en'
+    # try to guess the language from the user accept header the browser transmits.
+    # We support ko/en/ja in this app. The best match wins.
+    return request.accept_languages.best_match(current_app.config['BABEL_SUPPORTED_LOCALES'])
     # 이걸 이용해서 ko, en, ja로 케이스 분기처리되면 됩니다!
 
 babel.init_app(app, locale_selector=get_locale)
@@ -26,19 +32,21 @@ babel.init_app(app, locale_selector=get_locale)
 def initialize_cache():
     current_app.config['tag_cases'] = db.generate_tag_cases()
 
+@app.route('/')
+def root():
+    locale = get_locale() or current_app.config['BABEL_DEFAULT_LOCALE']
+
+    return redirect(url_for('main.index', locale=locale))
+
+main = Blueprint('main', __name__, url_prefix='/<locale>')
 
 # 메인 페이지
-@app.route('/', methods = ['GET','POST'])
-def index():
+@main.route('/')
+def index(locale):
     print(f'\n{get_client_ip()} 에서 방문했습니다.')
-    page_language = get_locale() # browser locale 값이 기본값
-    if request.method == "POST":
-        page_language = request.form.get('language','en')
+    data = current_app.config.get('tag_cases', {}).get(locale, {})# browser locale 값이 기본값
 
-    data = current_app.config.get('tag_cases', {}).get(page_language, {})
-    # print(f'{data=}')
-
-    return render_template('index.html', data = data)
+    return render_template('index.html', data = data, locale=locale)
 
 def get_client_ip():
     # X-Forwarded-For 헤더: 클라이언트가 프록시 서버를 거칠 때 원래 IP 정보가 담긴 헤더
@@ -48,32 +56,23 @@ def get_client_ip():
     return f"Client IP: {ip}"
 
 # 지도 페이지
-@app.route('/map', methods = ['GET','POST'])
-def browse_on_map():
-    page_language = get_locale() # browser locale 값이 기본값
-    if request.method == "POST":
-        page_language = request.form.get('language','en')
-
-    # [{'id': 'POI001', 'name': 'Gangnam MICE Special Tourist Zone', 'crowd': 'Crowded', 'beauty': '241', 'food': '25', 'drama': '18', 'movie': '14', 'lat': '37.512693', 'lng': '127.0624'},]
-    data = db.get_info_for_map(page_language)
+@main.route('/map')
+def browse_on_map(locale):
+    data = db.get_info_for_map(locale) # browser locale 값이 기본값
         
-    return render_template('onmap.html', data=data)
+    return render_template('onmap.html', data = data, locale=locale)
 
 # 상세 페이지
-@app.route('/detail/<attraction_id>', methods = ['GET','POST'])
-def detail(attraction_id):
-    page_language = get_locale() # browser locale 값이 기본값
-    if request.method == "POST":
-        page_language = request.form.get('language','en')
-
+@main.route('/detail/<attraction_id>')
+def detail(locale, attraction_id):
     attraction_info_by_id = db.get_info_by_id('attraction', attraction_id)
     if not attraction_info_by_id:
 
         return render_template('404.html'), 404
 
     data = {"AREA_CD" : attraction_id,
-            "NAME" : attraction_info_by_id[0].get('name_' + page_language),
-            "DESCRIPTION": attraction_info_by_id[0].get('desc_' + page_language),
+            "NAME" : attraction_info_by_id[0].get('name_' + locale),
+            "DESCRIPTION": attraction_info_by_id[0].get('desc_' + locale),
             # 날씨 예측
             "WEATHER_STTS": [{"FCST_DT": d.get('fcst_dt'),
                               "TEMP": str(d.get('fcst_temp')),
@@ -98,10 +97,10 @@ def detail(attraction_id):
             ],
             # 주변 따릉이
             # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
-            "SBIKE_STTS":get_info(attraction_id, page_language)
+            "SBIKE_STTS":get_info(attraction_id, locale)
     }
 
-    return render_template('detail_page.html', data=data)
+    return render_template('detail_page.html', data=data, locale=locale)
 
 # --------------------------------------------
 
@@ -111,6 +110,8 @@ def page_not_found(e):
     # note that we set the 404 status explicitly
 
     return render_template('404.html'), 404
+
+app.register_blueprint(main)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
