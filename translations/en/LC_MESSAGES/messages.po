@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-31 18:02+0900\n"
-"PO-Revision-Date: 2025-08-31 18:02+0900\n"
+"POT-Creation-Date: 2025-09-02 10:11+0900\n"
+"PO-Revision-Date: 2025-09-02 10:11+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -41,6 +41,10 @@ msgstr "Weather"
 #: templates/detail_page.html:113
 msgid "public-bike-available"
 msgstr "--counts-- Public bike(s) available"
+
+#: templates/index.html:33 templates/index.html:42
+msgid "browse-on-map"
+msgstr "Browse on Map"
 
 #: templates/onmap.html:25
 msgid "search-label"

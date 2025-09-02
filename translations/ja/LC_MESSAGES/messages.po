@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-31 18:02+0900\n"
-"PO-Revision-Date: 2025-08-31 18:02+0900\n"
+"POT-Creation-Date: 2025-09-02 10:11+0900\n"
+"PO-Revision-Date: 2025-09-02 10:11+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -42,6 +42,10 @@ msgstr "天気"
 msgid "public-bike-available"
 msgstr "公共自転車--counts--台使用可能"
 
+#: templates/index.html:33 templates/index.html:42
+msgid "browse-on-map"
+msgstr "マップで探す"
+
 #: templates/onmap.html:25
 msgid "search-label"
 msgstr "場所名で検索"
@@ -73,4 +77,3 @@ msgstr "少々混雑"
 #: templates/onmap.html:71
 msgid "crowd-crowded"
 msgstr "混雑"
-
