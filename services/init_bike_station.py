@@ -29,7 +29,7 @@ def mapping_id(attraction_dict):
         bike_state = city_data.get('SBIKE_STTS') # sbike stts list
         if not bike_state:
             print(f'No Bike Station near {city_data.get('AREA_NM')} : {area_code}')
-            return []  # [] 반환해 나중에 필터링 예정
+            return [] # [] 반환해 When flattened, it disappears.
 
         return [
             {'id': area_code, 'SBIKE_SPOT_ID': station.get('SBIKE_SPOT_ID'), 'SBIKE_SPOT_NM':station.get('SBIKE_SPOT_NM')}
@@ -38,7 +38,7 @@ def mapping_id(attraction_dict):
     except Exception as e:
         print(f'error message : {e}')
         print(f"error url : {url}")
-        return []  # [] 반환해 나중에 필터링 예정
+        return []  # [] 반환해 When flattened, it disappears.
 
 ## 1. 실시간 도시 데이터에서 도시ID - 대여소ID 매핑    
 # bike_station_info 생성 함수

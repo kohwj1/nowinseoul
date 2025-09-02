@@ -39,7 +39,7 @@ async def mapping_xy(attraction_dict, session):
         print(f'error message : {e}')
         print(f"error url : {url}")
 
-        return []  # [] 반환해 나중에 When flattened, it disappears.
+        return []  # [] 반환해 When flattened, it disappears.
 
 
 
