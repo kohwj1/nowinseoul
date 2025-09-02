@@ -134,10 +134,12 @@
 <script>
   // const userLocale = navigator.language;
   const pageData  = {{ data | tojson }};
+  window.pageData = pageData;
   const crowdData = pageData.FCST_PPLTN;
   const bikeData  = pageData.SBIKE_STTS;
   const weatherData = pageData.WEATHER_STTS;
 </script>
+
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="{{ url_for('static', filename='js/translate_js.js') }}"></script>
 <script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
