@@ -92,7 +92,7 @@ function openTooltip() {
 
 //지도 렌더링
 let map = L.map('map', {
-    center: [37.5665, 126.9780],
+    center: [37.5389, 126.9780],
     zoom: 11,
 });
 
