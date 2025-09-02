@@ -45,6 +45,6 @@ jobs:
             cd /home/ubuntu/SESAC/nowinseoul
             git fetch origin main
             git reset --hard origin/main
-            source sesac/bin/activate
+            source ../sesac/bin/activate
             pip install -r requirements.txt
             pm2 reload nowinseoul || pm2 start "python app.py" --name nowinseoul
