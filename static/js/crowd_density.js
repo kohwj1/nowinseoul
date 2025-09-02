@@ -40,5 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         label_area.appendChild(new_label);
       })
       progressBar.style.background = `linear-gradient(to right, ${softStops.join(', ')})`;
+    } else {
+      document.getElementById('no-forecast-mgs').textContent = translateCrowd(userLocale(), 'nodata');
     }
 });

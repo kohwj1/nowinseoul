@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tagEl.classList.add(hit.cls);
     } else {
       tagEl.textContent = 'No Data';
+      trafficMsg.textContent = translateTraffic(userLocale(), 'No Data')[1];
     }
   }
 });
