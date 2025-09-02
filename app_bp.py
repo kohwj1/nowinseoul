@@ -33,7 +33,7 @@ def initialize_cache():
 
 @app.route('/')
 def root():
-    locale = request.accept_languages.best_match(app.config['BABEL_SUPPORTED_LOCALES'])
+    locale = get_locale()
     if not locale:
         locale = app.config['BABEL_DEFAULT_LOCALE']
     return redirect(url_for('main.index', locale=locale))
