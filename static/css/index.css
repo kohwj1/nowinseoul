@@ -43,6 +43,22 @@ body {
   margin: 0;
 }
 
+#lang-select-ui {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  z-index: 9999;
+  width:max-content;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+#lang-select {
+  position: absolute;
+  top:0;
+  right:0;
+}
+
 .tag-form {
   width: 100%;
   margin: 0;

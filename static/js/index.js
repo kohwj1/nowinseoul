@@ -1,3 +1,5 @@
+const langSelectBox = document.getElementById('lang-select');
+
 function userLocale() {
     const url = new URL(window.location.href);
     const pathName = url.pathname;
@@ -12,8 +14,11 @@ function userLocale() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+  const locale = userLocale()
+  console.log(locale)
   const checkboxes = document.querySelectorAll('.mapfilter');
   const container  = document.getElementById('attractions-container');
+  document.getElementById(locale).setAttribute('selected','');
 
   const attractionData = window.attractionData || {};
 
@@ -77,3 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
       .replaceAll("'", '&#39;');
   }
 });
+
+langSelectBox.addEventListener('change', () => {
+  const newLang = langSelectBox.value;
+  console.log(newLang)
+  location.href = `/${newLang}`
+})
