@@ -11,6 +11,20 @@ main {
     height: 96vh;
 }
 
+.nav {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lang-select-icon {
+  font-size: 1.4rem;
+}
+
+#lang-select {
+  position: absolute;
+  right:0;
+}
+
 .nav-item {
     text-decoration: none;
 }
