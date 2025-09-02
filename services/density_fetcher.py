@@ -45,7 +45,7 @@ def mapping_id(attraction_dict):
     except Exception as e:
         print(f'error message : {e}')
         print(f"error url : {url}")
-        return []  # [] 반환해 나중에 When flattened, it disappears.
+        return []  # [] 반환해 When flattened, it disappears.
     
 # id - FCST_PPLTN 예측 목록 생성 함수
 def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달하는 것이 안전
