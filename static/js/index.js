@@ -62,8 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
       return `
         <div class="card">
           <a href="detail/${encodeURIComponent(id)}">
-            <img src="/static/images/attraction/${encodeURIComponent(id)}.jpg"
-                 alt="${escapeHtml(name)}" class="card-image" />
+            <div>
+              <img src="/static/images/attraction/${encodeURIComponent(id)}.jpg" alt="${escapeHtml(name)}" class="card-image" />
+              <div class="shadow-overlay"></div>
+            </div>
             <div class="card-title">${escapeHtml(name)}</div>
           </a>
         </div>
