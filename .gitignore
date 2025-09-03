@@ -15,9 +15,6 @@ __pycache__/
 *.db
 instance/*
 
-# 레거시 개발파일
-bike_station_fetcher_everyday.py
-
 # 개발
 test/*
 
@@ -25,5 +22,12 @@ test/*
 *.sh
 *.crontab
 
-#미사용리소스
+# 미사용리소스
 origin_images/
+
+# 로그파일
+*.log
+
+# 도커 관련파일
+.dockerignore
+Dockerfile
