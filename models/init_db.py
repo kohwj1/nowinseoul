@@ -5,10 +5,9 @@ from flask import current_app
 
 load_dotenv()  # .env 파일의 환경변수 로드
 
-DATABASE = os.getenv('DATABASE')
-if not DATABASE:
-    print(f'.env 파일에서 DATABASE를 입력하세요')
-DB_PATH = os.path.join('instance',DATABASE)  # 데이터베이스 파일 경로
+DB_PATH = os.getenv('DB_PATH') # 데이터베이스 파일 경로
+if not DB_PATH:
+    print(f'.env 파일에서 DB_PATH를 입력하세요') 
 CSV_FOLDER = 'data'     # CSV 파일이 있는 폴더 경로
 
 def init_db():
