@@ -1,14 +1,14 @@
-function userLocale() {
-    const url = new URL(window.location.href);
-    const pathName = url.pathname;
-    const pathSegments = pathName.split('/');
-    console.log(pathSegments)
+// function userLocale() {
+//     const url = new URL(window.location.href);
+//     const pathName = url.pathname;
+//     const pathSegments = pathName.split('/');
+//     console.log(pathSegments)
 
-    if (pathSegments.length === 0) {
-        return 'en'
-    }
-    return pathSegments[1];
-}
+//     if (pathSegments.length === 0) {
+//         return 'en'
+//     }
+//     return pathSegments[1];
+// }
 
 //커스텀 마커
 function customMarker(crowdLevel) {

@@ -1,24 +1,29 @@
-function userLocale() {
-    const url = new URL(window.location.href);
-    const pathName = url.pathname;
-    const pathSegments = pathName.split('/');
-    console.log(pathSegments)
+// const langSelectBox = document.getElementById('lang-select');
 
-    if (pathSegments.length === 0) {
-        return 'en'
-    }
-    return pathSegments[1];
-}
+// function userLocale() {
+//     const url = new URL(window.location.href);
+//     const pathName = url.pathname;
+//     const pathSegments = pathName.split('/');
+//     console.log(pathSegments)
+
+//     if (pathSegments.length === 0) {
+//         return 'en'
+//     }
+//     return pathSegments[1];
+// }
 
 
 document.addEventListener('DOMContentLoaded', function() {
+  // const locale = userLocale()
+  // console.log(locale)
   const checkboxes = document.querySelectorAll('.mapfilter');
   const container  = document.getElementById('attractions-container');
+  // document.getElementById(locale).setAttribute('selected','');
 
   const attractionData = window.attractionData || {};
 
   // (초기/전체해제 시 사용) 지금은 movie이지만 나중에 가장 높은 검색량을 나타내는 변수가 생기면 그것과 교체 
-  const DEFAULT_TAG = 'movie';
+  const DEFAULT_TAG = 'food_beauty_drama_movie';
 
   // 백엔드가 조합 키를 만들 때 쓴 기준 순서 
   const BACKEND_ORDER = ['food', 'beauty', 'drama', 'movie'];
@@ -57,8 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
       return `
         <div class="card">
           <a href="detail/${encodeURIComponent(id)}">
-            <img src="/static/images/attraction/${encodeURIComponent(id)}.jpg"
-                 alt="${escapeHtml(name)}" class="card-image" />
+            <div>
+              <img src="/static/images/attraction/${encodeURIComponent(id)}.jpg" alt="${escapeHtml(name)}" class="card-image" />
+              <div class="shadow-overlay"></div>
+            </div>
             <div class="card-title">${escapeHtml(name)}</div>
           </a>
         </div>
@@ -77,3 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
       .replaceAll("'", '&#39;');
   }
 });
+
+langSelectBox.addEventListener('change', () => {
+  const newLang = langSelectBox.value;
+  console.log(newLang)
+  location.href = `/${newLang}`
+})

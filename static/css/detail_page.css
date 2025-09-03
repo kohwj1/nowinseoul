@@ -5,7 +5,34 @@ body {
   font-family: 'Noto Sans KR', Arial, sans-serif;
 }
 
-.header-overlay{
+.nav {
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    border: none !important;
+}
+
+#lang-select-icon {
+  font-size: 1.4rem;
+  text-shadow: #000 1px 3px 10px;
+  cursor: pointer;
+}
+
+#lang-select {
+  position: absolute;
+  right:0;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: #000 1px 3px 10px;
+    cursor: pointer;
+}
+
+.header-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -309,6 +336,10 @@ body {
 .bike-station-name {
   font-size: 0.9rem;
   flex: 1;
+}
+
+.bike-count-bubble {
+  text-align: center;
 }
 
 /* 지도 서식 */

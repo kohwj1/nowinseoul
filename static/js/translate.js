@@ -28,21 +28,24 @@ function translateCrowd(language, text) {
                 'Moderate':'보통',
                 'Slightly crowded':'약간 붐빔',
                 'Crowded':'혼잡',
-                'Go to Detail': '자세히 보기'
+                'Go to Detail': '자세히 보기',
+                'nodata': '혼잡도 예측 데이터가 제공되지 않습니다.'
             },
         'ja': {
                 'Comfortable':'余裕',
                 'Moderate':'普通',
                 'Slightly crowded':'少々混雑',
                 'Crowded':'混雑',
-                'Go to Detail': 'もっと見る'
+                'Go to Detail': 'もっと見る',
+                'nodata': '混雑度の予告情報が手供されない状態です。'
             },
         'en': {
                 'Comfortable':'Comfortable',
                 'Moderate':'Moderate',
                 'Slightly crowded':'Slightly crowded',
                 'Crowded':'Crowded',
-                'Go to Detail': 'Go to Detail'
+                'Go to Detail': 'Go to Detail',
+                'nodata': 'No forecast Data'
             },
     }
     if (trans_data.hasOwnProperty(language)) {
@@ -56,17 +59,20 @@ function translateTraffic(language, text) {
         'ko': {
                 '원활':['원활', '해당 장소로 이동·진입하는 도로가 크게 막히지 않아요.'],
                 '서행':['서행', '해당 장소로 이동·진입 시 시간이 다소 소요될 수 있어요.'],
-                '정체':['정체', 'congested-ko']
+                '정체':['정체', '해당 장소로 이동·진입 시 시간이 오래 걸릴 수 있어요.'],
+                'No Data':['No Data', '실시간 교통상황 정보 제공이 불가능합니다.']
             },
         'ja': {
                 '원활':['渋滞なし', '現地へ通行する道路状況は問題ありません。'],
-                '서행':['混雑', '現地への進入に時間がかかっています。'],
-                '정체':['渋滞', 'congested-ja']
+                '서행':['混雑', '現地への進入に時間がかかる可能性があります。'],
+                '정체':['渋滞', '現地への進入に時間がかかる可能性が高いです。'],
+                'No Data':['No Data', 'システムの点検などによりリアルタイム情報が提供できません。']
             },
         'en': {
                 '원활':['Free flow', "Roadways heading toward or entering the corresponding place aren't congested."],
                 '서행':['Slow', "It may take some time when on route to or entering the corresponding place."],
-                '정체':['Congested', "congested-en"]
+                '정체':['Congested', "It can take a long time to move and enter the place."],
+                'No Data':['No Data', 'No forecast Data']
             },
     }
     if (trans_data.hasOwnProperty(language)) {
