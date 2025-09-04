@@ -3,7 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/detail_page.min.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -151,11 +151,11 @@
 </script>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="{{ url_for('static', filename='js/globalLocale.js') }}"></script>
-<script src="{{ url_for('static', filename='js/translate.js') }}"></script>
-<script src="{{ url_for('static', filename='js/detail_page.js') }}"></script>
-<script src="{{ url_for('static', filename='js/bike.js') }}"></script>
-<script src="{{ url_for('static', filename='js/crowd_density.js') }}"></script>  
+<script src="{{ url_for('static', filename='js/globalLocale.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/translate.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/detail_page.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bike.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/crowd_density.min.js') }}"></script>  
 <script src="{{ url_for('static', filename='js/traffic.js') }}"></script>
 <script src="{{ url_for('static', filename='js/weather.js') }}"></script>  
 {% endblock %}

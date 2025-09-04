@@ -2,7 +2,7 @@
 {% block title %}Now in Seoul{% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.min.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -54,7 +54,7 @@
   window.attractionData = {{ data | tojson }};
 </script>
 
-<script src="{{ url_for('static', filename='js/globalLocale.js') }}"></script>
-<script src="{{ url_for('static', filename='js/index.js') }}"></script>
-<script src="{{ url_for('static', filename='js/translate.js') }}"></script>
+<script src="{{ url_for('static', filename='js/globalLocale.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/translate.min.js') }}"></script>
 {% endblock %}
