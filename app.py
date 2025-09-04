@@ -14,9 +14,10 @@ babel = Babel(app)
 
 def get_locale():
     # https://flask.palletsprojects.com/en/stable/api/#flask.Request.view_args
-    path_lang = request.view_args.get('locale', False)
-    if path_lang in current_app.config['BABEL_SUPPORTED_LOCALES']:
-        return path_lang
+    # Flask 웹 프레임워크에서 URL 경로(path) 요소로부터 추출된 변수(locale)를 의미
+    # path_lang = request.view_args.get('locale', False)
+    # if path_lang in current_app.config['BABEL_SUPPORTED_LOCALES']:
+    #     return path_lang
 
     # https://python-babel.github.io/flask-babel/
     # try to guess the language from the user accept header the browser transmits.
@@ -44,7 +45,7 @@ main = Blueprint('main', __name__, url_prefix='/<locale>')
 @main.route('/')
 def index(locale):
     print(f'\n{get_client_ip()} 에서 방문했습니다.')
-    data = current_app.config.get('tag_cases', {}).get(locale, {})# browser locale 값이 기본값
+    data = current_app.config.get('tag_cases', {}).get(locale, {})# browser url <locale> 값이 기본값
 
     return render_template('index.html', data = data, locale=locale)
 
