@@ -28,13 +28,13 @@ def fetch(url, max_retries=3) -> dict:
     # else: Try 구문에서 else는 요청 성공
     #     print("요청 성공:", response.status_code)
 
-        # 재시도 전에 지연 시간(backoff)을 줍니다.
+        # 재시도 전에 지연 시간(backoff)을 줍니다. <- 이러면 페이지 뜨는 속도가 느려지기에 안함
         # 지수적 백오프(Exponential Backoff)를 적용해 재시도 횟수가 늘수록 지연 시간도 길어집니다.
         # 재시도 횟수가 증가할수록 대기 시간을 길게 가져가므로, 서버에 연속적인 부하를 주지 않고 스스로 회복할 시간을 줍니다.
-        if attempt < max_retries - 1:
-            wait_time = 2 ** attempt  # 1, 2, 4초 순으로 지연
-            print(f"Waiting for {wait_time} seconds before retrying...")
-            time.sleep(wait_time)
+        # if attempt < max_retries - 1:
+        #     wait_time = 2 ** attempt  # 1, 2, 4초 순으로 지연
+        #     print(f"Waiting for {wait_time} seconds before retrying...")
+        #     time.sleep(wait_time)
 
     # 재시도 모두 실패한 경우 빈 딕셔너리 반환
     return {}
