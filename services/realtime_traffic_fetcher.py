@@ -45,7 +45,7 @@ def mapping_id(attraction_dict):
     except Exception as e:
         print(f'error message : {e}')
         print(f"error url : {url}")
-        print(f'resolution message : {attraction_dict.get('name_ko')}의 날씨 정보를 제공하지 않습니다')
+        print(f'resolution message : {attraction_dict.get('name_ko')}의 실시간 주변도로 교통정보를 제공하지 않습니다')
         return []  # [] 반환해 When flattened, it disappears.
     
 # 주변도로 생성 함수
