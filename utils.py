@@ -15,7 +15,7 @@ def fetch(url, max_retries=3) -> dict:
     # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     for attempt in range(max_retries):
         try:
-            response = requests.get(url, timeout=4) # 타임아웃을 4초로 설정 3.51s 쯤 걸려서
+            response = requests.get(url) # 손실데이터가 많아져서 안씀 : 타임아웃을 4초로 설정 3.51s 쯤 걸려서
             response.raise_for_status()  # HTTP 상태 코드 오류 체크 200이면 pass 아니면 에러 발생
             # print(f'{response=}\n{response.text=}')
             data = response.json() # JSON 응답을 Python dict로 변환

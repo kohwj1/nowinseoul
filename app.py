@@ -15,9 +15,9 @@ babel = Babel(app)
 def get_locale():
     # https://flask.palletsprojects.com/en/stable/api/#flask.Request.view_args
     # Flask 웹 프레임워크에서 URL 경로(path) 요소로부터 추출된 변수(locale)를 의미
-    # path_lang = request.view_args.get('locale', False)
-    # if path_lang in current_app.config['BABEL_SUPPORTED_LOCALES']:
-    #     return path_lang
+    path_lang = request.view_args.get('locale', False)
+    if path_lang in current_app.config['BABEL_SUPPORTED_LOCALES']:
+        return path_lang
 
     # https://python-babel.github.io/flask-babel/
     # try to guess the language from the user accept header the browser transmits.
@@ -25,7 +25,7 @@ def get_locale():
     return request.accept_languages.best_match(current_app.config['BABEL_SUPPORTED_LOCALES'])
     # 이걸 이용해서 ko, en, ja로 케이스 분기처리되면 됩니다!
 
-babel.init_app(app, locale_selector=get_locale)
+babel.init_app(app, locale_selector=get_locale) # 언어는 url의 locale을 따른다
 
 # https://flask.palletsprojects.com/en/stable/appcontext/
 # 앱 시작할 때, 언어별 tag조합별 id/name 목록을 생성해서 current_app에 캐싱
@@ -35,7 +35,8 @@ def initialize_cache():
 
 @app.route('/')
 def root():
-    locale = get_locale() or current_app.config['BABEL_DEFAULT_LOCALE']
+    # url/에 처음 들어오면 clinet browser의 언어설정을 가져오는데, false면 default 값 적용
+    locale = request.accept_languages.best_match(current_app.config['BABEL_SUPPORTED_LOCALES']) or current_app.config['BABEL_DEFAULT_LOCALE']
 
     return redirect(url_for('main.index', locale=locale))
 
