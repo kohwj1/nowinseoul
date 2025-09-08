@@ -22,5 +22,11 @@ jobs:
             source /home/ubuntu/SESAC/sesac/bin/activate
             pip install -r requirements.txt
             sudo systemctl restart nowinseoul
+            sudo setfacl -R -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/static
+            sudo setfacl -R -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/instance/nowinseoul.db
+            sudo setfacl -R -d -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/static
+          # nginx가 정적 파일과 그 상위 경로에 www-data의 읽기 권한이 있어야 합니다.
 
-# pm2 restart nowinseoul || pm2 start "gunicorn -w 2 --bind 0.0.0.0:8000 app:app" --name nowinseoul
+          # sudo setfacl -R -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/static
+          # sudo setfacl -R -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/instance/nowinseoul.db
+          # sudo setfacl -R -d -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/static
