@@ -19,8 +19,9 @@ instance/*
 test/*
 
 # 쉘스크립트 및 스케줄러
-*.sh
 *.crontab
+*.sh
+!docker-entrypoint.sh
 
 # 미사용리소스
 origin_images/
@@ -30,4 +31,4 @@ origin_images/
 
 # 도커 관련파일
 .dockerignore
-Dockerfile
+# Dockerfile
