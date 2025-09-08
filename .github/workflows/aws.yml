@@ -21,6 +21,5 @@ jobs:
             git reset --hard origin/main
             source /home/ubuntu/SESAC/sesac/bin/activate
             pip install -r requirements.txt
-            sudo systemctl restart nowinseoul
-
+# sudo systemctl restart nowinseoul
 # pm2 restart nowinseoul || pm2 start "gunicorn -w 2 --bind 0.0.0.0:8000 app:app" --name nowinseoul
