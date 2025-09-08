@@ -30,3 +30,6 @@ jobs:
           # sudo setfacl -R -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/static
           # sudo setfacl -R -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/instance/nowinseoul.db
           # sudo setfacl -R -d -m u:www-data:rx /home/ubuntu/SESAC/nowinseoul/static
+
+# sudo systemctl restart nowinseoul
+# pm2 restart nowinseoul || pm2 start "gunicorn -w 2 --bind 0.0.0.0:8000 app:app" --name nowinseoul
