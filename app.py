@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, current_app, redirect, url_for, Blueprint, stream_template
+from flask import Flask, render_template, jsonify, request, current_app, redirect, url_for, Blueprint
 from flask_babel import Babel
 from services.bike_station_fetcher import get_info
 from models import db
@@ -72,7 +72,7 @@ def detail(locale, attraction_id):
 
         return render_template('404.html'), 404
 
-    deatil_cache_data = db.get_info_by_id('detail_cache',attraction_id)
+    detail_cache_data = db.get_info_by_id('detail_cache',attraction_id)
     data = {"AREA_CD" : attraction_id,
             "NAME" : attraction_info_by_id[0].get('name_' + locale),
             "DESCRIPTION": attraction_info_by_id[0].get('desc_' + locale),
@@ -90,20 +90,20 @@ def detail(locale, attraction_id):
             # 실시간 인구밀도
             "LIVE_PPLTN_STTS":[{"PPLTN_TIME": d.get('realtime_pop_dttm'),
                                 "AREA_CONGEST_LVL": d.get('realtime_pop')}
-                                    for d in deatil_cache_data
+                                    for d in detail_cache_data
             ],
             # 실시간 주변도로 혼잡도
             "ROAD_TRAFFIC_STTS":[{"ROAD_TRAFFIC_TIME" : d.get('realtime_road_dttm'),
                                   "ROAD_TRAFFIC_IDX" : d.get('realtime_road'),
                                   "ROAD_MSG" : d.get('realtime_road_msg')}
-                                    for d in deatil_cache_data
+                                    for d in detail_cache_data
             ],
             # 주변 따릉이
             # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
             "SBIKE_STTS":get_info(attraction_id, locale)
     }
 
-    return stream_template('detail_page.html', data=data, locale=locale)
+    return render_template('detail_page.html', data=data, locale=locale)
 
 # --------------------------------------------
 
