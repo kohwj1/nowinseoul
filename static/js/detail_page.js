@@ -2,7 +2,7 @@ function userLocale() {
     const url = new URL(window.location.href);
     const pathName = url.pathname;
     const pathSegments = pathName.split('/');
-    console.log(pathSegments)
+    // console.log(pathSegments)
 
     if (pathSegments.length === 0) {
         return 'en'
@@ -10,8 +10,17 @@ function userLocale() {
     return pathSegments[1];
 }
 
+function getImageUrl() {
+    const url = new URL(window.location.href);
+    const pathName = url.pathname;
+    const pathSegments = pathName.split('/');
+    return `/static/images/attraction/${pathSegments[3]}.jpg`;
+}
+
 function initPage() {
   // --- read more ---
+  document.querySelector('.background-image-cover').src = getImageUrl();
+  
   const textContainer = document.querySelector('.text-container');
   const readMoreBtn = document.getElementById('read-more-btn');
   if (textContainer && readMoreBtn) {

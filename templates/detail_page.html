@@ -8,9 +8,6 @@
 
 {% block content %}
 <div class="top-section">
-  <!-- <button class="back-button" onclick="goBack()">
-    <img src="{{ url_for('static', filename='images/ui/back-button.png') }}" alt="뒤로가기">
-  </button> -->
   <div class="nav p-2 border-bottom">
     <a onclick="goBack()" class="nav-item"><i class="bi bi-chevron-left"></i> Back</a>
     <div class="bi bi-globe me-2" id="lang-select-icon">
@@ -21,7 +18,7 @@
         </select>
     </div>
 </div>
-  <img src="{{ url_for('static', filename='images/attraction/' + data.AREA_CD + '.jpg') }}" alt="배경 이미지" class="background-image-cover">
+  <img src="" alt="{{ data.NAME }}" class="background-image-cover">
   <div class="header-overlay"></div>
   <div class="hero-text">
     <h1 id="location-name">{{ data.NAME }}</h1>
