@@ -14,7 +14,7 @@ function getImageUrl() {
     const url = new URL(window.location.href);
     const pathName = url.pathname;
     const pathSegments = pathName.split('/');
-    return `/static/images/attraction/${pathSegments[3]}.jpg`;
+    return `/static/images/attraction/${pathSegments[3]}.webp`;
 }
 
 function initPage() {
