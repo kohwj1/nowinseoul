@@ -18,7 +18,7 @@
         </select>
     </div>
 </div>
-  <img src="" alt="{{ data.NAME }}" class="background-image-cover">
+  <img src="{{ url_for('static', filename='images/attraction/' + data.AREA_CD + '.webp') }}" alt="배경 이미지" class="background-image-cover">
   <div class="header-overlay"></div>
   <div class="hero-text">
     <h1 id="location-name">{{ data.NAME }}</h1>
