@@ -61,17 +61,20 @@ def get_client_ip():
 # 지도 페이지
 @main.route('/map')
 def browse_on_map(locale):
+    # route 변수 검증
+    if locale not in current_app.config['BABEL_SUPPORTED_LOCALES']:
+        return render_template('404.html'), 404
+        
     data = db.get_info_for_map(locale) # browser locale 값이 기본값
         
     return render_template('onmap.html', data = data, locale=locale)
 
 # 상세 페이지
-@utils.execution_time
 @main.route('/detail/<attraction_id>')
 def detail(locale, attraction_id):
     attraction_info_by_id = db.get_info_by_id('attraction', attraction_id)
-    if not attraction_info_by_id:
-
+    # route 변수 검증
+    if locale not in current_app.config['BABEL_SUPPORTED_LOCALES'] or not attraction_info_by_id:
         return render_template('404.html'), 404
 
     detail_cache_data = db.get_info_by_id('detail_cache',attraction_id)
@@ -109,12 +112,10 @@ def detail(locale, attraction_id):
 # 따릉이
 @main.route('/bike/<attraction_id>')
 def bike(locale, attraction_id):
-    if locale not in current_app.config['BABEL_SUPPORTED_LOCALES']:
+    # route 변수 검증
+    if locale not in current_app.config['BABEL_SUPPORTED_LOCALES'] or attraction_id not in db.Attractions().get_id():
         return render_template('404.html'), 404
 
-    # if attraction_id not in db.Attractions:
-    #     return render_template('404.html'), 404
-    
     # 주변 따릉이
     # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
     return jsonify({"SBIKE_STTS":get_info(attraction_id, locale)})

@@ -257,6 +257,7 @@ def import_bike_station_info():
 class Attractions: 
     _instance = None
     _attractions = None
+    _id = None
 
     """ __new__
     - 객체를 실제로 새로 생성하는 메서드입니다.
@@ -276,10 +277,14 @@ class Attractions:
         if cls._instance is None:
             cls._instance = super(Attractions, cls).__new__(cls) # 최초 한 번만 리스트 로드
             cls._instance._attractions = cls._instance.get_station() 
+            cls._instance._id = cls._instance.get_id() 
         return cls._instance # _instance가 이미 존재하므로 새 객체를 만들지 않고 기존 객체를 반환합니다.
 
     def get_station(self): # 80개 attraction 목록
         return get_data('name_ko', 'attraction')
+
+    def get_id(self):
+        return [d.get('id') for d in get_data('id', 'attraction')]
 
     def __call__(self):
         # 인스턴스를 함수처럼 Attractions() 형태로 호출하면 리스트 반환 
@@ -287,7 +292,7 @@ class Attractions:
         # 없으면 인스턴스는 함수처럼 호출될 수 없고, 호출하면 TypeError가 발생합니다.
         # Attractions._attractions나 Attractions.get_attractions() 같은 명시적 메서드 호출로 충분하다면 __call__은 불필요
         return self._attractions
-    
+
     def __iter__(self):
         # 내부 리스트의 iterator 반환
         return iter(self._attractions)
