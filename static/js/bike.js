@@ -1,4 +1,6 @@
 //따릉이용 서클 마커
+const PageLocale = userLocale()
+
 function circleOnMap(marker_data, map) {
     try {
         for (m of marker_data) {
@@ -9,7 +11,7 @@ function circleOnMap(marker_data, map) {
                     iconAnchor: [22, 15],
                     popupAnchor: [-7, 2]
                 })})
-                .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br><div class="bike-count-bubble">${m.SBIKE_PARKING_CNT}${translateBike(userLocale())}</div>`)
+                .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br><div class="bike-count-bubble">${m.SBIKE_PARKING_CNT}${translateBike(PageLocale)}</div>`)
                 .addTo(map)
                 L.marker([m.SBIKE_X, m.SBIKE_Y],{icon: L.divIcon({html: `<div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${m.SBIKE_PARKING_CNT}</div>`, iconSize: [0, 0], iconAnchor: [-10, 12],})})
                 .addTo(map)
@@ -20,7 +22,7 @@ function circleOnMap(marker_data, map) {
                     iconAnchor: [22, 15],
                     popupAnchor: [-7, 2]
                 })})
-                .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br><div class="bike-count-bubble">${m.SBIKE_PARKING_CNT}${translateBike(userLocale())}</div>`)
+                .bindPopup(`<strong>${m.SBIKE_SPOT_NM}</strong><br><br><div class="bike-count-bubble">${m.SBIKE_PARKING_CNT}${translateBike(PageLocale)}</div>`)
                 .addTo(map)
                 L.marker([m.SBIKE_X, m.SBIKE_Y],{icon: L.divIcon({html: `<div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">${m.SBIKE_PARKING_CNT}</div>`, iconSize: [0, 0], iconAnchor: [-10, 12],})})
                 .addTo(map)
@@ -32,9 +34,15 @@ function circleOnMap(marker_data, map) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     //지도 렌더링
+    const url = new URL(window.location.href);
+    const attractionId = url.pathname.split('/')[3];
+
     try{
+        const apiResponse = await fetch(`/${PageLocale}/bike/${attractionId}`);
+        const bikeData = await apiResponse.SBIKE_STTS;
+
         const initLat = bikeData[0].SBIKE_X;
         const initLng = bikeData[0].SBIKE_Y;
         console.log(initLat, initLng);
