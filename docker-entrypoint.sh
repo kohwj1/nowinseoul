@@ -40,4 +40,4 @@ echo "[ENTRYPOINT] Starting Gunicorn..."
 # UNIX 소켓 통신일 경우, --bind unix:/path
 # 소유자와 그룹에 읽기/쓰기 권한이 주어지고(OS default 권한 마스크에 따름),다른 사용자에게는 권한이 부여되지 않음
 # --umask 007[octal] 적용하면 => 666-007 = 660[octal](ref.https://docs.gunicorn.org/en/stable/settings.html#umask) 
-exec gunicorn -w 2 --umask 007 --bind unix:$SOCKET_PATH app:app
+exec gunicorn -w 2 --umask 007 --bind unix:$SOCKET_PATH app:app --capture-output --enable-stdio-inheritance
