@@ -46,8 +46,28 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const initLat = bikeData[0].SBIKE_X;
         const initLng = bikeData[0].SBIKE_Y;
-        console.log(initLat, initLng);
         
+        const bikeList = document.querySelector('.bike-list');
+
+        for (bike of bikeData) {
+            const bikeItem = document.createElement('li');
+
+            const bikeStationName = document.createElement('span');
+            bikeStationName.textContent = bike.SBIKE_SPOT_NM
+            bikeStationName.classList.add('bike-station-name');
+            
+            const bikeCount = document.createElement('span');
+            bikeCount.textContent = bike.SBIKE_PARKING_CNT;
+            
+            bikeCount.classList.add('bike-count-list');
+            if (bike.SBIKE_PARKING_CNT == '0') {
+                bikeCount.classList.add('bike-zero');
+            }
+            bikeItem.appendChild(bikeCount);
+            bikeItem.appendChild(bikeStationName);
+            bikeList.appendChild(bikeItem);
+        };
+
         let map = L.map('map', {
             center: [initLat, initLng],
             zoom: 16,

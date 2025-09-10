@@ -115,7 +115,7 @@ def bike(locale, attraction_id):
     # if attraction_id not in db.Attractions:
     #     return render_template('404.html'), 404
     
-    # 주변 따릉이
+    # 주변 따릉이 데이터 예시
     # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
     return jsonify({"SBIKE_STTS":get_info(attraction_id, locale)})
 
@@ -131,4 +131,4 @@ def page_not_found(e):
 app.register_blueprint(main)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')
