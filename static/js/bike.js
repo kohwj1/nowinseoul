@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const resBody = await apiResponse.json();
         const bikeData = await resBody.SBIKE_STTS;
 
+        document.querySelector('#map').classList.remove('placeholder-glow');
+
         const initLat = bikeData[0].SBIKE_X;
         const initLng = bikeData[0].SBIKE_Y;
         
