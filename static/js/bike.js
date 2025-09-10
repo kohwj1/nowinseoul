@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const resBody = await apiResponse.json();
         const bikeData = await resBody.SBIKE_STTS;
 
+        //로딩 완료 후 스켈레톤 제거
+        document.querySelector('#map').removeChild(document.querySelector('#skeleton'));
         document.querySelector('#map').classList.remove('placeholder-glow');
 
         const initLat = bikeData[0].SBIKE_X;
