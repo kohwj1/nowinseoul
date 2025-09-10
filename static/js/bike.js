@@ -36,12 +36,13 @@ function circleOnMap(marker_data, map) {
 
 document.addEventListener('DOMContentLoaded', async () => {
     //지도 렌더링
-    const url = new URL(window.location.href);
-    const attractionId = url.pathname.split('/')[3];
-
+    
     try{
+        const url = new URL(window.location.href);
+        const attractionId = url.pathname.split('/')[3];
         const apiResponse = await fetch(`/${PageLocale}/bike/${attractionId}`);
-        const bikeData = await apiResponse.SBIKE_STTS;
+        const resBody = await apiResponse.json();
+        const bikeData = await resBody.SBIKE_STTS;
 
         const initLat = bikeData[0].SBIKE_X;
         const initLng = bikeData[0].SBIKE_Y;
@@ -57,6 +58,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
         circleOnMap(bikeData, map)
+
+        const totalBikesHeader = document.getElementById('total-bikes');
+        if (totalBikesHeader && Array.isArray(bikeData) && bikeData.length > 0) {
+            const total = bikeData.reduce((s, st) => s + (parseInt(st.SBIKE_PARKING_CNT, 10) || 0), 0);
+            const result = totalBikesHeader.innerText.replace('--counts--', total);
+            totalBikesHeader.textContent = result;
+        } else {
+            const result = totalBikesHeader.innerText.replace('--counts--', 0);
+            totalBikesHeader.textContent = result;
+        }
+
     } catch {
         const msgNoBike = document.createElement('div')
         msgNoBike.textContent = 'No bike available'
