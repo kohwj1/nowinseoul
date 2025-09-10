@@ -119,18 +119,10 @@
         <div class="bike-header">
           <p id="total-bikes">{{ _('public-bike-available') }}</p>
         </div>
-        <div class="bike-map" id="map"></div>
+        <div class="bike-map placeholder-glow" id="map">
+          <div class="placeholder" id="skeleton"></div>
+        </div>
         <ul class="bike-list">
-          {% for bike in data.SBIKE_STTS %}
-          <li>
-            {% if bike.SBIKE_PARKING_CNT == '0' %}
-              <span class="bike-count-list bike-zero">{{bike.SBIKE_PARKING_CNT}}</span>
-            {% else %}
-              <span class="bike-count-list">{{bike.SBIKE_PARKING_CNT}}</span>
-            {% endif %}
-            <span class="bike-station-name">{{bike.SBIKE_SPOT_NM}}</span>
-          </li>
-          {% endfor %}
         </ul>
       </div>
     </div>
@@ -139,11 +131,10 @@
 </div>
 
 <script>
-  // const userLocale = navigator.language;
   const pageData  = {{ data | tojson }};
   window.pageData = pageData;
   const crowdData = pageData.FCST_PPLTN;
-  const bikeData  = pageData.SBIKE_STTS;
+  // const bikeData  = pageData.SBIKE_STTS;
   const weatherData = pageData.WEATHER_STTS;
 </script>
 

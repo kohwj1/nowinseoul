@@ -33,15 +33,15 @@ function initPage() {
   }
 
   // --- 따릉이 합 ---
-  const totalBikesHeader = document.getElementById('total-bikes');
-  if (totalBikesHeader && Array.isArray(bikeData) && bikeData.length > 0) {
-    const total = bikeData.reduce((s, st) => s + (parseInt(st.SBIKE_PARKING_CNT, 10) || 0), 0);
-    const result = totalBikesHeader.innerText.replace('--counts--', total);
-    totalBikesHeader.textContent = result;
-  } else {
-    const result = totalBikesHeader.innerText.replace('--counts--', 0);
-    totalBikesHeader.textContent = result;
-  }
+  // const totalBikesHeader = document.getElementById('total-bikes');
+  // if (totalBikesHeader && Array.isArray(bikeData) && bikeData.length > 0) {
+  //   const total = bikeData.reduce((s, st) => s + (parseInt(st.SBIKE_PARKING_CNT, 10) || 0), 0);
+  //   const result = totalBikesHeader.innerText.replace('--counts--', total);
+  //   totalBikesHeader.textContent = result;
+  // } else {
+  //   const result = totalBikesHeader.innerText.replace('--counts--', 0);
+  //   totalBikesHeader.textContent = result;
+  // }
 }
 
 // 최초 로드 시 실행

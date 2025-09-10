@@ -257,7 +257,7 @@ body {
   border-radius: 999px;
   font-weight: 700;
   width: max-content;
-  font-size: .875rem;
+  font-size: .75rem;
 }
 
 /* Crowd Density */
@@ -348,6 +348,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#skeleton {
+  width:100%;
+  height:100%;
 }
 
 .circle-text {
