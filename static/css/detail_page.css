@@ -350,6 +350,10 @@ body {
   align-items: center;
 }
 
+#skeleton {
+  width:100%;
+}
+
 .circle-text {
   color: #fff;
   font-weight: 800;
