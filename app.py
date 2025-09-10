@@ -99,13 +99,20 @@ def detail(locale, attraction_id):
                                   "ROAD_TRAFFIC_IDX" : d.get('realtime_road'),
                                   "ROAD_MSG" : d.get('realtime_road_msg')}
                                     for d in detail_cache_data
-            ],
-            # 주변 따릉이
-            # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
-            "SBIKE_STTS":get_info(attraction_id, locale)
+            ]
     }
 
     return render_template('detail_page.html', data=data, locale=locale)
+
+# --------------------------------------------
+
+# 따릉이
+@main.route('/bike/<attraction_id>', methods=['POST'])
+def detail(locale, attraction_id):
+    
+    # 주변 따릉이
+    # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
+    return jsonify("SBIKE_STTS":get_info(attraction_id, locale))
 
 # --------------------------------------------
 
