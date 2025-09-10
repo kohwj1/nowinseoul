@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, request, current_app, redirec
 from flask_babel import Babel
 from services.bike_station_fetcher import get_info
 from models import db
+import utils
 
 
 app = Flask(__name__) # 앱 인스턴스 : 앱 전체의 생명주기 동안 존재하는 단일 객체
@@ -65,6 +66,7 @@ def browse_on_map(locale):
     return render_template('onmap.html', data = data, locale=locale)
 
 # 상세 페이지
+@utils.execution_time
 @main.route('/detail/<attraction_id>')
 def detail(locale, attraction_id):
     attraction_info_by_id = db.get_info_by_id('attraction', attraction_id)
