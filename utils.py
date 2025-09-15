@@ -60,12 +60,14 @@ async def async_fetch(session, url, max_retries=3):
                 "Accept": "application/json",
                 "Content-Type": "application/json;charset=UTF-8"
             }
-            async with session.get(url, headers=headers) as response:
+            # async with session.get(url, headers=headers) as response:
+            async with session.get(url) as response:
+                print(f'fetching url : {url}')
                 response.raise_for_status()
                 data = await response.json()
                 return data
         except Exception as e:
-            print(f"Attempt {attempt + 1}/{max_retries} failed for {url}: {e}")
+            print(f"Attempt {attempt + 1}/{max_retries} failed for {url=}: {e=}")
     return {}
 
 if __name__ == "__main__":

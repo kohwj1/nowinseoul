@@ -55,6 +55,7 @@ def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달�
         results = list(chain.from_iterable(executor.map(fn, load)))
 
         return results
+        
 @utils.execution_time
 def fetch_traffic():
     result_list = concurrent_processing(mapping_id,db.Attractions()) # 여기까지 21.3초 걸렸음
