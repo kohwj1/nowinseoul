@@ -56,10 +56,11 @@ def async_execution_time(func):
 async def async_fetch(session, url, max_retries=3):
     for attempt in range(max_retries):
         try:
-            headers = {
-                "Accept": "application/json",
-                "Content-Type": "application/json;charset=UTF-8"
-            }
+            # 서울시 api 업데이트로인해 header 추가하지 않아도 됨
+            # headers = {
+            #     "Accept": "application/json",
+            #     "Content-Type": "application/json;charset=UTF-8"
+            # }
             # async with session.get(url, headers=headers) as response:
             async with session.get(url) as response:
                 print(f'fetching url : {url}')

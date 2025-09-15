@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, request, current_app, redirec
 from flask_babel import Babel
 from services.bike_station_fetcher import get_info
 from models import db
-import utils
+import utils, asyncio
 
 
 app = Flask(__name__) # 앱 인스턴스 : 앱 전체의 생명주기 동안 존재하는 단일 객체
@@ -118,7 +118,7 @@ def bike(locale, attraction_id):
 
     # 주변 따릉이
     # {'SBIKE_SPOT_NM_KO': '379. 서울역9번출구', 'SBIKE_SPOT_NM_EN': '379. Seoul Station Exit 9', 'SBIKE_SPOT_NM_JA': '379.ソウル駅9番出口', 'SBIKE_PARKING_CNT': '5', 'SBIKE_X': '37.55599976', 'SBIKE_Y': '126.97335815'}
-    return jsonify({"SBIKE_STTS":get_info(attraction_id, locale)})
+    return jsonify({"SBIKE_STTS":asyncio.run(get_info(attraction_id, locale))})
 
 # --------------------------------------------
 
