@@ -348,6 +348,7 @@
         "columnIds": [
           "kYBD7y3AMgyymzTORgkB6",
           "f7WgH69Y0PYiyzpvNKwPW",
+          "9u3Wy3xx0f4Rs4AcMhG2d",
           "Oulub3YrovuT5Om_8I9kv",
           "uX_FR7nrHSU_3a_grlSOQ",
           "f7WUntdJzv9xZnRoSwgDV",
@@ -363,6 +364,7 @@
           "vb3qnhzY_bmqKh54FlihG",
           "jl9Nk1lifHwg5RERnJV5q",
           "NNtCeBMNtoATyF-86j3Bv",
+          "9u3Wy3xx0f4Rs4AcMhG2d",
           "Oulub3YrovuT5Om_8I9kv",
           "uX_FR7nrHSU_3a_grlSOQ",
           "BlowBnC4dkWjiPvh4ouWI",
@@ -379,7 +381,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1756357035499,
+          "updateAt": 1757982888744,
           "createAt": 1755411421632
         }
       }
@@ -2544,6 +2546,26 @@
           "updateAt": 1756448475762,
           "createAt": 1756448475761
         }
+      },
+      "9u3Wy3xx0f4Rs4AcMhG2d": {
+        "id": "9u3Wy3xx0f4Rs4AcMhG2d",
+        "tableId": "hIcTx2_EfbL-yvSslkqqM",
+        "name": "station_index",
+        "comment": "실시간 따릉이 정보에서 index 값",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 78,
+          "widthComment": 160,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1757982946829,
+          "createAt": 1757982867427
+        }
       }
     },
     "relationshipEntities": {
@@ -2738,8 +2760,8 @@
           "columnIds": [
             "kYBD7y3AMgyymzTORgkB6"
           ],
-          "x": 1122.5,
-          "y": 410,
+          "x": 1158.5,
+          "y": 434,
           "direction": 8
         },
         "meta": {

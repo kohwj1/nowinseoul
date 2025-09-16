@@ -51,7 +51,7 @@ async def fetch_and_filter(session, url, station_id_dict):
             return fltten_results
 
 
-# @utils.async_execution_time
+@utils.async_execution_time
 async def get_info(attraction_id, my_locale): # POI033 서울역
     # 리스트 안에 원시값(숫자, 문자열 등 불변 객체)만 있다면 사실상 독립적인 리스트가 되고, 내부 요소 변경도 영향을 안 준다.
     # 여기서는 영향을 받아야하므로 얕은카피(.copy())하지 않음
@@ -62,7 +62,7 @@ async def get_info(attraction_id, my_locale): # POI033 서울역
     result_data = []
 
     # 한번에 1000개 까지 get(조회) for n in [2]: # 4001 부터는 없음
-    urls = [f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/bikeList/{n*1000 +1}/{(n+1)*1000}' for n in range(4)]
+    urls = [f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/bikeList/{n*500 +1}/{(n+1)*500}' for n in range(20)]
     # async with aiohttp.ClientSession(headers={"Accept": "application/json"}) as session:
     async with aiohttp.ClientSession() as session:
         tasks = [fetch_and_filter(session, url, station_id_dict) for url in urls]

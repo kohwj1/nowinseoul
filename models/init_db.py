@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS bike_station_info
 (
   id              TEXT NOT NULL, -- 관광지 고유식별자
   station_id      TEXT NOT NULL, -- 대여소 id
+  station_index   TEXT NULL    , -- 실시간 따릉이 정보에서 index 값
   station_name_ko TEXT NOT NULL, -- 대여소 한국어명
   station_name_en TEXT NULL    , -- 대여소 영어명
   station_name_ja TEXT NULL    , -- 대여소 일본어명
