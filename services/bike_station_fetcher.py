@@ -41,6 +41,10 @@ def parking_info(api_data, station_id_dict):
 async def fetch_and_filter(session, url, station_id_dict):
         obj = await utils.async_fetch(session, url)
         fetch_data = obj.get('rentBikeStatus', {}).get('row', [])
+        if fetch_data:
+            pass
+        else:
+            print(f'{len(fetch_data)=}')
 
         # 스레드풀을 사용하여 각 지역의 데이터를 병렬 처리
         with ThreadPoolExecutor() as executor:
@@ -62,7 +66,7 @@ async def get_info(attraction_id, my_locale): # POI033 서울역
     result_data = []
 
     # 한번에 1000개 까지 get(조회) for n in [2]: # 4001 부터는 없음
-    urls = [f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/bikeList/{n*500 +1}/{(n+1)*500}' for n in range(20)]
+    urls = [f'http://openapi.seoul.go.kr:8088/{API_KEY}/json/bikeList/{n*350 +1}/{(n+1)*350}' for n in range(9)]
     # async with aiohttp.ClientSession(headers={"Accept": "application/json"}) as session:
     async with aiohttp.ClientSession() as session:
         tasks = [fetch_and_filter(session, url, station_id_dict) for url in urls]
