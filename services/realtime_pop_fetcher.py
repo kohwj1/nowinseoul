@@ -63,9 +63,13 @@ def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달�
         return results
 @utils.execution_time
 def fetch_realtime_pop():
+    # fetch and parse 80개 관광지 데이터
     result_list = concurrent_processing(mapping_id,db.Attractions())
+
+    # insert data
     db.insert_data('detail_raw', result_list)
     print(f'detail_raw {len(result_list)}개 데이터 insert 완료 {datetime.now().strftime('%Y%m%d%H%M%S')}')
+
     return result_list
 
 if __name__ == "__main__":
