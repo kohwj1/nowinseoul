@@ -1,5 +1,4 @@
 ### 실시간 주변 도로 종합 현황
-# 
 
 # 서울시 api는 비동기 요청시 (aiohttp) xml로 답변이 옴 (llm은 aiohttp에 헤더가 없아서 그런거라는데..)
 import sys, os
@@ -17,7 +16,7 @@ API_KEY = os.getenv('API_KEY')
 if not API_KEY:
     print(f'.env 파일에서 API_KEY를 입력하세요')
 
-## 실시간 도시 데이터에서 날씨 예측정보 fetch
+## 실시간 주변도로 상황 데이터에서 평균 도로 현황 정보 fetch
 def mapping_id(attraction_dict):
         # 조건문 없이 예외를 활용하는 EAFP 스타일로 작성
     try:
@@ -56,14 +55,15 @@ def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달�
 
         return results
         
-@utils.execution_time
+# @utils.execution_time
 def fetch_traffic():
+    # fetch 80개 주요 관광지 대상 데이터
     result_list = concurrent_processing(mapping_id,db.Attractions()) # 여기까지 21.3초 걸렸음
-    print(f'{result_list[0]=}')
+
+    # insert 데이터
     db.update_traffic(result_list)
     print(f'detail_raw {len(result_list)}개 실시간 주변 도로 데이터 insert 완료 {datetime.now().strftime('%Y.%m.%d %H:%M:%S')}')
-    # weather_raw 1920(24*80)개 데이터 insert 완료 20250824224242
-    # fetch_traffic 함수 실행 시간: 30.6초
+
     return result_list
 
 if __name__ == "__main__":
