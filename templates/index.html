@@ -36,7 +36,7 @@
     <label class="btn btn-outline-primary btn-sm mb-1" for="movie">#Movie</label>
   </div>
 
-  <div class="map-button-container d-none d-md-flex">
+  <div class="map-button-container d-none d-lg-flex">
     <a href="{{ url_for('main.browse_on_map', locale=locale) }}" class="btn btn-primary">{{_('browse-on-map')}}</a>
   </div>
 </form>
@@ -45,7 +45,7 @@
   <!-- JS 사용해서 여기에 이미지 삽입  -->
   <div id="attractions-container" class="content"></div>
 
-  <div class="mobile-map-cta d-md-none">
+  <div class="mobile-map-cta d-lg-none">
     <a href="{{ url_for('main.browse_on_map', locale=locale) }}" class="btn btn-primary w-100">{{_('browse-on-map')}}</a>
   </div>
 </div>

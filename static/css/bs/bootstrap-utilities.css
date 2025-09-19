@@ -3670,7 +3670,7 @@
     text-align: center !important;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .float-lg-start {
     float: left !important;
   }
