@@ -758,7 +758,7 @@ progress {
     max-width: 720px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .container-lg, .container-md, .container-sm, .container {
     max-width: 960px;
   }
@@ -777,7 +777,7 @@ progress {
   --bs-breakpoint-xs: 0;
   --bs-breakpoint-sm: 576px;
   --bs-breakpoint-md: 768px;
-  --bs-breakpoint-lg: 992px;
+  --bs-breakpoint-lg: 1001px;
   --bs-breakpoint-xl: 1200px;
   --bs-breakpoint-xxl: 1400px;
 }
@@ -1346,7 +1346,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .col-lg {
     flex: 1 0 0;
   }
@@ -3492,7 +3492,7 @@ textarea.form-control-lg {
     right: auto;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .dropdown-menu-lg-start {
     --bs-position: start;
   }
@@ -4147,7 +4147,7 @@ textarea.form-control-lg {
     overflow-y: visible;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .navbar-expand-lg {
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -5141,7 +5141,7 @@ textarea.form-control-lg {
     border-right-width: var(--bs-list-group-border-width);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .list-group-horizontal-lg {
     flex-direction: row;
   }
@@ -5610,7 +5610,7 @@ textarea.form-control-lg {
     --bs-modal-width: 300px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .modal-lg,
   .modal-xl {
     --bs-modal-width: 800px;
@@ -6480,7 +6480,7 @@ textarea.form-control-lg {
     visibility: visible;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .offcanvas-lg {
     --bs-offcanvas-height: auto;
     --bs-offcanvas-border-width: 0;
@@ -7067,7 +7067,7 @@ textarea.form-control-lg {
     z-index: 1020;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .sticky-lg-top {
     position: -webkit-sticky;
     position: sticky;
@@ -10281,7 +10281,7 @@ textarea.form-control-lg {
     text-align: center !important;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1001px) {
   .float-lg-start {
     float: right !important;
   }
