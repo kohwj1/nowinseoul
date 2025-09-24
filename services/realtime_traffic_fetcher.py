@@ -55,7 +55,7 @@ def concurrent_processing(fn, load:list): # 전역변수보다 인수로 전달�
 
         return results
         
-# @utils.execution_time
+@utils.execution_time
 def fetch_traffic():
     # fetch 80개 주요 관광지 대상 데이터
     result_list = concurrent_processing(mapping_id,db.Attractions()) # 여기까지 21.3초 걸렸음

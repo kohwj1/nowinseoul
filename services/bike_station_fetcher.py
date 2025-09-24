@@ -39,7 +39,7 @@ def parking_info(api_data, station_id_dict):
     return []
 
 async def fetch_and_filter(session, url, station_id_dict):
-        obj = await utils.async_fetch(session, url)
+        obj = await utils.async_fetch(session, url) or {}
         fetch_data = obj.get('rentBikeStatus', {}).get('row', [])
         if fetch_data:
             pass

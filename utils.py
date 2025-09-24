@@ -66,9 +66,11 @@ async def async_fetch(session, url, max_retries=3):
                 print(f'fetching url : {url}')
                 response.raise_for_status()
                 data = await response.json()
+                # print(f'ok fetch data :{data=}')
                 return data
         except Exception as e:
             print(f"Attempt {attempt + 1}/{max_retries} failed for {url=}: {e=}")
+
     return {}
 
 if __name__ == "__main__":
